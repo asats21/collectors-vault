@@ -36,10 +36,11 @@ function App() {
           };
         }
   
-        // Ensure sat is a number before passing it to isPizza
-        if (satNumber && isPizza(satNumber)) {
+        if (isPizza(satNumber)) {
           updatedCollection[sat].tags.push('pizza');
         }
+
+
       });
       return updatedCollection;
     });
@@ -115,7 +116,22 @@ function App() {
           cols="50"
         />
         <br />
-        <button type="submit">Add Sats</button>
+        <button
+          type="submit"
+          style={{
+            backgroundColor: "#343a40", // Dark grey background
+            color: "#ffffff",          // White text
+            border: "1px solid #444",  // Subtle border
+            borderRadius: "4px",       // Rounded corners
+            padding: "8px 16px",       // Padding for better size
+            fontSize: "16px",          // Increase font size
+            cursor: "pointer",
+          }}
+          onMouseOver={(e) => (e.target.style.backgroundColor = "#495057")} // Lighter hover effect
+          onMouseOut={(e) => (e.target.style.backgroundColor = "#343a40")}
+        >
+        Add Sats
+      </button>
       </form>
     );
   }
