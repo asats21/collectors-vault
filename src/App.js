@@ -45,6 +45,14 @@ function App() {
     });
   };
 
+  const handleDeleteSat = (sat) => {
+    setSatCollection((prevCollection) => {
+      const updatedCollection = { ...prevCollection };
+      delete updatedCollection[sat];
+      return updatedCollection;
+    });
+  };
+
   function SatList({ collection }) {
     return (
       <div className="table-responsive">
@@ -60,6 +68,7 @@ function App() {
               <th>Tags</th>
               <th>Block Number</th>
               <th>Price</th>
+              <th>Actions</th> {/* Add a column for actions */}
             </tr>
           </thead>
           <tbody>
@@ -69,6 +78,14 @@ function App() {
                 <td>{details.tags.join(', ')}</td>
                 <td>{details.block_number || 'N/A'}</td>
                 <td>{details.price !== null ? details.price : 'N/A'}</td>
+                <td>
+                  <button
+                    className="btn btn-danger btn-sm"
+                    onClick={() => handleDeleteSat(sat)}
+                  >
+                    &times; {/* Red cross symbol */}
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
