@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
@@ -6,7 +6,17 @@ import './App.css';
 import { isPizza } from './Pizza';
 
 function App() {
-  const [satCollection, setSatCollection] = useState({});
+
+  const [satCollection, setSatCollection] = useState(() => {
+    // Load from localStorage or initialize with an empty object
+    const savedCollection = localStorage.getItem('satCollection');
+    return savedCollection ? JSON.parse(savedCollection) : {};
+  });
+
+  // Save satCollection to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem('satCollection', JSON.stringify(satCollection));
+  }, [satCollection]);
 
   const handleAddSats = (input) => {
     const newSats = input
