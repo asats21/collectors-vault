@@ -1,6 +1,8 @@
-// App.js
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+// import { isPalindrome, isPerfectPalinception, isUniformPalinception } from './Helpers';
+import { isPizza } from './Pizza';
 
 function App() {
   const [satCollection, setSatCollection] = useState({});
@@ -9,16 +11,23 @@ function App() {
     const newSats = input
       .split(/\s*,\s*|\s+/) // Split by comma or whitespace
       .filter(Boolean); // Remove empty strings
-
+  
     setSatCollection((prevCollection) => {
       const updatedCollection = { ...prevCollection };
       newSats.forEach((sat) => {
+        const satNumber = Number(sat);  // Convert to number
+  
         if (!updatedCollection[sat]) {
           updatedCollection[sat] = {
             tags: [],
             block_number: null,
             price: null,
           };
+        }
+  
+        // Ensure sat is a number before passing it to isPizza
+        if (satNumber && isPizza(satNumber)) {
+          updatedCollection[sat].tags.push('pizza');
         }
       });
       return updatedCollection;
