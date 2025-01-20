@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 // import { isPalindrome, isPerfectPalinception, isUniformPalinception } from './Helpers';
 import { isPizza } from './Pizza';
@@ -37,8 +38,13 @@ function App() {
   function SatList({ collection }) {
     return (
       <div className="table-responsive">
-        <table className="table table-striped table-bordered">
-          <thead className="table-dark">
+        <table className="table table-dark table-striped">
+          <thead
+            style={{
+              border: "1px solid #444",
+              minWidth: "800px", // Ensure the table is readable on smaller screens
+            }}
+          >
             <tr>
               <th>Sat Number</th>
               <th>Tags</th>
