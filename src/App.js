@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-// import { isPalindrome, isPerfectPalinception, isUniformPalinception } from './Helpers';
+import { isPalindrome, isPerfectPalinception, isUniformPalinception } from './Helpers';
 import { isPizza } from './Pizza';
 
 function App() {
@@ -40,6 +40,17 @@ function App() {
           updatedCollection[sat].tags.push('pizza');
         }
 
+        if (isPalindrome(satNumber)) {
+          updatedCollection[sat].tags.push('palindrome');
+        }
+
+        if (isUniformPalinception(satNumber)) {
+          updatedCollection[sat].tags.push('uniform');
+        }
+
+        if (isPerfectPalinception(satNumber)) {
+          updatedCollection[sat].tags.push('perfect');
+        }
 
       });
       return updatedCollection;
