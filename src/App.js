@@ -5,6 +5,9 @@ import './App.css';
 import { isPalindrome, isPerfectPalinception, isUniformPalinception } from './Helpers';
 import { isPizza } from './Pizza';
 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import PalindromeBook from './PalindromeBook';  // Import the new page
+
 function App() {
 
   const [satCollection, setSatCollection] = useState(() => {
@@ -148,15 +151,20 @@ function App() {
   }
 
   return (
-    <div className="container my-5">
-      <h1 className="text-center mb-4">Rare Sats Collector</h1>
-      <div className="card shadow-sm p-4">
-        <TextAreaInput onAddSats={handleAddSats} />
+    <Router>
+      <div className="container my-5">
+        <h1 className="text-center mb-4">Rare Sats Collector</h1>
+        <div className="card shadow-sm p-4">
+          <TextAreaInput onAddSats={handleAddSats} />
+        </div>
+        <div className="mt-4">
+          <SatList collection={satCollection} />
+        </div>
+        <Routes>
+          <Route path="/palindrome-book" element={<PalindromeBook satCollection={satCollection} />} />
+        </Routes>
       </div>
-      <div className="mt-4">
-        <SatList collection={satCollection} />
-      </div>
-    </div>
+    </Router>
   );
 }
 
