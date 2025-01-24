@@ -87,14 +87,14 @@ ul.levels {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid purple;
+    border: 2px solid #037F5E;
     transform: rotate(45deg);
     font-size: 16px;
     font-weight: bold;
     margin: 20px auto;
     text-align: center;
     position: relative;
-    box-shadow: 0 0 10px 2px rgba(128, 0, 128, 0.8); /* Purple glow */
+    box-shadow: 0 0 10px 2px #037F5E;
     animation: pulse 4s infinite; /* Sparkle animation */
   }
   
