@@ -43,9 +43,12 @@ const Book = ({ satCollection }) => {
   return (
     <div>
       <h1>{bookData.name}</h1>
-      <ul>
+      <ul className='levels'>
         {completedLevels.map((level, index) => (
-          <li key={index}>
+          <li
+            key={index}
+            className={level.isComplete ? "level-complete" : "level-incomplete"}
+          >
             <h3>{level.level}</h3>
             <p>
               <strong>Requirements:</strong>

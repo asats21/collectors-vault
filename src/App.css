@@ -58,3 +58,23 @@ h2 {
     background-color: #037F5E; /* Mint Green (hover effect) */
     color: #FFFFFF;
 }
+
+.level-complete {
+    border: 2px solid #06D6A0; /* Green border */
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    list-style: none;
+}
+  
+.level-incomplete {
+    border: 2px solid #E05C5C; /* Red border */
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    list-style: none;
+}
+
+ul.levels {
+    padding-left: 0 !important; /* Optional: to remove any default padding as well */
+}
