@@ -56,9 +56,6 @@ const Book = ({ satCollection }) => {
             <h3>
               {level.level} {level.isComplete ? "✅" : "❌"}
             </h3>
-            <p>
-              <strong>Requirements:</strong>
-            </p>
             <ul class='mb-3'>
               {level.requirements.map((req, i) => (
                 <li key={i}>
