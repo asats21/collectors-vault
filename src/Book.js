@@ -49,25 +49,23 @@ const Book = ({ satCollection }) => {
             key={index}
             className={level.isComplete ? "level-complete" : "level-incomplete"}
           >
-            <h3>{level.level}</h3>
+            <div className="level-header">
+              <h3 className="level-name">{level.level}</h3>
+              <span className={`level-status ${level.isComplete ? "complete" : "incomplete"}`}>
+                {level.isComplete ? "✅ Level complete!" : "❌ Level not complete yet"}
+              </span>
+            </div>
             <p>
               <strong>Requirements:</strong>
             </p>
-            <ul>
+            <ul class='mb-3'>
               {level.requirements.map((req, i) => (
                 <li key={i}>
-                  At least {req.count} sats with tags: {req.tags.join(', ')}
+                  At least {req.count} sats with tags: {req.tags.join(", ")}
                 </li>
               ))}
             </ul>
-            {level.isComplete ? (
-              <>
-                <p>✅ Level complete!</p>
-                <p>Sats: {level.sats.join(', ')}</p>
-              </>
-            ) : (
-              <p>❌ Level not complete yet</p>
-            )}
+            {level.isComplete && <p>Sats: {level.sats.join(", ")}</p>}
           </li>
         ))}
       </ul>
