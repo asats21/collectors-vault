@@ -63,6 +63,10 @@ const MySats = ({ satCollection, setSatCollection }) => {
           updatedCollection[sat].tags.push('paliblock');
         }
 
+        if (blockNumber < 1000) {
+          updatedCollection[sat].tags.push('vintage');
+        }
+
         if (isAlpha(satNumber)) {
           updatedCollection[sat].tags.push('alpha');
         }
