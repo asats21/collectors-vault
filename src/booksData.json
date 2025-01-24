@@ -1,20 +1,26 @@
 [
-    {
-      "key": "palindrome",
-      "name": "Palindrome Book",
-      "levels": [
-        {
-          "name": "Level 1",
-          "requirements": [
-            { "count": 1, "tags": ["palindrome"] }
-          ]
-        },
-        {
-          "name": "Level 2",
-          "requirements": [
-            { "count": 1, "tags": ["palindrome", "3_digits"] }
-          ]
-        }
-      ]
-    }
-  ]
+  {
+    "key": "palindrome",
+    "name": "Palindrome Book",
+    "levels": [
+      {
+        "name": "Level 1",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"] }
+        ]
+      },
+      {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"] }
+        ]
+      },
+      {
+        "name": "Level 3",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "2_digits"] }
+        ]
+      }
+    ]
+  }
+]

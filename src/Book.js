@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import booksData from './booksData.json'; // Adjust the path if needed
+import booksData from './booksData.json'; // JSON file with book data
 
 const Book = ({ satCollection }) => {
-  const { bookKey } = useParams(); // Get the book key from the URL (e.g., "palindrome")
+  const { bookKey } = useParams(); // Get the book key from the URL
   const [bookData, setBookData] = useState(null);
   const [completedLevels, setCompletedLevels] = useState([]);
 
-  // Find the book based on the bookKey
+  // Load book data for the given key
   useEffect(() => {
-    const foundBook = booksData.find(book => book.key === bookKey);
-    setBookData(foundBook);
+    const book = booksData.find((b) => b.key === bookKey);
+    setBookData(book);
   }, [bookKey]);
 
   // Check which levels are completed based on satCollection
@@ -18,8 +18,8 @@ const Book = ({ satCollection }) => {
     if (bookData) {
       const newCompletedLevels = bookData.levels.map((level) => {
         const satsForLevel = Object.entries(satCollection).filter(([sat, details]) => {
-          const hasRequiredTags = level.requirements.every(req => 
-            req.tags.every(tag => details.tags.includes(tag))
+          const hasRequiredTags = level.requirements.every((req) =>
+            req.tags.every((tag) => details.tags.includes(tag))
           );
           return hasRequiredTags;
         });
@@ -27,13 +27,14 @@ const Book = ({ satCollection }) => {
         return {
           level: level.name,
           isComplete: satsForLevel.length >= level.requirements[0].count,
-          sats: satsForLevel.map(([sat, _]) => sat)
+          sats: satsForLevel.map(([sat, _]) => sat),
+          requirements: level.requirements, // Include the requirements for display
         };
       });
 
       setCompletedLevels(newCompletedLevels);
     }
-  }, [satCollection, bookData]);
+  }, [bookData, satCollection]);
 
   if (!bookData) {
     return <div>Not found</div>;
@@ -46,13 +47,23 @@ const Book = ({ satCollection }) => {
         {completedLevels.map((level, index) => (
           <li key={index}>
             <h3>{level.level}</h3>
+            <p>
+              <strong>Requirements:</strong>
+            </p>
+            <ul>
+              {level.requirements.map((req, i) => (
+                <li key={i}>
+                  At least {req.count} sats with tags: {req.tags.join(', ')}
+                </li>
+              ))}
+            </ul>
             {level.isComplete ? (
               <>
-                <p>Level complete!</p>
+                <p>✅ Level complete!</p>
                 <p>Sats: {level.sats.join(', ')}</p>
               </>
             ) : (
-              <p>Level not complete yet</p>
+              <p>❌ Level not complete yet</p>
             )}
           </li>
         ))}
