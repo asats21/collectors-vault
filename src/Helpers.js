@@ -65,3 +65,34 @@ export function isUniformPalinception(num) {
 
     return false;
 } 
+
+export function getBlock(sat_num) {
+    const BTC = 1e8; // Assuming BTC is 100 million satoshis (standard Bitcoin definition)
+    const BLOCKS = 210000; // Number of blocks per halving epoch (standard for Bitcoin)
+  
+    let blockReward = 50; // Starting reward (50 BTC per block)
+    let startSats = 0; // Starting sats for each halving epoch
+    let totalBlocks = 0; // Total blocks across all halvings
+    let epoch = 0; // Start from the first epoch
+  
+    while (true) {
+      let epochSats = BLOCKS * blockReward * BTC;
+  
+      // If the sat number is within the current epoch range
+      if (sat_num < startSats + epochSats) {
+        let block = Math.floor((sat_num - startSats) / (blockReward * BTC));
+        return totalBlocks + block; // Calculate block number in this epoch and add to total blocks
+      }
+  
+      // If not, move to the next epoch
+      startSats += epochSats;
+      totalBlocks += BLOCKS;
+      blockReward /= 2; // Halve the block reward for the next epoch
+      epoch++;
+
+      if(epoch > 64)
+        break;
+    }
+  
+    return 0; // If not found in any epoch (though should never reach here for valid sat_num)
+}

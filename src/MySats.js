@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Modal, Button, Form } from 'react-bootstrap';  // Import required components
 
-import { isPalindrome, isPerfectPalinception, isUniformPalinception } from './Helpers';
+import { isPalindrome, isPerfectPalinception, isUniformPalinception, getBlock } from './Helpers';
 import { isPizza } from './Pizza';
 
 const MySats = ({ satCollection, setSatCollection }) => {
@@ -32,7 +32,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
         if (!updatedCollection[sat]) {
           updatedCollection[sat] = {
             tags: [],
-            block_number: null,
+            block_number: getBlock(satNumber),
             price: null,
           };
         }
