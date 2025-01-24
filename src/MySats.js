@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Modal, Button, Form } from 'react-bootstrap';  // Import required components
 
-import { isPalindrome, isPerfectPalinception, isUniformPalinception, isAlpha, isOmega, getBlock } from './Helpers';
+import { isPalindrome, isPerfectPalinception, isUniformPalinception, isAlpha, isOmega, getBlock, isUncommon } from './Helpers';
 import { isPizza } from './Pizza';
 import { isJpeg } from './Jpeg';
 
@@ -69,6 +69,10 @@ const MySats = ({ satCollection, setSatCollection }) => {
 
         if (blockNumber < 1000) {
           updatedCollection[sat].tags.push('vintage');
+        }
+
+        if (isUncommon(satNumber)) {
+          updatedCollection[sat].tags.push('uncommon');
         }
 
         if (isAlpha(satNumber)) {

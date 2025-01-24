@@ -104,3 +104,28 @@ export function isAlpha(sat_num) {
 export function isOmega(sat_num) {
     return Number.isInteger((sat_num + 1) / 1e8);
 }
+
+export function isUncommon(sat_num) {
+    // Define the subsidy halving epochs and their starting satoshi values
+    const epochs = [
+        { start: 0, subsidy: 50e8 }, // Epoch 0
+        { start: 1050000000000000, subsidy: 25e8 }, // Epoch 1
+        { start: 1575000000000000, subsidy: 12.5e8 }, // Epoch 2
+        { start: 1837500000000000, subsidy: 6.25e8 }, // Epoch 3
+        { start: 1968750000000000, subsidy: 3.125e8 }, // Epoch 4
+        { start: 2034375000000000, subsidy: 1.5625e8 }, // Epoch 5
+        { start: 2067187500000000, subsidy: 0.78125e8 }, // Epoch 6
+        { start: 2083593750000000, subsidy: 0.390625e8 }, // Epoch 7
+        { start: 2091796875000000, subsidy: 0.1953125e8 }, // Epoch 8
+        { start: 2095898437500000, subsidy: 0.09765625e8 }, // Epoch 9
+      // Add more epochs if needed
+    ];
+  
+    // Check if the satoshi falls on a subsidy boundary in any epoch
+    return epochs.some(epoch => {
+      if (sat_num >= epoch.start) {
+        return (sat_num - epoch.start) % epoch.subsidy === 0;
+      }
+      return false;
+    });
+  }
