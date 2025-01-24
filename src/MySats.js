@@ -5,7 +5,7 @@ import { Modal, Button, Form } from 'react-bootstrap';  // Import required compo
 import { isPalindrome, isPerfectPalinception, isUniformPalinception } from './Helpers';
 import { isPizza } from './Pizza';
 
-const IndexPage = ({ satCollection, setSatCollection }) => {
+const MySats = ({ satCollection, setSatCollection }) => {
 
   const [showModal, setShowModal] = useState(false); // State to control modal visibility
   const [input, setInput] = useState('');
@@ -146,4 +146,4 @@ const IndexPage = ({ satCollection, setSatCollection }) => {
   );
 };
 
-export default IndexPage;
+export default MySats;
