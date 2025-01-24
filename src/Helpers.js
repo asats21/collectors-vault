@@ -143,3 +143,43 @@ export function is2Digits(sat_num) {
     // Check if the size of the Set is exactly 2
     return uniqueDigits.size === 2;
 }
+
+export function getSatYear(blockNum) {
+    // Mapping of years to their first block numbers
+    const yearData = {
+      2025: 877268,
+      2024: 823799,
+      2023: 769810,
+      2022: 716600,
+      2021: 663920,
+      2020: 610710,
+      2019: 556471,
+      2018: 501974,
+      2017: 446045,
+      2016: 391195,
+      2015: 336883,
+      2014: 278013,
+      2013: 214571,
+      2012: 160046,
+      2011: 100425,
+      2010: 32502,
+      2009: 0, // Genesis Block
+    };
+
+    // Return null if the block number is outside the range
+    if(blockNum > yearData[2025] + 52560) {
+        return null;
+    }
+  
+    // Sort years in descending order
+    const sortedYears = Object.keys(yearData).sort((a, b) => b - a);
+  
+    for (let year of sortedYears) {
+      if (blockNum >= yearData[year]) {
+        return parseInt(year, 10);
+      }
+    }
+  
+    // Return null if the block number is outside the range
+    return null;
+}

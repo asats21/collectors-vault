@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Modal, Button, Form } from 'react-bootstrap';  // Import required components
 
-import { isPalindrome, isPerfectPalinception, isUniformPalinception, isAlpha, isOmega, getBlock, isUncommon, is3Digits, is2Digits } from './Helpers';
+import { isPalindrome, isPerfectPalinception, isUniformPalinception, isAlpha, isOmega, getBlock, isUncommon, is3Digits, is2Digits, getSatYear } from './Helpers';
 import { isPizza } from './Pizza';
 import { isJpeg } from './Jpeg';
 
@@ -37,6 +37,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
         updatedCollection[sat] = {
           tags: [],
           block_number: blockNumber,
+          year: getSatYear(blockNumber),
           price: null,
         };
   
@@ -124,7 +125,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
               <th>Sat Number</th>
               <th>Tags</th>
               <th>Block Number</th>
-              {/* <th>Price</th> */}
+              <th>Year</th>
               <th>Actions</th> {/* Add a column for actions */}
           </tr>
           </thead>
@@ -134,7 +135,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
               <td>{sat}</td>
               <td>{details.tags.join(', ')}</td>
               <td>{details.block_number || 'N/A'}</td>
-              {/* <td>{details.price !== null ? details.price : 'N/A'}</td> */}
+              <td>{details.year !== null ? details.year : 'N/A'}</td>
               <td>
                   <button
                   className="btn btn-danger btn-sm"
