@@ -133,8 +133,8 @@ const MySats = ({ satCollection, setSatCollection }) => {
               <tr key={sat}>
               <td>{sat}</td>
               <td>{details.tags.join(', ')}</td>
-              {/* <td>{details.block_number || 'N/A'}</td> */}
-              <td>{details.price !== null ? details.price : 'N/A'}</td>
+              <td>{details.block_number || 'N/A'}</td>
+              {/* <td>{details.price !== null ? details.price : 'N/A'}</td> */}
               <td>
                   <button
                   className="btn btn-danger btn-sm"
