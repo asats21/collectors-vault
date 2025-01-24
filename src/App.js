@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';  // Import required components
 
 import PalindromeBook from './Book';  // Import your PalindromeBook component
-import BooksPage from './BooksPage';  // Import the Available Books page
+import BooksList from './BooksList';  // Import the Available Books page
 import MySats from './MySats';  // Import the Index page
 
 function App() {
@@ -44,9 +44,9 @@ function App() {
         <h1 className="text-center mb-4">Sat Collector's Vault</h1>
         <Navigation/>
         <Routes>
-          <Route path="/" element={<MySats satCollection={satCollection} setSatCollection={setSatCollection} />} /> {/* Index page */}
-          <Route path="/books" element={<BooksPage />} /> {/* Available books page */}
-          <Route path="/books/:bookKey" element={<PalindromeBook satCollection={satCollection} />} /> {/* Specific book page */}
+          <Route path="/" element={<MySats satCollection={satCollection} setSatCollection={setSatCollection} />} />
+          <Route path="/books" element={<BooksList />} />
+          <Route path="/books/:bookKey" element={<PalindromeBook satCollection={satCollection} />} />
         </Routes>
       </div>
     </Router>

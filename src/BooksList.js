@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import booksData from './booksData.json'; // Adjust the path as needed
 
-const BooksPage = () => {
+const BooksList = () => {
   const [books] = useState(booksData);
 
   return (
@@ -28,4 +28,4 @@ const BooksPage = () => {
   );
 };
 
-export default BooksPage;
+export default BooksList;
