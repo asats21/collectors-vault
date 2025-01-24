@@ -136,7 +136,6 @@ const IndexPage = ({ satCollection, setSatCollection }) => {
 
   return (
     <div>
-        <h1 className="text-center mb-4">Rare Sats Collector</h1>
         <div className="card shadow-sm p-4">
           <TextAreaInput onAddSats={handleAddSats} />
         </div>
