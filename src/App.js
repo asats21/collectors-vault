@@ -4,6 +4,8 @@ import './App.css';
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
+import { Button } from 'react-bootstrap';  // Import required components
+
 import PalindromeBook from './Book';  // Import your PalindromeBook component
 import BooksPage from './BooksPage';  // Import the Available Books page
 import IndexPage from './IndexPage';  // Import the Index page
@@ -24,11 +26,14 @@ function App() {
   function Navigation() {
     return (
       <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/books">Books</Link></li>
-          {/* Add more navigation links as needed */}
-        </ul>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <Button variant="outline-primary">My Sats</Button>
+          </Link>
+          <Link to="/books" style={{ textDecoration: 'none' }}>
+            <Button variant="outline-primary">Books</Button>
+          </Link>
+        </div>
       </nav>
     );
   }
@@ -36,7 +41,7 @@ function App() {
   return (
     <Router>
       <div className="container my-5">
-        <h1 className="text-center mb-4">Rare Sats Collector</h1>
+        <h1 className="text-center mb-4">Sat Collector's Vault</h1>
         <Navigation/>
         <Routes>
           <Route path="/" element={<IndexPage satCollection={satCollection} setSatCollection={setSatCollection} />} /> {/* Index page */}

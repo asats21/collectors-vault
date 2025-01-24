@@ -123,7 +123,7 @@ const IndexPage = ({ satCollection, setSatCollection }) => {
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="satInput">
-              <Form.Label>Enter sat numbers (separated by comma or whitespace)</Form.Label>
+              <Form.Label>Enter sat numbers (separated by comma, whitespace or newline)</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={4}

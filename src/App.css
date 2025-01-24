@@ -38,3 +38,23 @@ color: #fff;
 .modal-header, .modal-footer {
 border: none;
 }
+
+/* Custom styles for the books page */
+h2 {
+    font-family: 'Arial', sans-serif;
+    color: #118AB2;  /* Azure Blue */
+    font-weight: bold;
+}
+
+.list-group-item {
+    font-size: 1.2rem;
+    background-color: #2A2D34; /* Charcoal Gray (dark background) */
+    color: #FFFFFF;
+    border: 1px solid #444;
+    margin-bottom: 10px;
+}
+
+.list-group-item:hover {
+    background-color: #037F5E; /* Mint Green (hover effect) */
+    color: #FFFFFF;
+}
