@@ -96,3 +96,11 @@ export function getBlock(sat_num) {
   
     return 0; // If not found in any epoch (though should never reach here for valid sat_num)
 }
+
+export function isAlpha(sat_num) {
+    return Number.isInteger(sat_num / 1e8);
+}
+
+export function isOmega(sat_num) {
+    return Number.isInteger((sat_num + 1) / 1e8);
+}

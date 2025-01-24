@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Modal, Button, Form } from 'react-bootstrap';  // Import required components
 
-import { isPalindrome, isPerfectPalinception, isUniformPalinception, getBlock } from './Helpers';
+import { isPalindrome, isPerfectPalinception, isUniformPalinception, isAlpha, isOmega, getBlock } from './Helpers';
 import { isPizza } from './Pizza';
 import { isJpeg } from './Jpeg';
 
@@ -61,6 +61,14 @@ const MySats = ({ satCollection, setSatCollection }) => {
 
         if (isPalindrome(blockNumber)) {
           updatedCollection[sat].tags.push('paliblock');
+        }
+
+        if (isAlpha(satNumber)) {
+          updatedCollection[sat].tags.push('alpha');
+        }
+
+        if (isOmega(satNumber)) {
+          updatedCollection[sat].tags.push('omega');
         }
 
         if (blockNumber === 9) {
