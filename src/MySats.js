@@ -113,7 +113,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
               <th>Sat Number</th>
               <th>Tags</th>
               <th>Block Number</th>
-              <th>Price</th>
+              {/* <th>Price</th> */}
               <th>Actions</th> {/* Add a column for actions */}
           </tr>
           </thead>
@@ -122,7 +122,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
               <tr key={sat}>
               <td>{sat}</td>
               <td>{details.tags.join(', ')}</td>
-              <td>{details.block_number || 'N/A'}</td>
+              {/* <td>{details.block_number || 'N/A'}</td> */}
               <td>{details.price !== null ? details.price : 'N/A'}</td>
               <td>
                   <button
