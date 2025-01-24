@@ -78,3 +78,39 @@ h2 {
 ul.levels {
     padding-left: 0 !important; /* Optional: to remove any default padding as well */
 }
+
+.diamond {
+    width: 120px;
+    height: 120px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid purple;
+    transform: rotate(45deg);
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px auto;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 10px 2px rgba(128, 0, 128, 0.8); /* Purple glow */
+    animation: pulse 2s infinite; /* Sparkle animation */
+  }
+  
+  .diamond span {
+    transform: rotate(-45deg);
+    display: block;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: rotate(45deg) scale(1);
+    }
+    50% {
+      transform: rotate(45deg) scale(1.05);
+    }
+    100% {
+      transform: rotate(45deg) scale(1);
+    }
+  }

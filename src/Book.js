@@ -64,9 +64,9 @@ const Book = ({ satCollection }) => {
               ))}
             </ul>
             {level.isComplete && (
-              <p>
-                <strong>Sat:</strong> {level.sat}
-              </p>
+              <div className="diamond" data-tooltip={`SAT: ${level.sat}`}>
+            <span>{level.sat}</span>
+          </div>
             )}
           </li>
         ))}
