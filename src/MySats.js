@@ -49,6 +49,9 @@ const MySats = ({ satCollection, setSatCollection }) => {
 
         if (isPalindrome(satNumber)) {
           updatedCollection[sat].tags.push('palindrome');
+
+          if(blockNumber >= 210000)
+            updatedCollection[sat].tags.push('Epoch1+');
         }
 
         if (isUniformPalinception(satNumber)) {
