@@ -83,20 +83,17 @@ ul.levels {
     width: 120px;
     height: 120px;
     background-color: black;
-    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #037F5E;
     transform: rotate(45deg);
     font-size: 16px;
     font-weight: bold;
     margin: 0; /* Override auto margins for inline placement */
     text-align: center;
     position: relative;
-    box-shadow: 0 0 10px 2px #037F5E;
-    animation: pulse 4s infinite; /* Sparkle animation */
-  }
+
+}
   
 .diamond span {
     transform: rotate(-45deg);
@@ -133,4 +130,17 @@ ul.levels {
     .diamond {
         margin: 1rem auto; /* Center the diamond on smaller screens */
     }
+}
+
+.diamond-full {
+    color: white;
+    border: 2px solid #037F5E;
+    box-shadow: 0 0 10px 2px #037F5E;
+    animation: pulse 4s infinite; /* Sparkle animation */
+}
+
+.diamond-empty {
+    color: white;
+    border: 2px solid #E05C5C;
+    box-shadow: 0 0 10px 2px #E05C5C;
 }
