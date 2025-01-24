@@ -17,21 +17,25 @@ const Book = ({ satCollection }) => {
   useEffect(() => {
     if (bookData) {
       const newCompletedLevels = bookData.levels.map((level) => {
-        const satsForLevel = Object.entries(satCollection).filter(([sat, details]) => {
-          const hasRequiredTags = level.requirements.every((req) =>
-            req.tags.every((tag) => details.tags.includes(tag))
-          );
-          return hasRequiredTags;
-        });
-
+        const satsForLevel = Object.entries(satCollection)
+          .filter(([sat, details]) => {
+            const hasRequiredTags = level.requirements.every((req) =>
+              req.tags.every((tag) => details.tags.includes(tag))
+            );
+            return hasRequiredTags;
+          })
+          .sort((a, b) => a[1].tags.length - b[1].tags.length); // Sort by the number of tags
+  
+        const selectedSat = satsForLevel.length > 0 ? satsForLevel[0][0] : null; // Pick the sat with the least tags
+  
         return {
           level: level.name,
           isComplete: satsForLevel.length >= level.requirements[0].count,
-          sats: satsForLevel.map(([sat, _]) => sat),
+          sat: selectedSat,
           requirements: level.requirements, // Include the requirements for display
         };
       });
-
+  
       setCompletedLevels(newCompletedLevels);
     }
   }, [bookData, satCollection]);
@@ -43,18 +47,15 @@ const Book = ({ satCollection }) => {
   return (
     <div>
       <h1>{bookData.name}</h1>
-      <ul className='levels'>
+      <ul className="levels">
         {completedLevels.map((level, index) => (
           <li
             key={index}
             className={level.isComplete ? "level-complete" : "level-incomplete"}
           >
-            <div className="level-header">
-              <h3 className="level-name">{level.level}</h3>
-              <span className={`level-status ${level.isComplete ? "complete" : "incomplete"}`}>
-                {level.isComplete ? "✅ Level complete!" : "❌ Level not complete yet"}
-              </span>
-            </div>
+            <h3>
+              {level.level} {level.isComplete ? "✅" : "❌"}
+            </h3>
             <p>
               <strong>Requirements:</strong>
             </p>
@@ -65,7 +66,11 @@ const Book = ({ satCollection }) => {
                 </li>
               ))}
             </ul>
-            {level.isComplete && <p>Sats: {level.sats.join(", ")}</p>}
+            {level.isComplete && (
+              <p>
+                <strong>Sat:</strong> {level.sat}
+              </p>
+            )}
           </li>
         ))}
       </ul>

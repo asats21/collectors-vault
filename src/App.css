@@ -78,29 +78,3 @@ h2 {
 ul.levels {
     padding-left: 0 !important; /* Optional: to remove any default padding as well */
 }
-
-.level-header {
-    display: flex;
-    justify-content: space-between; /* Space between level name and status */
-    align-items: center; /* Align vertically */
-    font-size: 1rem;
-    margin-bottom: 10px; /* Add some space below the header */
-}
-
-.level-name {
-    font-size: 1.2rem; /* Slightly larger font for level name */
-    font-weight: bold; /* Bold for emphasis */
-}
-
-.level-status {
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-.level-status.complete {
-    color: #06d6a0; /* Green for completed levels */
-}
-
-.level-status.incomplete {
-    color: #e05c5c; /* Red for incomplete levels */
-}
