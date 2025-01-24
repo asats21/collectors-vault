@@ -30,14 +30,15 @@ const MySats = ({ satCollection, setSatCollection }) => {
       newSats.forEach((sat) => {
         const satNumber = Number(sat);  // Convert to number
         const blockNumber = getBlock(satNumber);
+
+        if (updatedCollection[sat])
+          return updatedCollection;
   
-        if (!updatedCollection[sat]) {
-          updatedCollection[sat] = {
-            tags: [],
-            block_number: blockNumber,
-            price: null,
-          };
-        }
+        updatedCollection[sat] = {
+          tags: [],
+          block_number: blockNumber,
+          price: null,
+        };
   
         if (isPizza(satNumber)) {
           updatedCollection[sat].tags.push('pizza');
