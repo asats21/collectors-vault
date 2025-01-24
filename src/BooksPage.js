@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import booksData from './booksData.json'; // Adjust the path as needed
+
 const BooksPage = () => {
+  const [books] = useState(booksData);
+
   return (
     <div>
       <h2>Available Books</h2>
       <ul>
-        <li>
-          <Link to="/books/palindrome-book">Palindrome Book</Link>
-        </li>
-        {/* Add other books here as necessary */}
+        {books.map((book) => (
+          <li key={book.name}>
+            <Link to={`/books/${book.key}`}>
+              {book.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

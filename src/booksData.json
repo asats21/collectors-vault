@@ -1,0 +1,20 @@
+[
+    {
+      "key": "palindrome",
+      "name": "Palindrome Book",
+      "levels": [
+        {
+          "name": "Level 1",
+          "requirements": [
+            { "count": 1, "tags": ["palindrome"] }
+          ]
+        },
+        {
+          "name": "Level 2",
+          "requirements": [
+            { "count": 1, "tags": ["palindrome", "3_digits"] }
+          ]
+        }
+      ]
+    }
+  ]

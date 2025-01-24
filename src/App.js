@@ -4,7 +4,7 @@ import './App.css';
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
-import PalindromeBook from './PalindromeBook';  // Import your PalindromeBook component
+import PalindromeBook from './Book';  // Import your PalindromeBook component
 import BooksPage from './BooksPage';  // Import the Available Books page
 import IndexPage from './IndexPage';  // Import the Index page
 
@@ -41,7 +41,7 @@ function App() {
         <Routes>
           <Route path="/" element={<IndexPage satCollection={satCollection} setSatCollection={setSatCollection} />} /> {/* Index page */}
           <Route path="/books" element={<BooksPage />} /> {/* Available books page */}
-          <Route path="/books/:bookName" element={<PalindromeBook satCollection={satCollection} />} /> {/* Specific book page */}
+          <Route path="/books/:bookKey" element={<PalindromeBook satCollection={satCollection} />} /> {/* Specific book page */}
         </Routes>
       </div>
     </Router>
