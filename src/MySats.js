@@ -28,11 +28,12 @@ const MySats = ({ satCollection, setSatCollection }) => {
       const updatedCollection = { ...prevCollection };
       newSats.forEach((sat) => {
         const satNumber = Number(sat);  // Convert to number
+        const blockNumber = getBlock(satNumber);
   
         if (!updatedCollection[sat]) {
           updatedCollection[sat] = {
             tags: [],
-            block_number: getBlock(satNumber),
+            block_number: blockNumber,
             price: null,
           };
         }
@@ -51,6 +52,10 @@ const MySats = ({ satCollection, setSatCollection }) => {
 
         if (isPerfectPalinception(satNumber)) {
           updatedCollection[sat].tags.push('perfect');
+        }
+
+        if (isPalindrome(blockNumber)) {
+          updatedCollection[sat].tags.push('paliblock');
         }
 
       });
