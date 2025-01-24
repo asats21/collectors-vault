@@ -1,48 +1,62 @@
 import React, { useState } from 'react';
 
+import { Modal, Button, Form } from 'react-bootstrap';  // Import required components
+
 import { isPalindrome, isPerfectPalinception, isUniformPalinception } from './Helpers';
 import { isPizza } from './Pizza';
 
 const IndexPage = ({ satCollection, setSatCollection }) => {
 
-    const handleAddSats = (input) => {
-        const newSats = input
-          .split(/\s*,\s*|\s+/) // Split by comma or whitespace
-          .filter(Boolean); // Remove empty strings
-      
-        setSatCollection((prevCollection) => {
-          const updatedCollection = { ...prevCollection };
-          newSats.forEach((sat) => {
-            const satNumber = Number(sat);  // Convert to number
-      
-            if (!updatedCollection[sat]) {
-              updatedCollection[sat] = {
-                tags: [],
-                block_number: null,
-                price: null,
-              };
-            }
-      
-            if (isPizza(satNumber)) {
-              updatedCollection[sat].tags.push('pizza');
-            }
+  const [showModal, setShowModal] = useState(false); // State to control modal visibility
+  const [input, setInput] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (input.trim()) {
+      handleAddSats(input);
+      setInput('');
+      setShowModal(false);  // Close modal after submission
+    }
+  };
+
+  const handleAddSats = (input) => {
+      const newSats = input
+        .split(/\s*,\s*|\s+/) // Split by comma or whitespace
+        .filter(Boolean); // Remove empty strings
     
-            if (isPalindrome(satNumber)) {
-              updatedCollection[sat].tags.push('palindrome');
-            }
+      setSatCollection((prevCollection) => {
+        const updatedCollection = { ...prevCollection };
+        newSats.forEach((sat) => {
+          const satNumber = Number(sat);  // Convert to number
     
-            if (isUniformPalinception(satNumber)) {
-              updatedCollection[sat].tags.push('uniform');
-            }
+          if (!updatedCollection[sat]) {
+            updatedCollection[sat] = {
+              tags: [],
+              block_number: null,
+              price: null,
+            };
+          }
     
-            if (isPerfectPalinception(satNumber)) {
-              updatedCollection[sat].tags.push('perfect');
-            }
-    
-          });
-          return updatedCollection;
+          if (isPizza(satNumber)) {
+            updatedCollection[sat].tags.push('pizza');
+          }
+  
+          if (isPalindrome(satNumber)) {
+            updatedCollection[sat].tags.push('palindrome');
+          }
+  
+          if (isUniformPalinception(satNumber)) {
+            updatedCollection[sat].tags.push('uniform');
+          }
+  
+          if (isPerfectPalinception(satNumber)) {
+            updatedCollection[sat].tags.push('perfect');
+          }
+  
         });
-      };
+        return updatedCollection;
+      });
+    };
     
       const handleDeleteSat = (sat) => {
         setSatCollection((prevCollection) => {
@@ -51,47 +65,6 @@ const IndexPage = ({ satCollection, setSatCollection }) => {
           return updatedCollection;
         });
       };
-    
-      function TextAreaInput({ onAddSats }) {
-        const [input, setInput] = useState('');
-      
-        const handleSubmit = (e) => {
-          e.preventDefault();
-          if (input.trim()) {
-            onAddSats(input);
-            setInput('');
-          }
-        };
-      
-        return (
-          <form onSubmit={handleSubmit}>
-            <textarea
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Enter sat numbers separated by comma or whitespace"
-              rows="5"
-              cols="50"
-            />
-            <br />
-            <button
-              type="submit"
-              style={{
-                backgroundColor: "#343a40", // Dark grey background
-                color: "#ffffff",          // White text
-                border: "1px solid #444",  // Subtle border
-                borderRadius: "4px",       // Rounded corners
-                padding: "8px 16px",       // Padding for better size
-                fontSize: "16px",          // Increase font size
-                cursor: "pointer",
-              }}
-              onMouseOver={(e) => (e.target.style.backgroundColor = "#495057")} // Lighter hover effect
-              onMouseOut={(e) => (e.target.style.backgroundColor = "#343a40")}
-            >
-            Add Sats
-          </button>
-          </form>
-        );
-      }
 
     function SatList({ collection }) {
     return (
@@ -136,9 +109,36 @@ const IndexPage = ({ satCollection, setSatCollection }) => {
 
   return (
     <div>
-        <div className="card shadow-sm p-4">
-          <TextAreaInput onAddSats={handleAddSats} />
-        </div>
+
+      {/* Button to open the modal */}
+      <Button variant="primary" onClick={() => setShowModal(true)}>
+        Add Sats
+      </Button>
+
+      {/* Modal for adding sats */}
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add Sat Numbers</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="satInput">
+              <Form.Label>Enter sat numbers (separated by comma or whitespace)</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={4}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Enter sat numbers"
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" className="mt-2">
+              Submit
+            </Button>
+          </Form>
+        </Modal.Body>
+      </Modal>
+
         <div className="mt-4">
           <SatList collection={satCollection} />
         </div>

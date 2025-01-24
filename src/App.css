@@ -29,3 +29,12 @@ button:hover {
 textarea::placeholder {
     color: #777;
 }
+
+.modal-content {
+background-color: #2a2d34;  /* Charcoal Gray */
+color: #fff;
+}
+
+.modal-header, .modal-footer {
+border: none;
+}
