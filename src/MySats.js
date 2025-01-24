@@ -63,6 +63,14 @@ const MySats = ({ satCollection, setSatCollection }) => {
           updatedCollection[sat].tags.push('paliblock');
         }
 
+        if (blockNumber === 9) {
+          updatedCollection[sat].tags.push('block 9');
+        }
+
+        if (blockNumber === 78) {
+          updatedCollection[sat].tags.push('block 78');
+        }
+
       });
       return updatedCollection;
     });
