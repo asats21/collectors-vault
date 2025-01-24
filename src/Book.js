@@ -53,21 +53,25 @@ const Book = ({ satCollection }) => {
             key={index}
             className={level.isComplete ? "level-complete" : "level-incomplete"}
           >
-            <h3>
-              {level.level} {level.isComplete ? "✅" : "❌"}
-            </h3>
-            <ul class='mb-3'>
-              {level.requirements.map((req, i) => (
-                <li key={i}>
-                  At least {req.count} sats with tags: {req.tags.join(", ")}
-                </li>
-              ))}
-            </ul>
-            {level.isComplete && (
-              <div className="diamond">
-                <span>{level.sat}</span>
+            <div className="level-content pb-5 pb-md-0">
+              <div class="py-3 py-md-5">
+                <h3>
+                  {level.level} {level.isComplete ? "✅" : "❌"}
+                </h3>
+                <ul className="mb-3">
+                  {level.requirements.map((req, i) => (
+                    <li key={i}>
+                      At least {req.count} sats with tags: {req.tags.join(", ")}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            )}
+              {level.isComplete && (
+                <div className="diamond mx-auto mx-md-5">
+                  <span className='small'>{level.sat}</span>
+                </div>
+              )}
+            </div>
           </li>
         ))}
       </ul>

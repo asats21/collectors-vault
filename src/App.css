@@ -91,7 +91,7 @@ ul.levels {
     transform: rotate(45deg);
     font-size: 16px;
     font-weight: bold;
-    margin: 20px auto;
+    margin: 0; /* Override auto margins for inline placement */
     text-align: center;
     position: relative;
     box-shadow: 0 0 10px 2px #037F5E;
@@ -112,5 +112,25 @@ ul.levels {
     }
     100% {
         transform: rotate(45deg) scale(1);
+    }
+}
+
+.level-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    overflow: hidden;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .level-content {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: flex-start; /* Align content to the left */
+    }
+
+    .diamond {
+        margin: 1rem auto; /* Center the diamond on smaller screens */
     }
 }
