@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Modal, Button, Form } from 'react-bootstrap';  // Import required components
 
-import { isPalindrome, isPerfectPalinception, isUniformPalinception, isAlpha, isOmega, getBlock, isUncommon } from './Helpers';
+import { isPalindrome, isPerfectPalinception, isUniformPalinception, isAlpha, isOmega, getBlock, isUncommon, is3Digits, is2Digits } from './Helpers';
 import { isPizza } from './Pizza';
 import { isJpeg } from './Jpeg';
 
@@ -53,6 +53,12 @@ const MySats = ({ satCollection, setSatCollection }) => {
 
           if(blockNumber >= 210000)
             updatedCollection[sat].tags.push('Epoch1+');
+
+          if(is3Digits(satNumber))
+            updatedCollection[sat].tags.push('3_digits');
+
+          if(is2Digits(satNumber))
+            updatedCollection[sat].tags.push('2_digits');
         }
 
         if (isUniformPalinception(satNumber)) {
