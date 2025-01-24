@@ -4,6 +4,7 @@ import { Modal, Button, Form } from 'react-bootstrap';  // Import required compo
 
 import { isPalindrome, isPerfectPalinception, isUniformPalinception, getBlock } from './Helpers';
 import { isPizza } from './Pizza';
+import { isJpeg } from './Jpeg';
 
 const MySats = ({ satCollection, setSatCollection }) => {
 
@@ -40,6 +41,10 @@ const MySats = ({ satCollection, setSatCollection }) => {
   
         if (isPizza(satNumber)) {
           updatedCollection[sat].tags.push('pizza');
+        }
+
+        if (isJpeg(satNumber)) {
+          updatedCollection[sat].tags.push('jpeg');
         }
 
         if (isPalindrome(satNumber)) {
