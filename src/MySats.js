@@ -54,6 +54,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
         <table className="table table-dark table-striped">
           <thead>
             <tr>
+              <th>#</th>
               <th>Sat Number</th>
               <th>Tags</th>
               <th>Block</th>
@@ -61,8 +62,9 @@ const MySats = ({ satCollection, setSatCollection }) => {
             </tr>
           </thead>
           <tbody>
-            {currentSats.map(({ sat, details }) => (
+            {currentSats.map(({ sat, details }, index) => (
               <tr key={sat}>
+                <td>{offset + index + 1}</td> {/* Position (1, 2, 3, etc.) */}
                 <td>#{sat}</td>
                 <td>
                   <div className="sat-tags">
