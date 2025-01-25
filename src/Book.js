@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+// Book.js
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import booksData from './booksData.json'; // JSON file with book data
+import useBookCompletion from './useBookCompletion'; // Import the custom hook
 
 const Book = ({ satCollection }) => {
   const { bookKey } = useParams(); // Get the book key from the URL
   const [bookData, setBookData] = useState(null);
-  const [completedLevels, setCompletedLevels] = useState([]);
 
   // Load book data for the given key
   useEffect(() => {
@@ -13,32 +14,8 @@ const Book = ({ satCollection }) => {
     setBookData(book);
   }, [bookKey]);
 
-  // Check which levels are completed based on satCollection
-  useEffect(() => {
-    if (bookData) {
-      const newCompletedLevels = bookData.levels.map((level) => {
-        const satsForLevel = Object.entries(satCollection)
-          .filter(([sat, details]) => {
-            const hasRequiredTags = level.requirements.every((req) =>
-              req.tags.every((tag) => details.tags.includes(tag))
-            );
-            return hasRequiredTags;
-          })
-          .sort((a, b) => a[1].tags.length - b[1].tags.length); // Sort by the number of tags
-  
-        const selectedSat = satsForLevel.length > 0 ? satsForLevel[0][0] : null; // Pick the sat with the least tags
-  
-        return {
-          level: level.name,
-          isComplete: satsForLevel.length >= level.requirements[0].count,
-          sat: selectedSat,
-          requirements: level.requirements, // Include the requirements for display
-        };
-      });
-  
-      setCompletedLevels(newCompletedLevels);
-    }
-  }, [bookData, satCollection]);
+  // Use the custom hook to get completed levels
+  const bookLevels = useBookCompletion(bookData, satCollection);
 
   if (!bookData) {
     return <div>Not found</div>;
@@ -48,7 +25,7 @@ const Book = ({ satCollection }) => {
     <div>
       <h1>{bookData.name}</h1>
       <ul className="levels">
-        {completedLevels.map((level, index) => (
+        {bookLevels.map((level, index) => (
           <li
             key={index}
             className={level.isComplete ? "level-complete" : "level-incomplete"}
