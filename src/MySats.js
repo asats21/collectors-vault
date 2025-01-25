@@ -1,53 +1,66 @@
 import React, { useState } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap'; // Import required components
-import { addSatsToCollection, deleteSatFromCollection } from './satUtils'; // Import the extracted logic
+import { Modal, Form } from 'react-bootstrap';
+import { addSatsToCollection, deleteSatFromCollection } from './satUtils';
 
 const MySats = ({ satCollection, setSatCollection }) => {
-  const [showModal, setShowModal] = useState(false); // State to control modal visibility
+  const [showModal, setShowModal] = useState(false);
   const [input, setInput] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.trim()) {
-      setSatCollection((prevCollection) =>
-        addSatsToCollection(input, prevCollection)
-      );
+      setSatCollection((prev) => addSatsToCollection(input, prev));
       setInput('');
-      setShowModal(false); // Close modal after submission
+      setShowModal(false);
     }
   };
 
-  function SatList({ collection }) {
-    return (
+  const handleDelete = (sat) => {
+    setSatCollection((prev) => deleteSatFromCollection(sat, prev));
+  };
+
+  return (
+    <div className="my-sats-container">
+      {/* Header + Add Button */}
+      <div className="sats-header">
+        <h1>My Sats Vault</h1>
+        <button
+          className="nav-button my-sats"
+          onClick={() => setShowModal(true)}
+        >
+          Add Sats
+        </button>
+      </div>
+
+      {/* Sats Table */}
       <div className="table-responsive">
         <table className="table table-dark table-striped">
-          <thead
-            style={{
-              border: '1px solid #444',
-              minWidth: '800px', // Ensure the table is readable on smaller screens
-            }}
-          >
+          <thead>
             <tr>
               <th>Sat Number</th>
               <th>Tags</th>
-              <th>Block Number</th>
-              <th>Year</th>
-              <th>Actions</th> {/* Add a column for actions */}
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {Object.entries(collection).map(([sat, details]) => (
+            {Object.entries(satCollection).map(([sat, details]) => (
               <tr key={sat}>
-                <td>{sat}</td>
-                <td>{details.tags.join(', ')}</td>
-                <td>{details.block_number || 'N/A'}</td>
-                <td>{details.year !== null ? details.year : 'N/A'}</td>
+                <td>#{sat}</td>
+                <td>
+                  <div className="sat-tags">
+                    {details.tags.map((tag) => (
+                      <span key={tag} className={`tag-${tag.replace(' ', '-')}`}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </td>
                 <td>
                   <button
-                    className="btn btn-danger btn-sm"
-                    onClick={() => handleDeleteSat(sat)}
+                    className="delete-button"
+                    onClick={() => handleDelete(sat)}
                   >
-                    &times; {/* Red cross symbol */}
+                    Delete
                   </button>
                 </td>
               </tr>
@@ -55,49 +68,34 @@ const MySats = ({ satCollection, setSatCollection }) => {
           </tbody>
         </table>
       </div>
-    );
-  }
 
-  const handleDeleteSat = (sat) => {
-    setSatCollection((prevCollection) =>
-      deleteSatFromCollection(sat, prevCollection)
-    );
-  };
-
-  return (
-    <div>
-      {/* Button to open the modal */}
-      <Button variant="primary" onClick={() => setShowModal(true)}>
-        Add Sats
-      </Button>
-
-      {/* Modal for adding sats */}
-      <Modal show={showModal} onHide={() => setShowModal(false)}>
-        <Modal.Header closeButton>
-          <Modal.Title>Add Sat Numbers</Modal.Title>
+      {/* Add Sats Modal */}
+      <Modal
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        className="cyber-modal"
+      >
+        <Modal.Header className="modal-header-glow">
+          <Modal.Title>Add Sats to Vault</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="modal-body-glow">
           <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="satInput">
-              <Form.Label>Enter sat numbers (separated by comma, whitespace or newline)</Form.Label>
+            <Form.Group>
+              <Form.Label>Enter SAT numbers (comma/space/newline separated):</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={4}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Enter sat numbers"
+                className="cyber-input"
               />
             </Form.Group>
-            <Button variant="primary" type="submit" className="mt-2">
-              Submit
-            </Button>
+            <button type="submit" className="nav-button my-sats">
+              Inscribe Sats
+            </button>
           </Form>
         </Modal.Body>
       </Modal>
-
-      <div className="mt-4">
-        <SatList collection={satCollection} />
-      </div>
     </div>
   );
 };

@@ -313,3 +313,133 @@ ul.levels {
   .book-item.gray:hover {
     box-shadow: 0 0 20px #888;
   }
+/* My Sats Page */
+.my-sats-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Table Styling */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table-dark {
+  background-color: #2a2d34;
+  border: 2px solid #444;
+  border-radius: 8px;
+}
+
+.table-dark th,
+.table-dark td {
+  border-color: #444;
+}
+
+.table-dark th {
+  background-color: #1e1e1e;
+  color: #6AA8C3;
+}
+
+.table-dark tbody tr:hover {
+  background-color: #373b44;
+}
+
+/* Tags Styling */
+.sat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sat-tags span {
+  background: #1e1e1e;
+  color: #6AA8C3;
+  padding: 0.3rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid #444;
+}
+
+/* Delete Button */
+.delete-button {
+  background: #E05C5C;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delete-button:hover {
+  background: #ff6b6b;
+  box-shadow: 0 0 15px rgba(224, 92, 92, 0.5);
+}
+
+/* Modal Styling */
+.cyber-modal .modal-content {
+  background: #1e1e1e;
+  border: 2px solid #6AA8C3;
+  border-radius: 12px;
+}
+
+.modal-header-glow {
+  border-bottom: 2px solid #6AA8C3;
+  color: #6AA8C3;
+  padding: 1rem;
+}
+
+.modal-body-glow {
+  padding: 1.5rem;
+}
+
+.cyber-input {
+  background: #2a2d34;
+  border: 2px solid #444;
+  color: white;
+  border-radius: 8px;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.cyber-input:focus {
+  border-color: #E89A02;
+  box-shadow: 0 0 15px rgba(232, 154, 2, 0.4);
+}
+
+/* Nav Button Styling */
+.nav-button {
+  background: transparent;
+  border: 2px solid #6AA8C3;
+  color: #6AA8C3;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(106, 168, 195, 0.3);
+}
+
+.nav-button:hover {
+  background: #6AA8C3;
+  color: #000;
+  box-shadow: 0 0 25px #6AA8C3;
+}
+
+.nav-button.my-sats {
+  border-color: #6AA8C3;
+  color: #6AA8C3;
+}
+
+.nav-button.my-sats:hover {
+  background: #6AA8C3;
+  color: #000;
+}
