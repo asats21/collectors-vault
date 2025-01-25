@@ -427,8 +427,9 @@ ul.levels {
 }
 
 .cyber-input:focus {
-  border-color: #E89A02;
-  box-shadow: 0 0 15px rgba(232, 154, 2, 0.4);
+  background: #2a2d34;
+  border-color: #6AA8C3;
+  box-shadow: 0 0 10px #6AA8C3;
 }
 
 /* Nav Button Styling */

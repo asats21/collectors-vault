@@ -106,6 +106,8 @@ const MySats = ({ satCollection, setSatCollection }) => {
         show={showModal}
         onHide={() => setShowModal(false)}
         className="cyber-modal"
+        centered // Center the modal on the screen
+        size="lg" // Make the modal larger
       >
         <Modal.Header className="modal-header-glow">
           <Modal.Title>Add Sats to Vault</Modal.Title>
@@ -116,15 +118,17 @@ const MySats = ({ satCollection, setSatCollection }) => {
               <Form.Label>Enter sat numbers (comma/space/newline separated):</Form.Label>
               <Form.Control
                 as="textarea"
-                rows={4}
+                rows={20} // Increase the number of rows
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 className="cyber-input"
               />
             </Form.Group>
-            <button type="submit" className="nav-button add-sats">
-              Add Sats
-            </button>
+            <div className="text-center mt-4"> {/* Center the button and add padding */}
+              <button type="submit" className="nav-button add-sats">
+                Add Sats
+              </button>
+            </div>
           </Form>
         </Modal.Body>
       </Modal>
