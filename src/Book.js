@@ -32,9 +32,18 @@ const Book = ({ satCollection }) => {
         >
           <div className="level-content pb-5 pb-md-0">
             <div className="py-3 py-md-5">
-              <h3>
-                {level.level} {level.status === 'complete' ? '✅' : '❌'}
-              </h3>
+            <h3>
+              {level.level}{' '}
+              {level.status === 'complete'
+                ? '✅' // Green checkmark for complete
+                : level.status === 'blocked'
+                ? '🚫' // Blocked symbol
+                : level.status === 'progress'
+                ? '🔄' // Spinning circle for in progress
+                : level.status === 'next'
+                ? '⏩' // Arrow for next in line
+                : '❌'} {/* Dash for not complete */}
+            </h3>
               <ul className="mb-3">
                 {level.requirements.map((req, i) => (
                   <li key={i}>
