@@ -13,6 +13,7 @@ import {
   } from './Helpers';
   import { isPizza } from './Pizza';
   import { isJpeg } from './Jpeg';
+  import { isHitman } from './Hitman';
   
   /**
    * Adds new sats to the collection and tags them based on their properties.
@@ -28,6 +29,9 @@ import {
     const updatedCollection = { ...prevCollection };
   
     newSats.forEach((sat) => {
+      if(isNaN(sat))
+        return;
+
       const satNumber = Number(sat); // Convert to number
       const blockNumber = getBlock(satNumber);
   
@@ -46,6 +50,10 @@ import {
   
       if (isJpeg(satNumber)) {
         updatedCollection[sat].tags.push('jpeg');
+      }
+      
+      if (isHitman(satNumber)) {
+        updatedCollection[sat].tags.push('hitman');
       }
   
       if (isPalindrome(satNumber)) {
