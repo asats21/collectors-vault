@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Modal, Form } from 'react-bootstrap';
 import ReactPaginate from 'react-paginate';
 import { addSatsToCollection, deleteSatFromCollection } from './satUtils';
+import { tagWeights } from './tagWeights'; // Import tag weights
 
 const MySats = ({ satCollection, setSatCollection }) => {
   const [showModal, setShowModal] = useState(false);
   const [input, setInput] = useState('');
-  const [currentPage, setCurrentPage] = useState(0); // Current page index
-  const satsPerPage = 20; // Number of sats per page
+  const [currentPage, setCurrentPage] = useState(0);
+  const satsPerPage = 20;
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.trim()) {
@@ -19,19 +19,24 @@ const MySats = ({ satCollection, setSatCollection }) => {
     }
   };
 
-  // Handle sat deletion
   const handleDelete = (sat) => {
     setSatCollection((prev) => deleteSatFromCollection(sat, prev));
   };
 
-  // Pagination logic
-  const pageCount = Math.ceil(Object.keys(satCollection).length / satsPerPage);
-  const offset = currentPage * satsPerPage;
-  const currentSats = Object.entries(satCollection)
-    .slice(offset, offset + satsPerPage)
-    .map(([sat, details]) => ({ sat, details }));
+  // Calculate weight sum for each SAT
+  const satsWithWeights = Object.entries(satCollection).map(([sat, details]) => {
+    const weightSum = details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0);
+    return { sat, details, weightSum };
+  });
 
-  // Handle page change
+  // Sort SATs by weight sum (descending)
+  const sortedSats = satsWithWeights.sort((a, b) => b.weightSum - a.weightSum);
+
+  // Pagination logic
+  const pageCount = Math.ceil(sortedSats.length / satsPerPage);
+  const offset = currentPage * satsPerPage;
+  const currentSats = sortedSats.slice(offset, offset + satsPerPage);
+
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected);
   };
@@ -58,13 +63,14 @@ const MySats = ({ satCollection, setSatCollection }) => {
               <th>Sat Number</th>
               <th>Tags</th>
               <th>Block</th>
-              <th></th>
+              <th>Weight</th> {/* New column */}
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            {currentSats.map(({ sat, details }, index) => (
+            {currentSats.map(({ sat, details, weightSum }, index) => (
               <tr key={sat}>
-                <td>{offset + index + 1}</td> {/* Position (1, 2, 3, etc.) */}
+                <td>{offset + index + 1}</td>
                 <td>#{sat}</td>
                 <td>
                   <div className="sat-tags">
@@ -76,6 +82,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
                   </div>
                 </td>
                 <td>{details.block_number}</td>
+                <td>{weightSum}</td> {/* Display weight sum */}
                 <td>
                 <button
                   className="delete-button fw-bold"
@@ -108,8 +115,8 @@ const MySats = ({ satCollection, setSatCollection }) => {
         show={showModal}
         onHide={() => setShowModal(false)}
         className="cyber-modal"
-        centered // Center the modal on the screen
-        size="lg" // Make the modal larger
+        centered
+        size="lg"
       >
         <Modal.Header className="modal-header-glow">
           <Modal.Title>Add Sats to Vault</Modal.Title>
