@@ -370,18 +370,26 @@ ul.levels {
 
 /* Delete Button */
 .delete-button {
-  background: #E05C5C;
-  border: none;
-  color: white;
+  border: 2px solid #E05C5C; /* Red border */
+  color: #E05C5C; /* Red cross */
   padding: 0.5rem 1rem;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(224, 92, 92, 0.3); /* Subtle red glow */
+  font-size: 1.2rem; /* Larger cross */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Fixed width for consistency */
+  height: 40px; /* Fixed height for consistency */
 }
 
 .delete-button:hover {
+  color: #fff; /* White cross */
   background: #ff6b6b;
-  box-shadow: 0 0 15px rgba(224, 92, 92, 0.5);
+  border-color: #ff6b6b; /* Brighter red border on hover */
+  box-shadow: 0 0 20px rgba(224, 92, 92, 0.6); /* Stronger glow on hover */
 }
 
 /* Modal Styling */

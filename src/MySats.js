@@ -39,7 +39,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
             <tr>
               <th>Sat Number</th>
               <th>Tags</th>
-              <th>Actions</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -56,12 +56,12 @@ const MySats = ({ satCollection, setSatCollection }) => {
                   </div>
                 </td>
                 <td>
-                  <button
-                    className="delete-button"
-                    onClick={() => handleDelete(sat)}
-                  >
-                    Delete
-                  </button>
+                <button
+                  className="delete-button fw-bold"
+                  onClick={() => handleDelete(sat)}
+                >
+                  &times; {/* Red cross symbol */}
+                </button>
                 </td>
               </tr>
             ))}
@@ -81,7 +81,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
         <Modal.Body className="modal-body-glow">
           <Form onSubmit={handleSubmit}>
             <Form.Group>
-              <Form.Label>Enter SAT numbers (comma/space/newline separated):</Form.Label>
+              <Form.Label>Enter sat numbers (comma/space/newline separated):</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={4}
@@ -91,7 +91,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
               />
             </Form.Group>
             <button type="submit" className="nav-button my-sats">
-              Inscribe Sats
+              Add Sats
             </button>
           </Form>
         </Modal.Body>
