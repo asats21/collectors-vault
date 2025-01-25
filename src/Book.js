@@ -58,12 +58,12 @@ const Book = ({ satCollection }) => {
               </div>
             )}
             {level.status === 'blocked' && (
-              <div className="diamond diamond-full mx-auto mx-md-5">
+              <div className="diamond diamond-blocked mx-auto mx-md-5">
                 <span className="small">{level.sat}</span>
               </div>
             )}
             {level.status === 'next' && (
-              <div className="diamond diamond-empty mx-auto mx-md-5">
+              <div className="diamond diamond-next mx-auto mx-md-5">
                 <span className="small">???</span>
               </div>
             )}
