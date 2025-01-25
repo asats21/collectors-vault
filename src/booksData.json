@@ -2,6 +2,7 @@
   {
     "key": "palindrome",
     "name": "Palindrome Book",
+    "difficulty": "novice",
     "levels": [
       {
         "name": "Level 1",
@@ -18,25 +19,41 @@
       {
         "name": "Level 3",
         "requirements": [
-          { "count": 1, "tags": ["palindrome", "2_digits"] }
+          { "count": 1, "tags": ["palindrome", "uniform"] }
+        ]
+      },
+      {
+        "name": "Level 4",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"] }
         ]
       }
     ]
   },
   {
-    "key": "pizza",
-    "name": "Pizza Book",
+    "key": "event_pali",
+    "name": "Events Palindrome Book",
+    "difficulty": "novice",
     "levels": [
       {
         "name": "Level 1",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "pizza"] }
         ]
-      },
-      {
+      }, {
         "name": "Level 2",
         "requirements": [
-          { "count": 1, "tags": ["alpha", "pizza"] }
+          { "count": 1, "tags": ["palindrome", "jpeg"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "silkroad"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "hitman"] }
         ]
       }
     ]
