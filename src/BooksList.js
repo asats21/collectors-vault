@@ -1,4 +1,3 @@
-// BooksList.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import booksData from './booksData.json';
@@ -12,8 +11,16 @@ const BookProgressItem = ({ book, satCollection }) => {
     (level) => level.status === 'complete'
   ).length;
 
+  // Determine card color based on progress
+  const cardColor =
+    completedCount === totalLevels
+      ? 'green' // All levels complete
+      : completedCount > 0
+      ? 'purple' // At least one level complete
+      : 'gray'; // No levels complete
+
   return (
-    <li className="book-item">
+    <li className={`book-item ${cardColor}`}>
       <Link to={`/books/${book.key}`} className="book-link">
         <h2>{book.name}</h2>
         <p>
@@ -32,9 +39,9 @@ const BookProgressItem = ({ book, satCollection }) => {
 
 const BooksList = ({ satCollection }) => {
   return (
-    <div>
+    <div className="books-page">
       <h1>My Books</h1>
-      <ul className="books-list">
+      <ul className="books-list mt-4">
         {booksData.map((book) => (
           <BookProgressItem
             key={book.key}

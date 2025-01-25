@@ -220,23 +220,31 @@ ul.levels {
     box-shadow: 0 0 10px #C38BFA;
   }
 
-  /* Books List Styling */
-.books-list {
+  /* Books Page Styling */
+  .books-page {
+    padding: 20px;
+  }
+  
+  .books-list {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
   }
   
   .book-item {
     background-color: #2a2d34; /* Charcoal gray */
-    border: 2px solid #444;
+    border: 2px solid transparent;
     border-radius: 8px;
-    margin-bottom: 20px;
     padding: 20px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .book-item:hover {
-    background-color: #037F5E; /* Mint green on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
   }
   
   .book-link {
@@ -246,7 +254,7 @@ ul.levels {
   
   .book-link h2 {
     margin: 0 0 10px;
-    color: #6AA8C3; /* Azure blue */
+    color: #fff; /* Azure blue */
   }
   
   .progress-bar {
@@ -258,7 +266,36 @@ ul.levels {
   }
   
   .progress {
-    background-color: #E89A02; /* Orange for progress */
+    background-color: #C38BFA; /* Purple for progress */
     height: 100%;
     transition: width 0.3s ease;
+  }
+  
+  /* Card Colors */
+  .book-item.green {
+    border-color: #037F5E; /* Green for all levels complete */
+    box-shadow: 0 0 10px #037F5E;
+  }
+  
+  .book-item.purple {
+    border-color: #C38BFA; /* Purple for at least one level complete */
+    box-shadow: 0 0 10px #C38BFA;
+  }
+  
+  .book-item.gray {
+    border-color: #888; /* Gray for no levels complete */
+    box-shadow: 0 0 10px #888;
+  }
+  
+  /* Hover Effects */
+  .book-item.green:hover {
+    box-shadow: 0 0 20px #037F5E;
+  }
+  
+  .book-item.purple:hover {
+    box-shadow: 0 0 20px #C38BFA;
+  }
+  
+  .book-item.gray:hover {
+    box-shadow: 0 0 20px #888;
   }
