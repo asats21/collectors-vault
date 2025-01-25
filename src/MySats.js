@@ -25,7 +25,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
       <div className="sats-header">
         <h1>My Sats Vault</h1>
         <button
-          className="nav-button my-sats"
+          className="nav-button add-sats"
           onClick={() => setShowModal(true)}
         >
           Add Sats
@@ -90,7 +90,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
                 className="cyber-input"
               />
             </Form.Group>
-            <button type="submit" className="nav-button my-sats">
+            <button type="submit" className="nav-button add-sats">
               Add Sats
             </button>
           </Form>

@@ -198,13 +198,13 @@ ul.levels {
   /* Specific button colors */
   .nav-button.my-sats {
     border-color: #037F5E; /* Updated color for My Sats */
-    color: #037F5E;
+    color: #037F5E ;
     box-shadow: 0 0 5px #037F5E;
   }
   
   .nav-button.my-sats:hover {
     background-color: #037F5E;
-    color: white; /* White text on hover */
+    color: white !important; /* White text on hover */
     box-shadow: 0 0 10px #037F5E;
   }
   
@@ -439,15 +439,15 @@ ul.levels {
 .nav-button:hover {
   background: #6AA8C3;
   color: #000;
-  box-shadow: 0 0 25px #6AA8C3;
+  box-shadow: 0 0 10px #6AA8C3;
 }
 
-.nav-button.my-sats {
+.nav-button.add-sats {
   border-color: #6AA8C3;
   color: #6AA8C3;
 }
 
-.nav-button.my-sats:hover {
+.nav-button.add-sats:hover {
   background: #6AA8C3;
-  color: #000;
+  color: #fff;
 }
