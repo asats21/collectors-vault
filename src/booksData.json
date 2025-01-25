@@ -1,7 +1,7 @@
 [
   {
     "key": "palindrome",
-    "name": "Palindrome",
+    "name": "Palindromes",
     "difficulty": "Novice",
     "levels": [
       {
@@ -32,7 +32,7 @@
   },
   {
     "key": "event_pali",
-    "name": "Events Palindrome",
+    "name": "Event Palindromes",
     "difficulty": "Collector",
     "levels": [
       {
@@ -59,9 +59,42 @@
     ]
   },
   {
+    "key": "palinceptions",
+    "name": "Palinceptions",
+    "difficulty": "Collector",
+    "levels": [
+      {
+        "name": "Level 1",
+        "requirements": [
+          { "count": 1, "tags": ["uniform"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["uniform", "3_digits"] }
+        ]
+      }, {
+        "name": "Level 3",
+        "requirements": [
+          { "count": 1, "tags": ["uniform", "paliblock"] }
+        ]
+      }, {
+        "name": "Level 4",
+        "requirements": [
+          { "count": 1, "tags": ["uniform", "3_digits", "paliblock"] }
+        ]
+      }, {
+        "name": "Level 5",
+        "requirements": [
+          { "count": 1, "tags": ["uniform", "3_digits", "paliblock", "sequence"] }
+        ]
+      }
+    ]
+  },
+  {
     "key": "event_pali_expert",
-    "name": "Events Palindrome",
-    "difficulty": "Expert",
+    "name": "Event Uniform Palinceptions",
+    "difficulty": "Elite",
     "levels": [
       {
         "name": "Level 1",
@@ -82,6 +115,57 @@
         "name": "Level 2",
         "requirements": [
           { "count": 1, "tags": ["uniform", "hitman"] }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "perfect_palinceptions",
+    "name": "Perfect Palinceptions",
+    "difficulty": "Elite",
+    "levels": [
+      {
+        "name": "Level 1",
+        "requirements": [
+          { "count": 1, "tags": ["perfect"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["perfect"], "years": [2009] }
+        ]
+      }, {
+        "name": "Level 3",
+        "requirements": [
+          { "count": 1, "tags": ["perfect", "epoch1+"] }
+        ]
+      }, {
+        "name": "Level 4",
+        "requirements": [
+          { "count": 1, "tags": ["perfect", "3_digits"] }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "perfect_palinceptions_plus",
+    "name": "Perfect Palinceptions +",
+    "difficulty": "Zenite",
+    "levels": [
+      {
+        "name": "Level 1",
+        "requirements": [
+          { "count": 1, "tags": ["perfect", "epoch1+"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["perfect",  "2_digits"] }
+        ]
+      }, {
+        "name": "Level 3",
+        "requirements": [
+          { "count": 1, "tags": ["perfect", "paliblock"] }
         ]
       }
     ]
