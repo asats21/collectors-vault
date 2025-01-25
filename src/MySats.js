@@ -23,7 +23,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
     <div className="my-sats-container">
       {/* Header + Add Button */}
       <div className="sats-header">
-        <h1>My Sats Vault</h1>
+        <h1>My Sats</h1>
         <button
           className="nav-button add-sats"
           onClick={() => setShowModal(true)}
@@ -39,6 +39,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
             <tr>
               <th>Sat Number</th>
               <th>Tags</th>
+              <th>Block</th>
               <th></th>
             </tr>
           </thead>
@@ -55,6 +56,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
                     ))}
                   </div>
                 </td>
+                <td>{details.block_number}</td>
                 <td>
                 <button
                   className="delete-button fw-bold"
