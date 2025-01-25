@@ -4,8 +4,6 @@ import './App.css';
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
-import { Button } from 'react-bootstrap';  // Import required components
-
 import PalindromeBook from './Book';  // Import your PalindromeBook component
 import BooksList from './BooksList';  // Import the Available Books page
 import MySats from './MySats';  // Import the Index page
@@ -28,10 +26,10 @@ function App() {
       <nav>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <Button variant="outline-primary">My Sats</Button>
+            <button className="nav-button my-sats">My Sats</button>
           </Link>
           <Link to="/books" style={{ textDecoration: 'none' }}>
-            <Button variant="outline-primary">Books</Button>
+            <button className="nav-button books">Books</button>
           </Link>
         </div>
       </nav>

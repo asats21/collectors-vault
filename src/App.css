@@ -144,3 +144,49 @@ ul.levels {
     border: 2px solid #E05C5C;
     box-shadow: 0 0 10px 2px #E05C5C;
 }
+
+/* Navigation Buttons */
+.nav-button {
+    background-color: transparent;
+    border: 2px solid #6AA8C3; /* Default border color */
+    color: #6AA8C3;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px #6AA8C3; /* Subtle glow effect */
+  }
+  
+  .nav-button:hover {
+    background-color: #6AA8C3;
+    color: white; /* White text on hover */
+    box-shadow: 0 0 10px #6AA8C3; /* Slightly stronger glow on hover */
+  }
+  
+  /* Specific button colors */
+  .nav-button.my-sats {
+    border-color: #037F5E; /* Updated color for My Sats */
+    color: #037F5E;
+    box-shadow: 0 0 5px #037F5E;
+  }
+  
+  .nav-button.my-sats:hover {
+    background-color: #037F5E;
+    color: white; /* White text on hover */
+    box-shadow: 0 0 10px #037F5E;
+  }
+  
+  .nav-button.books {
+    border-color: #C38BFA;
+    color: #C38BFA;
+    box-shadow: 0 0 5px #C38BFA;
+  }
+  
+  .nav-button.books:hover {
+    background-color: #C38BFA;
+    color: white; /* White text on hover */
+    box-shadow: 0 0 10px #C38BFA;
+  }
