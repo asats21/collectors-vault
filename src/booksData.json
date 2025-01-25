@@ -1,7 +1,7 @@
 [
   {
     "key": "palindrome",
-    "name": "Palindrome Book",
+    "name": "Palindrome",
     "difficulty": "novice",
     "levels": [
       {
@@ -32,8 +32,8 @@
   },
   {
     "key": "event_pali",
-    "name": "Events Palindrome Book",
-    "difficulty": "novice",
+    "name": "Events Palindrome",
+    "difficulty": "collector",
     "levels": [
       {
         "name": "Level 1",
@@ -54,6 +54,34 @@
         "name": "Level 2",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "hitman"] }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "event_pali_expert",
+    "name": "Events Palindrome",
+    "difficulty": "expert",
+    "levels": [
+      {
+        "name": "Level 1",
+        "requirements": [
+          { "count": 1, "tags": ["uniform", "pizza"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["uniform", "jpeg"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["uniform", "silkroad"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["uniform", "hitman"] }
         ]
       }
     ]
