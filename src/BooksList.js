@@ -11,13 +11,12 @@ const BookProgressItem = ({ book, satCollection }) => {
     (level) => level.status === 'complete'
   ).length;
 
-  // Determine card color based on progress
   const cardColor =
     completedCount === totalLevels
-      ? 'green' // All levels complete
+      ? 'green'
       : completedCount > 0
-      ? 'purple' // At least one level complete
-      : 'gray'; // No levels complete
+      ? 'purple'
+      : 'gray';
 
   return (
     <li className={`book-item ${cardColor}`}>
@@ -38,18 +37,35 @@ const BookProgressItem = ({ book, satCollection }) => {
 };
 
 const BooksList = ({ satCollection }) => {
+  // Group books by difficulty
+  const groupedBooks = booksData.reduce((acc, book) => {
+    const difficulty = book.difficulty;
+    if (!acc[difficulty]) {
+      acc[difficulty] = [];
+    }
+    acc[difficulty].push(book);
+    return acc;
+  }, {});
+
+  // Define the order of difficulty tiers
+  const difficultyOrder = ['Novice', 'Collector', 'Expert', 'Elite', 'Zenite'];
+
   return (
     <div className="books-page">
-      <h1>My Books</h1>
-      <ul className="books-list mt-4">
-        {booksData.map((book) => (
-          <BookProgressItem
-            key={book.key}
-            book={book}
-            satCollection={satCollection}
-          />
-        ))}
-      </ul>
+      {difficultyOrder.map((difficulty) => (
+        <div key={difficulty} className="difficulty-tier">
+          <h2>{difficulty}</h2>
+          <ul className="books-list mt-4">
+            {groupedBooks[difficulty]?.map((book) => (
+              <BookProgressItem
+                key={book.key}
+                book={book}
+                satCollection={satCollection}
+              />
+            ))}
+          </ul>
+        </div>
+      ))}
     </div>
   );
 };
