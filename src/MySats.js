@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Modal, Form } from 'react-bootstrap';
+import ReactPaginate from 'react-paginate';
 import { addSatsToCollection, deleteSatFromCollection } from './satUtils';
 
 const MySats = ({ satCollection, setSatCollection }) => {
   const [showModal, setShowModal] = useState(false);
   const [input, setInput] = useState('');
+  const [currentPage, setCurrentPage] = useState(0); // Current page index
+  const satsPerPage = 20; // Number of sats per page
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.trim()) {
@@ -15,8 +19,21 @@ const MySats = ({ satCollection, setSatCollection }) => {
     }
   };
 
+  // Handle sat deletion
   const handleDelete = (sat) => {
     setSatCollection((prev) => deleteSatFromCollection(sat, prev));
+  };
+
+  // Pagination logic
+  const pageCount = Math.ceil(Object.keys(satCollection).length / satsPerPage);
+  const offset = currentPage * satsPerPage;
+  const currentSats = Object.entries(satCollection)
+    .slice(offset, offset + satsPerPage)
+    .map(([sat, details]) => ({ sat, details }));
+
+  // Handle page change
+  const handlePageClick = ({ selected }) => {
+    setCurrentPage(selected);
   };
 
   return (
@@ -44,7 +61,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
             </tr>
           </thead>
           <tbody>
-            {Object.entries(satCollection).map(([sat, details]) => (
+            {currentSats.map(({ sat, details }) => (
               <tr key={sat}>
                 <td>#{sat}</td>
                 <td>
@@ -70,6 +87,19 @@ const MySats = ({ satCollection, setSatCollection }) => {
           </tbody>
         </table>
       </div>
+
+      {/* Pagination */}
+      <ReactPaginate
+        previousLabel={'← Previous'}
+        nextLabel={'Next →'}
+        pageCount={pageCount}
+        onPageChange={handlePageClick}
+        containerClassName={'pagination'}
+        previousLinkClassName={'pagination-link'}
+        nextLinkClassName={'pagination-link'}
+        disabledClassName={'pagination-disabled'}
+        activeClassName={'pagination-active'}
+      />
 
       {/* Add Sats Modal */}
       <Modal
