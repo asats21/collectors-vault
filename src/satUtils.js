@@ -95,3 +95,15 @@ import {
   
     return updatedCollection;
 };
+
+/**
+ * Deletes a sat from the collection.
+ * @param {string} sat - The sat number to delete.
+ * @param {Object} prevCollection - The current sat collection.
+ * @returns {Object} - The updated sat collection.
+ */
+export const deleteSatFromCollection = (sat, prevCollection) => {
+  const updatedCollection = { ...prevCollection };
+  delete updatedCollection[sat];
+  return updatedCollection;
+};

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap'; // Import required components
-import { addSatsToCollection } from './satUtils'; // Import the extracted logic
+import { addSatsToCollection, deleteSatFromCollection } from './satUtils'; // Import the extracted logic
 
 const MySats = ({ satCollection, setSatCollection }) => {
   const [showModal, setShowModal] = useState(false); // State to control modal visibility
@@ -15,14 +15,6 @@ const MySats = ({ satCollection, setSatCollection }) => {
       setInput('');
       setShowModal(false); // Close modal after submission
     }
-  };
-
-  const handleDeleteSat = (sat) => {
-    setSatCollection((prevCollection) => {
-      const updatedCollection = { ...prevCollection };
-      delete updatedCollection[sat];
-      return updatedCollection;
-    });
   };
 
   function SatList({ collection }) {
@@ -65,6 +57,12 @@ const MySats = ({ satCollection, setSatCollection }) => {
       </div>
     );
   }
+
+  const handleDeleteSat = (sat) => {
+    setSatCollection((prevCollection) =>
+      deleteSatFromCollection(sat, prevCollection)
+    );
+  };
 
   return (
     <div>
