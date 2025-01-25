@@ -43,7 +43,7 @@ function App() {
         <Navigation/>
         <Routes>
           <Route path="/" element={<MySats satCollection={satCollection} setSatCollection={setSatCollection} />} />
-          <Route path="/books" element={<BooksList />} />
+          <Route path="/books" element={<BooksList satCollection={satCollection} />} />
           <Route path="/books/:bookKey" element={<PalindromeBook satCollection={satCollection} />} />
         </Routes>
       </div>

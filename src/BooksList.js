@@ -1,29 +1,48 @@
-import React, { useState } from 'react';
+// BooksList.js
+import React from 'react';
 import { Link } from 'react-router-dom';
+import booksData from './booksData.json';
+import useBookCompletion from './useBookCompletion';
 
-import booksData from './booksData.json'; // Adjust the path as needed
-
-const BooksList = () => {
-  const [books] = useState(booksData);
+// Component for individual book progress
+const BookProgressItem = ({ book, satCollection }) => {
+  const completedLevels = useBookCompletion(book, satCollection);
+  const totalLevels = book.levels.length;
+  const completedCount = completedLevels.filter(
+    (level) => level.status === 'complete'
+  ).length;
 
   return (
-    <div className="container my-5">
-      <h2 className="text-center mb-4 text-light">Available Books</h2>
-      <div className="row justify-content-center">
-        <div className="col-md-8">
-          <div className="list-group">
-            {books.map((book) => (
-              <Link 
-                key={book.name} 
-                to={`/books/${book.key}`} 
-                className="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-              >
-                {book.name}
-              </Link>
-            ))}
-          </div>
+    <li className="book-item">
+      <Link to={`/books/${book.key}`} className="book-link">
+        <h2>{book.name}</h2>
+        <p>
+          Completed {completedCount} out of {totalLevels} levels
+        </p>
+        <div className="progress-bar">
+          <div
+            className="progress"
+            style={{ width: `${(completedCount / totalLevels) * 100}%` }}
+          ></div>
         </div>
-      </div>
+      </Link>
+    </li>
+  );
+};
+
+const BooksList = ({ satCollection }) => {
+  return (
+    <div>
+      <h1>My Books</h1>
+      <ul className="books-list">
+        {booksData.map((book) => (
+          <BookProgressItem
+            key={book.key}
+            book={book}
+            satCollection={satCollection}
+          />
+        ))}
+      </ul>
     </div>
   );
 };

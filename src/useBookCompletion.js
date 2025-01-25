@@ -7,14 +7,15 @@ const useBookCompletion = (bookData, satCollection) => {
     if (bookData) {
       // Step 1: Build the initial array of levels with their completion status
       const initialLevels = bookData.levels.map((level) => {
-        const satsForLevel = Object.entries(satCollection)
+        const satsForLevel = Object.entries(satCollection || {}) // Fallback to empty object
           .filter(([sat, details]) => {
+            if (!details || !details.tags) return false; // Guard clause
             const hasRequiredTags = level.requirements.every((req) =>
               req.tags.every((tag) => details.tags.includes(tag))
             );
             return hasRequiredTags;
           })
-          .sort((a, b) => a[1].tags.length - b[1].tags.length); // Sort by the number of tags
+          .sort((a, b) => a[1].tags.length - b[1].tags.length);
 
         const selectedSat = satsForLevel.length > 0 ? satsForLevel[0][0] : null; // Pick the sat with the least tags
 

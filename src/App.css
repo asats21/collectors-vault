@@ -219,3 +219,46 @@ ul.levels {
     color: white; /* White text on hover */
     box-shadow: 0 0 10px #C38BFA;
   }
+
+  /* Books List Styling */
+.books-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .book-item {
+    background-color: #2a2d34; /* Charcoal gray */
+    border: 2px solid #444;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-item:hover {
+    background-color: #037F5E; /* Mint green on hover */
+  }
+  
+  .book-link {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .book-link h2 {
+    margin: 0 0 10px;
+    color: #6AA8C3; /* Azure blue */
+  }
+  
+  .progress-bar {
+    background-color: #444;
+    border-radius: 8px;
+    height: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  .progress {
+    background-color: #E89A02; /* Orange for progress */
+    height: 100%;
+    transition: width 0.3s ease;
+  }
