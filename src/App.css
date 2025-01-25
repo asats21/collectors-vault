@@ -370,6 +370,7 @@ ul.levels {
 
 /* Delete Button */
 .delete-button {
+  background: transparent; /* Transparent background */
   border: 2px solid #E05C5C; /* Red border */
   color: #E05C5C; /* Red cross */
   padding: 0.5rem 1rem;
@@ -381,15 +382,16 @@ ul.levels {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px; /* Fixed width for consistency */
-  height: 40px; /* Fixed height for consistency */
+  width: 20px; /* Fixed width for consistency */
+  height: 30px; /* Fixed height for consistency */
+  margin-left: auto; /* Pull to the right */
 }
 
 .delete-button:hover {
   color: #fff; /* White cross */
   background: #ff6b6b;
   border-color: #ff6b6b; /* Brighter red border on hover */
-  box-shadow: 0 0 20px rgba(224, 92, 92, 0.6); /* Stronger glow on hover */
+  box-shadow: 0 0 12px rgba(224, 92, 92, 0.6); /* Stronger glow on hover */
 }
 
 /* Modal Styling */
