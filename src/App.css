@@ -59,24 +59,40 @@ h2 {
     color: #FFFFFF;
 }
 
-.level-complete {
-    border: 2px solid #06D6A0; /* Green border */
-    border-radius: 8px;
-    padding: 10px;
-    margin: 10px 0;
-    list-style: none;
+ul.levels {
+    padding-left: 0 !important; /* Optional: to remove any default padding as well */
 }
-  
-.level-incomplete {
-    border: 2px solid #E05C5C; /* Red border */
+
+.level {
     border-radius: 8px;
     padding: 10px;
     margin: 10px 0;
     list-style: none;
 }
 
-ul.levels {
-    padding-left: 0 !important; /* Optional: to remove any default padding as well */
+.level-complete {
+    border: 2px solid #037F5E; /* Green for complete */
+    box-shadow: 0 0 5px #037F5E;
+}
+  
+.level-blocked {
+    border: 2px solid #E05C5C; /* Red for blocked */
+    box-shadow: 0 0 5px #E05C5C;
+}
+  
+.level-progress {
+    border: 2px solid #6AA8C3; /* Blue for in progress */
+    box-shadow: 0 0 5px #6AA8C3;
+}
+  
+.level-next {
+    border: 2px solid #E89A02; /* Orange for next in line */
+    box-shadow: 0 0 5px #E89A02;
+}
+  
+.level-incomplete {
+    border: 2px solid #444; /* Gray for not complete */
+    box-shadow: 0 0 5px #444;
 }
 
 .diamond {
