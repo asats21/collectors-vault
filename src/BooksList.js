@@ -27,7 +27,9 @@ const BookProgressItem = ({ book, satCollection }) => {
         </p>
         <div className="progress-bar">
           <div
-            className="progress"
+            className={
+              completedCount === totalLevels ? 'progress-bar-complete' : 'progress-bar-in-progress'
+            }
             style={{ width: `${(completedCount / totalLevels) * 100}%` }}
           ></div>
         </div>

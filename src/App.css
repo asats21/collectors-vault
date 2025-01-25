@@ -279,8 +279,14 @@ ul.levels {
     margin-top: 10px;
   }
   
-  .progress {
+  .progress-bar-in-progress {
     background-color: #C38BFA; /* Purple for progress */
+    height: 100%;
+    transition: width 0.3s ease;
+  }
+
+  .progress-bar-complete {
+    background-color: #037F5E; /* Green for completed */
     height: 100%;
     transition: width 0.3s ease;
   }
