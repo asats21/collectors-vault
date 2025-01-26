@@ -1,9 +1,156 @@
 [
   {
-    "key": "palindrome-epoch1",
-    "name": "Palindrome + Epoch1 Showcase",
-    "description": "SATs with both palindrome and epoch1 traits are incredibly rare and highly sought after.",
-    "traits": ["palindrome", "epoch1"],
+    "key": "palindrome-e1+",
+    "name": "Epoch1+ Palindrome",
+    "description": "Epoch1+ Palindrome are much rarer than epoch 0 ones",
+    "traits": ["palindrome", "epoch1+"],
     "difficulty": "Novice"
+  },
+  {
+    "key": "pizza_palindrome",
+    "name": "Pizza palindromes",
+    "description": "Pizza palindrome",
+    "traits": ["pizza", "palindrome"],
+    "difficulty": "Novice"
+  },
+  {
+    "key": "vintage_palindrome",
+    "name": "Vintage palindromes",
+    "description": "Vintage palindrome",
+    "traits": ["vintage", "palindrome"],
+    "difficulty": "Novice"
+  },
+  {
+    "key": "2009_pali",
+    "name": "2009 palindromes",
+    "description": "2009 palindromes",
+    "traits": ["2009", "palindrome"],
+    "difficulty": "Novice"
+  },
+  {
+    "key": "pali_3d",
+    "name": "3D palindromes",
+    "description": "3D palindromes",
+    "traits": ["3_digits", "palindrome"],
+    "difficulty": "Novice"
+  },
+  {
+    "key": "palindrome-e1+",
+    "name": "Epoch1+ 3D Palindrome",
+    "description": "Epoch1+ 3D Palindrome are much rarer than epoch 0 ones",
+    "traits": ["palindrome", "epoch1+", "3_digits"],
+    "difficulty": "Collector"
+  },
+  {
+    "key": "paliblock_3d",
+    "name": "3D paliblock",
+    "description": "3D palindromes",
+    "traits": ["3_digits", "paliblock"],
+    "difficulty": "Collector"
+  },
+  {
+    "key": "palinception_3d",
+    "name": "3D palinception",
+    "description": "3D palindromes",
+    "traits": ["3_digits", "uniform"],
+    "difficulty": "Collector"
+  },
+  {
+    "key": "uncommon_epoch0",
+    "name": "Pre First Halving Uncommons",
+    "description": "Uncommons mined before the first halving event",
+    "traits": ["uncommon", "epoch0"],
+    "difficulty": "Collector"
+  },
+  {
+    "key": "vintage_paliblock",
+    "name": "Vintage palindromes paliblock",
+    "description": "Vintage palindrome paliblock",
+    "traits": ["vintage", "palindrome", "paliblock"],
+    "difficulty": "Collector"
+  },
+  {
+    "key": "perfect_palinceptions",
+    "name": "Perfect Palinceptions",
+    "description": "Perfect Palinceptions are a pure numerical beauty and have a great distribution",
+    "traits": ["perfect"],
+    "difficulty": "Expert"
+  },
+  {
+    "key": "uncommon_2009",
+    "name": "Uncommon 2009",
+    "description": "Uncommons from the year Bitcoin was born",
+    "traits": ["uncommon", "2009"],
+    "difficulty": "Expert"
+  },
+  {
+    "key": "jpeg_palindrome",
+    "name": "Jpeg palindromes",
+    "description": "Palindromes from the 5K jpeg sats collection",
+    "traits": ["jpeg", "palindrome"],
+    "difficulty": "Expert"
+  },
+  {
+    "key": "pizza_aplha",
+    "name": "Pizza Alphas",
+    "description": "Pizza Alphas",
+    "traits": ["alpha", "pizza"],
+    "difficulty": "Expert"
+  },
+  {
+    "key": "uniform_3d_paliblock",
+    "name": "Paliblock 3D Uniform Palinceptions",
+    "description": "Paliblock 3D Uniform Palinceptions",
+    "traits": ["alpha", "pizza"],
+    "difficulty": "Expert"
+  },
+  {
+    "key": "vintage_palindrome_3d",
+    "name": "Vintage palindromes 3D",
+    "description": "Vintage palindrome 3D",
+    "traits": ["vintage", "palindrome", "3_digits"],
+    "difficulty": "Collector"
+  },
+  {
+    "key": "perfect_palinceptions_e1+",
+    "name": "Epoch1+ Perfect Palinceptions",
+    "description": "Perfect Palinceptions are a pure numerical beauty and have a great distribution",
+    "traits": ["perfect", "epoch1+"],
+    "difficulty": "Elite"
+  },
+  {
+    "key": "pizza_palindrome_420",
+    "name": "420 Pizza Palindromes",
+    "description": "One of N",
+    "traits": ["palindrome", "pizza", "420"],
+    "difficulty": "Elite"
+  },
+  {
+    "key": "jpeg_alphas",
+    "name": "Jpeg Alphas",
+    "description": "One of 500",
+    "traits": ["alpha", "pizza"],
+    "difficulty": "Zenite"
+  },
+  {
+    "key": "pizza_palindrome_2009",
+    "name": "2009 Pizza Palindromes",
+    "description": "One of N",
+    "traits": ["alpha", "pizza"],
+    "difficulty": "Zenite"
+  },
+  {
+    "key": "jpeg_palindrome_2010",
+    "name": "2010 Jpeg Palindromes",
+    "description": "One of N",
+    "traits": ["jpeg", "palindrome", "2010"],
+    "difficulty": "Zenite"
+  },
+  {
+    "key": "perfect_palinception_2d",
+    "name": "Perfect Palinceptions 2D",
+    "description": "One of N",
+    "traits": ["perfect", "2_digits"],
+    "difficulty": "Zenite"
   }
 ]
