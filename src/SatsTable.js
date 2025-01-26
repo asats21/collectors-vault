@@ -51,17 +51,19 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
       </div>
 
       {/* Pagination */}
-      <ReactPaginate
-        previousLabel={'← Previous'}
-        nextLabel={'Next →'}
-        pageCount={pageCount}
-        onPageChange={handlePageClick}
-        containerClassName={'pagination'}
-        previousLinkClassName={'pagination-link'}
-        nextLinkClassName={'pagination-link'}
-        disabledClassName={'pagination-disabled'}
-        activeClassName={'pagination-active'}
-      />
+      {pageCount > 1 &&
+        <ReactPaginate
+          previousLabel={'← Previous'}
+          nextLabel={'Next →'}
+          pageCount={pageCount}
+          onPageChange={handlePageClick}
+          containerClassName={'pagination'}
+          previousLinkClassName={'pagination-link'}
+          nextLinkClassName={'pagination-link'}
+          disabledClassName={'pagination-disabled'}
+          activeClassName={'pagination-active'}
+        />
+      }
     </>
   );
 };
