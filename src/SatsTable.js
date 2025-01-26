@@ -12,6 +12,8 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
               <th>Sat Number</th>
               <th>Tags</th>
               <th>Block</th>
+              <th>Year</th>
+              <th>Epoch</th>
               <th>Weight</th> {/* New column */}
               <th></th>
             </tr>
@@ -31,6 +33,8 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                   </div>
                 </td>
                 <td>{details.block_number}</td>
+                <td>{details.year}</td>
+                <td>{details.epoch}</td>
                 <td>{weightSum}</td> {/* Display weight sum */}
                 <td>
                 <button
