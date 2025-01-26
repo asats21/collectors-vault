@@ -183,3 +183,13 @@ export function getSatYear(blockNum) {
     // Return null if the block number is outside the range
     return null;
 }
+
+/**
+ * Calculates the epoch for a given block number.
+ * Each epoch consists of 210,000 blocks, starting from block 0.
+ * @param {number} blockNumber - The block number.
+ * @returns {number} - The epoch number.
+ */
+export const getEpoch = (blockNumber) => {
+    return Math.floor(blockNumber / 210000);
+};

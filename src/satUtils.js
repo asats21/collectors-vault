@@ -10,6 +10,7 @@ import {
     is3Digits,
     is2Digits,
     getSatYear,
+    getEpoch
   } from './Helpers';
   import { isPizza } from './Pizza';
   import { isJpeg } from './Jpeg';
@@ -41,6 +42,7 @@ import {
         tags: [],
         block_number: blockNumber,
         year: getSatYear(blockNumber),
+        epoch: getEpoch(blockNumber),
         price: null,
       };
   
