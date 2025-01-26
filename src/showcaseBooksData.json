@@ -1,30 +1,9 @@
 [
   {
-    "key": "uncommons",
-    "name": "Uncommons",
-    "difficulty": "Novice",
-    "levels": [
-      {
-        "name": "Uncommon sat",
-        "requirements": [
-          { "count": 1, "tags": ["uncommon"] }
-        ]
-      }, {
-        "name": "Alpha Uncommon sat",
-        "requirements": [
-          { "count": 1, "tags": ["uncommon",  "alpha"] }
-        ]
-      }, {
-        "name": "Black uncommon sat",
-        "requirements": [
-          { "count": 1, "tags": ["black_uncommon"] }
-        ]
-      }, {
-        "name": "Black omega sat",
-        "requirements": [
-          { "count": 1, "tags": ["black_uncommon", "omega"] }
-        ]
-      }
-    ]
+    "key": "palindrome-epoch1",
+    "name": "Palindrome + Epoch1 Showcase",
+    "description": "SATs with both palindrome and epoch1 traits are incredibly rare and highly sought after.",
+    "traits": ["palindrome", "epoch1"],
+    "difficulty": "Novice"
   }
 ]

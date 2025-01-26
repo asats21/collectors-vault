@@ -538,3 +538,74 @@ ul.levels {
   color: #000; /* Black text */
   box-shadow: 0 0 15px rgba(224, 92, 92, 0.6); /* Stronger red glow */
 }
+
+/* Showcase Books Page */
+.showcase-books-page {
+  padding: 2rem;
+}
+
+.books-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.book-item {
+  background-color: #2a2d34;
+  border: 2px solid #444;
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.book-item:hover {
+  border-color: #6AA8C3;
+  box-shadow: 0 0 20px rgba(106, 168, 195, 0.4);
+}
+
+.book-link {
+  text-decoration: none;
+  color: white;
+}
+
+.book-link h2 {
+  margin: 0 0 10px;
+  color: #6AA8C3;
+}
+
+.progress-bar {
+  background-color: #444;
+  border-radius: 8px;
+  height: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress {
+  background-color: #E89A02;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Difficulty Colors */
+.book-item.novice {
+  border-color: #6AA8C3; /* Blue for Novice */
+}
+
+.book-item.collector {
+  border-color: #C38BFA; /* Purple for Collector */
+}
+
+.book-item.expert {
+  border-color: #E89A02; /* Orange for Expert */
+}
+
+.book-item.elite {
+  border-color: #037F5E; /* Green for Elite */
+}
+
+.book-item.zenite {
+  border-color: #E05C5C; /* Red for Zenite */
+}
