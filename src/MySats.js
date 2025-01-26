@@ -19,8 +19,10 @@ const MySats = ({ satCollection, setSatCollection }) => {
     }
   };
 
-  const handleDelete = (sat) => {
-    setSatCollection((prev) => deleteSatFromCollection(sat, prev));
+  const handleDeleteAll = () => {
+    if (window.confirm('Are you sure you want to delete all your sats?')) {
+      setSatCollection({});
+    }
   };
 
   // Calculate weight sum for each sat
@@ -39,6 +41,10 @@ const MySats = ({ satCollection, setSatCollection }) => {
 
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected);
+  };
+
+  const handleDelete = (sat) => {
+    setSatCollection((prev) => deleteSatFromCollection(sat, prev));
   };
 
   return (
@@ -63,6 +69,18 @@ const MySats = ({ satCollection, setSatCollection }) => {
         handlePageClick={handlePageClick}
       />
 
+      {/* Delete All Button */}
+      {satCollection && Object.keys(satCollection).length > 0 &&
+        <div className="text-center mt-4">
+          <button
+            className="nav-button delete-all"
+            onClick={handleDeleteAll}
+          >
+            Delete All
+          </button>
+        </div>
+      }
+
       {/* Add Sats Modal */}
       <AddSatsModal
         showModal={showModal}
@@ -72,6 +90,8 @@ const MySats = ({ satCollection, setSatCollection }) => {
         handleSubmit={handleSubmit}
       />
     </div>
+
+    
   );
 };
 
