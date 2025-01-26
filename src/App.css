@@ -428,6 +428,7 @@ ul.levels {
 
 .cyber-input:focus {
   background: #2a2d34;
+  color: white;
   border-color: #6AA8C3;
   box-shadow: 0 0 10px #6AA8C3;
 }
