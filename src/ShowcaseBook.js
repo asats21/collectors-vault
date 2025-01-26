@@ -12,28 +12,32 @@ const ShowcaseBook = ({ satCollection }) => {
   }, [bookKey]);
 
   if (!bookData) {
-    return <div>Not found</div>;
+    return <div className="text-center mt-5">Not found</div>;
   }
 
-  // Use bookData instead of book
+  // Filter sats that match the book's traits
   const matchingSats = Object.entries(satCollection).filter(([sat, details]) =>
     bookData.traits.every((trait) => details.tags.includes(trait))
   );
 
   return (
-    <div className="showcase-book">
-      <h2>{bookData.name}</h2>
-      <p>{bookData.description}</p>
-      <div className="sats-grid">
+    <div className="container mt-4">
+      <h3 className="mb-4">{bookData.name}</h3>
+      <p className="mb-4">{bookData.description}</p>
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 g-4">
         {matchingSats.map(([sat, details]) => (
-          <div key={sat} className="sat-card">
-            <span className="sat-number">#{sat}</span>
-            <div className="sat-tags">
-              {details.tags.map((tag) => (
-                <span key={tag} className={`tag-${tag.replace(' ', '-')}`}>
-                  {tag}
-                </span>
-              ))}
+          <div key={sat} className="col">
+            <div className="sat-card p-3">
+              <div className="sat-number text-center">#{sat}</div>
+              <div className="sat-block text-center">Block: {details.block_number}</div>
+              <div className="sat-year text-center">Year: {details.year}</div>
+              <div className="sat-tags mt-2">
+                {details.tags.map((tag) => (
+                  <span key={tag} className="badge">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         ))}

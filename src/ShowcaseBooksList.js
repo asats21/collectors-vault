@@ -33,7 +33,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
                   <Link to={`/showcase-books/${book.key}`} className="book-link">
                     <h2>{book.name}</h2>
                     <p>{book.description}</p>
-                    <p className="mt-2">Sats: {matchingSats.length}</p>
+                    <p className="mt-2">In collection: {matchingSats.length}</p>
                   </Link>
                 </li>
               );
