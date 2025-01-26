@@ -35,19 +35,23 @@ import {
 
       const satNumber = Number(sat); // Convert to number
       const blockNumber = getBlock(satNumber);
+      const year = getSatYear(blockNumber);
+      const epoch = getEpoch(blockNumber);
   
       if (updatedCollection[sat]) return; // Skip if sat already exists
   
       updatedCollection[sat] = {
         tags: [],
         block_number: blockNumber,
-        year: getSatYear(blockNumber),
-        epoch: getEpoch(blockNumber),
+        year: year,
+        epoch: epoch,
         price: null,
       };
   
       if (isPizza(satNumber)) {
         updatedCollection[sat].tags.push('pizza');
+
+        if(blockNumber >= 52115 && blockNumber <= 52153) updatedCollection[sat].tags.push('420');
       }
   
       if (isJpeg(satNumber)) {
@@ -61,7 +65,7 @@ import {
       if (isPalindrome(satNumber)) {
         updatedCollection[sat].tags.push('palindrome');
   
-        if (blockNumber >= 210000) updatedCollection[sat].tags.push('epoch1+');
+        if (epoch > 0) updatedCollection[sat].tags.push('epoch1+');
         if (is3Digits(satNumber)) updatedCollection[sat].tags.push('3_digits');
         if (is2Digits(satNumber)) updatedCollection[sat].tags.push('2_digits');
       }
@@ -85,6 +89,10 @@ import {
       if (isUncommon(satNumber)) {
         updatedCollection[sat].tags.push('uncommon');
       }
+
+      if (isUncommon(satNumber + 1)) {
+        updatedCollection[sat].tags.push('black_uncommon');
+      }
   
       if (isAlpha(satNumber)) {
         updatedCollection[sat].tags.push('alpha');
@@ -100,6 +108,10 @@ import {
   
       if (blockNumber === 78) {
         updatedCollection[sat].tags.push('block 78');
+      }
+
+      if (year === 2009) {
+        updatedCollection[sat].tags.push('2009');
       }
     });
   
