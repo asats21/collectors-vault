@@ -105,6 +105,13 @@
     "difficulty": "Expert"
   },
   {
+    "key": "alpha_paliblock",
+    "name": "Paliblock Alphas",
+    "description": "Paliblock Alphas",
+    "traits": ["alpha", "paliblock"],
+    "difficulty": "Expert"
+  },
+  {
     "key": "vintage_palindrome_3d",
     "name": "Vintage palindromes 3D",
     "description": "Vintage palindrome 3D",
@@ -123,6 +130,13 @@
     "name": "420 Pizza Palindromes",
     "description": "One of N",
     "traits": ["palindrome", "pizza", "420"],
+    "difficulty": "Elite"
+  },
+  {
+    "key": "paliblock_uncommon",
+    "name": "Paliblock Uncommon",
+    "description": "One of N",
+    "traits": ["palindrome", "uncommon"],
     "difficulty": "Elite"
   },
   {
@@ -151,6 +165,13 @@
     "name": "Perfect Palinceptions 2D",
     "description": "One of N",
     "traits": ["perfect", "2_digits"],
+    "difficulty": "Zenite"
+  },
+  {
+    "key": "paliblock_uncommon_alpha",
+    "name": "Paliblock Uncommon Alpha",
+    "description": "One of N",
+    "traits": ["palindrome", "uncommon", "alpha"],
     "difficulty": "Zenite"
   }
 ]
