@@ -502,8 +502,7 @@ ul.levels {
   box-shadow: none;
 }
 
-.pagination-active .pagination-link {
-  background: #6AA8C3;
-  color: #000;
-  box-shadow: 0 0 15px rgba(106, 168, 195, 0.5);
+.pagination-active {
+  color: #6AA8C3; /* Blue text */
+  font-weight: bold; /* Bold text */
 }
