@@ -169,5 +169,61 @@
         ]
       }
     ]
+  },
+  {
+    "key": "event_alphas",
+    "name": "Event Alphas",
+    "difficulty": "Expert",
+    "levels": [
+      {
+        "name": "Level 1",
+        "requirements": [
+          { "count": 1, "tags": ["pizza", "alpha"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["silkroad",  "alpha"] }
+        ]
+      }, {
+        "name": "Level 3",
+        "requirements": [
+          { "count": 1, "tags": ["hitman", "alpha"] }
+        ]
+      }, {
+        "name": "Level 4",
+        "requirements": [
+          { "count": 1, "tags": ["jpeg", "alpha"] }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "uncommons",
+    "name": "Uncommons",
+    "difficulty": "Novice",
+    "levels": [
+      {
+        "name": "Uncommon sat",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"] }
+        ]
+      }, {
+        "name": "Alpha Uncommon sat",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon",  "alpha"] }
+        ]
+      }, {
+        "name": "Black uncommon sat",
+        "requirements": [
+          { "count": 1, "tags": ["black_uncommon"] }
+        ]
+      }, {
+        "name": "Black omega sat",
+        "requirements": [
+          { "count": 1, "tags": ["black_uncommon", "omega"] }
+        ]
+      }
+    ]
   }
 ]

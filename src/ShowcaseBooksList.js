@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import challengeBooksData from './challengeBooksData.json';
+import showcaseBooksData from './showcaseBooksData.json';
 import useBookCompletion from './useBookCompletion';
 
 // Component for individual book progress
@@ -38,9 +38,11 @@ const BookProgressItem = ({ book, satCollection }) => {
   );
 };
 
-const ChallengeBooksList = ({ satCollection }) => {
+const ShowcaseBooksList = ({ satCollection }) => {
+  console.log(showcaseBooksData);
+
   // Group books by difficulty
-  const groupedBooks = challengeBooksData.reduce((acc, book) => {
+  const groupedBooks = showcaseBooksData.reduce((acc, book) => {
     const difficulty = book.difficulty;
     if (!acc[difficulty]) {
       acc[difficulty] = [];
@@ -72,4 +74,4 @@ const ChallengeBooksList = ({ satCollection }) => {
   );
 };
 
-export default ChallengeBooksList;
+export default ShowcaseBooksList;

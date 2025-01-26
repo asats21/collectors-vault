@@ -1,7 +1,7 @@
 // Book.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import challengeBooksData from './challengeBooksData.json'; // JSON file with book data
+import showcaseBooksData from './showcaseBooksData.json'; // JSON file with book data
 import useBookCompletion from './useBookCompletion'; // Import the custom hook
 
 const Book = ({ satCollection }) => {
@@ -10,7 +10,7 @@ const Book = ({ satCollection }) => {
 
   // Load book data for the given key
   useEffect(() => {
-    const book = challengeBooksData.find((b) => b.key === bookKey);
+    const book = showcaseBooksData.find((b) => b.key === bookKey);
     setBookData(book);
   }, [bookKey]);
 
