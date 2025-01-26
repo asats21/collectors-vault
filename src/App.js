@@ -4,7 +4,7 @@ import './App.css';
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
-import PalindromeBook from './Book';  // Import your PalindromeBook component
+import ChallengeBook from './ChallengeBook';  // Import your ChallengeBook component
 import BooksList from './BooksList';  // Import the Available Books page
 import MySats from './MySats';  // Import the Index page
 
@@ -28,8 +28,11 @@ function App() {
           <Link to="/" style={{ textDecoration: 'none' }}>
             <button className="nav-button my-sats">My Sats</button>
           </Link>
-          <Link to="/books" style={{ textDecoration: 'none' }}>
-            <button className="nav-button books">Books</button>
+          <Link to="/challenge-books" style={{ textDecoration: 'none' }}>
+            <button className="nav-button challenge-books">Challenge Books</button>
+          </Link>
+          <Link to="/showcase-books" style={{ textDecoration: 'none' }}>
+            <button className="nav-button showcase-books">Showcase Books</button>
           </Link>
         </div>
       </nav>
@@ -43,8 +46,8 @@ function App() {
         <Navigation/>
         <Routes>
           <Route path="/" element={<MySats satCollection={satCollection} setSatCollection={setSatCollection} />} />
-          <Route path="/books" element={<BooksList satCollection={satCollection} />} />
-          <Route path="/books/:bookKey" element={<PalindromeBook satCollection={satCollection} />} />
+          <Route path="/challenge-books" element={<BooksList satCollection={satCollection} />} />
+          <Route path="/challenge-books/:bookKey" element={<ChallengeBook satCollection={satCollection} />} />
         </Routes>
       </div>
     </Router>

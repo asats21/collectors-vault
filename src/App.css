@@ -208,16 +208,28 @@ ul.levels {
     box-shadow: 0 0 10px #037F5E;
   }
   
-  .nav-button.books {
+  .nav-button.challenge-books {
     border-color: #C38BFA;
     color: #C38BFA;
     box-shadow: 0 0 5px #C38BFA;
   }
   
-  .nav-button.books:hover {
+  .nav-button.challenge-books:hover {
     background-color: #C38BFA;
     color: white; /* White text on hover */
     box-shadow: 0 0 10px #C38BFA;
+  }
+
+  .nav-button.showcase-books {
+    border-color: #E89A02;
+    color: #E89A02;
+    box-shadow: 0 0 5px #E89A02;
+  }
+  
+  .nav-button.showcase-books:hover {
+    background-color: #E89A02;
+    color: white; /* White text on hover */
+    box-shadow: 0 0 10px #E89A02;
   }
 
   /* Books Page Styling */
