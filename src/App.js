@@ -5,7 +5,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import ChallengeBook from './ChallengeBook';  // Import your ChallengeBook component
-import BooksList from './BooksList';  // Import the Available Books page
+import ChallengeBooksList from './ChallengeBooksList';  // Import the Challenge Books page
 import MySats from './MySats';  // Import the Index page
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
         <Navigation/>
         <Routes>
           <Route path="/" element={<MySats satCollection={satCollection} setSatCollection={setSatCollection} />} />
-          <Route path="/challenge-books" element={<BooksList satCollection={satCollection} />} />
+          <Route path="/challenge-books" element={<ChallengeBooksList satCollection={satCollection} />} />
           <Route path="/challenge-books/:bookKey" element={<ChallengeBook satCollection={satCollection} />} />
         </Routes>
       </div>

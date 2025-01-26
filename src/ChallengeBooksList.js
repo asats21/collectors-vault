@@ -38,7 +38,7 @@ const BookProgressItem = ({ book, satCollection }) => {
   );
 };
 
-const BooksList = ({ satCollection }) => {
+const ChallengeBooksList = ({ satCollection }) => {
   // Group books by difficulty
   const groupedBooks = booksData.reduce((acc, book) => {
     const difficulty = book.difficulty;
@@ -72,4 +72,4 @@ const BooksList = ({ satCollection }) => {
   );
 };
 
-export default BooksList;
+export default ChallengeBooksList;
