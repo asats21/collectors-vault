@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
-import { FaTrash, FaGem, FaRegGem, FaPizzaSlice, FaFont, FaHive, FaDiceTwo, FaDiceThree } from 'react-icons/fa';
+import { FaTrash, FaGem, FaRegGem, FaPizzaSlice, FaFont, FaHive, FaDiceTwo, FaDiceThree, FaHourglass, FaCrosshairs, FaImage } from 'react-icons/fa';
 import { FaBluesky } from "react-icons/fa6";
 
 const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageClick }) => {
@@ -11,10 +11,13 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
     uncommon: {icon: <FaGem className="icon" style={{color: "#ED2B9C"}}/>, number: 1 },
     black_uncommon: {icon: <FaRegGem className="icon" style={{color: '#999'}} />, number: 1 },
     pizza: {icon: <FaPizzaSlice className="icon" style={{color: '#F2A900'}} />, number: 2 },
-    palindrome: {icon: <FaBluesky className="icon" style={{color: '#118AB2'}}/>, number: 1 },
+    palindrome: {icon: <FaBluesky className="icon" style={{color: '#6AA8C3'}}/>, number: 1 },
     uniform: {icon: <><FaBluesky className="icon" style={{color: '#118AB2'}} /><FaBluesky className="icon" style={{color: '#118AB2'}} /></>, number: 2 },
     perfect: {icon: <><FaBluesky className="icon" style={{color: '#E89A02'}} /><FaBluesky className="icon" style={{color: '#E89A02'}} /></>, number: 3 },
     paliblock: {icon: <FaHive className="icon" />, number: 10 },
+    vintage: {icon: <FaHourglass className="icon" style={{color: '#F6BB41'}} />, number: 10 },
+    jpeg: {icon: <FaImage className="icon" style={{color: '#037F5E'}} />, number: 10 },
+    hitman: {icon: <FaCrosshairs className="icon" style={{color: '#E05C5C'}} />, number: 10 },
     '2_digits': {icon: <FaDiceTwo className="icon" />, number: 5 },
     '3_digits': {icon: <FaDiceThree className="icon" />, number: 5 },
   };
