@@ -209,27 +209,27 @@ ul.levels {
   }
   
   .nav-button.challenge-books {
-    border-color: #C38BFA;
-    color: #C38BFA;
-    box-shadow: 0 0 5px #C38BFA;
-  }
-  
-  .nav-button.challenge-books:hover {
-    background-color: #C38BFA;
-    color: white; /* White text on hover */
-    box-shadow: 0 0 10px #C38BFA;
-  }
-
-  .nav-button.showcase-books {
     border-color: #E89A02;
     color: #E89A02;
     box-shadow: 0 0 5px #E89A02;
   }
   
-  .nav-button.showcase-books:hover {
+  .nav-button.challenge-books:hover {
     background-color: #E89A02;
     color: white; /* White text on hover */
     box-shadow: 0 0 10px #E89A02;
+  }
+
+  .nav-button.showcase-books {
+    border-color: #118AB2;
+    color: #118AB2;
+    box-shadow: 0 0 5px #118AB2;
+  }
+  
+  .nav-button.showcase-books:hover {
+    background-color: #118AB2;
+    color: white; /* White text on hover */
+    box-shadow: 0 0 10px #118AB2;
   }
 
   /* Books Page Styling */
@@ -287,7 +287,7 @@ ul.levels {
   
   .book-link h2 {
     margin: 0 0 10px;
-    color: #6AA8C3; /* Azure blue */
+    color: #fff;
   }
   
   .progress-bar {
@@ -572,6 +572,7 @@ ul.levels {
 }
 
 .showcase-book-header>h2 {
+  color: #fff;
   margin-bottom: 0px;
   font-size: 1.5rem;
 }
@@ -627,7 +628,7 @@ ul.levels {
   flex-direction: column;
   justify-content: center;
   aspect-ratio: 1/1; /* Force square shape */
-  animation: pulse-square 4s ease-in-out infinite;; /* Sparkle animation */
+  animation: pulse-square 4s ease infinite; /* Sparkle animation */
 }
 
 /* Hover Effects */
@@ -666,18 +667,18 @@ ul.levels {
 
 @keyframes pulse-square {
   0% {
-    box-shadow: 0 0 10px 2px rgba(106, 168, 195, 0.5)
+    box-shadow: 0 0 4px 2px rgba(106, 168, 195, 0.4)
   }
-  25% {
-    box-shadow: 0 0 12px 3px rgba(106, 168, 195, 0.55);
+  20% {
+    box-shadow: 0 0 8px 3px rgba(106, 168, 195, 0.46);
   }
   50% {
-    box-shadow: 0 0 15px 4px rgba(106, 168, 195, 0.6);
+    box-shadow: 0 0 10px 4px rgba(106, 168, 195, 0.5);
   }
-  75% {
-    box-shadow: 0 0 12px 3px rgba(106, 168, 195, 0.55);
+  80% {
+    box-shadow: 0 0 8px 3px rgba(106, 168, 195, 0.46);
   }
   100% {
-    box-shadow: 0 0 10px 2px rgba(106, 168, 195, 0.5);
+    box-shadow: 0 0 4px 2px rgba(106, 168, 195, 0.4);
   }
 }

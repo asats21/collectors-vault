@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import showcaseBooksData from './showcaseBooksData.json';
 
+import { FaCube } from "react-icons/fa";
+
 const ShowcaseBook = ({ satCollection }) => {
   const { bookKey } = useParams();
   const [bookData, setBookData] = useState(null);
@@ -28,9 +30,9 @@ const ShowcaseBook = ({ satCollection }) => {
         {matchingSats.map(([sat, details]) => (
           <div key={sat} className="col">
             <div className="sat-card p-3">
-              <div className="sat-number text-center">#{sat}</div>
-              <div className="sat-block text-center">Block: {details.block_number}</div>
-              <div className="sat-year text-center">Year: {details.year}</div>
+              <div className="sat-number text-center">{sat}</div>
+              <div className="sat-block text-center fw-bold" style={{ color: '#6AA8C3' }}> <FaCube /> {details.block_number}</div>
+              <div className="sat-year text-center fw-bold" style={{ color: '#6AA8C3' }}>{details.year} </div>
               <div className="sat-tags mt-2">
                 {details.tags.map((tag) => (
                   <span key={tag} className="badge">

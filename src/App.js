@@ -30,11 +30,11 @@ function App() {
           <Link to="/" style={{ textDecoration: 'none' }}>
             <button className="nav-button my-sats">My Sats</button>
           </Link>
-          <Link to="/challenge-books" style={{ textDecoration: 'none' }}>
-            <button className="nav-button challenge-books">Challenge Books</button>
-          </Link>
           <Link to="/showcase-books" style={{ textDecoration: 'none' }}>
             <button className="nav-button showcase-books">Showcase Books</button>
+          </Link>
+          <Link to="/challenge-books" style={{ textDecoration: 'none' }}>
+            <button className="nav-button challenge-books">Challenge Books</button>
           </Link>
         </div>
       </nav>
