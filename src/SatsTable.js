@@ -11,7 +11,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
             <tr>
               <th>#</th>
               <th>Sat Number</th>
-              <th>Tags</th>
+              <th></th>
               <th>Block</th>
               <th>Year</th>
               <th>Epoch</th>
