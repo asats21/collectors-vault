@@ -14,7 +14,6 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
               <th>Block</th>
               <th>Year</th>
               <th>Epoch</th>
-              <th>Weight</th> {/* New column */}
               <th></th>
             </tr>
           </thead>
@@ -35,7 +34,6 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                 <td>{details.block_number}</td>
                 <td>{details.year}</td>
                 <td>{details.epoch}</td>
-                <td>{weightSum}</td> {/* Display weight sum */}
                 <td>
                 <button
                   className="delete-button fw-bold"
