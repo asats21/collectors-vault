@@ -1,25 +1,28 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
-import { FaTrash, FaGem, FaRegGem, FaPizzaSlice, FaFont, FaHive, FaDiceTwo, FaDiceThree, FaHourglass, FaCrosshairs, FaImage } from 'react-icons/fa';
+import { FaTrash, FaGem, FaRegGem, FaPizzaSlice, FaHourglass, FaCrosshairs, FaImage } from 'react-icons/fa';
 import { FaBluesky } from "react-icons/fa6";
+import { AiOutlineBlock } from "react-icons/ai";
+import { TbAlpha, TbOmega } from "react-icons/tb";
 
 const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageClick }) => {
 
   // Mapping tags to corresponding Font Awesome icons and colors
   const tagIcons = {
-    alpha: {icon: <FaFont className="icon" style={{color: "#FF6F00"}}/>, number: 2 },
+    alpha: {icon: <TbAlpha className="icon" style={{color: "#FF6F00"}}/>, number: 2 },
+    omega: {icon: <TbOmega className="icon" style={{color: "#118AB2"}}/>, number: 2 },
     uncommon: {icon: <FaGem className="icon" style={{color: "#ED2B9C"}}/>, number: 1 },
     black_uncommon: {icon: <FaRegGem className="icon" style={{color: '#999'}} />, number: 1 },
     pizza: {icon: <FaPizzaSlice className="icon" style={{color: '#F2A900'}} />, number: 2 },
     palindrome: {icon: <FaBluesky className="icon" style={{color: '#6AA8C3'}}/>, number: 1 },
     uniform: {icon: <><FaBluesky className="icon" style={{color: '#118AB2'}} /><FaBluesky className="icon" style={{color: '#118AB2'}} /></>, number: 2 },
     perfect: {icon: <><FaBluesky className="icon" style={{color: '#E89A02'}} /><FaBluesky className="icon" style={{color: '#E89A02'}} /></>, number: 3 },
-    paliblock: {icon: <FaHive className="icon" />, number: 10 },
+    paliblock: {icon: <AiOutlineBlock className="icon" />, number: 10 },
     vintage: {icon: <FaHourglass className="icon" style={{color: '#F6BB41'}} />, number: 10 },
     jpeg: {icon: <FaImage className="icon" style={{color: '#037F5E'}} />, number: 10 },
     hitman: {icon: <FaCrosshairs className="icon" style={{color: '#E05C5C'}} />, number: 10 },
-    '2_digits': {icon: <FaDiceTwo className="icon" />, number: 5 },
-    '3_digits': {icon: <FaDiceThree className="icon" />, number: 5 },
+    '2_digits': {icon: <div className="fw-bold">2D</div>, number: 5 },
+    '3_digits': {icon: <div className="fw-bold">3D</div>, number: 5 },
   };
 
   // Function to handle rendering of tags and icons
