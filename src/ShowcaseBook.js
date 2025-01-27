@@ -30,9 +30,9 @@ const ShowcaseBook = ({ satCollection }) => {
         {matchingSats.map(([sat, details]) => (
           <div key={sat} className="col">
             <div className="sat-card p-3">
-              <div className="sat-year text-center fw-bold" style={{ color: '#6AA8C3' }}>{details.year} </div>
+              <div className="sat-year text-center fw-bold">{details.year} </div>
               <div className="sat-number text-center">{sat}</div>
-              <div className="sat-block text-center fw-bold" style={{ color: '#6AA8C3' }}> <FaCube /> {details.block_number}</div>
+              <div className="sat-block text-center fw-bold"> <FaCube /> {details.block_number}</div>
               <div className="sat-tags mt-2">
                 {details.tags.map((tag) => (
                   <span key={tag} className="badge">
