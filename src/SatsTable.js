@@ -7,16 +7,41 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
 
   // Mapping tags to corresponding Font Awesome icons and colors
   const tagIcons = {
-    alpha: <FaFont className="icon" />,
-    uncommon: <FaGem className="icon" />,
-    black_uncommon: <FaGem className="icon" />,
-    pizza: <FaPizzaSlice className="icon" />,
-    palindrome: <FaBluesky className="icon" />,
-    uniform: <FaBluesky className="icon" />,
-    perfect: <FaBluesky className="icon" />,
-    paliblock: <FaHive className="icon" />,
-    '2_digits': <FaDiceTwo className="icon" />,
-    '3_digits': <FaDiceThree className="icon" />,
+    alpha: {icon: <FaFont className="icon" />, number: 2 },
+    uncommon: {icon: <FaGem className="icon" />, number: 1 },
+    black_uncommon: {icon: <FaGem className="icon" />, number: 1 },
+    pizza: {icon: <FaPizzaSlice className="icon" />, number: 2 },
+    palindrome: {icon: <FaBluesky className="icon" />, number: 1 },
+    uniform: {icon: <FaBluesky className="icon" />, number: 2 },
+    perfect: {icon: <FaBluesky className="icon" />, number: 3 },
+    paliblock: {icon: <FaHive className="icon" />, number: 10 },
+    '2_digits': {icon: <FaDiceTwo className="icon" />, number: 5 },
+    '3_digits': {icon: <FaDiceThree className="icon" />, number: 5 },
+  };
+
+  // Function to handle rendering of tags and icons
+  const renderTags = (tags) => {
+    return tags
+      .map((tag) => {
+        const tagInfo = tagIcons[tag];
+        if (tagInfo) {
+          return { type: 'icon', ...tagInfo }; // Return the icon and number if it exists
+        }
+        return { type: 'tag', tag }; // Return the tag text if no icon
+      })
+      .sort((a, b) => {
+        // Sort by the number of the icon first
+        return a.type === 'icon' && b.type === 'icon' ? a.number - b.number : a.type === 'icon' ? -1 : 1;
+      })
+      .map((item, index) =>
+        item.type === 'icon' ? (
+          React.cloneElement(item.icon, { key: index })
+        ) : (
+          <span key={item.tag} className={`tag-${item.tag.replace(' ', '-')}`}>
+            {item.tag}
+          </span>
+        )
+      );
   };
 
   return (
@@ -41,27 +66,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                 <td>#{sat}</td>
                 <td>
                   <div className="sat-tags">
-                  {details.tags
-                      .map((tag) => {
-                        const icon = tagIcons[tag];
-                        if (icon) {
-                          return { type: 'icon', icon }; // Return the icon if it exists
-                        }
-                        return { type: 'tag', tag }; // Return the tag text if no icon
-                      })
-                      .sort((a, b) => {
-                        // Sort icons first, then tags
-                        return a.type === 'icon' ? -1 : 1;
-                      })
-                      .map((item, index) =>
-                        item.type === 'icon' ? (
-                          React.cloneElement(item.icon, { key: index })
-                        ) : (
-                          <span key={item.tag} className={`tag-${item.tag.replace(' ', '-')}`}>
-                            {item.tag}
-                          </span>
-                        )
-                  )}
+                    {renderTags(details.tags)} {/* Call the renderTags function */}
                   </div>
                 </td>
                 <td>{details.block_number}</td>
