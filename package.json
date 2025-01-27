@@ -1,6 +1,7 @@
 {
-  "name": "sat-collector",
+  "name": "collectors-vault",
   "version": "0.1.0",
+  "homepage": "https://asats21.github.io/collectors-vault",
   "private": true,
   "dependencies": {
     "bootstrap": "^5.3.3",
