@@ -20,7 +20,7 @@ const BookProgressItem = ({ book, satCollection }) => {
 
   return (
     <li className={`book-item ${cardColor}`}>
-      <Link to={`/challenge-books/${book.key}`} className="book-link">
+      <Link to={`/challenge-books/${book.key}`} className="book-link challenge-book-header">
         <h2>{book.name}</h2>
         <p>
           Completed {completedCount} out of {totalLevels} levels
