@@ -576,19 +576,28 @@ ul.levels {
   font-size: 1.5rem;
 }
 
+.showcase-book-header>h2.purple {
+  color: #C38BFA;
+}
+
+.showcase-book-header>div.purple {
+  color: #C38BFA;
+  margin-bottom: 0px;
+}
+
 /* Card Colors */
 .showcase-book-item.green {
-  border-color: #037F5E; /* Green for all levels complete */
+  border-color: #037F5E;
   box-shadow: 0 0 10px #037F5E;
 }
 
 .showcase-book-item.purple {
-  border-color: #C38BFA; /* Purple for at least one level complete */
+  border-color: #C38BFA;
   box-shadow: 0 0 10px #C38BFA;
 }
 
 .showcase-book-item.gray {
-  border-color: #888; /* Gray for no levels complete */
+  border-color: #888;
   box-shadow: 0 0 10px #888;
 }
 
@@ -618,6 +627,7 @@ ul.levels {
   flex-direction: column;
   justify-content: center;
   aspect-ratio: 1/1; /* Force square shape */
+  animation: pulse-square 4s ease-in-out infinite;; /* Sparkle animation */
 }
 
 /* Hover Effects */
@@ -652,4 +662,22 @@ ul.levels {
 /* Grid Layout Adjustments */
 .row-cols-xl-5 > * {
   padding: 12px; /* Spacing between cards */
+}
+
+@keyframes pulse-square {
+  0% {
+    box-shadow: 0 0 10px 2px rgba(106, 168, 195, 0.5)
+  }
+  25% {
+    box-shadow: 0 0 12px 3px rgba(106, 168, 195, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 15px 4px rgba(106, 168, 195, 0.6);
+  }
+  75% {
+    box-shadow: 0 0 12px 3px rgba(106, 168, 195, 0.55);
+  }
+  100% {
+    box-shadow: 0 0 10px 2px rgba(106, 168, 195, 0.5);
+  }
 }
