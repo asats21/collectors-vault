@@ -2,56 +2,56 @@
   {
     "key": "palindrome-e1+",
     "name": "Epoch1+ Palindrome",
-    "description": "Epoch1+ Palindrome are much rarer than epoch 0 ones",
+    "description": "Palindromes mined after the first Bitcoin halving, shortly following the 'palindrome extinction event'",
     "traits": ["palindrome", "epoch1+"],
     "difficulty": "Novice"
   },
   {
     "key": "pizza_palindrome",
-    "name": "Pizza palindromes",
-    "description": "Pizza palindrome",
+    "name": "Pizza Palindromes",
+    "description": "Palindromic sats from the 2010 'Bitcoin Pizza Day' transaction, where 2 pizzas were bought for 10,000 BTC, marking Bitcoin's first real-world purchase",
     "traits": ["pizza", "palindrome"],
     "difficulty": "Novice"
   },
   {
     "key": "vintage_palindrome",
-    "name": "Vintage palindromes",
-    "description": "Vintage palindrome",
+    "name": "Vintage Palindromes",
+    "description": "Palindromes from the first 1,000 Bitcoin blocks",
     "traits": ["vintage", "palindrome"],
     "difficulty": "Novice"
   },
   {
     "key": "2009_pali",
-    "name": "2009 palindromes",
-    "description": "2009 palindromes",
+    "name": "2009 Palindromes",
+    "description": "Palindromes from 2009, the year Bitcoin began to shape its early legacy",
     "traits": ["2009", "palindrome"],
     "difficulty": "Novice"
   },
   {
     "key": "pali_3d",
-    "name": "3D palindromes",
-    "description": "3D palindromes",
+    "name": "3D Palindromes",
+    "description": "Palindromes consisting of just 3 repeated digits",
     "traits": ["3_digits", "palindrome"],
     "difficulty": "Novice"
   },
   {
     "key": "palindrome-e1+",
     "name": "Epoch1+ 3D Palindrome",
-    "description": "Epoch1+ 3D Palindrome are much rarer than epoch 0 ones",
+    "description": "3D Palindromes mined after the first Bitcoin halving, shortly following the 'palindrome extinction event'",
     "traits": ["palindrome", "epoch1+", "3_digits"],
     "difficulty": "Collector"
   },
   {
     "key": "paliblock_3d",
-    "name": "3D paliblock",
-    "description": "3D palindromes",
+    "name": "3D Paliblock Palindromes",
+    "description": "3D palindromes featuring a block number that is itself a palindrome",
     "traits": ["3_digits", "paliblock"],
     "difficulty": "Collector"
   },
   {
     "key": "palinception_3d",
-    "name": "3D palinception",
-    "description": "3D palindromes",
+    "name": "3D Uniform Palinception",
+    "description": "3D uniform palinceptions, where the palindrome structure is made up of smaller palindromes of equal length",
     "traits": ["3_digits", "uniform"],
     "difficulty": "Collector"
   },
@@ -64,113 +64,113 @@
   },
   {
     "key": "vintage_paliblock",
-    "name": "Vintage palindromes paliblock",
-    "description": "Vintage palindrome paliblock",
+    "name": "Vintage Paliblock Palindromes",
+    "description": "Vintage palindromes featuring a block number that is itself a palindrome",
     "traits": ["vintage", "palindrome", "paliblock"],
     "difficulty": "Collector"
   },
   {
     "key": "perfect_palinceptions",
     "name": "Perfect Palinceptions",
-    "description": "Perfect Palinceptions are a pure numerical beauty and have a great distribution",
+    "description": "Perfect palinceptions, made up of identical smaller palindromes of equal length, creating a flawlessly symmetrical and balanced sequence",
     "traits": ["perfect"],
     "difficulty": "Expert"
   },
   {
     "key": "uncommon_2009",
-    "name": "Uncommon 2009",
-    "description": "Uncommons from the year Bitcoin was born",
+    "name": "2009 Uncommons",
+    "description": "Uncommons from the year Bitcoin was created",
     "traits": ["uncommon", "2009"],
     "difficulty": "Expert"
   },
   {
     "key": "jpeg_palindrome",
-    "name": "Jpeg palindromes",
-    "description": "Palindromes from the 5K jpeg sats collection",
+    "name": "Jpeg Palindromes",
+    "description": "Palindromes from what is believed to be the first Bitcoin trade for an image",
     "traits": ["jpeg", "palindrome"],
     "difficulty": "Expert"
   },
   {
     "key": "pizza_aplha",
     "name": "Pizza Alphas",
-    "description": "Pizza Alphas",
+    "description": "First sats of each Bitcoin from the legendary pizza transaction",
     "traits": ["alpha", "pizza"],
     "difficulty": "Expert"
   },
   {
     "key": "uniform_3d_paliblock",
     "name": "Paliblock 3D Uniform Palinceptions",
-    "description": "Paliblock 3D Uniform Palinceptions",
+    "description": "3D uniform palinceptions, where the palindrome structure consists of smaller palindromes of equal length, and the block number itself is also a palindrome",
     "traits": ["alpha", "pizza"],
     "difficulty": "Expert"
   },
   {
     "key": "alpha_paliblock",
     "name": "Paliblock Alphas",
-    "description": "Paliblock Alphas",
+    "description": "Alphas from a palindromic block",
     "traits": ["alpha", "paliblock"],
     "difficulty": "Expert"
   },
   {
     "key": "vintage_palindrome_3d",
-    "name": "Vintage palindromes 3D",
-    "description": "Vintage palindrome 3D",
+    "name": "Vintage 3D Palindromes",
+    "description": "3D palindrome originating from the first 1,000 Bitcoin blocks",
     "traits": ["vintage", "palindrome", "3_digits"],
     "difficulty": "Collector"
   },
   {
     "key": "perfect_palinceptions_e1+",
     "name": "Epoch1+ Perfect Palinceptions",
-    "description": "Perfect Palinceptions are a pure numerical beauty and have a great distribution",
+    "description": "Perfect Palinceptions mined shortly after the 'palindrome extinction event'",
     "traits": ["perfect", "epoch1+"],
     "difficulty": "Elite"
   },
   {
     "key": "pizza_palindrome_420",
     "name": "420 Pizza Palindromes",
-    "description": "One of N",
+    "description": "Pizza Palindromes mined on April 20, 2010",
     "traits": ["palindrome", "pizza", "420"],
     "difficulty": "Elite"
   },
   {
     "key": "paliblock_uncommon",
     "name": "Paliblock Uncommon",
-    "description": "One of N",
+    "description": "Uncommon sat from a  palindromic block",
     "traits": ["palindrome", "uncommon"],
     "difficulty": "Elite"
   },
   {
     "key": "jpeg_alphas",
     "name": "Jpeg Alphas",
-    "description": "One of 500",
+    "description": "First sats of each Bitcoin from the jpeg transaction",
     "traits": ["alpha", "pizza"],
     "difficulty": "Zenite"
   },
   {
     "key": "pizza_palindrome_2009",
     "name": "2009 Pizza Palindromes",
-    "description": "One of N",
+    "description": "Pizza Palindromes mined in late 2009",
     "traits": ["alpha", "pizza"],
     "difficulty": "Zenite"
   },
   {
     "key": "jpeg_palindrome_2010",
     "name": "2010 Jpeg Palindromes",
-    "description": "One of N",
+    "description": "Pizza Palindromes mined in early 2010",
     "traits": ["jpeg", "palindrome", "2010"],
     "difficulty": "Zenite"
   },
   {
     "key": "perfect_palinception_2d",
-    "name": "Perfect Palinceptions 2D",
-    "description": "One of N",
+    "name": "2D Perfect Palinceptions",
+    "description": "Perfect Palinceptions containing only 2 unique digits",
     "traits": ["perfect", "2_digits"],
     "difficulty": "Zenite"
   },
   {
     "key": "paliblock_uncommon_alpha",
     "name": "Paliblock Uncommon Alpha",
-    "description": "One of N",
+    "description": "Alpha Uncommons from a palindromic block",
     "traits": ["palindrome", "uncommon", "alpha"],
     "difficulty": "Zenite"
   }
