@@ -280,7 +280,7 @@ ul.levels {
   
   .book-link h2 {
     margin: 0 0 10px;
-    color: #fff; /* Azure blue */
+    color: #6AA8C3; /* Azure blue */
   }
   
   .progress-bar {
@@ -331,6 +331,7 @@ ul.levels {
   .book-item.gray:hover {
     box-shadow: 0 0 20px #888;
   }
+
 /* My Sats Page */
 .my-sats-container {
   padding: 2rem;
@@ -544,15 +545,7 @@ ul.levels {
   padding: 20px;
 }
 
-.books-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-.book-item {
+.showcase-book-item {
   background-color: #2a2d34;
   border: 2px solid #444;
   border-radius: 8px;
@@ -560,33 +553,38 @@ ul.levels {
   transition: all 0.3s ease;
 }
 
-.book-item:hover {
-  border-color: #6AA8C3;
-  box-shadow: 0 0 20px rgba(106, 168, 195, 0.4);
+.showcase-book-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-.book-link {
-  text-decoration: none;
-  color: white;
+/* Card Colors */
+.showcase-book-item.green {
+  border-color: #037F5E; /* Green for all levels complete */
+  box-shadow: 0 0 10px #037F5E;
 }
 
-.book-link h2 {
-  margin: 0 0 10px;
-  color: #6AA8C3;
+.showcase-book-item.purple {
+  border-color: #C38BFA; /* Purple for at least one level complete */
+  box-shadow: 0 0 10px #C38BFA;
 }
 
-.progress-bar {
-  background-color: #444;
-  border-radius: 8px;
-  height: 10px;
-  overflow: hidden;
-  margin-top: 10px;
+.showcase-book-item.gray {
+  border-color: #888; /* Gray for no levels complete */
+  box-shadow: 0 0 10px #888;
 }
 
-.progress {
-  background-color: #E89A02;
-  height: 100%;
-  transition: width 0.3s ease;
+/* Hover Effects */
+.showcase-book-item.green:hover {
+  box-shadow: 0 0 20px #037F5E;
+}
+
+.showcase-book-item.purple:hover {
+  box-shadow: 0 0 20px #C38BFA;
+}
+
+.showcase-book-item.gray:hover {
+  box-shadow: 0 0 20px #888;
 }
 
 /* Custom styles for Sat Cards */
@@ -595,7 +593,7 @@ ul.levels {
   border: 2px solid #6AA8C3; /* Blue border (existing color) */
   border-radius: 8px;
   color: white;
-  box-shadow: 0 0 15px rgba(106, 168, 195, 0.4); /* Blue glow effect */
+  box-shadow: 0 0 16px rgba(106, 168, 195, 0.8); /* Intensified glow */
   transition: all 0.3s ease;
   height: 100%; /* Ensure full height for Bootstrap grid */
   display: flex;
@@ -606,8 +604,6 @@ ul.levels {
 
 /* Hover Effects */
 .sat-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(106, 168, 195, 0.8); /* Intensified glow */
   border-color: #8bc3fa; /* Lighter blue for hover accent */
 }
 

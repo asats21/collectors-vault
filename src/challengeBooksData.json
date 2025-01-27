@@ -225,5 +225,39 @@
         ]
       }
     ]
+  },
+  {
+    "key": "exotic_pizza",
+    "name": "Exotic Pizza",
+    "difficulty": "Expert",
+    "levels": [
+      {
+        "name": "2009 Palindrome",
+        "requirements": [
+          { "count": 1, "tags": ["2009", "pizza", "palindrome"] }
+        ]
+      },
+      {
+        "name": "Paliblock",
+        "requirements": [
+          { "count": 1, "tags": ["paliblock", "pizza", "palindrome"] }
+        ]
+      }, {
+        "name": "Uniform Palinception",
+        "requirements": [
+          { "count": 1, "tags": ["uniform", "pizza"] }
+        ]
+      }, {
+        "name": "Paliblock palinception",
+        "requirements": [
+          { "count": 1, "tags": ["pizza", "uniform", "paliblock"] }
+        ]
+      }, {
+        "name": "Alpha 420",
+        "requirements": [
+          { "count": 1, "tags": ["alpha", "420"] }
+        ]
+      }
+    ]
   }
 ]

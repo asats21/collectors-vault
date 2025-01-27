@@ -16,6 +16,10 @@ const ShowcaseBooksList = ({ satCollection }) => {
   // Define the order of difficulty tiers
   const difficultyOrder = ['Novice', 'Collector', 'Expert', 'Elite', 'Zenite'];
 
+  const getColor = (matchingSats) => {
+    return matchingSats.length > 0 ? "green" : "gray"; 
+  }
+
   return (
     <div className="showcase-books-page">
       {difficultyOrder.map((difficulty) => (
@@ -29,7 +33,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
               );
 
               return (
-                <li key={book.key} className={`book-item ${book.difficulty.toLowerCase()}`}>
+                <li key={book.key} className={`showcase-book-item ${getColor(matchingSats)}`}>
                   <Link to={`/showcase-books/${book.key}`} className="book-link">
                     <h2>{book.name}</h2>
                     <p>{book.description}</p>
