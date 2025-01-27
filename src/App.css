@@ -382,7 +382,6 @@ ul.levels {
 .sat-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
 }
 
 .sat-tags span {

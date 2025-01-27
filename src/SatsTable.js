@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
-import { FaTrash, FaGem, FaPizzaSlice, FaFont, FaHive, FaDiceTwo, FaDiceThree } from 'react-icons/fa';
+import { FaTrash, FaGem, FaRegGem, FaPizzaSlice, FaFont, FaHive, FaDiceTwo, FaDiceThree } from 'react-icons/fa';
 import { FaBluesky } from "react-icons/fa6";
 
 const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageClick }) => {
 
   // Mapping tags to corresponding Font Awesome icons and colors
   const tagIcons = {
-    alpha: {icon: <FaFont className="icon" />, number: 2 },
-    uncommon: {icon: <FaGem className="icon" />, number: 1 },
-    black_uncommon: {icon: <FaGem className="icon" />, number: 1 },
-    pizza: {icon: <FaPizzaSlice className="icon" />, number: 2 },
-    palindrome: {icon: <FaBluesky className="icon" />, number: 1 },
-    uniform: {icon: <FaBluesky className="icon" />, number: 2 },
-    perfect: {icon: <FaBluesky className="icon" />, number: 3 },
+    alpha: {icon: <FaFont className="icon" style={{color: "#FF6F00"}}/>, number: 2 },
+    uncommon: {icon: <FaGem className="icon" style={{color: "#ED2B9C"}}/>, number: 1 },
+    black_uncommon: {icon: <FaRegGem className="icon" style={{color: '#999'}} />, number: 1 },
+    pizza: {icon: <FaPizzaSlice className="icon" style={{color: '#F2A900'}} />, number: 2 },
+    palindrome: {icon: <FaBluesky className="icon" style={{color: '#118AB2'}}/>, number: 1 },
+    uniform: {icon: <><FaBluesky className="icon" style={{color: '#118AB2'}} /><FaBluesky className="icon" style={{color: '#118AB2'}} /></>, number: 2 },
+    perfect: {icon: <><FaBluesky className="icon" style={{color: '#E89A02'}} /><FaBluesky className="icon" style={{color: '#E89A02'}} /></>, number: 3 },
     paliblock: {icon: <FaHive className="icon" />, number: 10 },
     '2_digits': {icon: <FaDiceTwo className="icon" />, number: 5 },
     '3_digits': {icon: <FaDiceThree className="icon" />, number: 5 },
@@ -35,9 +35,11 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
       })
       .map((item, index) =>
         item.type === 'icon' ? (
-          React.cloneElement(item.icon, { key: index })
+          <span className='me-1'>
+          { React.cloneElement(item.icon, { key: index }) }
+          </span>
         ) : (
-          <span key={item.tag} className={`tag-${item.tag.replace(' ', '-')}`}>
+          <span key={item.tag} className={`tag-${item.tag.replace(' ', '-')} me-1`}>
             {item.tag}
           </span>
         )
