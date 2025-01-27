@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
+import { FaTrash } from 'react-icons/fa';
 
 const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageClick }) => {
   return (
@@ -39,7 +40,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                   className="delete-button fw-bold"
                   onClick={() => handleDelete(sat)}
                 >
-                  &times; {/* Red cross symbol */}
+                  <FaTrash />
                 </button>
                 </td>
               </tr>
