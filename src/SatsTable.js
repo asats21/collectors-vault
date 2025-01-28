@@ -2,7 +2,6 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 import { FaTrash, FaGem, FaRegGem, FaPizzaSlice, FaHourglass, FaCrosshairs, FaImage } from 'react-icons/fa';
 import { FaBluesky } from "react-icons/fa6";
-import { AiOutlineBlock } from "react-icons/ai";
 import { TbAlpha, TbOmega } from "react-icons/tb";
 
 const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageClick }) => {
@@ -19,7 +18,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
     palindrome: {icon: <FaBluesky className="icon" style={{color: '#6AA8C3'}}/>, number: 1 },
     uniform: {icon: <><FaBluesky className="icon" style={{color: '#118AB2'}} /><FaBluesky className="icon" style={{color: '#118AB2'}} /></>, number: 2 },
     perfect: {icon: <><FaBluesky className="icon" style={{color: '#E89A02'}} /><FaBluesky className="icon" style={{color: '#E89A02'}} /></>, number: 3 },
-    paliblock: {icon: <AiOutlineBlock className="icon" />, number: 10 },
+    paliblock: {icon: <FaBluesky className="icon" style={{color: '#118AB2', padding: '1px', border: '1px solid #118AB2'}} />, number: 10 },
     vintage: {icon: <FaHourglass className="icon" style={{color: '#F6BB41'}} />, number: 2 },
     '2_digits': {icon: <div className="fw-bold">2D</div>, number: 5 },
     '3_digits': {icon: <div className="fw-bold">3D</div>, number: 5 },
