@@ -88,10 +88,12 @@ import {
   
       if (isUncommon(satNumber)) {
         updatedCollection[sat].tags.push('uncommon');
+        if (epoch === 0) updatedCollection[sat].tags.push('epoch0');
       }
 
       if (isUncommon(satNumber + 1)) {
         updatedCollection[sat].tags.push('black_uncommon');
+        if (epoch === 0) updatedCollection[sat].tags.push('epoch0');
       }
   
       if (isAlpha(satNumber)) {
@@ -103,11 +105,11 @@ import {
       }
   
       if (blockNumber === 9) {
-        updatedCollection[sat].tags.push('block 9');
+        updatedCollection[sat].tags.push('block_9');
       }
   
       if (blockNumber === 78) {
-        updatedCollection[sat].tags.push('block 78');
+        updatedCollection[sat].tags.push('block_78');
       }
 
       if (year === 2009) {
