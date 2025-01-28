@@ -22,8 +22,11 @@ export const tagWeights = {
     alpha: 10,
     omega: 10,
 
-    '420': 30,
     '2009': 10,
+    'pizza_2009': 50,
+    'pizza_4/20': 30,
+    'jpeg_2010': 50,
+    
     b78: 20,
     b9: 20,
 };

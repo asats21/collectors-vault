@@ -51,11 +51,13 @@ import {
       if (isPizza(satNumber)) {
         updatedCollection[sat].tags.push('pizza');
 
-        if(blockNumber >= 52115 && blockNumber <= 52153) updatedCollection[sat].tags.push('420');
+        if(blockNumber >= 52115 && blockNumber <= 52153) updatedCollection[sat].tags.push('pizza_4/20');
+        if (year === 2009) updatedCollection[sat].tags.push('pizza_2009');
       }
   
       if (isJpeg(satNumber)) {
         updatedCollection[sat].tags.push('jpeg');
+        if (year === 2010) updatedCollection[sat].tags.push('jpeg_2010');
       }
       
       if (isHitman(satNumber)) {
