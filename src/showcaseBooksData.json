@@ -171,7 +171,7 @@
     "key": "paliblock_uncommon_alpha",
     "name": "Paliblock Uncommon Alpha",
     "description": "Alpha Uncommons from a palindromic block",
-    "traits": ["palindrome", "uncommon", "alpha"],
+    "traits": ["paliblock", "uncommon", "alpha"],
     "difficulty": "Zenite"
   }
 ]
