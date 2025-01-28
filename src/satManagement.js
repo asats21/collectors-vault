@@ -1,4 +1,4 @@
-// satUtils.js
+// satManagement.js
 import {
     isPalindrome,
     isPerfectPalinception,

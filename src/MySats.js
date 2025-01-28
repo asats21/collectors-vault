@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { tagWeights } from './tagWeights';
-import { addSatsToCollection, deleteSatFromCollection } from './satUtils';
+import { addSatsToCollection, deleteSatFromCollection } from './satManagement';
 import AddSatsModal from './AddSatsModal';
 import SatsTable from './SatsTable';
 
