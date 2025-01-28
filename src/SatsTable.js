@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate';
 import { FaTrash, FaGem, FaRegGem, FaPizzaSlice, FaHourglass, FaCrosshairs, FaImage } from 'react-icons/fa';
 import { FaBluesky } from "react-icons/fa6";
 import { TbAlpha, TbOmega } from "react-icons/tb";
+import { isPalindrome } from "./Helpers";
 
 const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageClick }) => {
 
@@ -76,7 +77,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                     {renderTags(details.tags)} {/* Call the renderTags function */}
                   </div>
                 </td>
-                <td>{details.block_number}</td>
+                <td><span className={isPalindrome(details.block_number) ? 'table-palindromic-block' : ''}>{details.block_number}</span></td>
                 <td>{details.year}</td>
                 <td>{details.epoch}</td>
                 <td>

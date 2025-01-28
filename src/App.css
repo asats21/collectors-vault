@@ -666,3 +666,8 @@ ul.levels {
 .sat-number {
   letter-spacing: 0.04em;
 }
+
+.table-palindromic-block {
+  color: #118AB2;
+  text-shadow: 0 0 3px #118AB2; /* Intensified glow */
+}
