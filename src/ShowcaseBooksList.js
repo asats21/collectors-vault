@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { renderTags } from "./TagIcons";
 import showcaseBooksData from './showcaseBooksData.json';
 
 const ShowcaseBooksList = ({ satCollection }) => {
@@ -39,7 +40,10 @@ const ShowcaseBooksList = ({ satCollection }) => {
                       <h2 className={`${getColor(matchingSats)} me-1`}>{book.name}</h2>
                       <div className={`fw-bold h3 ${getColor(matchingSats)}`}>{matchingSats.length}</div>
                     </div> 
-                    <p>{book.description}</p>
+                    <div className="sat-tags d-flex justify-content-start">
+                      {renderTags(book.traits)}
+                    </div>
+                    <p class='mt-2'>{book.description}</p>
                   </Link>
                 </li>
               );
