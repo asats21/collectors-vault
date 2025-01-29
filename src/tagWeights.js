@@ -19,6 +19,10 @@ export const tagWeights = {
 
     uncommon: 20,
     black_uncommon: 20,
+
+    pali_uncommon: 50,
+    pali_black_uncommon: 50,
+
     alpha: 10,
     omega: 10,
 

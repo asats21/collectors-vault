@@ -7,6 +7,9 @@ import {
     isOmega,
     getBlock,
     isUncommon,
+    isBlackUncommon,
+    isPalindromicUncommon,
+    isPalindromicBlackUncommon,
     is3Digits,
     is2Digits,
     getSatYear,
@@ -91,11 +94,13 @@ import {
       if (isUncommon(satNumber)) {
         updatedCollection[sat].tags.push('uncommon');
         if (epoch === 0) updatedCollection[sat].tags.push('epoch0');
+        if (isPalindromicUncommon) updatedCollection[sat].tags.push('pali_uncommon');
       }
 
-      if (isUncommon(satNumber + 1)) {
+      if (isBlackUncommon(satNumber)) {
         updatedCollection[sat].tags.push('black_uncommon');
         if (epoch === 0) updatedCollection[sat].tags.push('epoch0');
+        if (isPalindromicBlackUncommon) updatedCollection[sat].tags.push('pali_black_uncommon');
       }
   
       if (isAlpha(satNumber)) {

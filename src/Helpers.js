@@ -130,6 +130,26 @@ export function isUncommon(sat_num) {
     });
 }
 
+export function isBlackUncommon(sat_num) {
+    return isUncommon(sat_num + 1);
+}
+
+export function isPalindromicUncommon(sat_num) {
+    if (!isUncommon(sat_num)) return false;
+
+    let trimmedNum = Number(sat_num.toString().replace(/0+$/, "")); // Remove trailing zeros & convert back to number
+
+    return isPalindrome(trimmedNum);
+}
+
+export function isPalindromicBlackUncommon(sat_num) {
+    if(!isBlackUncommon(sat_num)) return false;
+        
+    let trimmedNum = Number(sat_num.toString().replace(/9+$/, "")); // Remove trailing nines & convert back to number
+
+    return isPalindrome(trimmedNum);
+}
+
 export function is3Digits(sat_num) {
     // Convert the number to a string, then a Set to get unique digits
     const uniqueDigits = new Set(String(sat_num));
