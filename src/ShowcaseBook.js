@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import showcaseBooksData from './showcaseBooksData.json';
 
 import { FaCube } from "react-icons/fa";
+import { renderTags } from "./TagIcons";
 
 const ShowcaseBook = ({ satCollection }) => {
   const { bookKey } = useParams();
@@ -30,15 +31,11 @@ const ShowcaseBook = ({ satCollection }) => {
         {matchingSats.map(([sat, details]) => (
           <div key={sat} className="col">
             <div className="sat-card p-3">
-              <div className="sat-year text-center fw-bold">{details.year} </div>
+              <div className="sat-year text-center fw-bold small">{details.year} </div>
               <div className="sat-number text-center">{sat}</div>
-              <div className="sat-block text-center fw-bold"> <FaCube /> {details.block_number}</div>
-              <div className="sat-tags mt-2">
-                {details.tags.map((tag) => (
-                  <span key={tag} className="badge">
-                    {tag}
-                  </span>
-                ))}
+              <div className="sat-block text-center fw-bold small"> <FaCube /> {details.block_number}</div>
+              <div className="sat-tags mt-3 d-flex justify-content-center">
+                  {renderTags(details.tags)}
               </div>
             </div>
           </div>
