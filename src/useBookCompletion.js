@@ -10,10 +10,12 @@ const useBookCompletion = (bookData, satCollection) => {
         const satsForLevel = Object.entries(satCollection || {}) // Fallback to empty object
           .filter(([sat, details]) => {
             if (!details || !details.tags) return false; // Guard clause
-            const hasRequiredTags = level.requirements.every((req) =>
-              req.tags.every((tag) => details.tags.includes(tag))
-            );
-            return hasRequiredTags;
+        
+            return level.requirements.every((req) => {
+              const hasRequiredTags = req.tags.every((tag) => details.tags.includes(tag));
+              const hasRequiredYears = req.years ? req.years.includes(details.year) : true;
+              return hasRequiredTags && hasRequiredYears;
+            });
           })
           .sort((a, b) => a[1].tags.length - b[1].tags.length);
 
