@@ -47,14 +47,23 @@ const Book = ({ satCollection }) => {
             {level.status === 'complete' && (
               <div className="diamond diamond-full mx-auto mx-md-5">
                 <div className="diamond-content">
-                  <span className="small" style={{'margin-top': '15px'}}>{level.sat}</span>
+                  <span className="small" style={{'marginTop': '15px'}}>{level.sat}</span>
                   <span className="small" style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
                     <FaCube /> {level.block}
                   </span>
                 </div>
               </div>
             )}
-            {level.status === 'blocked' && (
+
+            {level.status === 'incomplete' && (
+              <div className="diamond diamond-empty mx-auto mx-md-5">
+                <div className="diamond-content">
+                  <span className="small" style={{'marginTop': '15px'}}>???</span>
+                </div>
+              </div>
+            )}
+
+            {/* {level.status === 'blocked' && (
               <div className="diamond diamond-blocked mx-auto mx-md-5">
                 <span className="small">{level.sat}</span>
               </div>
@@ -63,12 +72,8 @@ const Book = ({ satCollection }) => {
               <div className="diamond diamond-next mx-auto mx-md-5">
                 <span className="small">???</span>
               </div>
-            )}
-            {level.status === 'incomplete' && (
-              <div className="diamond diamond-empty mx-auto mx-md-5">
-                <span className="small">???</span>
-              </div>
-            )}
+            )} */}
+
           </div>
         </li>
       ))}
