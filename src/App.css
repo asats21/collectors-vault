@@ -96,24 +96,28 @@ ul.levels {
 }
 
 .diamond {
-    width: 120px;
-    height: 120px;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(45deg);
-    font-size: 16px;
-    font-weight: bold;
-    margin: 0; /* Override auto margins for inline placement */
-    text-align: center;
-    position: relative;
-
+  width: 120px;
+  height: 120px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
 }
-  
-.diamond span {
-    transform: rotate(-45deg);
-    display: block;
+
+.diamond-content {
+  position: absolute;
+  inset: 0; /* Ensures full coverage */
+  display: flex;
+  flex-direction: column; /* Aligns spans properly */
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Adjust spacing between spans */
+  transform: rotate(-45deg); /* Keeps text upright */
 }
 
 @keyframes pulse {

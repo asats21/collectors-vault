@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { getBlock } from './Helpers';
+
 const useBookCompletion = (bookData, satCollection) => {
   const [completedLevels, setCompletedLevels] = useState([]);
 
@@ -27,6 +29,7 @@ const useBookCompletion = (bookData, satCollection) => {
           level: level.name,
           isComplete,
           sat: selectedSat,
+          block: getBlock(selectedSat),
           requirements: level.requirements,
         };
       });

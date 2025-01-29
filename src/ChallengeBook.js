@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import challengeBooksData from './challengeBooksData.json'; // JSON file with book data
 import useBookCompletion from './useBookCompletion'; // Import the custom hook
+import { FaCube } from "react-icons/fa";
 
 const Book = ({ satCollection }) => {
   const { bookKey } = useParams(); // Get the book key from the URL
@@ -45,7 +46,12 @@ const Book = ({ satCollection }) => {
             </div>
             {level.status === 'complete' && (
               <div className="diamond diamond-full mx-auto mx-md-5">
-                <span className="small">{level.sat}</span>
+                <div className="diamond-content">
+                  <span className="small" style={{'margin-top': '15px'}}>{level.sat}</span>
+                  <span className="small" style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                    <FaCube /> {level.block}
+                  </span>
+                </div>
               </div>
             )}
             {level.status === 'blocked' && (
