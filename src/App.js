@@ -9,6 +9,7 @@ import ChallengeBooksList from './ChallengeBooksList';  // Import the Challenge 
 import ShowcaseBook from './ShowcaseBook';  // Import your ChallengeBook component
 import ShowcaseBooksList from './ShowcaseBooksList';  // Import the Showcase Books page
 import MySats from './MySats';  // Import the Index page
+import Tests from './Tests';  // Import the Tests page
 
 function App() {
 
@@ -52,6 +53,7 @@ function App() {
           <Route path="/challenge-books/:bookKey" element={<ChallengeBook satCollection={satCollection} />} />
           <Route path="/showcase-books" element={<ShowcaseBooksList satCollection={satCollection} />} />
           <Route path="/showcase-books/:bookKey" element={<ShowcaseBook satCollection={satCollection} />} />
+          <Route path="/tests" element={<Tests />} />
         </Routes>
       </div>
     </Router>
