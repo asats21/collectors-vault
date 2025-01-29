@@ -35,6 +35,13 @@
     "difficulty": "Novice"
   },
   {
+    "key": "black_uncommon_epoch0",
+    "name": "Pre First Halving Black Uncommons",
+    "description": "Black Uncommons mined before the first halving event",
+    "traits": ["black_uncommon", "epoch0"],
+    "difficulty": "Novice"
+  },
+  {
     "key": "palindrome-e1+",
     "name": "Epoch1+ 3D Palindrome",
     "description": "3D Palindromes mined after the first Bitcoin halving, shortly following the 'palindrome extinction event'",
@@ -67,6 +74,13 @@
     "name": "Vintage Paliblock Palindromes",
     "description": "Vintage palindromes featuring a block number that is itself a palindrome",
     "traits": ["vintage", "palindrome", "paliblock"],
+    "difficulty": "Collector"
+  },
+  {
+    "key": "black_uncommon_2009",
+    "name": "2009 Black Uncommons",
+    "description": "Black Uncommons from the year Bitcoin was created",
+    "traits": ["black_uncommon", "2009"],
     "difficulty": "Collector"
   },
   {
@@ -109,7 +123,14 @@
     "name": "Paliblock Alphas",
     "description": "Alphas from a palindromic block",
     "traits": ["alpha", "paliblock"],
-    "difficulty": "Expert"
+    "difficulty": "Collector"
+  },
+  {
+    "key": "omega_paliblock",
+    "name": "Paliblock Omegas",
+    "description": "Omegas from a palindromic block",
+    "traits": ["omega", "paliblock"],
+    "difficulty": "Collector"
   },
   {
     "key": "vintage_palindrome_3d",
@@ -169,9 +190,16 @@
   },
   {
     "key": "paliblock_uncommon_alpha",
-    "name": "Paliblock Uncommon Alpha",
+    "name": "Paliblock Alpha Uncommon",
     "description": "Alpha Uncommons from a palindromic block",
     "traits": ["paliblock", "uncommon", "alpha"],
+    "difficulty": "Zenite"
+  },
+  {
+    "key": "paliblock_black_uncommon_omega",
+    "name": "Paliblock Black Omega Uncommon",
+    "description": "Omega Black Uncommons from a palindromic block",
+    "traits": ["paliblock", "black_uncommon", "omega"],
     "difficulty": "Zenite"
   }
 ]
