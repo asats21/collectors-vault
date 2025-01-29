@@ -33,21 +33,7 @@ const useBookCompletion = (bookData, satCollection) => {
 
       // Step 2: Calculate the status for each level based on the initial array
       const newCompletedLevels = initialLevels.map((level, index) => {
-        const isPreviousLevelComplete =
-          index === 0 || initialLevels[index - 1].isComplete;
-
-        let status;
-        if (level.isComplete && isPreviousLevelComplete) {
-          status = 'complete';
-        } else if (level.isComplete && !isPreviousLevelComplete) {
-          status = 'blocked';
-        } else if (!level.isComplete && isPreviousLevelComplete) {
-          // status = index === 0 ? 'next' : 'progress';
-          status = 'next';
-        } else {
-          status = 'incomplete';
-        }
-
+        const status = level.isComplete ? 'complete' : 'incomplete';
         return {
           ...level,
           status,

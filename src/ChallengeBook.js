@@ -23,8 +23,8 @@ const Book = ({ satCollection }) => {
 
   return (
     <div>
-      <h1>{bookData.name}</h1>
-      <ul className="levels">
+      <h1 className='mt-3'>{bookData.name}</h1>
+      <ul className="levels mt-4">
       {bookLevels.map((level, index) => (
         <li
           key={index}
@@ -33,16 +33,7 @@ const Book = ({ satCollection }) => {
           <div className="level-content pb-5 pb-md-0">
             <div className="py-3 py-md-5">
             <h3 className='ms-2'>
-              {level.level}{' '}
-              {level.status === 'complete'
-                ? '✅' // Green checkmark for complete
-                : level.status === 'blocked'
-                ? '🚫' // Blocked symbol
-                : level.status === 'progress'
-                ? '🔄' // Spinning circle for in progress
-                : level.status === 'next'
-                ? '⏩' // Arrow for next in line
-                : '❌'} {/* Dash for not complete */}
+              {level.level}
             </h3>
             {level.requirements.map(({ count, tags, years }, i) => (
               <li key={i} className='ms-2'>
