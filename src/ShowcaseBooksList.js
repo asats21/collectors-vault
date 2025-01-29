@@ -36,7 +36,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
                 <li key={book.key} className={`showcase-book-item ${getColor(matchingSats)}`}>
                   <Link to={`/showcase-books/${book.key}`} className="book-link">
                     <div className='showcase-book-header d-flex justify-content-between'>
-                      <h2 className={`${getColor(matchingSats)}`}>{book.name}</h2>
+                      <h2 className={`${getColor(matchingSats)} me-1`}>{book.name}</h2>
                       <div className={`fw-bold h3 ${getColor(matchingSats)}`}>{matchingSats.length}</div>
                     </div> 
                     <p>{book.description}</p>
