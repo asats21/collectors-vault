@@ -48,7 +48,14 @@ const Book = ({ satCollection }) => {
               <div className="diamond diamond-full mx-auto mx-md-5">
                 <div className="diamond-content">
                   <span className="small" style={{'marginTop': '15px'}}>{level.sat}</span>
-                  <span className="small" style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                  <span className="small" style={{ 
+                      display: "inline-flex", 
+                      alignItems: "center", 
+                      gap: "4px",
+                      fontSize: "12px",  /* Adjust the size */
+                      lineHeight: "1",    /* Prevent extra spacing */
+                      transform: "scale(0.9)"  /* Shrinks the whole element */
+                    }}>
                     <FaCube /> {level.block}
                   </span>
                 </div>
