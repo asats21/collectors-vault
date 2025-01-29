@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import showcaseBooksData from './showcaseBooksData.json';
+import { isPalindrome } from "./Helpers";
 
 import { FaCube } from "react-icons/fa";
+import { FaBluesky } from "react-icons/fa6";
 import { renderTags } from "./TagIcons";
 
 const ShowcaseBook = ({ satCollection }) => {
@@ -33,7 +35,9 @@ const ShowcaseBook = ({ satCollection }) => {
             <div className="sat-card p-3">
               <div className="sat-year text-center fw-bold small">{details.year} </div>
               <div className="sat-number text-center">{sat}</div>
-              <div className="sat-block text-center fw-bold small"> <FaCube /> {details.block_number}</div>
+              <div className={`sat-block text-center fw-bold small ${isPalindrome(details.block_number) ? 'table-palindromic-block' : ''}`}> 
+                 {isPalindrome(details.block_number) ? <FaBluesky className="icon" style={{color: '#118AB2', padding: '1px', border: '1px solid #118AB2'}}/> : <FaCube />} {details.block_number}
+                </div>
               <div className="sat-tags mt-3 d-flex justify-content-center">
                   {renderTags(details.tags)}
               </div>
