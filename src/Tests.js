@@ -1,4 +1,4 @@
-import { getBlock, isPerfectPalinception } from './Helpers.js';
+import { getBlock, isUniformPalinception, isPerfectPalinception } from './Helpers.js';
 
 const Tests = () => {
 
@@ -47,12 +47,40 @@ const Tests = () => {
     });
   };
 
+  const testIsUniformPalinception = () => {
+    const testData = [
+      { sat: 454202636202454, expected: true },
+      { sat: 746475898574647, expected: true },
+      { sat: 1331833883381331, expected: true },
+
+      { sat: 78323877832387, expected: true },
+      { sat: 1444444114444441, expected: true },
+      { sat: 531355313553135, expected: true },
+
+      { sat: 398340909043893, expected: false },
+    ];
+
+    return testData.map(({ sat, expected }, index) => {
+      const result = isUniformPalinception(sat);
+      const passed = result === expected;
+
+      return (
+        <div key={index} style={{ color: passed ? 'green' : 'red' }}>
+          <h4 style={{marginBottom: '0px'}}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
+          {`Sat: ${sat} → Expected: ${expected}, Got: ${result}`}
+        </div>
+      );
+    });
+  };
+
   return (
     <>
       <h3>GetBlock Test</h3>
       <div>{testGetBlock()}</div>
       <h3>IsPerfectPalinception Test</h3>
       <div>{testIsPerfectPalinception()}</div>
+      <h3>IsUniformPalinception Test</h3>
+      <div>{testIsUniformPalinception()}</div>
     </>
   );
 };
