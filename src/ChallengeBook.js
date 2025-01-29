@@ -32,7 +32,7 @@ const Book = ({ satCollection }) => {
         >
           <div className="level-content pb-5 pb-md-0">
             <div className="py-3 py-md-5">
-            <h3>
+            <h3 className='ms-2'>
               {level.level}{' '}
               {level.status === 'complete'
                 ? '✅' // Green checkmark for complete
@@ -44,13 +44,13 @@ const Book = ({ satCollection }) => {
                 ? '⏩' // Arrow for next in line
                 : '❌'} {/* Dash for not complete */}
             </h3>
-              <ul className="mb-3">
-                {level.requirements.map((req, i) => (
-                  <li key={i}>
-                    At least {req.count} sats with tags: {req.tags.join(', ')}
-                  </li>
-                ))}
-              </ul>
+            {level.requirements.map(({ count, tags, years }, i) => (
+              <li key={i} className='ms-2'>
+                <div>At least {count} sats with:</div>
+                <div>Tags: {tags.join(', ')}</div>
+                {years?.length > 0 && <div>Years: {years.join(', ')}</div>}
+              </li>
+            ))}
             </div>
             {level.status === 'complete' && (
               <div className="diamond diamond-full mx-auto mx-md-5">
