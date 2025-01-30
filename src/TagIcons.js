@@ -19,6 +19,10 @@ export const tagIcons = {
     vintage: {icon: <FaHourglass className="icon" style={{color: '#F6BB41'}} />, number: 2 },
     '2_digits': {icon: <div className="fw-bold">2D</div>, number: 5 },
     '3_digits': {icon: <div className="fw-bold">3D</div>, number: 5 },
+    epoch0: {icon: <div className="fw-bold">E0</div>, number: 10 },
+    'epoch1+': {icon: <div className="fw-bold">E1+</div>, number: 10 },
+    '2009': {icon: <div className="fw-bold">2009</div>, number: 8 },
+    'pali_uncommon': {icon: <><FaGem className="icon" style={{color: "#ED2B9C"}}/>&nbsp;<FaBluesky className="icon" style={{color: '#ED2B9C'}}/></>, number: 2 },
 };
 
 export const renderTags = (tags) => {
