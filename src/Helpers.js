@@ -42,8 +42,13 @@ export function isUniformPalinception(num) {
     let str = num.toString();
     let length = str.length;
 
-    // Try splitting the number into segments of size 3 to 5
-    for (let len = 3; len <= 5; len++) {
+    // The whole number must be a palindrome first
+    if (!isPalindrome(str)) {
+        return false;
+    }
+
+    // Try segment lengths of 3 to 8
+    for (let len of [3, 4, 5, 6, 7, 8]) {
         if (length % len === 0) {
             let numSegments = length / len;
             let allPalindromes = true;
@@ -56,15 +61,14 @@ export function isUniformPalinception(num) {
                 }
             }
 
-            // Check if the whole number is also a palindrome
-            if (allPalindromes && isPalindrome(num)) {
+            if (allPalindromes) {
                 return true;
             }
         }
     }
 
     return false;
-} 
+}
 
 export function getBlock(sat_num) {
     const BTC = 1e8; // Assuming BTC is 100 million satoshis (standard Bitcoin definition)
