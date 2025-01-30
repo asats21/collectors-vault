@@ -1,6 +1,92 @@
-import { getBlock, isUniformPalinception, isPerfectPalinception } from './Helpers.js';
+import { getBlock, isUniformPalinception, isPerfectPalinception, isAlpha, isOmega, isUncommon, isBlackUncommon } from './Helpers.js';
 
 const Tests = () => {
+
+  const testIsAlpha = () => {
+    const testData = [
+      { sat: 541574400000000, expected: true },
+      { sat: 1412373000000000, expected: true },
+
+      { sat: 73929400000, expected: false },
+    ];
+
+    return testData.map(({ sat, expected }, index) => {
+      const result = isAlpha(sat);
+      const passed = result === expected;
+
+      return (
+        <div key={index} style={{ color: passed ? 'green' : 'red' }}>
+          <h4 style={{marginBottom: '0px'}}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
+          {`Sat: ${sat} → Expected: ${expected}, Got: ${result}`}
+        </div>
+      );
+    });
+  };
+
+  const testIsOmega = () => {
+    const testData = [
+      { sat: 1177182999999999, expected: true },
+      { sat: 322135399999999, expected: true },
+
+      { sat: 7889299999, expected: false },
+    ];
+
+    return testData.map(({ sat, expected }, index) => {
+      const result = isOmega(sat);
+      const passed = result === expected;
+
+      return (
+        <div key={index} style={{ color: passed ? 'green' : 'red' }}>
+          <h4 style={{marginBottom: '0px'}}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
+          {`Sat: ${sat} → Expected: ${expected}, Got: ${result}`}
+        </div>
+      );
+    });
+  };
+
+  const testIsUncommon = () => {
+    const testData = [
+      { sat: 61325000000000, expected: true },
+      { sat: 1965623125000000, expected: true },
+
+      { sat: 541574400000000, expected: false },
+      { sat: 73838499400000, expected: false },
+    ];
+
+    return testData.map(({ sat, expected }, index) => {
+      const result = isUncommon(sat);
+      const passed = result === expected;
+
+      return (
+        <div key={index} style={{ color: passed ? 'green' : 'red' }}>
+          <h4 style={{marginBottom: '0px'}}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
+          {`Sat: ${sat} → Expected: ${expected}, Got: ${result}`}
+        </div>
+      );
+    });
+  };
+  
+  const testIsBlackUncommon = () => {
+    const testData = [
+      { sat: 84369999999999, expected: true },
+      { sat: 1981070937499999, expected: true },
+
+      { sat: 322135399999999, expected: false },
+      { sat: 384575699999, expected: false },
+    ];
+
+    return testData.map(({ sat, expected }, index) => {
+      const result = isBlackUncommon(sat);
+      const passed = result === expected;
+
+      return (
+        <div key={index} style={{ color: passed ? 'green' : 'red' }}>
+          <h4 style={{marginBottom: '0px'}}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
+          {`Sat: ${sat} → Expected: ${expected}, Got: ${result}`}
+        </div>
+      );
+    });
+  };
 
   const testGetBlock = () => {
     const testData = [
@@ -75,6 +161,14 @@ const Tests = () => {
 
   return (
     <>
+      <h3>IsAlpha Test</h3>
+      <div>{testIsAlpha()}</div>
+      <h3>IsOmega Test</h3>
+      <div>{testIsOmega()}</div>
+      <h3>IsUncommon Test</h3>
+      <div>{testIsUncommon()}</div>
+      <h3>IsBlackUncommon Test</h3>
+      <div>{testIsBlackUncommon()}</div>
       <h3>GetBlock Test</h3>
       <div>{testGetBlock()}</div>
       <h3>IsPerfectPalinception Test</h3>
