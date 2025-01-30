@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 import ChallengeBook from './ChallengeBook';  // Import your ChallengeBook component
 import ChallengeBooksList from './ChallengeBooksList';  // Import the Challenge Books page
@@ -25,17 +26,18 @@ function App() {
   }, [satCollection]);
 
   function Navigation() {
+    const location = useLocation();
     return (
       <nav>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }}>
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <button className="nav-button my-sats">My Sats</button>
+            <button className={`nav-button my-sats ${location.pathname === "/" ? "active" : ""}`}>My Sats</button>
           </Link>
           <Link to="/showcase-books" style={{ textDecoration: 'none' }}>
-            <button className="nav-button showcase-books">Showcase Books</button>
+            <button className={`nav-button showcase-books ${location.pathname === "/showcase-books" ? "active" : ""}`}>Showcase Books</button>
           </Link>
           <Link to="/challenge-books" style={{ textDecoration: 'none' }}>
-            <button className="nav-button challenge-books">Challenge Books</button>
+            <button className={`nav-button challenge-books ${location.pathname === "/challenge-books" ? "active" : ""}`}>Challenge Books</button>
           </Link>
         </div>
       </nav>

@@ -685,3 +685,9 @@ ul.levels {
   color: #118AB2;
   text-shadow: 0 0 2px #118AB2; /* Intensified glow */
 }
+
+.nav-button.active {
+  text-decoration: underline;
+  text-underline-offset: 4px; /* Adjusts the position of the underline */
+  text-decoration-thickness: 2px; /* Makes the underline bolder */
+}
