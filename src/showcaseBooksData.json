@@ -161,6 +161,20 @@
     "difficulty": "Elite"
   },
   {
+    "key": "pizza_palindrome_2009",
+    "name": "2009 Pizza Palindromes",
+    "description": "Pizza Palindromes mined in late 2009",
+    "traits": ["alpha", "pizza"],
+    "difficulty": "Elite"
+  },
+  {
+    "key": "jpeg_palindrome_2010",
+    "name": "2010 Jpeg Palindromes",
+    "description": "Pizza Palindromes mined in early 2010",
+    "traits": ["jpeg", "palindrome", "2010"],
+    "difficulty": "Elite"
+  },
+  {
     "key": "jpeg_alphas",
     "name": "Jpeg Alphas",
     "description": "First sats of each Bitcoin from the jpeg transaction",
@@ -168,17 +182,10 @@
     "difficulty": "Zenite"
   },
   {
-    "key": "pizza_palindrome_2009",
-    "name": "2009 Pizza Palindromes",
-    "description": "Pizza Palindromes mined in late 2009",
-    "traits": ["alpha", "pizza"],
-    "difficulty": "Zenite"
-  },
-  {
-    "key": "jpeg_palindrome_2010",
-    "name": "2010 Jpeg Palindromes",
-    "description": "Pizza Palindromes mined in early 2010",
-    "traits": ["jpeg", "palindrome", "2010"],
+    "key": "2009_pizza_alphas",
+    "name": "2009 Pizza Alphas",
+    "description": "First sats of each Bitcoin from the famous pizza transaction, mined in late 2009",
+    "traits": ["alpha", "pizza", "2009"],
     "difficulty": "Zenite"
   },
   {
