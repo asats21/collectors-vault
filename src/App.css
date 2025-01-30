@@ -389,12 +389,22 @@ ul.levels {
 }
 
 .sat-tags span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #1e1e1e;
   color: #6AA8C3;
   padding: 0.3rem 0.6rem;
   border-radius: 20px;
   font-size: 0.85rem;
   border: 1px solid #444;
+}
+
+.sat-tags svg {
+  display: block; /* Prevent extra spacing from inline elements */
+  height: 1em; 
+  width: 1em;
+  vertical-align: middle; /* Ensures proper alignment */
 }
 
 /* Delete Button */
