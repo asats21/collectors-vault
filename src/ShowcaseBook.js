@@ -5,7 +5,7 @@ import { isPalindrome } from "./Helpers";
 
 import { FaCube } from "react-icons/fa";
 import { FaBluesky } from "react-icons/fa6";
-import { renderTags } from "./TagIcons";
+import { RenderTags } from "./RenderTags";
 
 const ShowcaseBook = ({ satCollection }) => {
   const { bookKey } = useParams();
@@ -45,7 +45,7 @@ const ShowcaseBook = ({ satCollection }) => {
                 </span>
               </div>
               <div className="sat-tags mt-3 d-flex justify-content-center" style={{"row-gap": "0.5rem"}}>
-                  {renderTags(details.tags)}
+                <RenderTags tags={details.tags} />
               </div>
             </div>
           </div>

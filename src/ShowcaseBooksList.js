@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect } from "react";
 import { Link } from 'react-router-dom';
-import { renderTags } from "./TagIcons";
+import { RenderTags } from "./RenderTags";
 import showcaseBooksData from './showcaseBooksData.json';
 import { RiNumbersFill } from "react-icons/ri";
 import { CgSearchFound } from "react-icons/cg";
@@ -54,7 +54,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
 
                     <div className='d-flex justify-content-between'>
                       <div className="sat-tags d-flex justify-content-start">
-                        {renderTags(book.traits)}
+                        <RenderTags tags={book.traits} />
                       </div>
                       { book.supply && 
                         <div className="fw-bold">

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactPaginate from 'react-paginate';
 import { FaTrash } from 'react-icons/fa';
 import { isPalindrome } from "./Helpers";
-import { renderTags } from "./TagIcons";
+import { RenderTags } from "./RenderTags";
 
 const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageClick }) => {
 
@@ -28,7 +28,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                 <td>#{sat}</td>
                 <td>
                   <div className="sat-tags">
-                    {renderTags(details.tags)} {/* Call the renderTags function */}
+                    <RenderTags tags={details.tags} />
                   </div>
                 </td>
                 <td><span className={isPalindrome(details.block_number) ? 'table-palindromic-block' : ''}>{details.block_number}</span></td>
