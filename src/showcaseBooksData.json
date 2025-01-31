@@ -20,6 +20,7 @@
     "description": "Palindromes from the first 1,000 Bitcoin blocks",
     "traits": ["vintage", "palindrome"],
     "supply": "6M",
+    "found": "21K",
     "difficulty": "Novice"
   },
   {
@@ -28,6 +29,7 @@
     "description": "Alphas from 2009, the year Bitcoin began to shape its early legacy",
     "traits": ["2009", "alpha"],
     "supply": "1,6M",
+    "found": "8K",
     "difficulty": "Novice"
   },
   {
@@ -36,14 +38,16 @@
     "description": "Palindromes consisting of just 3 repeated digits",
     "traits": ["3_digits", "palindrome"],
     "supply": "1,2M",
+    "found": "24K",
     "difficulty": "Novice"
   },
   {
     "key": "black_uncommon_epoch0",
-    "name": "Pre First Halving Black Uncommons",
+    "name": "Pre-First Halving Black Uncommons",
     "description": "Black Uncommons mined before the first halving event",
     "traits": ["black_uncommon", "epoch0"],
     "supply": "210K",
+    "found": "13K",
     "difficulty": "Novice"
   },
   {
@@ -72,10 +76,11 @@
   },
   {
     "key": "uncommon_epoch0",
-    "name": "Pre First Halving Uncommons",
+    "name": "Pre-First Halving Uncommons",
     "description": "Uncommons mined before the first halving event",
     "traits": ["uncommon", "epoch0"],
     "supply": "210K",
+    "found": "16K",
     "difficulty": "Collector"
   },
   {
@@ -84,6 +89,7 @@
     "description": "Vintage palindromes featuring a block number that is itself a palindrome",
     "traits": ["vintage", "palindrome", "paliblock"],
     "supply": "1,1M",
+    "found": "2K",
     "difficulty": "Collector"
   },
   {
@@ -230,10 +236,17 @@
   },
   {
     "key": "paliblock_black_uncommon_omega",
-    "name": "Paliblock Black Omega Uncommon",
+    "name": "Paliblock Omega Black Uncommon",
     "description": "Omega Black Uncommons from a palindromic block",
     "traits": ["paliblock", "black_uncommon", "omega"],
     "supply": "1,602",
+    "difficulty": "Zenite"
+  },
+  {
+    "key": "palindromic_uncommon",
+    "name": "Palindromic Uncommon",
+    "description": "Uncommons which resemble a palindrome, e.g. 123210000000000",
+    "traits": ["pali_uncommon"],
     "difficulty": "Zenite"
   }
 ]

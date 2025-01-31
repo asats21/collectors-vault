@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { renderTags } from "./TagIcons";
 import showcaseBooksData from './showcaseBooksData.json';
 import { RiNumbersFill } from "react-icons/ri";
+import { CgSearchFound } from "react-icons/cg";
 import { Tooltip } from "bootstrap";
 
 const ShowcaseBooksList = ({ satCollection }) => {
@@ -58,8 +59,13 @@ const ShowcaseBooksList = ({ satCollection }) => {
                       { book.supply && 
                         <div className="fw-bold">
                           <span data-bs-toggle="tooltip" data-bs-placement="top" title="Total Supply">
-                            <RiNumbersFill /> { book.supply }
+                            <RiNumbersFill />{ book.supply }
                           </span>
+                          { book.found && 
+                            <span className='ms-1' data-bs-toggle="tooltip" data-bs-placement="top" title="Found">
+                              <CgSearchFound />{ book.found }
+                            </span>
+                          }
                         </div>
                       }
                     </div>
