@@ -23,6 +23,7 @@ export const tagIcons = {
     'epoch1+': {icon: <div className="fw-bold">E1+</div>, number: 10 },
     '2009': {icon: <div className="fw-bold">2009</div>, number: 8 },
     'pali_uncommon': {icon: <><FaGem className="icon" style={{color: "#ED2B9C"}}/>&nbsp;<FaBluesky className="icon" style={{color: '#ED2B9C'}}/></>, number: 2 },
+    'pali_black_uncommon': {icon: <><FaRegGem className="icon" style={{color: "#999"}}/>&nbsp;<FaBluesky className="icon" style={{color: '#999'}}/></>, number: 2 },
 };
 
 export const renderTags = (tags) => {
