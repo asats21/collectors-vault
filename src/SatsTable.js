@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate';
 import { FaTrash } from 'react-icons/fa';
 import { isPalindrome } from "./Helpers";
 import { RenderTags } from "./RenderTags";
+import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 
 const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageClick }) => {
 
@@ -25,7 +26,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
             {currentSats.map(({ sat, details, weightSum }, index) => (
               <tr key={sat}>
                 <td>{offset + index + 1}</td>
-                <td>#{sat}</td>
+                <td>{isRodarmorName(sat) ? getRodarmorName(sat) : '#' + sat}</td>
                 <td>
                   <div className="sat-tags">
                     <RenderTags tags={details.tags} />

@@ -18,6 +18,7 @@ import {
   import { isPizza } from './Pizza';
   import { isJpeg } from './Jpeg';
   import { isHitman } from './Hitman';
+  import { isRodarmorName } from './RodarmorNames.js';
   
   /**
    * Adds new sats to the collection and tags them based on their properties.
@@ -122,6 +123,11 @@ import {
       if (year === 2009) {
         updatedCollection[sat].tags.push('2009');
       }
+
+      if (isRodarmorName(satNumber)) {
+        updatedCollection[sat].tags.push('rodarmor_name');
+      }
+
     });
   
     return updatedCollection;

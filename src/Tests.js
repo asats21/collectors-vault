@@ -1,4 +1,5 @@
 import { getBlock, isUniformPalinception, isPerfectPalinception, isAlpha, isOmega, isUncommon, isBlackUncommon } from './Helpers.js';
+import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 
 const Tests = () => {
 
@@ -159,6 +160,46 @@ const Tests = () => {
     });
   };
 
+  const testIsRodarmorName = () => {
+    const testData = [
+      { sat: 1846358422272101, expected: true },
+      { sat: 6686728801179, expected: true },
+
+      { sat: 398340909043893, expected: false },
+    ];
+
+    return testData.map(({ sat, expected }, index) => {
+      const result = isRodarmorName(sat);
+      const passed = result === expected;
+
+      return (
+        <div key={index} style={{ color: passed ? 'green' : 'red' }}>
+          <h4 style={{marginBottom: '0px'}}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
+          {`Sat: ${sat} → Expected: ${expected}, Got: ${result}`}
+        </div>
+      );
+    });
+  };
+
+  const testGetRodarmorName = () => {
+    const testData = [
+      { sat: 996607730538391, expected: "guesthouses" },
+      { sat: 1811516515494097, expected: "backpacking" },
+    ];
+
+    return testData.map(({ sat, expected }, index) => {
+      const result = getRodarmorName(sat);
+      const passed = result === expected;
+
+      return (
+        <div key={index} style={{ color: passed ? 'green' : 'red' }}>
+          <h4 style={{marginBottom: '0px'}}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
+          {`Sat: ${sat} → Expected: ${expected}, Got: ${result}`}
+        </div>
+      );
+    });
+  };
+
   return (
     <>
       <h3>IsAlpha Test</h3>
@@ -175,6 +216,9 @@ const Tests = () => {
       <div>{testIsPerfectPalinception()}</div>
       <h3>IsUniformPalinception Test</h3>
       <div>{testIsUniformPalinception()}</div>
+      <h3>Rodarmor Name Test</h3>
+      <div>{testIsRodarmorName()}</div>
+      <div>{testGetRodarmorName()}</div>
     </>
   );
 };
