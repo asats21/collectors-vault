@@ -183,7 +183,7 @@
     "key": "pizza_palindrome_420",
     "name": "420 Pizza Palindromes",
     "description": "Pizza Palindromes mined on April 20, 2010",
-    "traits": ["palindrome", "pizza", "420"],
+    "traits": ["palindrome", "pizza", "pizza_4/20"],
     "supply": "1,600",
     "difficulty": "Elite"
   },
@@ -206,8 +206,8 @@
   {
     "key": "jpeg_palindrome_2010",
     "name": "2010 Jpeg Palindromes",
-    "description": "Pizza Palindromes mined in early 2010",
-    "traits": ["jpeg", "palindrome", "2010"],
+    "description": "Jpeg Palindromes mined in early 2010",
+    "traits": ["jpeg", "palindrome", "jpeg_2010"],
     "supply": "5,000",
     "difficulty": "Elite"
   },
