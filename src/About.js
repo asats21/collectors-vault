@@ -4,11 +4,11 @@ const Tests = () => {
     <div className="my-sats-container">
       <h1>About this project</h1>
       <p>
-        This site was created as a proof of concept for rare sat collectors. It’s based on my experience in the space and my thoughts on what collectors in this area might need.
+        This site was created as a proof of concept, based on my experience in the space and my thoughts on what rare sat collectors might need.
       </p>
 
       <p>
-        We need tools and services to:
+        Rare sat collectors need tools and services to:
       </p>
       
       <ul>
