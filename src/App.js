@@ -11,6 +11,7 @@ import ShowcaseBook from './ShowcaseBook';  // Import your ChallengeBook compone
 import ShowcaseBooksList from './ShowcaseBooksList';  // Import the Showcase Books page
 import MySats from './MySats';  // Import the Index page
 import Tests from './Tests';  // Import the Tests page
+import About from './About';  // Import the About page
 
 function App() {
 
@@ -55,8 +56,25 @@ function App() {
           <Route path="/challenge-books/:bookKey" element={<ChallengeBook satCollection={satCollection} />} />
           <Route path="/showcase-books" element={<ShowcaseBooksList satCollection={satCollection} />} />
           <Route path="/showcase-books/:bookKey" element={<ShowcaseBook satCollection={satCollection} />} />
+          <Route path="/about" element={<About />} />
           <Route path="/tests" element={<Tests />} />
         </Routes>
+      
+        {/* Footer */}
+        <footer className="footer-nav text-center pt-5">
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }} className='mb-5'>
+            <Link to="/about" style={{ textDecoration: 'none' }}>
+              <button className="nav-button-footer about">
+                About
+              </button>
+            </Link>
+            <a href="https://asats21.github.io/rare-stats/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <button className="nav-button-footer rarity">
+                Rare Stats
+              </button>
+            </a>
+          </div>
+        </footer>
       </div>
     </Router>
   );
