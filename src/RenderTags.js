@@ -3,8 +3,12 @@ import { FaGem, FaRegGem, FaPizzaSlice, FaHourglass, FaCrosshairs, FaImage, FaBo
 import { FaBluesky } from "react-icons/fa6";
 import { TbAlpha, TbOmega } from "react-icons/tb";
 import { Tooltip } from "bootstrap";
+import { PiNumberNineFill } from "react-icons/pi";
 
 export const tagIcons = {
+    block_9: { icon: <PiNumberNineFill  className="icon" style={{ color: "#fff" }} />, number: 2, tooltip: "First transaction block" },
+    "450x": { icon: <div className="fw-bold">450x</div>, number: 1, tooltip: "The first Bitcoin in the very first transaction" },
+
     alpha: { icon: <TbAlpha className="icon" style={{ color: "#FF6F00" }} />, number: 2, tooltip: "Alpha" },
     omega: { icon: <TbOmega className="icon" style={{ color: "#118AB2" }} />, number: 2, tooltip: "Omega" },
     uncommon: { icon: <FaGem className="icon" style={{ color: "#ED2B9C" }} />, number: 1, tooltip: "Uncommon" },

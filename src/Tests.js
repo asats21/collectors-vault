@@ -1,5 +1,5 @@
 import { getBlock, isUniformPalinception, isPerfectPalinception, isAlpha, isOmega, isUncommon, isBlackUncommon, 
-getSubPaliLength, displayUniformPalinception, getUniformPalinceptionStructure } from './Helpers.js';
+getSubPaliLength, displayUniformPalinception, getUniformPalinceptionStructure, is450x } from './Helpers.js';
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 
 const Tests = () => {
@@ -268,6 +268,25 @@ const Tests = () => {
     });
   };
 
+  const testIs450x = () => {
+    const testData = [
+      { sat: 45080708054, expected: true },
+      { sat: 45180708054, expected: false },
+    ];
+
+    return testData.map(({ sat, expected }, index) => {
+      const result = is450x(sat);
+      const passed = result === expected;
+
+      return (
+        <div key={index} style={{ color: passed ? 'green' : 'red' }}>
+          <h4 style={{marginBottom: '0px'}}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
+          {`Sat: ${sat} → Expected: ${expected}, Got: ${result}`}
+        </div>
+      );
+    });
+  };
+
   return (
     <>
       <h3>IsAlpha Test</h3>
@@ -291,6 +310,8 @@ const Tests = () => {
       <h3>Rodarmor Name Test</h3>
       <div>{testIsRodarmorName()}</div>
       <div>{testGetRodarmorName()}</div>
+      <h3>450x Test</h3>
+      <div>{testIs450x()}</div>
     </>
   );
 };

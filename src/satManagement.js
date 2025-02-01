@@ -14,7 +14,8 @@ import {
     is2Digits,
     getSatYear,
     getEpoch,
-    getUniformPalinceptionStructure
+    getUniformPalinceptionStructure,
+    is450x
   } from './Helpers';
   import { isPizza } from './Pizza';
   import { isJpeg } from './Jpeg';
@@ -116,6 +117,7 @@ import {
   
       if (blockNumber === 9) {
         updatedCollection[sat].tags.push('block_9');
+        if(is450x(satNumber)) updatedCollection[sat].tags.push('450x');
       }
   
       if (blockNumber === 78) {

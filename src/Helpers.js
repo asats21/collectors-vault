@@ -272,3 +272,7 @@ export function getSatYear(blockNum) {
 export const getEpoch = (blockNumber) => {
     return Math.floor(blockNumber / 210000);
 };
+
+export const is450x = (sat_num) => {
+    return sat_num >= 45000000000 && sat_num < 45100000000;
+  };
