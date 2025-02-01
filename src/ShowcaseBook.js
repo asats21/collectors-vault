@@ -46,7 +46,7 @@ const ShowcaseBook = ({ satCollection }) => {
                   } {details.block_number}
                 </span>
               </div>
-              <div className="sat-tags mt-3 d-flex justify-content-center" style={{"row-gap": "0.5rem"}}>
+              <div className="sat-tags mt-3 d-flex justify-content-center" style={{"rowGap": "0.5rem"}}>
                 <RenderTags tags={details.tags} />
               </div>
             </div>
