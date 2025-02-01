@@ -101,6 +101,15 @@
     "difficulty": "Collector"
   },
   {
+    "key": "rodarmor_name",
+    "name": "Rodarmor Name",
+    "description": "Sat names featured in the Ordinal Bounty 3, a challenge rewarding hunters for discovering names based on the Google Books dataset",
+    "traits": ["rodarmor_name"],
+    "supply": "12,450",
+    "found": "1K",
+    "difficulty": "Collector"
+  },
+  {
     "key": "perfect_palinceptions",
     "name": "Perfect Palinceptions",
     "description": "Perfect palinceptions, made up of identical smaller palindromes of equal length, creating a flawlessly symmetrical and balanced sequence",

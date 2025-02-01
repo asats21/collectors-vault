@@ -24,7 +24,7 @@ export const tagIcons = {
     "2009": { icon: <div className="fw-bold">2009</div>, number: 8, tooltip: "Mined in 2009" },
     pali_uncommon: { icon: <><FaGem className="icon" style={{ color: "#ED2B9C" }} />&nbsp;<FaBluesky className="icon" style={{ color: "#ED2B9C" }} /></>, number: 2, tooltip: "Palindromic Uncommon" },
     pali_black_uncommon: { icon: <><FaRegGem className="icon" style={{ color: "#999" }} />&nbsp;<FaBluesky className="icon" style={{ color: "#999" }} /></>, number: 2, tooltip: "Palindromic Black Uncommon" },
-    rodarmor_name: { icon: <FaBook className="icon" style={{ color: "#E89A02" }} />, number: 1, tooltip: "Rodarmor Name" },
+    rodarmor_name: { icon: <FaBook className="icon" style={{ color: "#F6BB41" }} />, number: 1, tooltip: "Rodarmor Name" },
 };
 
 export function RenderTags({ tags }) {
