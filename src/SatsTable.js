@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 import { FaTrash } from 'react-icons/fa';
-import { isPalindrome } from "./Helpers";
+import { isPalindrome, getSubPaliLength, displayUniformPalinception } from "./Helpers";
 import { RenderTags } from "./RenderTags";
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 
@@ -26,7 +26,19 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
             {currentSats.map(({ sat, details, weightSum }, index) => (
               <tr key={sat}>
                 <td>{offset + index + 1}</td>
-                <td>{isRodarmorName(sat) ? getRodarmorName(sat) : '#' + sat}</td>
+                <td>
+                  {(() => {
+                    const subPaliLength = getSubPaliLength(sat);
+                    if (subPaliLength) {
+                      return displayUniformPalinception(sat, subPaliLength);
+                    }
+                    if(isRodarmorName(sat)) {
+                      return getRodarmorName(sat);
+                    }
+
+                    return '#' + sat;
+                  })()}
+                </td>
                 <td>
                   <div className="sat-tags">
                     <RenderTags tags={details.tags} />

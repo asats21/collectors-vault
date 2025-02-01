@@ -70,6 +70,53 @@ export function isUniformPalinception(num) {
     return false;
 }
 
+export function getSubPaliLength(num) {
+    if (!isUniformPalinception(num)) {
+        return null;
+    }
+
+    let str = num.toString();
+    let length = str.length;
+
+    for (let len of [3, 4, 5, 6, 7, 8]) {
+        if (length % len === 0) {
+            let numSegments = length / len;
+            let allPalindromes = true;
+
+            for (let i = 0; i < numSegments; i++) {
+                let segment = str.slice(i * len, (i + 1) * len);
+                if (!isPalindrome(segment)) {
+                    allPalindromes = false;
+                    break;
+                }
+            }
+
+            if (allPalindromes) {
+                return len; // Return the first valid sub-palindrome length
+            }
+        }
+    }
+
+    return null;
+}
+
+export function displayUniformPalinception(sat_num) {
+    let subPaliLength = getSubPaliLength(sat_num);
+    if (!subPaliLength) {
+        return sat_num.toString(); // If not uniform, return as is
+    }
+
+    let str = sat_num.toString();
+    let numSegments = str.length / subPaliLength;
+    let segments = [];
+
+    for (let i = 0; i < numSegments; i++) {
+        segments.push(str.slice(i * subPaliLength, (i + 1) * subPaliLength));
+    }
+
+    return segments.join('-'); // Return formatted uniform palinception
+}
+
 export function getBlock(sat_num) {
     const BTC = 1e8; // Assuming BTC is 100 million satoshis (standard Bitcoin definition)
     const BLOCKS = 210000; // Number of blocks per halving epoch (standard for Bitcoin)
