@@ -117,6 +117,14 @@ export function displayUniformPalinception(sat_num) {
     return segments.join('-'); // Return formatted uniform palinception
 }
 
+export function getUniformPalinceptionStructure(sat_num) {
+    const subPaliLength = getSubPaliLength(sat_num);
+    if (!subPaliLength) return null;
+
+    const numSegments = sat_num.toString().length / subPaliLength;
+    return Array(numSegments).fill(subPaliLength).join('-');
+}
+
 export function getBlock(sat_num) {
     const BTC = 1e8; // Assuming BTC is 100 million satoshis (standard Bitcoin definition)
     const BLOCKS = 210000; // Number of blocks per halving epoch (standard for Bitcoin)

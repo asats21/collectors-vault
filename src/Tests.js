@@ -1,5 +1,5 @@
 import { getBlock, isUniformPalinception, isPerfectPalinception, isAlpha, isOmega, isUncommon, isBlackUncommon, 
-getSubPaliLength, displayUniformPalinception } from './Helpers.js';
+getSubPaliLength, displayUniformPalinception, getUniformPalinceptionStructure } from './Helpers.js';
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 
 const Tests = () => {
@@ -227,6 +227,28 @@ const Tests = () => {
     });
   };
 
+  const testGetUniformPalinceptionStructure = () => {
+    const testData = [
+      { sat: 1950059119500591, expected: "8-8" },
+      { sat: 78323877832387, expected: "7-7" },
+      { sat: 891988919889198, expected: "5-5-5" },
+      { sat: 1221122112211221, expected: "4-4-4-4" },
+      { sat: 121565888565121, expected: "3-3-3-3-3" },
+    ];
+
+    return testData.map(({ sat, expected }, index) => {
+      const result = getUniformPalinceptionStructure(sat);
+      const passed = result === expected;
+
+      return (
+        <div key={index} style={{ color: passed ? 'green' : 'red' }}>
+          <h4 style={{marginBottom: '0px'}}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
+          {`Sat: ${sat} → Expected: ${expected}, Got: ${result}`}
+        </div>
+      );
+    });
+  };
+
   const testGetRodarmorName = () => {
     const testData = [
       { sat: 996607730538391, expected: "guesthouses" },
@@ -265,6 +287,7 @@ const Tests = () => {
       <h3>UniformPalinception Test</h3>
       <div>{testGetSubPaliLength()}</div>
       <div>{testDisplayUniformPalinception()}</div>
+      <div>{testGetUniformPalinceptionStructure()}</div>
       <h3>Rodarmor Name Test</h3>
       <div>{testIsRodarmorName()}</div>
       <div>{testGetRodarmorName()}</div>

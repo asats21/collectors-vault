@@ -13,7 +13,8 @@ import {
     is3Digits,
     is2Digits,
     getSatYear,
-    getEpoch
+    getEpoch,
+    getUniformPalinceptionStructure
   } from './Helpers';
   import { isPizza } from './Pizza';
   import { isJpeg } from './Jpeg';
@@ -78,6 +79,7 @@ import {
   
       if (isUniformPalinception(satNumber)) {
         updatedCollection[sat].tags.push('uniform');
+        updatedCollection[sat].tags.push(getUniformPalinceptionStructure(satNumber));
       }
   
       if (isPerfectPalinception(satNumber)) {
