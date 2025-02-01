@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import showcaseBooksData from './showcaseBooksData.json';
 import { isPalindrome } from "./Helpers";
-
+import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 import { FaCube } from "react-icons/fa";
 import { FaBluesky } from "react-icons/fa6";
 import { RenderTags } from "./RenderTags";
@@ -34,7 +34,9 @@ const ShowcaseBook = ({ satCollection }) => {
           <div key={sat} className="col">
             <div className="sat-card p-3">
               <div className="sat-year text-center fw-bold small">{details.year} </div>
-              <div className="sat-number text-center">{sat}</div>
+              <div className="sat-number text-center">
+                {isRodarmorName(sat) ? getRodarmorName(sat) : sat}
+              </div>
               <div className={`sat-block text-center fw-bold small ${isPalindrome(details.block_number) ? 'table-palindromic-block' : ''}`}> 
                 <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
                   {isPalindrome(details.block_number) ? 
