@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { RenderTags } from "./RenderTags";
 import showcaseBooksData from './showcaseBooksData.json';
@@ -8,28 +7,34 @@ import { CgSearchFound } from "react-icons/cg";
 import { Tooltip } from "bootstrap";
 
 const ShowcaseBooksList = ({ satCollection }) => {
+  const [loading, setLoading] = useState(true);
+  const [matchedSats, setMatchedSats] = useState({});
 
   useEffect(() => {
-    // Initialize Bootstrap tooltips
-    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-    tooltipTriggerList.forEach((tooltipEl) => new Tooltip(tooltipEl));
-  }, []);
+    // Initialize Bootstrap tooltips once
+    setTimeout(() => {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+      tooltipTriggerList.forEach((tooltipEl) => new Tooltip(tooltipEl));
+    }, 100);
 
-  // Group books by difficulty
-  const groupedBooks = showcaseBooksData.reduce((acc, book) => {
-    const difficulty = book.difficulty;
-    if (!acc[difficulty]) {
-      acc[difficulty] = [];
-    }
-    acc[difficulty].push(book);
-    return acc;
-  }, {});
+    // Process SAT matches outside of render
+    const satMatches = {};
+    showcaseBooksData.forEach((book) => {
+      satMatches[book.key] = Object.entries(satCollection).filter(([_, details]) =>
+        book.traits.every((trait) => details.tags.includes(trait))
+      );
+    });
+    setMatchedSats(satMatches);
+    setLoading(false);
+  }, [satCollection]);
 
-  // Define the order of difficulty tiers
+  // Define difficulty order
   const difficultyOrder = ['Novice', 'Collector', 'Expert', 'Elite', 'Zenite'];
 
-  const getColor = (matchingSats) => {
-    return matchingSats.length > 0 ? "purple" : "gray"; 
+  const getColor = (matchingSats) => (matchingSats.length > 0 ? "purple" : "gray");
+
+  if (loading) {
+    return <div className="text-center mt-5"><div className="spinner-border text-primary" role="status"></div></div>;
   }
 
   return (
@@ -38,32 +43,28 @@ const ShowcaseBooksList = ({ satCollection }) => {
         <div key={difficulty} className="difficulty-tier">
           <h2>{difficulty}</h2>
           <ul className="books-list">
-            {groupedBooks[difficulty]?.map((book) => {
-              // Filter SATs that match the book's traits
-              const matchingSats = Object.entries(satCollection).filter(([sat, details]) =>
-                book.traits.every((trait) => details.tags.includes(trait))
-              );
-
-              return (
-                <li key={book.key} className={`showcase-book-item ${getColor(matchingSats)}`}>
+            {showcaseBooksData
+              .filter((book) => book.difficulty === difficulty)
+              .map((book) => (
+                <li key={book.key} className={`showcase-book-item ${getColor(matchedSats[book.key])}`}>
                   <Link to={`/showcase-books/${book.key}`} className="book-link">
                     <div className='showcase-book-header d-flex justify-content-between'>
-                      <h2 className={`${getColor(matchingSats)} me-1`}>{book.name}</h2>
-                      <div className={`fw-bold h3 ${getColor(matchingSats)}`}>{matchingSats.length}</div>
-                    </div> 
+                      <h2 className={`${getColor(matchedSats[book.key])} me-1`}>{book.name}</h2>
+                      <div className={`fw-bold h3 ${getColor(matchedSats[book.key])}`}>{matchedSats[book.key].length}</div>
+                    </div>
 
                     <div className='d-flex justify-content-between'>
                       <div className="sat-tags d-flex justify-content-start">
                         <RenderTags tags={book.traits} />
                       </div>
-                      { book.supply && 
+                      {book.supply &&
                         <div className="fw-bold">
                           <span data-bs-toggle="tooltip" data-bs-placement="top" title="Total Supply">
-                            <RiNumbersFill />{ book.supply }
+                            <RiNumbersFill />{book.supply}
                           </span>
-                          { book.found && 
+                          {book.found &&
                             <span className='ms-1' data-bs-toggle="tooltip" data-bs-placement="top" title="Found">
-                              <CgSearchFound />{ book.found }
+                              <CgSearchFound />{book.found}
                             </span>
                           }
                         </div>
@@ -73,8 +74,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
                     <p className='mt-2'>{book.description}</p>
                   </Link>
                 </li>
-              );
-            })}
+              ))}
           </ul>
         </div>
       ))}
