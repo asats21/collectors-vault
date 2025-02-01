@@ -45,36 +45,42 @@ function App() {
     );
   }
 
+  function Footer() {
+    return (
+      <footer className="footer-nav text-center pt-5">
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }} className='mb-5'>
+          <Link to="/about" style={{ textDecoration: 'none' }}>
+            <button className="nav-button-footer about">
+              About
+            </button>
+          </Link>
+          <a href="https://asats21.github.io/rare-stats/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <button className="nav-button-footer rarity">
+              Rare Stats
+            </button>
+          </a>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <Router>
-      <div className="container my-5">
-        <h1 className="text-center mb-4">Sat Collector's Vault</h1>
-        <Navigation/>
-        <Routes>
-          <Route path="/" element={<MySats satCollection={satCollection} setSatCollection={setSatCollection} />} />
-          <Route path="/challenge-books" element={<ChallengeBooksList satCollection={satCollection} />} />
-          <Route path="/challenge-books/:bookKey" element={<ChallengeBook satCollection={satCollection} />} />
-          <Route path="/showcase-books" element={<ShowcaseBooksList satCollection={satCollection} />} />
-          <Route path="/showcase-books/:bookKey" element={<ShowcaseBook satCollection={satCollection} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/tests" element={<Tests />} />
-        </Routes>
-      
-        {/* Footer */}
-        <footer className="footer-nav text-center pt-5">
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }} className='mb-5'>
-            <Link to="/about" style={{ textDecoration: 'none' }}>
-              <button className="nav-button-footer about">
-                About
-              </button>
-            </Link>
-            <a href="https://asats21.github.io/rare-stats/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-              <button className="nav-button-footer rarity">
-                Rare Stats
-              </button>
-            </a>
-          </div>
-        </footer>
+      <div className="app-container">
+        <div className="container my-5">
+          <h1 className="text-center mb-4">Sat Collector's Vault</h1>
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<MySats satCollection={satCollection} setSatCollection={setSatCollection} />} />
+            <Route path="/challenge-books" element={<ChallengeBooksList satCollection={satCollection} />} />
+            <Route path="/challenge-books/:bookKey" element={<ChallengeBook satCollection={satCollection} />} />
+            <Route path="/showcase-books" element={<ShowcaseBooksList satCollection={satCollection} />} />
+            <Route path="/showcase-books/:bookKey" element={<ShowcaseBook satCollection={satCollection} />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/tests" element={<Tests />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
     </Router>
   );

@@ -39,6 +39,23 @@ color: #fff;
 border: none;
 }
 
+/* Ensure the entire page takes up at least full viewport height */
+html, body, #root, .app-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* The content container should take up all available space */
+.container {
+  flex: 1;
+}
+
+/* Footer stays at the bottom */
+.footer-nav {
+  width: 100%;
+}
+
 /* Custom styles for the books page */
 h2 {
     font-family: 'Arial', sans-serif;
