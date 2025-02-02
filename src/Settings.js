@@ -85,22 +85,28 @@ const Settings = ({ satCollection, setSatCollection }) => {
           theme="dark"
         />
         {error && <p className="text-danger mt-2">{error}</p>}
-        <button className="nav-button save-books mt-3" onClick={handleSaveBooks}>
-          Save Books
-        </button>
+        <div className="d-flex mt-3">
+
+          <button className="nav-button save-books me-3" onClick={handleSaveBooks}>
+            Save Books
+          </button>
+
+          <button
+            className="nav-button help-toggle"
+            data-bs-toggle="collapse"
+            data-bs-target="#json-help"
+            aria-expanded="false"
+            aria-controls="json-help"
+          >
+            How do I do it?
+          </button>
+
+        </div>
+
       </div>
 
             {/* Collapsible Help Section */}
             <div className="help-section mt-4">
-        <button
-          className="nav-button help-toggle"
-          data-bs-toggle="collapse"
-          data-bs-target="#json-help"
-          aria-expanded="false"
-          aria-controls="json-help"
-        >
-          How do I do it?
-        </button>
         <div className="collapse mt-2" id="json-help">
           <p>Copy and paste this example into the editor to see how it works. Don't forget to click 'Save'! Once saved, this book will appear on the Showcase Books page, merged with the existing books.</p>
           <pre className="json-template">

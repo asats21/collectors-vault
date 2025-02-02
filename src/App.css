@@ -753,3 +753,15 @@ ul.levels {
   color: white;
   box-shadow: 0 0 10px #E89A02;
 }
+
+.help-toggle {
+  color: #E89A02;
+  box-shadow: 0 0 2px #E89A02;
+  border: 2px solid #E89A02;
+}
+
+.help-toggle:hover {
+  background-color: #E89A02;
+  color: white; /* White text on hover */
+  box-shadow: 0 0 4px #E89A02; /* Slightly stronger glow on hover */
+}
