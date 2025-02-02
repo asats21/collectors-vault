@@ -70,7 +70,7 @@ const Settings = ({ satCollection, setSatCollection }) => {
   return (
     <div className="settings-page">
       <h1>Settings</h1>
-
+  
       {/* User Books Input */}
       <div className="user-books-form mt-5">
         <h3>Add Your Own Showcase Books (JSON Format)</h3>
@@ -87,17 +87,58 @@ const Settings = ({ satCollection, setSatCollection }) => {
         </button>
       </div>
 
-      {/* Collection Delete Button */}
-      {satCollection && Object.keys(satCollection).length > 0 && (
-        <div className="text-center mt-4">
-          <button className="nav-button delete-all" onClick={() => setSatCollection({})}>
-            Delete All Sats
+            {/* Collapsible Help Section */}
+            <div className="help-section mt-4">
+        <button
+          className="nav-button help-toggle"
+          data-bs-toggle="collapse"
+          data-bs-target="#json-help"
+          aria-expanded="false"
+          aria-controls="json-help"
+        >
+          How do I do it?
+        </button>
+        <div className="collapse mt-2" id="json-help">
+          <p>Copy and paste this example into the editor to see how it works. Don't forget to click 'Save'! Once saved, this book will appear on the Showcase Books page, merged with the existing books.</p>
+          <pre className="json-template">
+  {`{
+    "key": "hitman_palindrome",
+    "name": "Hitman Palindrome",
+    "description": "Palindromic sats from the hitman transaction",
+    "traits": ["hitman", "palindrome"],
+    "difficulty": "Novice"
+  }`}
+          </pre>
+          <button
+            className="nav-button copy-template mt-2"
+            onClick={() => setUserBooksJson(`[{
+  "key": "hitman_palindrome",
+  "name": "Hitman Palindrome",
+  "description": "Palindromic sats from the hitman transaction",
+  "traits": ["hitman", "palindrome"],
+  "difficulty": "Novice"
+}]`)}
+          >
+            Fill Form with Example
           </button>
         </div>
+      </div>
+  
+      {/* Collection Delete Button */}
+      {satCollection && Object.keys(satCollection).length > 0 && (
+        <div className="mt-5">
+          <h3>Danger Zone</h3>
+        
+          <div className="mt-4">
+            <button className="nav-button delete-all" onClick={() => setSatCollection({})}>
+              Delete All Sats
+            </button>
+          </div>
+        </div>
       )}
-
     </div>
   );
+  
 };
 
 export default Settings;
