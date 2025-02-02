@@ -10,7 +10,13 @@ const Settings = ({ satCollection, setSatCollection }) => {
   useEffect(() => {
     const savedUserBooks = localStorage.getItem("userShowcaseBooks");
     if (savedUserBooks) {
-      setUserBooksJson(savedUserBooks);
+      // Format JSON for readability
+      try {
+        const formattedJson = JSON.stringify(JSON.parse(savedUserBooks), null, 2);
+        setUserBooksJson(formattedJson);
+      } catch {
+        setUserBooksJson("[]");
+      }
     }
   }, []);
 
@@ -22,9 +28,9 @@ const Settings = ({ satCollection, setSatCollection }) => {
         throw new Error("JSON must be an array of books.");
       }
 
-      localStorage.setItem("userShowcaseBooks", JSON.stringify(parsedBooks));
+      // Save formatted JSON to localStorage
+      localStorage.setItem("userShowcaseBooks", JSON.stringify(parsedBooks, null, 2));
       setError("");
-      alert("Books saved successfully!");
     } catch (err) {
       setError("Invalid JSON format. Please check and try again.");
     }
@@ -34,18 +40,9 @@ const Settings = ({ satCollection, setSatCollection }) => {
     <div className="settings-page">
       <h1>Settings</h1>
 
-      {/* SAT Collection Delete Button */}
-      {satCollection && Object.keys(satCollection).length > 0 && (
-        <div className="text-center mt-4">
-          <button className="nav-button delete-all" onClick={() => setSatCollection({})}>
-            Delete All Sats
-          </button>
-        </div>
-      )}
-
       {/* User Books Input */}
       <div className="user-books-form mt-5">
-        <h2>Add Your Own Books (JSON Format)</h2>
+        <h3>Add Your Own Showcase Books (JSON Format)</h3>
         <CodeMirror
           value={userBooksJson}
           height="300px"
@@ -58,6 +55,16 @@ const Settings = ({ satCollection, setSatCollection }) => {
           Save Books
         </button>
       </div>
+
+      {/* Collection Delete Button */}
+      {satCollection && Object.keys(satCollection).length > 0 && (
+        <div className="text-center mt-4">
+          <button className="nav-button delete-all" onClick={() => setSatCollection({})}>
+            Delete All Sats
+          </button>
+        </div>
+      )}
+
     </div>
   );
 };
