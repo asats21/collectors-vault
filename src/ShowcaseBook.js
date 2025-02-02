@@ -1,20 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import showcaseBooksData from './showcaseBooksData.json';
 import { isPalindrome } from "./Helpers";
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 import { FaCube } from "react-icons/fa";
 import { FaBluesky } from "react-icons/fa6";
 import { RenderTags } from "./RenderTags";
+import ShowcaseBooksContext from './ShowcaseBooksContext';
 
 const ShowcaseBook = ({ satCollection }) => {
   const { bookKey } = useParams();
   const [bookData, setBookData] = useState(null);
 
+  // Correct context property name (should match what's provided in your provider)
+  const { showcaseBooks } = useContext(ShowcaseBooksContext);
+
   useEffect(() => {
-    const book = showcaseBooksData.find((b) => b.key === bookKey);
+    const book = showcaseBooks.find((b) => b.key === bookKey);
     setBookData(book);
-  }, [bookKey]);
+  }, [bookKey, showcaseBooks]);
 
   if (!bookData) {
     return <div className="text-center mt-5">Not found</div>;
