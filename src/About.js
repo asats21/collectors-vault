@@ -1,7 +1,7 @@
 const About = () => {
 
   return (
-    <div className="">
+    <div className="mt-2">
       <h1>About this project</h1>
       <p>
         This site was created as a proof of concept, based on my experience in the space and my thoughts on what rare sat collectors might need.

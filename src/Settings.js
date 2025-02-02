@@ -71,7 +71,7 @@ const Settings = ({ satCollection, setSatCollection }) => {
   };
 
   return (
-    <div className="settings-page">
+    <div className="settings-page mt-2">
       <h1>Settings</h1>
   
       {/* User Books Input */}
