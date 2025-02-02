@@ -1,4 +1,7 @@
 import { useState, useEffect } from "react";
+import CodeMirror from "@uiw/react-codemirror";
+import { json } from "@codemirror/lang-json";
+import { EditorView } from "@codemirror/view";
 
 const Settings = ({ satCollection, setSatCollection }) => {
   const [userBooksJson, setUserBooksJson] = useState("[]");
@@ -43,13 +46,13 @@ const Settings = ({ satCollection, setSatCollection }) => {
       {/* User Books Input */}
       <div className="user-books-form mt-5">
         <h2>Add Your Own Books (JSON Format)</h2>
-        <textarea
-          className="form-control"
-          rows="10"
+        <CodeMirror
           value={userBooksJson}
-          onChange={(e) => setUserBooksJson(e.target.value)}
-          placeholder='[{"key": "unique-key", "name": "Book Name", "description": "Details", "traits": ["trait1"], "difficulty": "Novice"}]'
-        ></textarea>
+          height="300px"
+          extensions={[json(), EditorView.lineWrapping]}
+          onChange={(value) => setUserBooksJson(value)}
+          theme="dark"
+        />
         {error && <p className="text-danger mt-2">{error}</p>}
         <button className="nav-button save-books mt-3" onClick={handleSaveBooks}>
           Save Books
