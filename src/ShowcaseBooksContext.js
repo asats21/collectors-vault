@@ -1,20 +1,30 @@
-// src/contexts/ShowcaseBooksContext.js
-import React, { createContext, useState, useEffect } from 'react';
-import showcaseBooksData from './showcaseBooksData.json';
+import React, { createContext, useState, useEffect } from "react";
+import showcaseBooksData from "./showcaseBooksData.json";
 
 const ShowcaseBooksContext = createContext();
 
 export const ShowcaseBooksProvider = ({ children }) => {
   const [showcaseBooks, setShowcaseBooks] = useState([]);
 
-  // Load initial data from JSON file
   useEffect(() => {
-    setShowcaseBooks(showcaseBooksData);
+    const loadUserBooks = () => {
+      try {
+        const savedUserBooks = localStorage.getItem("userShowcaseBooks");
+        const userBooks = savedUserBooks ? JSON.parse(savedUserBooks) : [];
+        setShowcaseBooks([...showcaseBooksData, ...userBooks]);
+      } catch (err) {
+        console.error("Failed to load user books:", err);
+        setShowcaseBooks(showcaseBooksData);
+      }
+    };
+
+    loadUserBooks();
   }, []);
 
-  // Function to add user-defined books (for future use)
   const addUserBook = (newBook) => {
-    setShowcaseBooks((prevBooks) => [...prevBooks, newBook]);
+    const updatedBooks = [...showcaseBooks, newBook];
+    setShowcaseBooks(updatedBooks);
+    localStorage.setItem("userShowcaseBooks", JSON.stringify(updatedBooks));
   };
 
   return (
