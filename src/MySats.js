@@ -21,12 +21,6 @@ const MySats = ({ satCollection, setSatCollection }) => {
     }
   };
 
-  const handleDeleteAll = () => {
-    if (window.confirm('Are you sure you want to delete all your sats?')) {
-      setSatCollection({});
-    }
-  };
-
   // Calculate weight sum for each sat
   const satsWithWeights = Object.entries(satCollection).map(([sat, details]) => {
     const weightSum = details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0);
@@ -50,7 +44,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
   };
 
   return (
-    <div className="my-sats-container">
+    <div className="">
       {/* Header + Add Button */}
       <div className="sats-header">
         <h1>My Sats</h1>
@@ -70,18 +64,6 @@ const MySats = ({ satCollection, setSatCollection }) => {
         pageCount={pageCount}
         handlePageClick={handlePageClick}
       />
-
-      {/* Delete All Button */}
-      {satCollection && Object.keys(satCollection).length > 0 &&
-        <div className="text-center mt-4">
-          <button
-            className="nav-button delete-all"
-            onClick={handleDeleteAll}
-          >
-            Delete All
-          </button>
-        </div>
-      }
 
       {/* Add Sats Modal */}
       <AddSatsModal

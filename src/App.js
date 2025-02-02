@@ -12,6 +12,9 @@ import ShowcaseBooksList from './ShowcaseBooksList';  // Import the Showcase Boo
 import MySats from './MySats';  // Import the Index page
 import Tests from './Tests';  // Import the Tests page
 import About from './About';  // Import the About page
+import Settings from './Settings';  // Import the Settings page
+
+import { FaCog } from "react-icons/fa";
 
 function App() {
 
@@ -64,10 +67,37 @@ function App() {
     );
   }
 
+  function SettingsCog() {
+    return (
+      <Link to="/settings" className="settings-link">
+        <div
+          className="settings-icon"
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+          }}
+        >
+          <FaCog
+            size={24}
+            style={{
+              cursor: "pointer",
+              color: "#ffffff",
+              marginLeft: "10px",
+            }}
+          />
+        </div>
+      </Link>
+    );
+  }
+
   return (
     <Router>
       <div className="app-container">
         <div className="container my-5">
+
+          <SettingsCog/>
+
           <h1 className="text-center mb-4">Sat Collector's Vault</h1>
           <Navigation />
           <Routes>
@@ -76,6 +106,7 @@ function App() {
             <Route path="/challenge-books/:bookKey" element={<ChallengeBook satCollection={satCollection} />} />
             <Route path="/showcase-books" element={<ShowcaseBooksList satCollection={satCollection} />} />
             <Route path="/showcase-books/:bookKey" element={<ShowcaseBook satCollection={satCollection} />} />
+            <Route path="/settings" element={<Settings satCollection={satCollection} setSatCollection={setSatCollection} />} />
             <Route path="/about" element={<About />} />
             <Route path="/tests" element={<Tests />} />
           </Routes>

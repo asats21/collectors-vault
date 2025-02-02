@@ -1,7 +1,7 @@
-const Tests = () => {
+const About = () => {
 
   return (
-    <div className="my-sats-container">
+    <div className="">
       <h1>About this project</h1>
       <p>
         This site was created as a proof of concept, based on my experience in the space and my thoughts on what rare sat collectors might need.
@@ -48,4 +48,4 @@ const Tests = () => {
   );
 };
 
-export default Tests;
+export default About;
