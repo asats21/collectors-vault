@@ -2,10 +2,13 @@ import { useState, useEffect } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { json } from "@codemirror/lang-json";
 import { EditorView } from "@codemirror/view";
+import { tagWeights } from "./tagWeights";
 
 const Settings = ({ satCollection, setSatCollection }) => {
   const [userBooksJson, setUserBooksJson] = useState("[]");
   const [error, setError] = useState("");
+
+  const availableTraits = Object.keys(tagWeights);
 
   useEffect(() => {
     const savedUserBooks = localStorage.getItem("userShowcaseBooks");
@@ -121,6 +124,12 @@ const Settings = ({ satCollection, setSatCollection }) => {
           >
             Fill Form with Example
           </button>
+
+          <div className="available-traits mt-3">
+            <h5>Available Traits</h5>
+            <p>{availableTraits.join(", ")}</p>
+          </div>
+
         </div>
       </div>
   
