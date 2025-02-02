@@ -1,39 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { RenderTags } from "./RenderTags";
-import showcaseBooksData from './showcaseBooksData.json';
 import { RiNumbersFill } from "react-icons/ri";
 import { CgSearchFound } from "react-icons/cg";
 import { Tooltip } from "bootstrap";
+import ShowcaseBooksContext from './ShowcaseBooksContext';
 
 const ShowcaseBooksList = ({ satCollection }) => {
   const [loading, setLoading] = useState(true);
   const [matchedSats, setMatchedSats] = useState({});
+  
+  // Correct context property name (should match what's provided in your provider)
+  const { showcaseBooks } = useContext(ShowcaseBooksContext);
 
   useEffect(() => {
-    // Initialize Bootstrap tooltips once
-    setTimeout(() => {
+    if (!showcaseBooks) return;
+
+    // Initialize Bootstrap tooltips
+    const initTooltips = () => {
       const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
       tooltipTriggerList.forEach((tooltipEl) => new Tooltip(tooltipEl));
+    };
+
+    // Process SAT matches
+    const processMatches = () => {
+      const satMatches = {};
+      showcaseBooks.forEach((book) => {
+        satMatches[book.key] = Object.entries(satCollection).filter(([_, details]) =>
+          book.traits.every((trait) => details.tags.includes(trait))
+        );
+      });
+      setMatchedSats(satMatches);
+      setLoading(false);
+    };
+
+    // Add slight delay to ensure DOM is ready for tooltips
+    const timer = setTimeout(() => {
+      initTooltips();
+      processMatches();
     }, 100);
 
-    // Process SAT matches outside of render
-    const satMatches = {};
-    showcaseBooksData.forEach((book) => {
-      satMatches[book.key] = Object.entries(satCollection).filter(([_, details]) =>
-        book.traits.every((trait) => details.tags.includes(trait))
-      );
-    });
-    setMatchedSats(satMatches);
-    setLoading(false);
-  }, [satCollection]);
+    return () => clearTimeout(timer);
+  }, [satCollection, showcaseBooks]); // Use showcaseBooks instead of showcaseBooksData
 
-  // Define difficulty order
   const difficultyOrder = ['Novice', 'Collector', 'Expert', 'Elite', 'Zenite'];
 
-  const getColor = (matchingSats) => (matchingSats.length > 0 ? "purple" : "gray");
+  const getColor = (matchingSats) => (matchingSats?.length > 0 ? "purple" : "gray");
 
-  if (loading) {
+  if (loading || !showcaseBooks) {
     return <div className="text-center mt-5"><div className="spinner-border text-primary" role="status"></div></div>;
   }
 
@@ -43,14 +57,16 @@ const ShowcaseBooksList = ({ satCollection }) => {
         <div key={difficulty} className="difficulty-tier">
           <h2>{difficulty}</h2>
           <ul className="books-list">
-            {showcaseBooksData
+            {showcaseBooks
               .filter((book) => book.difficulty === difficulty)
               .map((book) => (
                 <li key={book.key} className={`showcase-book-item ${getColor(matchedSats[book.key])}`}>
                   <Link to={`/showcase-books/${book.key}`} className="book-link">
                     <div className='showcase-book-header d-flex justify-content-between'>
                       <h2 className={`${getColor(matchedSats[book.key])} me-1`}>{book.name}</h2>
-                      <div className={`fw-bold h3 ${getColor(matchedSats[book.key])}`}>{matchedSats[book.key].length}</div>
+                      <div className={`fw-bold h3 ${getColor(matchedSats[book.key])}`}>
+                        {matchedSats[book.key]?.length || 0}
+                      </div>
                     </div>
 
                     <div className='d-flex justify-content-between'>
