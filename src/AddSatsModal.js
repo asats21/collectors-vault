@@ -16,7 +16,7 @@ const AddSatsModal = ({ showModal, setShowModal, input, setInput, handleSubmit }
       <Modal.Body className="modal-body-glow">
         <Form onSubmit={handleSubmit}>
           <Form.Group>
-            <Form.Label>Enter sat numbers (comma/space/newline separated):</Form.Label>
+            <Form.Label>Enter sat numbers (comma OR space OR newline separated):</Form.Label>
             <Form.Control
               as="textarea"
               rows={20}
