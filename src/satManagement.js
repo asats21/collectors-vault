@@ -89,7 +89,7 @@ import {
       }
   
       if (isPerfectPalinception(satNumber)) {
-        updatedCollection[sat].tags.push('perfect');
+        updatedCollection[sat].tags.push('perfect_palinception');
       }
   
       if (isPalindrome(blockNumber)) {

@@ -19,7 +19,7 @@ export const tagIcons = {
     silkroad: { icon: <GiCamel className="icon" style={{ color: "#F2A900" }} />, number: 2, tooltip: "Silkroad First Auction" },
     palindrome: { icon: <FaBluesky className="icon" style={{ color: "#6AA8C3" }} />, number: 1, tooltip: "Palindrome" },
     uniform_palinception: { icon: <><FaBluesky className="icon" style={{ color: "#118AB2" }} /><FaBluesky className="icon" style={{ color: "#118AB2" }} /></>, number: 2, tooltip: "Uniform Palinception" },
-    perfect: { icon: <><FaBluesky className="icon" style={{ color: "#E89A02" }} /><FaBluesky className="icon" style={{ color: "#E89A02" }} /></>, number: 3, tooltip: "Perfect Palinception" },
+    perfect_palinception: { icon: <><FaBluesky className="icon" style={{ color: "#E89A02" }} /><FaBluesky className="icon" style={{ color: "#E89A02" }} /></>, number: 3, tooltip: "Perfect Palinception" },
     paliblock: { icon: <FaBluesky className="icon" style={{ color: "#118AB2", padding: "1px", border: "1px solid #118AB2" }} />, number: 10, tooltip: "PaliBlock" },
     vintage: { icon: <FaHourglass className="icon" style={{ color: "#F6BB41" }} />, number: 2, tooltip: "Vintage" },
     "2_digits": { icon: <div className="fw-bold">2D</div>, number: 5, tooltip: "2 Digits" },

@@ -161,22 +161,22 @@
       {
         "name": "Level 1",
         "requirements": [
-          { "count": 1, "tags": ["perfect"] }
+          { "count": 1, "tags": ["perfect_palinception"] }
         ]
       }, {
         "name": "Level 2",
         "requirements": [
-          { "count": 1, "tags": ["perfect"], "years": [2009] }
+          { "count": 1, "tags": ["perfect_palinception"], "years": [2009] }
         ]
       }, {
         "name": "Level 3",
         "requirements": [
-          { "count": 1, "tags": ["perfect", "nova"] }
+          { "count": 1, "tags": ["perfect_palinception", "nova"] }
         ]
       }, {
         "name": "Level 4",
         "requirements": [
-          { "count": 1, "tags": ["perfect", "3_digits"] }
+          { "count": 1, "tags": ["perfect_palinception", "3_digits"] }
         ]
       }
     ]
@@ -189,17 +189,17 @@
       {
         "name": "Level 1",
         "requirements": [
-          { "count": 1, "tags": ["perfect", "nova"] }
+          { "count": 1, "tags": ["perfect_palinception", "nova"] }
         ]
       }, {
         "name": "Level 2",
         "requirements": [
-          { "count": 1, "tags": ["perfect",  "2_digits"] }
+          { "count": 1, "tags": ["perfect_palinception",  "2_digits"] }
         ]
       }, {
         "name": "Level 3",
         "requirements": [
-          { "count": 1, "tags": ["perfect", "paliblock"] }
+          { "count": 1, "tags": ["perfect_palinception", "paliblock"] }
         ]
       }
     ]

@@ -113,7 +113,7 @@
     "key": "perfect_palinceptions",
     "name": "Perfect Palinceptions",
     "description": "Perfect palinceptions, made up of identical smaller palindromes of equal length, creating a flawlessly symmetrical and balanced sequence",
-    "traits": ["perfect"],
+    "traits": ["perfect_palinception"],
     "supply": "13,305",
     "difficulty": "Expert"
   },
@@ -175,7 +175,7 @@
     "key": "nova_perfect_palinceptions",
     "name": "Nova Perfect Palinceptions",
     "description": "Perfect Palinceptions mined shortly after the 'palindrome extinction event'",
-    "traits": ["perfect", "nova"],
+    "traits": ["perfect_palinception", "nova"],
     "supply": "1,050",
     "difficulty": "Elite"
   },
@@ -240,7 +240,7 @@
     "key": "perfect_palinception_2d",
     "name": "2D Perfect Palinceptions",
     "description": "Perfect Palinceptions containing only 2 unique digits",
-    "traits": ["perfect", "2_digits"],
+    "traits": ["perfect_palinception", "2_digits"],
     "supply": "1,768",
     "difficulty": "Zenite"
   },
