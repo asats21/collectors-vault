@@ -4,8 +4,23 @@ import { FaTrash } from 'react-icons/fa';
 import { isPalindrome, getSubPaliLength, displayUniformPalinception } from "./TagDetection";
 import { RenderTags } from "./RenderTags";
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
+import { FiCalendar } from "react-icons/fi";
+import { FaCube } from "react-icons/fa";
 
 const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageClick }) => {
+
+  const displaySatNumber = (sat) => {
+    const subPaliLength = getSubPaliLength(sat);
+    if (subPaliLength) {
+      return '#' + displayUniformPalinception(sat, subPaliLength);
+    }
+    if(isRodarmorName(sat)) {
+      return getRodarmorName(sat);
+    }
+
+    return '#' + sat;
+  }
+
   return (
     <>
       {/* Desktop Table View */}
@@ -28,17 +43,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                 <tr key={sat}>
                   <td>{offset + index + 1}</td>
                   <td>
-                    {(() => {
-                      const subPaliLength = getSubPaliLength(sat);
-                      if (subPaliLength) {
-                        return displayUniformPalinception(sat, subPaliLength);
-                      }
-                      if(isRodarmorName(sat)) {
-                        return getRodarmorName(sat);
-                      }
-
-                      return '#' + sat;
-                    })()}
+                      { displaySatNumber(sat) }
                   </td>
                   <td>
                     <div className="sat-tags">
@@ -63,44 +68,51 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
         </div>
       </div>
 
-      {/* Mobile Card View */}
+      {/* Mobile Card View - Icon Compact */}
       <div className="d-md-none">
-        <div className="row">
-          {currentSats.map(({ sat, details, weightSum }, index) => (
-            <div className="col-12 mb-4" key={sat}>
-              <div className="card bg-dark text-white">
-                <div className="card-body">
-                  <h5 className="card-title">
-                    {(() => {
-                      const subPaliLength = getSubPaliLength(sat);
-                      if (subPaliLength) {
-                        return displayUniformPalinception(sat, subPaliLength);
-                      }
-                      if (isRodarmorName(sat)) {
-                        return getRodarmorName(sat);
-                      }
-                      return '#' + sat;
-                    })()}
-                  </h5>
-                  <p className="card-text">
-                    <strong>Block: </strong>
-                    <span className={isPalindrome(details.block_number) ? 'table-palindromic-block' : ''}>
-                      {details.block_number}
-                    </span>
-                    <br />
-                    <strong>Year: </strong>{details.year}
-                    <br />
-                    <strong>Epoch: </strong>{details.epoch}
-                  </p>
-                  <div className="sat-tags mb-3">
-                    <RenderTags tags={details.tags} />
+        <div className="row g-1">
+          {currentSats.map(({ sat, details }) => (
+            <div className="col-12" key={sat}>
+              <div className="card bg-dark text-white mb-1">
+                <div className="card-body p-2">
+                  {/* Top Line: Tags + Delete Button */}
+                  <div className="d-flex justify-content-between align-items-start mb-1">
+                    <div className="sat-tags flex-grow-1 pe-2" style={{maxWidth: '85%'}}>
+                      <RenderTags tags={details.tags} />
+                    </div>
+                    <button 
+                      className="btn btn-danger btn-sm"
+                      onClick={() => handleDelete(sat)}
+                    >
+                      <FaTrash />
+                    </button>
                   </div>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleDelete(sat)}
-                  >
-                    <FaTrash /> Delete
-                  </button>
+
+                  {/* Bottom Line: SAT + Metadata */}
+                  <div className="d-flex align-items-center justify-content-between gap-2 text-nowrap mt-2">
+                    {/* Sat Number */}
+                    <div className="d-flex align-items-center text-truncate" style={{maxWidth: '40%'}}>
+                      <span className="fw-bold">
+                        { displaySatNumber(sat) }
+                      </span>
+                    </div>
+
+                    <div className='d-flex gap-2'>
+                      {/* Block */}
+                      <div className="d-flex align-items-center">
+                        <FaCube className="me-1" size={12} />
+                        <span className={isPalindrome(details.block_number) ? 'table-palindromic-block' : ''}>
+                          {details.block_number}
+                        </span>
+                      </div>
+
+                      {/* Year */}
+                      <div className="d-flex align-items-center">
+                        <FiCalendar className="me-1" size={12} />
+                        {details.year}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
