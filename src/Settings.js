@@ -78,6 +78,29 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
     }));
   };
 
+  const convertToCSV = (data) => {
+    return Object.keys(data).join('\n');
+  };
+
+  const downloadCSV = () => {
+    const csvData = convertToCSV(satCollection);
+    
+    // Create a Blob from the CSV string
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    
+    // Create an invisible link to trigger the download
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'data.txt');  // Set the default filename
+    link.style.visibility = 'hidden';
+    
+    // Append the link to the body, click it, and remove it
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="settings-page mt-2">
       <h1>Settings</h1>
@@ -162,6 +185,19 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
 
         </div>
       </div>
+
+      {/* Collection Delete Button */}
+      {satCollection && Object.keys(satCollection).length > 0 && (
+        <div className="mt-5">
+          <h3>Backup & Share</h3>
+        
+          <div className="mt-4">
+            <button className="nav-button backup-all" onClick={downloadCSV}>
+              Backup Sats
+            </button>
+          </div>
+        </div>
+      )}
   
       {/* Collection Delete Button */}
       {satCollection && Object.keys(satCollection).length > 0 && (
