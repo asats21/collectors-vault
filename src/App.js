@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
+import { Tooltip } from "bootstrap";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
 
@@ -28,6 +28,24 @@ function App() {
   useEffect(() => {
     localStorage.setItem('satCollection', JSON.stringify(satCollection));
   }, [satCollection]);
+
+  useEffect(() => {
+    const initializeTooltips = () => {
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        tooltipTriggerList.forEach((tooltipEl) => {
+            if (!Tooltip.getInstance(tooltipEl)) {
+                new Tooltip(tooltipEl);
+            }
+        });
+    };
+
+    initializeTooltips(); // Initialize tooltips once
+
+    const observer = new MutationObserver(initializeTooltips);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect(); // Cleanup on unmount
+  }, []);
 
   function Navigation() {
     const location = useLocation();

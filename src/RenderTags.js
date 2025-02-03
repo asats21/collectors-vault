@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FaGem, FaRegGem, FaPizzaSlice, FaHourglass, FaCrosshairs, FaImage, FaBook } from "react-icons/fa";
 import { FaBluesky } from "react-icons/fa6";
 import { TbAlpha, TbOmega } from "react-icons/tb";
-import { Tooltip } from "bootstrap";
 import { PiNumberNineFill } from "react-icons/pi";
 
 export const tagIcons = {
@@ -35,12 +34,6 @@ export const tagIcons = {
 };
 
 export function RenderTags({ tags }) {
-    useEffect(() => {
-        // Initialize Bootstrap tooltips
-        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-        tooltipTriggerList.forEach((tooltipEl) => new Tooltip(tooltipEl));
-    }, []);
-
     const sortedTags = tags
         .map((tag) => {
             const tagInfo = tagIcons[tag];

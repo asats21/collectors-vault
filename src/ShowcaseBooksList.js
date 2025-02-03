@@ -3,26 +3,18 @@ import { Link } from 'react-router-dom';
 import { RenderTags } from "./RenderTags";
 import { RiNumbersFill } from "react-icons/ri";
 import { CgSearchFound } from "react-icons/cg";
-import { Tooltip } from "bootstrap";
 import ShowcaseBooksContext from './ShowcaseBooksContext';
 
 const ShowcaseBooksList = ({ satCollection }) => {
   const [loading, setLoading] = useState(true);
   const [matchedSats, setMatchedSats] = useState({});
   
-  // Correct context property name (should match what's provided in your provider)
   const { showcaseBooks } = useContext(ShowcaseBooksContext);
 
   useEffect(() => {
     if (!showcaseBooks) return;
 
-    // Initialize Bootstrap tooltips
-    const initTooltips = () => {
-      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-      tooltipTriggerList.forEach((tooltipEl) => new Tooltip(tooltipEl));
-    };
-
-    // Process SAT matches
+    // Process sat matches
     const processMatches = () => {
       const satMatches = {};
       showcaseBooks.forEach((book) => {
@@ -34,14 +26,9 @@ const ShowcaseBooksList = ({ satCollection }) => {
       setLoading(false);
     };
 
-    // Add slight delay to ensure DOM is ready for tooltips
-    const timer = setTimeout(() => {
-      initTooltips();
-      processMatches();
-    }, 100);
+    processMatches();
 
-    return () => clearTimeout(timer);
-  }, [satCollection, showcaseBooks]); // Use showcaseBooks instead of showcaseBooksData
+  }, [satCollection, showcaseBooks]);
 
   const difficultyOrder = ['Novice', 'Collector', 'Expert', 'Elite', 'Zenite'];
 
