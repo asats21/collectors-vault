@@ -16,7 +16,8 @@ import {
     getSatYear,
     getEpoch,
     getUniformPalinceptionStructure,
-    is450x
+    is450x,
+    isNakamoto
   } from './Helpers';
   import { isPizza } from './Pizza';
   import { isJpeg } from './Jpeg';
@@ -52,8 +53,7 @@ import {
         tags: [],
         block_number: blockNumber,
         year: year,
-        epoch: epoch,
-        price: null,
+        epoch: epoch
       };
 
       if(!settings.ignoreSilkroadRanges) {
@@ -137,6 +137,10 @@ import {
 
       if (isRodarmorName(satNumber)) {
         updatedCollection[sat].tags.push('rodarmor_name');
+      }
+
+      if (isNakamoto(blockNumber)) {
+        updatedCollection[sat].tags.push('nakamoto');
       }
 
     });

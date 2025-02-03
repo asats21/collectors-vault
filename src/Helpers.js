@@ -284,3 +284,14 @@ export const getEpoch = (blockNumber) => {
 export const is450x = (sat_num) => {
     return sat_num >= 45000000000 && sat_num < 45100000000;
   };
+
+export const isNakamoto = (block) => {
+    // Set of Nakamoto blocks
+    const nakamotoBlocks = new Set([
+        9, 286, 688, 877, 1760, 2459, 2485, 3479, 5326, 9443,
+        9925, 10645, 14450, 15625, 15817, 19093, 23014, 28593, 29097
+    ]);
+
+    // Check if the block is in the set of Nakamoto blocks
+    return nakamotoBlocks.has(block);
+}

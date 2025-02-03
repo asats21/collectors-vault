@@ -9,6 +9,7 @@ export const tagWeights = {
     jpeg: 60,
     hitman: 50,
     silkroad: 40,
+    nakamoto: 100,
 
     '3_digits': 20,
     '2_digits': 120,
