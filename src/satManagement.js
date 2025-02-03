@@ -84,7 +84,7 @@ import {
       }
   
       if (isUniformPalinception(satNumber)) {
-        updatedCollection[sat].tags.push('uniform');
+        updatedCollection[sat].tags.push('uniform_palinception');
         updatedCollection[sat].tags.push(getUniformPalinceptionStructure(satNumber));
       }
   

@@ -70,7 +70,7 @@
     "key": "palinception_3d",
     "name": "3D Uniform Palinception",
     "description": "3D uniform palinceptions, where the palindrome structure is made up of smaller palindromes of equal length",
-    "traits": ["3_digits", "uniform"],
+    "traits": ["3_digits", "uniform_palinception"],
     "supply": "139,616",
     "difficulty": "Collector"
   },
@@ -145,7 +145,7 @@
     "key": "uniform_3d_paliblock",
     "name": "Paliblock 3D Uniform Palinceptions",
     "description": "3D uniform palinceptions, where the palindrome structure consists of smaller palindromes of equal length, and the block number itself is also a palindrome",
-    "traits": ["3_digits", "uniform", "paliblock"],
+    "traits": ["3_digits", "uniform_palinception", "paliblock"],
     "supply": "25,173",
     "difficulty": "Expert"
   },
@@ -215,7 +215,7 @@
     "key": "nova_unifrom_palinceptions",
     "name": "Nova Uniform Palinceptions",
     "description": "Uniform Palinceptions mined shortly after the 'palindrome extinction event'",
-    "traits": ["uniform", "nova"],
+    "traits": ["uniform_palinception", "nova"],
     "supply": "2,040",
     "found": "135",
     "difficulty": "Elite"

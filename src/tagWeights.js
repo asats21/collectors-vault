@@ -1,6 +1,6 @@
 export const tagWeights = {
     palindrome: 5,
-    uniform: 30,
+    uniform_palinception: 30,
     perfect: 200,
     nova: 40,
 

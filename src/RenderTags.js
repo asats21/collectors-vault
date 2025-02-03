@@ -18,7 +18,7 @@ export const tagIcons = {
     hitman: { icon: <FaCrosshairs className="icon" style={{ color: "#E05C5C" }} />, number: 2, tooltip: "Hitman" },
     silkroad: { icon: <GiCamel className="icon" style={{ color: "#F2A900" }} />, number: 2, tooltip: "Silkroad First Auction" },
     palindrome: { icon: <FaBluesky className="icon" style={{ color: "#6AA8C3" }} />, number: 1, tooltip: "Palindrome" },
-    uniform: { icon: <><FaBluesky className="icon" style={{ color: "#118AB2" }} /><FaBluesky className="icon" style={{ color: "#118AB2" }} /></>, number: 2, tooltip: "Uniform Palinception" },
+    uniform_palinception: { icon: <><FaBluesky className="icon" style={{ color: "#118AB2" }} /><FaBluesky className="icon" style={{ color: "#118AB2" }} /></>, number: 2, tooltip: "Uniform Palinception" },
     perfect: { icon: <><FaBluesky className="icon" style={{ color: "#E89A02" }} /><FaBluesky className="icon" style={{ color: "#E89A02" }} /></>, number: 3, tooltip: "Perfect Palinception" },
     paliblock: { icon: <FaBluesky className="icon" style={{ color: "#118AB2", padding: "1px", border: "1px solid #118AB2" }} />, number: 10, tooltip: "PaliBlock" },
     vintage: { icon: <FaHourglass className="icon" style={{ color: "#F6BB41" }} />, number: 2, tooltip: "Vintage" },

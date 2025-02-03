@@ -19,7 +19,7 @@
       {
         "name": "Level 3",
         "requirements": [
-          { "count": 1, "tags": ["palindrome", "uniform"] }
+          { "count": 1, "tags": ["palindrome", "uniform_palinception"] }
         ]
       },
       {
@@ -93,34 +93,34 @@
     ]
   },
   {
-    "key": "palinceptions",
-    "name": "Palinceptions",
+    "key": "uniform_palinceptions",
+    "name": "Uniform Palinceptions",
     "difficulty": "Collector",
     "levels": [
       {
         "name": "Level 1",
         "requirements": [
-          { "count": 1, "tags": ["uniform"] }
+          { "count": 1, "tags": ["uniform_palinception"] }
         ]
       }, {
         "name": "Level 2",
         "requirements": [
-          { "count": 1, "tags": ["uniform", "3_digits"] }
+          { "count": 1, "tags": ["uniform_palinception", "3_digits"] }
         ]
       }, {
         "name": "Level 3",
         "requirements": [
-          { "count": 1, "tags": ["uniform", "paliblock"] }
+          { "count": 1, "tags": ["uniform_palinception", "paliblock"] }
         ]
       }, {
         "name": "Level 4",
         "requirements": [
-          { "count": 1, "tags": ["uniform", "3_digits", "paliblock"] }
+          { "count": 1, "tags": ["uniform_palinception", "3_digits", "paliblock"] }
         ]
       }, {
         "name": "Level 5",
         "requirements": [
-          { "count": 1, "tags": ["uniform", "3_digits", "paliblock", "sequence"] }
+          { "count": 1, "tags": ["uniform_palinception", "3_digits", "paliblock", "sequence"] }
         ]
       }
     ]
@@ -133,22 +133,22 @@
       {
         "name": "Level 1",
         "requirements": [
-          { "count": 1, "tags": ["uniform", "pizza"] }
+          { "count": 1, "tags": ["uniform_palinception", "pizza"] }
         ]
       }, {
         "name": "Level 2",
         "requirements": [
-          { "count": 1, "tags": ["uniform", "jpeg"] }
+          { "count": 1, "tags": ["uniform_palinception", "jpeg"] }
         ]
       }, {
         "name": "Level 2",
         "requirements": [
-          { "count": 1, "tags": ["uniform", "silkroad"] }
+          { "count": 1, "tags": ["uniform_palinception", "silkroad"] }
         ]
       }, {
         "name": "Level 2",
         "requirements": [
-          { "count": 1, "tags": ["uniform", "hitman"] }
+          { "count": 1, "tags": ["uniform_palinception", "hitman"] }
         ]
       }
     ]
@@ -279,12 +279,12 @@
       }, {
         "name": "Uniform Palinception",
         "requirements": [
-          { "count": 1, "tags": ["uniform", "pizza"] }
+          { "count": 1, "tags": ["uniform_palinception", "pizza"] }
         ]
       }, {
-        "name": "Paliblock palinception",
+        "name": "Paliblock Uniform Palinception",
         "requirements": [
-          { "count": 1, "tags": ["pizza", "uniform", "paliblock"] }
+          { "count": 1, "tags": ["pizza", "uniform_palinception", "paliblock"] }
         ]
       }, {
         "name": "Alpha 420",
