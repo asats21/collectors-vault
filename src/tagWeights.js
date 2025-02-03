@@ -2,14 +2,13 @@ export const tagWeights = {
     palindrome: 5,
     uniform: 30,
     perfect: 200,
+    nova: 40,
 
     pizza: 40,
     jpeg: 60,
     hitman: 50,
     silkroad: 40,
 
-    'epoch1+': 40,
-    'epoch0': 40,
     '3_digits': 20,
     '2_digits': 120,
     'block 9': 50,
@@ -21,6 +20,7 @@ export const tagWeights = {
 
     uncommon: 20,
     black_uncommon: 20,
+    epoch0: 40,
 
     pali_uncommon: 50,
     pali_black_uncommon: 50,

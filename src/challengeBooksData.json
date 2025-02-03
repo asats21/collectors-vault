@@ -171,7 +171,7 @@
       }, {
         "name": "Level 3",
         "requirements": [
-          { "count": 1, "tags": ["perfect", "epoch1+"] }
+          { "count": 1, "tags": ["perfect", "nova"] }
         ]
       }, {
         "name": "Level 4",
@@ -189,7 +189,7 @@
       {
         "name": "Level 1",
         "requirements": [
-          { "count": 1, "tags": ["perfect", "epoch1+"] }
+          { "count": 1, "tags": ["perfect", "nova"] }
         ]
       }, {
         "name": "Level 2",

@@ -1,9 +1,9 @@
 [
   {
-    "key": "palindrome-e1+",
-    "name": "Epoch1+ Palindrome",
+    "key": "nova_palindrome",
+    "name": "Nova Palindrome",
     "description": "Palindromes mined after the first Bitcoin halving, shortly following the 'palindrome extinction event'",
-    "traits": ["palindrome", "epoch1+"],
+    "traits": ["palindrome", "nova"],
     "difficulty": "Novice"
   },
   {
@@ -51,10 +51,10 @@
     "difficulty": "Novice"
   },
   {
-    "key": "palindrome_3d_e1+",
-    "name": "Epoch1+ 3D Palindrome",
+    "key": "nova_palindrome_3d",
+    "name": "Nova 3D Palindrome",
     "description": "3D Palindromes mined after the first Bitcoin halving, shortly following the 'palindrome extinction event'",
-    "traits": ["palindrome", "epoch1+", "3_digits"],
+    "traits": ["palindrome", "nova", "3_digits"],
     "supply": "70,766",
     "difficulty": "Collector"
   },
@@ -172,10 +172,10 @@
     "difficulty": "Collector"
   },
   {
-    "key": "perfect_palinceptions_e1+",
-    "name": "Epoch1+ Perfect Palinceptions",
+    "key": "nova_perfect_palinceptions",
+    "name": "Nova Perfect Palinceptions",
     "description": "Perfect Palinceptions mined shortly after the 'palindrome extinction event'",
-    "traits": ["perfect", "epoch1+"],
+    "traits": ["perfect", "nova"],
     "supply": "1,050",
     "difficulty": "Elite"
   },
@@ -209,6 +209,15 @@
     "description": "Jpeg Palindromes mined in early 2010",
     "traits": ["jpeg", "palindrome", "jpeg_2010"],
     "supply": "5,000",
+    "difficulty": "Elite"
+  },
+  {
+    "key": "nova_unifrom_palinceptions",
+    "name": "Nova Uniform Palinceptions",
+    "description": "Uniform Palinceptions mined shortly after the 'palindrome extinction event'",
+    "traits": ["uniform", "nova"],
+    "supply": "2,040",
+    "found": "135",
     "difficulty": "Elite"
   },
   {

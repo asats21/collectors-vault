@@ -78,7 +78,7 @@ import {
       if (isPalindrome(satNumber)) {
         updatedCollection[sat].tags.push('palindrome');
   
-        if (epoch > 0) updatedCollection[sat].tags.push('epoch1+');
+        if (epoch > 0) updatedCollection[sat].tags.push('nova');
         if (is3Digits(satNumber)) updatedCollection[sat].tags.push('3_digits');
         if (is2Digits(satNumber)) updatedCollection[sat].tags.push('2_digits');
       }
