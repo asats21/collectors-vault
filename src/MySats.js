@@ -46,7 +46,7 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
   return (
     <div className="mt-2">
       {/* Header + Add Button */}
-      <div className="sats-header">
+      <div className="sats-header mt-4 mt-md-none">
         <h1>My Sats</h1>
         <button
           className="nav-button add-sats"
