@@ -6,7 +6,7 @@ import SatsTable from './SatsTable';
 
 import { FaPlusSquare } from "react-icons/fa";
 
-const MySats = ({ satCollection, setSatCollection }) => {
+const MySats = ({ satCollection, setSatCollection, settings }) => {
   const [showModal, setShowModal] = useState(false);
   const [input, setInput] = useState('');
   const [currentPage, setCurrentPage] = useState(0);
@@ -15,7 +15,7 @@ const MySats = ({ satCollection, setSatCollection }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (input.trim()) {
-      setSatCollection((prev) => addSatsToCollection(input, prev));
+      setSatCollection((prev) => addSatsToCollection(input, prev, settings));
       setInput('');
       setShowModal(false);
     }

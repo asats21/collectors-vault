@@ -25,15 +25,26 @@ function App() {
     return savedCollection ? JSON.parse(savedCollection) : {};
   });
 
+  const [settings, setSettings] = useState(() => {
+    // Get settings from localStorage if they exist, otherwise use default values
+    const savedSettings = localStorage.getItem("scv_settings");
+    return savedSettings ? JSON.parse(savedSettings) : { ignoreSilkroadRanges: true };
+  });
+
   // Save satCollection to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('satCollection', JSON.stringify(satCollection));
   }, [satCollection]);
 
+  // Save settings to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("scv_settings", JSON.stringify(settings));
+  }, [settings]);
+
   // Load Silkroad ranges once
   useEffect(() => {
-    loadSilkroadRanges(); 
-  }, []);
+    if(!settings.ignoreSilkroadRanges) loadSilkroadRanges();
+  }, [settings]);
 
   useEffect(() => {
     const initializeTooltips = () => {
@@ -125,12 +136,12 @@ function App() {
           <h1 className="text-center mb-4">Sat Collector's Vault</h1>
           <Navigation />
           <Routes>
-            <Route path="/" element={<MySats satCollection={satCollection} setSatCollection={setSatCollection} />} />
+            <Route path="/" element={<MySats satCollection={satCollection} setSatCollection={setSatCollection} settings={settings} />} />
             <Route path="/challenge-books" element={<ChallengeBooksList satCollection={satCollection} />} />
             <Route path="/challenge-books/:bookKey" element={<ChallengeBook satCollection={satCollection} />} />
             <Route path="/showcase-books" element={<ShowcaseBooksList satCollection={satCollection} />} />
             <Route path="/showcase-books/:bookKey" element={<ShowcaseBook satCollection={satCollection} />} />
-            <Route path="/settings" element={<Settings satCollection={satCollection} setSatCollection={setSatCollection} />} />
+            <Route path="/settings" element={<Settings satCollection={satCollection} setSatCollection={setSatCollection} settings={settings} setSettings={setSettings} />} />
             <Route path="/about" element={<About />} />
             <Route path="/tests" element={<Tests />} />
           </Routes>

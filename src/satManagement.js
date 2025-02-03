@@ -29,7 +29,7 @@ import {
    * @param {Object} prevCollection - The current sat collection.
    * @returns {Object} - The updated sat collection.
    */
-  export const addSatsToCollection = (input, prevCollection) => {
+  export const addSatsToCollection = (input, prevCollection, settings) => {
     const newSats = input
       .split(/\s*,\s*|\s+/) // Split by comma or whitespace
       .filter(Boolean); // Remove empty strings
@@ -55,10 +55,8 @@ import {
         price: null,
       };
 
-      if(true) {
-        if (isSilkroad(sat)) {
-          updatedCollection[sat].tags.push('silkroad');
-        }
+      if(!settings.ignoreSilkroadRanges) {
+        if (isSilkroad(sat)) updatedCollection[sat].tags.push('silkroad');
       }
   
       if (isPizza(satNumber)) {

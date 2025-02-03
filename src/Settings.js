@@ -4,14 +4,9 @@ import { json } from "@codemirror/lang-json";
 import { EditorView } from "@codemirror/view";
 import { tagWeights } from "./tagWeights";
 
-const Settings = ({ satCollection, setSatCollection }) => {
+const Settings = ({ satCollection, setSatCollection, settings, setSettings }) => {
   const [userBooksJson, setUserBooksJson] = useState("[]");
   const [error, setError] = useState("");
-  const [settings, setSettings] = useState(() => {
-    // Get settings from localStorage if they exist, otherwise use default values
-    const savedSettings = localStorage.getItem("scv_settings");
-    return savedSettings ? JSON.parse(savedSettings) : { ignoreSilkroadRanges: true };
-  });
 
   const availableTraits = Object.keys(tagWeights);
 
@@ -82,11 +77,6 @@ const Settings = ({ satCollection, setSatCollection }) => {
       ignoreSilkroadRanges: !prevSettings.ignoreSilkroadRanges,
     }));
   };
-
-  // Save settings to localStorage whenever they change
-  useEffect(() => {
-    localStorage.setItem("scv_settings", JSON.stringify(settings));
-  }, [settings]);
 
   return (
     <div className="settings-page mt-2">
