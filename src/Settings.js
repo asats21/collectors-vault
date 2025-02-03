@@ -7,6 +7,11 @@ import { tagWeights } from "./tagWeights";
 const Settings = ({ satCollection, setSatCollection }) => {
   const [userBooksJson, setUserBooksJson] = useState("[]");
   const [error, setError] = useState("");
+  const [settings, setSettings] = useState(() => {
+    // Get settings from localStorage if they exist, otherwise use default values
+    const savedSettings = localStorage.getItem("scv_settings");
+    return savedSettings ? JSON.parse(savedSettings) : { ignoreSilkroadRanges: true };
+  });
 
   const availableTraits = Object.keys(tagWeights);
 
@@ -70,9 +75,38 @@ const Settings = ({ satCollection, setSatCollection }) => {
     }
   };
 
+  // Toggle the "Ignore silkroad ranges" setting
+  const toggleIgnoreSilkroadRanges = () => {
+    setSettings((prevSettings) => ({
+      ...prevSettings,
+      ignoreSilkroadRanges: !prevSettings.ignoreSilkroadRanges,
+    }));
+  };
+
+  // Save settings to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem("scv_settings", JSON.stringify(settings));
+  }, [settings]);
+
   return (
     <div className="settings-page mt-2">
       <h1>Settings</h1>
+
+      {/* Ignore Silkroad Ranges Setting */}
+      <div className="mt-5">
+        <div className="form-check">
+          <input
+            type="checkbox"
+            className="form-check-input"
+            id="ignoreSilkroadRanges"
+            checked={settings.ignoreSilkroadRanges}
+            onChange={toggleIgnoreSilkroadRanges}
+          />
+          <label className="form-check-label" htmlFor="ignoreSilkroadRanges">
+            Ignore Silkroad Ranges (Significantly improves performance on lower-end devices)
+          </label>
+        </div>
+      </div>
   
       {/* User Books Input */}
       <div className="user-books-form mt-5">
