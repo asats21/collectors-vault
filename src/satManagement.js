@@ -21,6 +21,7 @@ import {
   import { isJpeg } from './Jpeg';
   import { isHitman } from './Hitman';
   import { isRodarmorName } from './RodarmorNames.js';
+  import { isSilkroad } from './Silkroad.js';
   
   /**
    * Adds new sats to the collection and tags them based on their properties.
@@ -53,6 +54,12 @@ import {
         epoch: epoch,
         price: null,
       };
+
+      if(true) {
+        if (isSilkroad(sat)) {
+          updatedCollection[sat].tags.push('silkroad');
+        }
+      }
   
       if (isPizza(satNumber)) {
         updatedCollection[sat].tags.push('pizza');

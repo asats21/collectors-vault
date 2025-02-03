@@ -4,6 +4,7 @@ import './App.css';
 import { Tooltip } from "bootstrap";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
+import { loadSilkroadRanges } from './Silkroad';
 
 import ChallengeBook from './ChallengeBook';  // Import your ChallengeBook component
 import ChallengeBooksList from './ChallengeBooksList';  // Import the Challenge Books page
@@ -28,6 +29,11 @@ function App() {
   useEffect(() => {
     localStorage.setItem('satCollection', JSON.stringify(satCollection));
   }, [satCollection]);
+
+  // Load Silkroad ranges once
+  useEffect(() => {
+    loadSilkroadRanges(); 
+  }, []);
 
   useEffect(() => {
     const initializeTooltips = () => {

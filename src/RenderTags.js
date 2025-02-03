@@ -3,6 +3,7 @@ import { FaGem, FaRegGem, FaPizzaSlice, FaHourglass, FaCrosshairs, FaImage, FaBo
 import { FaBluesky } from "react-icons/fa6";
 import { TbAlpha, TbOmega } from "react-icons/tb";
 import { PiNumberNineFill } from "react-icons/pi";
+import { GiCamel } from "react-icons/gi";
 
 export const tagIcons = {
     block_9: { icon: <PiNumberNineFill  className="icon" style={{ color: "#fff" }} />, number: 2, tooltip: "First transaction block" },
@@ -15,6 +16,7 @@ export const tagIcons = {
     pizza: { icon: <FaPizzaSlice className="icon" style={{ color: "#F2A900" }} />, number: 2, tooltip: "Pizza" },
     jpeg: { icon: <FaImage className="icon" style={{ color: "#037F5E" }} />, number: 2, tooltip: "JPEG" },
     hitman: { icon: <FaCrosshairs className="icon" style={{ color: "#E05C5C" }} />, number: 2, tooltip: "Hitman" },
+    silkroad: { icon: <GiCamel className="icon" style={{ color: "#F2A900" }} />, number: 2, tooltip: "Silkroad First Auction" },
     palindrome: { icon: <FaBluesky className="icon" style={{ color: "#6AA8C3" }} />, number: 1, tooltip: "Palindrome" },
     uniform: { icon: <><FaBluesky className="icon" style={{ color: "#118AB2" }} /><FaBluesky className="icon" style={{ color: "#118AB2" }} /></>, number: 2, tooltip: "Uniform Palinception" },
     perfect: { icon: <><FaBluesky className="icon" style={{ color: "#E89A02" }} /><FaBluesky className="icon" style={{ color: "#E89A02" }} /></>, number: 3, tooltip: "Perfect Palinception" },

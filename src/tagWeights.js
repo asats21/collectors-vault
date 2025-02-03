@@ -4,8 +4,9 @@ export const tagWeights = {
     perfect: 200,
 
     pizza: 40,
-    hitman: 50,
     jpeg: 60,
+    hitman: 50,
+    silkroad: 40,
 
     'epoch1+': 40,
     'epoch0': 40,
