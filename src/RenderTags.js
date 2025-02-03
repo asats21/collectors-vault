@@ -36,7 +36,7 @@ export const tagIcons = {
     "pizza_4/20": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#F2A900" }}><FaPizzaSlice className="icon"/>&nbsp;4/20</div>, number: 2, tooltip: "Pizza sats mined on 4/20/2010" },
     "pizza_2009": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#F2A900" }}><FaPizzaSlice className="icon"/>&nbsp;2009</div>, number: 2, tooltip: "Jpeg sats mined in 2009" },
     "jpeg_2010": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#037F5E" }}><FaImage className="icon" />&nbsp;2010</div>, number: 2, tooltip: "Jpeg sats mined in 2010" },
-    nakamoto: { icon: <BsIncognito className="icon" style={{ color: "#ccc" }} />, number: 1, tooltip: "Sats mined by Satoshi Nakamoto himself" },
+    nakamoto: { icon: <BsIncognito className="icon" style={{ color: "#ccc" }} />, number: 5, tooltip: "Sats mined by Satoshi Nakamoto himself" },
 };
 
 export function RenderTags({ tags }) {

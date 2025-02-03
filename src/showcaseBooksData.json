@@ -102,11 +102,42 @@
   },
   {
     "key": "rodarmor_name",
-    "name": "Rodarmor Name",
+    "name": "Rodarmor Names",
     "description": "Sat names featured in the Ordinal Bounty 3, a challenge rewarding hunters for discovering names based on the Google Books dataset",
     "traits": ["rodarmor_name"],
     "supply": "12,450",
     "found": "1K",
+    "difficulty": "Collector"
+  },
+  {
+    "key": "nakamoto_palindrome",
+    "name": "Nakamoto Palindromes",
+    "description": "Palindromic sats mined by the man himself",
+    "traits": ["nakamoto", "palindrome"],
+    "supply": "77,000",
+    "found": "1K",
+    "difficulty": "Collector"
+  },
+  {
+    "key": "alpha_paliblock",
+    "name": "Paliblock Alphas",
+    "description": "Alphas from a palindromic block",
+    "traits": ["alpha", "paliblock"],
+    "difficulty": "Collector"
+  },
+  {
+    "key": "omega_paliblock",
+    "name": "Paliblock Omegas",
+    "description": "Omegas from a palindromic block",
+    "traits": ["omega", "paliblock"],
+    "difficulty": "Collector"
+  },
+  {
+    "key": "vintage_palindrome_3d",
+    "name": "Vintage 3D Palindromes",
+    "description": "3D palindrome originating from the first 1,000 Bitcoin blocks",
+    "traits": ["vintage", "palindrome", "3_digits"],
+    "supply": "244,800",
     "difficulty": "Collector"
   },
   {
@@ -148,28 +179,6 @@
     "traits": ["3_digits", "uniform_palinception", "paliblock"],
     "supply": "25,173",
     "difficulty": "Expert"
-  },
-  {
-    "key": "alpha_paliblock",
-    "name": "Paliblock Alphas",
-    "description": "Alphas from a palindromic block",
-    "traits": ["alpha", "paliblock"],
-    "difficulty": "Collector"
-  },
-  {
-    "key": "omega_paliblock",
-    "name": "Paliblock Omegas",
-    "description": "Omegas from a palindromic block",
-    "traits": ["omega", "paliblock"],
-    "difficulty": "Collector"
-  },
-  {
-    "key": "vintage_palindrome_3d",
-    "name": "Vintage 3D Palindromes",
-    "description": "3D palindrome originating from the first 1,000 Bitcoin blocks",
-    "traits": ["vintage", "palindrome", "3_digits"],
-    "supply": "244,800",
-    "difficulty": "Collector"
   },
   {
     "key": "nova_perfect_palinceptions",
