@@ -1,35 +1,33 @@
-let ranges = [];
+ let flatRanges = [];
 let isLoading = false; // Flag to track if the data is already being loaded
 
+// Function to load and process the flat ranges JSON
 export const loadSilkroadRanges = async () => {
-    // Prevent loading if ranges are already loaded or it's already in progress
-    if (ranges.length > 0 || isLoading) return;
+  // Prevent loading if ranges are already loaded or it's already in progress
+  if (flatRanges.length > 0 || isLoading) return;
 
-    isLoading = true; // Set the flag to indicate loading is in progress
-  
-    try {
-      const baseURL = process.env.PUBLIC_URL || ''; // Handle local vs. deployed
-      const response = await fetch(`${baseURL}/silk_road_ranges.txt`);
-      const text = await response.text();
-  
-      ranges = text
-        .trim()
-        .split(/\r?\n/) // Handle both Windows (\r\n) and Unix (\n) line endings
-        .map(line => {
-          const [min, max] = line.split(',').map(Number);
-          return { min, max };
-        });
-  
-      console.log(`Loaded ${ranges.length} silkroad ranges.`); // Debugging
-    } catch (error) {
-      console.error('Failed to load ranges:', error);
-    } finally {
-      isLoading = false; // Reset the loading flag when done
-    }
-  };
-  
+  isLoading = true; // Set the flag to indicate loading is in progress
 
+  try {
+    const response = await fetch(`${process.env.PUBLIC_URL}/silk_road_ranges_flat.json`);
+    flatRanges = await response.json();
+    console.log(`Loaded ${flatRanges.length / 2} silkroad ranges.`); // Each range has two values (min, max)
+  } catch (error) {
+    console.error('Failed to load ranges:', error);
+  } finally {
+    isLoading = false; // Reset the loading flag when done
+  }
+};
+  
+// Function to check if a given SAT is in any of the loaded ranges
 export const isSilkroad = (sat) => {
-  const satNum = Number(sat);
-  return ranges.some(({ min, max }) => satNum >= min && satNum <= max);
+  for (let i = 0; i < flatRanges.length; i += 2) {
+    const min = flatRanges[i];
+    const max = flatRanges[i + 1];
+
+    if (sat >= min && sat <= max) {
+      return true;
+    }
+  }
+  return false;
 };
