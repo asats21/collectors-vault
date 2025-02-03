@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactPaginate from 'react-paginate';
 import { FaTrash } from 'react-icons/fa';
-import { isPalindrome, getSubPaliLength, displayUniformPalinception } from "./Helpers";
+import { isPalindrome, getSubPaliLength, displayUniformPalinception } from "./TagDetection";
 import { RenderTags } from "./RenderTags";
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 

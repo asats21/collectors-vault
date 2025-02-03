@@ -1,5 +1,5 @@
 import { getBlock, isUniformPalinception, isPerfectPalinception, isAlpha, isOmega, isUncommon, isBlackUncommon, 
-getSubPaliLength, displayUniformPalinception, getUniformPalinceptionStructure, is450x, isSequence } from './Helpers.js';
+getSubPaliLength, displayUniformPalinception, getUniformPalinceptionStructure, is450x, isSequence } from './TagDetection.js';
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 
 const Tests = () => {

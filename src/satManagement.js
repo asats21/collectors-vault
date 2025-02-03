@@ -18,7 +18,7 @@ import {
     getUniformPalinceptionStructure,
     is450x,
     isNakamoto
-  } from './Helpers';
+  } from './TagDetection';
   import { isPizza } from './Pizza';
   import { isJpeg } from './Jpeg';
   import { isHitman } from './Hitman';

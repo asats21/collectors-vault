@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { isPalindrome } from "./Helpers";
+import { isPalindrome } from "./TagDetection";
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 import { FaCube } from "react-icons/fa";
 import { FaBluesky } from "react-icons/fa6";

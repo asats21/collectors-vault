@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { getBlock } from './Helpers';
+import { getBlock } from './TagDetection';
 
 const useBookCompletion = (bookData, satCollection) => {
   const [completedLevels, setCompletedLevels] = useState([]);
