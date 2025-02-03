@@ -1,6 +1,7 @@
 // satManagement.js
 import {
     isPalindrome,
+    isSequence,
     isPerfectPalinception,
     isUniformPalinception,
     isAlpha,
@@ -81,6 +82,7 @@ import {
         if (epoch > 0) updatedCollection[sat].tags.push('nova');
         if (is3Digits(satNumber)) updatedCollection[sat].tags.push('3_digits');
         if (is2Digits(satNumber)) updatedCollection[sat].tags.push('2_digits');
+        if (isSequence(satNumber)) updatedCollection[sat].tags.push('sequence');
       }
   
       if (isUniformPalinception(satNumber)) {

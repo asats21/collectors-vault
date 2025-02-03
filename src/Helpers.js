@@ -3,6 +3,14 @@ export function isPalindrome(num) {
     return str === str.split('').reverse().join('');
 }
 
+export function isSequence(sat_num) {
+    // Convert the number to a string
+    const str = sat_num.toString();
+    
+    // Use a regular expression to check for 3 or more repeating digits
+    return /(\d)\1{2,}/.test(str);
+}
+
 export function isPerfectPalinception(num) {
     // Convert number to string
     const str = num.toString();
