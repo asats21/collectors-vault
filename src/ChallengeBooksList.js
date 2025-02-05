@@ -56,7 +56,7 @@ const ChallengeBooksList = ({ satCollection }) => {
     <div className="">
 
       {/* Header */}
-      <div className="sats-header mt-4 mt-md-none">
+      <div className="sats-header mt-4 mt-md-2">
         <h1>Challenge Books</h1>
       </div>
 

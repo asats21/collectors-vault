@@ -85,7 +85,7 @@ function App() {
 
   function Footer() {
     return (
-      <footer className="footer-nav text-center pt-5">
+      <footer className="footer-nav text-center pt-4">
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }} className='mb-5'>
           <Link to="/about" style={{ textDecoration: 'none' }}>
             <button className="nav-button-footer about">
@@ -129,9 +129,11 @@ function App() {
   return (
     <Router>
       <div className="app-container">
-        <div className="container my-5">
+        <div className="container">
 
-          <SettingsCog/>
+          <div className='mt-3'>
+            <SettingsCog/>
+          </div>
 
           <h1 className="text-center mb-4">Sat Collector's Vault</h1>
           <Navigation />
