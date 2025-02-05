@@ -7,8 +7,8 @@ const useBookCompletion = (bookData, satCollection) => {
 
   useEffect(() => {
     if (bookData) {
-      // Step 1: Build the initial array of levels with their completion status
-      const initialLevels = bookData.levels.map((level) => {
+
+      const levels = bookData.levels.map((level) => {
         const satsForLevel = Object.entries(satCollection || {}) // Fallback to empty object
           .filter(([sat, details]) => {
             if (!details || !details.tags) return false; // Guard clause
@@ -27,23 +27,14 @@ const useBookCompletion = (bookData, satCollection) => {
 
         return {
           level: level.name,
-          isComplete,
+          status: isComplete ? 'complete' : 'incomplete',
           sat: selectedSat,
           block: getBlock(selectedSat),
           requirements: level.requirements,
         };
       });
 
-      // Step 2: Calculate the status for each level based on the initial array
-      const newCompletedLevels = initialLevels.map((level, index) => {
-        const status = level.isComplete ? 'complete' : 'incomplete';
-        return {
-          ...level,
-          status,
-        };
-      });
-
-      setCompletedLevels(newCompletedLevels);
+      setCompletedLevels(levels);
     }
   }, [bookData, satCollection]);
 
