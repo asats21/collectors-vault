@@ -18,9 +18,13 @@ const Book = ({ satCollection }) => {
   // Use the custom hook to get completed levels
   const bookLevels = useBookCompletion(bookData, satCollection);
 
+  console.log(bookLevels);
+
   if (!bookData) {
     return <div>Not found</div>;
   }
+
+  const allComplete = bookLevels.length > 0 && bookLevels.every(level => level.status === 'complete');
 
   return (
     <div>
@@ -29,7 +33,7 @@ const Book = ({ satCollection }) => {
       {bookLevels.map((level, index) => (
         <li
           key={index}
-          className={`level level-${level.status.replace(/ /g, '-')}`} // Convert spaces to dashes
+          className={`level level-${allComplete ? 'complete' : (level.status === 'complete' ? 'next' : 'incomplete')}`} // Convert spaces to dashes
         >
           <div className="level-content pb-5 pb-md-0">
             <div className="py-3 py-md-5">
@@ -45,7 +49,7 @@ const Book = ({ satCollection }) => {
             ))}
             </div>
             {level.status === 'complete' && (
-              <div className="diamond diamond-full mx-auto mx-md-5">
+              <div className={`diamond ${allComplete ? 'diamond-full-complete' : 'diamond-partialy-complete'} mx-auto mx-md-5`}>
                 <div className="diamond-content">
                   <span className="small" style={{'marginTop': '15px'}}>{level.sat}</span>
                   <span className="small" style={{ 
@@ -69,17 +73,6 @@ const Book = ({ satCollection }) => {
                 </div>
               </div>
             )}
-
-            {/* {level.status === 'blocked' && (
-              <div className="diamond diamond-blocked mx-auto mx-md-5">
-                <span className="small">{level.sat}</span>
-              </div>
-            )}
-            {level.status === 'next' && (
-              <div className="diamond diamond-next mx-auto mx-md-5">
-                <span className="small">???</span>
-              </div>
-            )} */}
 
           </div>
         </li>

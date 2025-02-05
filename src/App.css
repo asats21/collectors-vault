@@ -92,16 +92,6 @@ ul.levels {
     box-shadow: 0 0 5px #037F5E;
 }
   
-.level-blocked {
-    border: 2px solid #E05C5C; /* Red for blocked */
-    box-shadow: 0 0 5px #E05C5C;
-}
-  
-.level-progress {
-    border: 2px solid #6AA8C3; /* Blue for in progress */
-    box-shadow: 0 0 5px #6AA8C3;
-}
-  
 .level-next {
     border: 2px solid #C38BFA; /* Purple for next in line */
     box-shadow: 0 0 10px #C38BFA; /* Purple glow */
@@ -169,21 +159,14 @@ ul.levels {
     }
 }
 
-.diamond-full {
+.diamond-full-complete {
     color: white;
     border: 2px solid #037F5E;
     box-shadow: 0 0 10px 2px #037F5E;
     animation: pulse 4s infinite; /* Sparkle animation */
 }
 
-.diamond-blocked {
-    color: white;
-    border: 2px solid #E05C5C;
-    box-shadow: 0 0 10px 2px #E05C5C;
-    animation: pulse 4s infinite; /* Sparkle animation */
-}
-
-.diamond-next {
+.diamond-partialy-complete {
     color: white;
     border: 2px solid #C38BFA;
     box-shadow: 0 0 10px 2px #C38BFA;
