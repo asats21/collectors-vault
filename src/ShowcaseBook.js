@@ -23,26 +23,30 @@ const ShowcaseBook = ({ satCollection }) => {
   const handleMouseMove = (index, e) => {
     const card = cardRefs.current[index];
     if (!card) return;
-
+  
     const rect = card.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
-
-    const tiltX = (0.5 - x) * 15;
-    const tiltY = (y - 0.5) * 10;
-
+  
+    const tiltX = (0.5 - x) * 30;
+    const tiltY = (y - 0.5) * 20;
+  
+    // Apply tilt, a bit of Z-translation, and an enlarged scale
     card.style.transform = `
       perspective(1000px)
       rotateX(${tiltY}deg)
       rotateY(${tiltX}deg)
       translateZ(10px)
+      scale(1.05)
     `;
+    
   };
-
+  
   const handleMouseLeave = (index) => {
     const card = cardRefs.current[index];
     if (card) {
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px)';
+      // Reset transformations and shadow
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1)';
     }
   };
 
