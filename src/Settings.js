@@ -102,8 +102,12 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
   };
 
   return (
-    <div className="settings-page mt-2">
-      <h1>Settings</h1>
+    <div className="">
+
+      {/* Header */}
+      <div className="sats-header mt-4 mt-md-none">
+        <h1>Settings</h1>
+      </div>
 
       {/* Ignore Silkroad Ranges Setting */}
       <div className="mt-5">

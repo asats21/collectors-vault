@@ -39,7 +39,13 @@ const ShowcaseBooksList = ({ satCollection }) => {
   }
 
   return (
-    <div className="showcase-books-page">
+    <div className="">
+
+      {/* Header */}
+      <div className="sats-header mt-4 mt-md-none">
+        <h1>Showcase Books</h1>
+      </div>
+
       {difficultyOrder.map((difficulty) => (
         <div key={difficulty} className="difficulty-tier">
           <h2>{difficulty}</h2>

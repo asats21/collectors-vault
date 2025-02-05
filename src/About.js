@@ -1,8 +1,13 @@
 const About = () => {
 
   return (
-    <div className="mt-2">
-      <h1>About this project</h1>
+    <div className="">
+
+      {/* Header */}
+      <div className="sats-header mt-4 mt-md-none">
+        <h1>About this project</h1>
+      </div>
+
       <p>
         This site was created as a proof of concept, based on my experience in the space and my thoughts on what rare sat collectors might need.
       </p>
