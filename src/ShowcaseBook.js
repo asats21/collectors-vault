@@ -93,7 +93,7 @@ const ShowcaseBook = ({ satCollection }) => {
               <div className="sat-number text-center">
                 {isRodarmorName(sat) ? getRodarmorName(sat) : sat}
               </div>
-              <div className={`sat-block text-center fw-bold small ${isPalindrome(details.block_number) ? 'table-palindromic-block' : ''}`}> 
+              <div className={`sat-block text-center fw-bold small ${isPalindrome(details.block_number) ? '' : ''}`}> 
                 <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
                   {isPalindrome(details.block_number) ? 
                     <FaBluesky className="icon" style={{color: '#118AB2', padding: '1px', border: '1px solid #118AB2'}}/> 
