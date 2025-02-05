@@ -675,7 +675,6 @@ ul.levels {
   height: 100%; /* Ensure full height for Bootstrap grid */
   display: flex;
   flex-direction: column;
-  aspect-ratio: 1/1; /* Force square shape */
 }
 
 /* Hover Effects */

@@ -80,7 +80,7 @@ const ShowcaseBook = ({ satCollection }) => {
         {matchingSats.map(([sat, details], index) => (
           <div key={sat} className="col">
             <div 
-              className="sat-card p-3"
+              className="sat-card px-1 py-4"
               ref={el => cardRefs.current[index] = el}
               onMouseMove={(e) => handleMouseMove(index, e)}
               onMouseLeave={() => handleMouseLeave(index)}
