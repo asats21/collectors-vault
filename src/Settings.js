@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { json } from "@codemirror/lang-json";
 import { EditorView } from "@codemirror/view";
 import { tagWeights } from "./tagWeights";
+import ShowcaseBooksContext from './ShowcaseBooksContext';
 
 const Settings = ({ satCollection, setSatCollection, settings, setSettings }) => {
   const [userBooksJson, setUserBooksJson] = useState("[]");
   const [error, setError] = useState("");
+
+  const { addUserBook } = useContext(ShowcaseBooksContext);
 
   const availableTraits = Object.keys(tagWeights);
 
@@ -61,9 +64,14 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
           throw new Error(`Book at index ${index}: "difficulty" must be a non-empty string.`);
         }
       });
-  
+
+      parsedBooks.forEach((book) => {
+        addUserBook(book);
+      });
+
       // Save formatted JSON
       localStorage.setItem("userShowcaseBooks", JSON.stringify(parsedBooks, null, 2));
+
       setError("");
     } catch (err) {
       setError(err.message);
@@ -159,7 +167,7 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
             {/* Collapsible Help Section */}
             <div className="help-section mt-4">
         <div className="collapse mt-2" id="json-help">
-          <p>Copy and paste this example into the editor to see how it works. Don't forget to click 'Save'! Once saved, these 2 books will appear on the Showcase Books page, merged with the existing books.</p>
+          <p>Copy and paste this example into the editor to see how it works. Don't forget to click 'Save'! Once saved, these 2 books will appear on the Showcase Books page, merged with the existing books. (Don't forget to refresh the page!)</p>
           <pre className="json-template">
 {`{
   "key": "silkroad_palindrome",

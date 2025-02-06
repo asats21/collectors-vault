@@ -24,11 +24,10 @@ export const ShowcaseBooksProvider = ({ children }) => {
   const addUserBook = (newBook) => {
     const updatedBooks = [...showcaseBooks, newBook];
     setShowcaseBooks(updatedBooks);
-    localStorage.setItem("userShowcaseBooks", JSON.stringify(updatedBooks));
   };
 
   return (
-    <ShowcaseBooksContext.Provider value={{ showcaseBooks, addUserBook }}>
+    <ShowcaseBooksContext.Provider value={{ showcaseBooks, addUserBook, setShowcaseBooks }}>
       {children}
     </ShowcaseBooksContext.Provider>
   );
