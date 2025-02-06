@@ -159,25 +159,41 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
             {/* Collapsible Help Section */}
             <div className="help-section mt-4">
         <div className="collapse mt-2" id="json-help">
-          <p>Copy and paste this example into the editor to see how it works. Don't forget to click 'Save'! Once saved, this book will appear on the Showcase Books page, merged with the existing books.</p>
+          <p>Copy and paste this example into the editor to see how it works. Don't forget to click 'Save'! Once saved, these 2 books will appear on the Showcase Books page, merged with the existing books.</p>
           <pre className="json-template">
-  {`{
-    "key": "hitman_palindrome",
-    "name": "Hitman Palindrome",
-    "description": "Palindromic sats from the hitman transaction",
-    "traits": ["hitman", "palindrome"],
-    "difficulty": "Novice"
-  }`}
+{`{
+  "key": "silkroad_palindrome",
+  "name": "Silkroad Palindrome",
+  "description": "Palindromic sats from Bitcoin seized and sold at an auction conducted by the US Marshals",
+  "traits": ["silkroad", "palindrome"],
+  "difficulty": "Novice"
+},
+{
+  "key": "silkroad_alpha",
+  "name": "Silkroad Alpha",
+  "description": "Alpha sats from Bitcoin seized and sold at an auction conducted by the US Marshals",
+  "traits": ["silkroad", "alpha"],
+  "difficulty": "Collector"
+}`}
           </pre>
           <button
             className="nav-button copy-template mt-2"
-            onClick={() => setUserBooksJson(`[{
-  "key": "hitman_palindrome",
-  "name": "Hitman Palindrome",
-  "description": "Palindromic sats from the hitman transaction",
-  "traits": ["hitman", "palindrome"],
+            onClick={() => setUserBooksJson(`[
+{
+  "key": "silkroad_palindrome",
+  "name": "Silkroad Palindrome",
+  "description": "Palindromic sats from Bitcoin seized and sold at an auction conducted by the US Marshals",
+  "traits": ["silkroad", "palindrome"],
   "difficulty": "Novice"
-}]`)}
+},
+{
+  "key": "silkroad_alpha",
+  "name": "Silkroad Alpha",
+  "description": "Alpha sats from Bitcoin seized and sold at an auction conducted by the US Marshals",
+  "traits": ["silkroad", "alpha"],
+  "difficulty": "Collector"
+}
+]`)}
           >
             Fill Form with Example
           </button>
