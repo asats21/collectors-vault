@@ -3,6 +3,7 @@ export const tagWeights = {
     sequence: 5,
     uniform_palinception: 30,
     perfect_palinception: 200,
+    'uniform_3/5': 20,
     nova: 40,
 
     pizza: 40,

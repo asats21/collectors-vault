@@ -37,6 +37,7 @@ export const tagIcons = {
     "pizza_2009": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#F2A900" }}><FaPizzaSlice className="icon"/>&nbsp;2009</div>, number: 2, tooltip: "Jpeg sats mined in 2009" },
     "jpeg_2010": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#037F5E" }}><FaImage className="icon" />&nbsp;2010</div>, number: 2, tooltip: "Jpeg sats mined in 2010" },
     nakamoto: { icon: <BsIncognito className="icon" style={{ color: "#ccc" }} />, number: 5, tooltip: "Sats mined by Satoshi Nakamoto himself" },
+    "uniform_3/5": { icon: <div className="fw-bold">3/5</div>, number: 20, tooltip: "Uniform palinception with sub-palindrome lengths of both 3 and 5 simultaneously" },
 };
 
 export function RenderTags({ tags }) {

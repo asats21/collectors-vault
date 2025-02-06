@@ -18,7 +18,8 @@ import {
     getUniformPalinceptionStructure,
     is450x,
     isNakamoto,
-    isPrime
+    isPrime,
+    isThreeFivePalinception
   } from './TagDetection';
   import { isPizza } from './Pizza';
   import { isJpeg } from './Jpeg';
@@ -88,6 +89,10 @@ import {
       if (isUniformPalinception(satNumber)) {
         updatedCollection[sat].tags.push('uniform_palinception');
         updatedCollection[sat].tags.push(getUniformPalinceptionStructure(satNumber));
+        if(isThreeFivePalinception(satNumber)) { 
+          updatedCollection[sat].tags.push('5-5-5');
+          updatedCollection[sat].tags.push('uniform_3/5');
+        };
       }
   
       if (isPerfectPalinception(satNumber)) {

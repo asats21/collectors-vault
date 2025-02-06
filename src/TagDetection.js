@@ -108,6 +108,31 @@ export function getSubPaliLength(num) {
     return null;
 }
 
+export function isThreeFivePalinception(num) {
+    let str = num.toString();
+    let length = str.length;
+
+    // Check if length is divisible by both 3 and 5
+    if (length % 3 !== 0 || length % 5 !== 0) {
+        return false;
+    }
+
+    // Helper function to check palindrome segments
+    function checkSubPalindromes(segmentLength) {
+        let numSegments = length / segmentLength;
+        for (let i = 0; i < numSegments; i++) {
+            let segment = str.slice(i * segmentLength, (i + 1) * segmentLength);
+            if (!isPalindrome(segment)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // Check for both 3-length and 5-length sub-palindromes
+    return checkSubPalindromes(3) && checkSubPalindromes(5);
+}
+
 export function displayUniformPalinception(sat_num) {
     let subPaliLength = getSubPaliLength(sat_num);
     if (!subPaliLength) {
