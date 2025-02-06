@@ -8,6 +8,9 @@ import { RenderTags } from "./RenderTags";
 import { getSupply } from "./Rarities";
 import ShowcaseBooksContext from './ShowcaseBooksContext';
 
+import { RiNumbersFill } from "react-icons/ri";
+import { CgSearchFound } from "react-icons/cg";
+
 const ShowcaseBook = ({ satCollection }) => {
   const { bookKey } = useParams();
   const [bookData, setBookData] = useState(null);
@@ -78,6 +81,17 @@ const ShowcaseBook = ({ satCollection }) => {
     });
   };
 
+  const displayHeader = (bookData) => {
+    return (<>
+    <div className='d-flex justify-content-between'>
+      <h1 className="" style={{ color: "#fff"}}>{bookData.name}</h1>
+      <h3 className=""> {displaySupplyFigures(bookData)}</h3>
+    </div>
+    <p className="mb-4 small text-decoration-underline">{bookData.difficulty}</p>
+    <p className="mb-4">{bookData.description}</p>
+    </>);
+  }
+
   if (!bookData) {
     return <div className="text-center mt-5">Not found</div>;
   }
@@ -90,14 +104,21 @@ const ShowcaseBook = ({ satCollection }) => {
     bookData.traits.every((trait) => details.tags?.includes(trait))
   );
 
-  if (matchingSats.length === 0) {
-    return (
-      <div className="container mt-4">
-        <h3 className="mb-4">{bookData.name}</h3>
-        <p className="mb-4">{bookData.description}</p>
-        <div className="text-center mt-5">No matching items found in this collection</div>
-      </div>
-    );
+  const displaySupplyFigures = (book) => {
+    const supplyData = book.total ? { total: book.total, found: book.found } : getSupply(book.traits);
+    
+    return supplyData ? (
+        <div className="fw-bold d-flex">
+            <span data-bs-toggle="tooltip" data-bs-placement="top" title="Total Supply">
+                <RiNumbersFill />{supplyData.total}
+            </span>
+            {supplyData.found && (
+                <span className='ms-1' data-bs-toggle="tooltip" data-bs-placement="top" title="Found">
+                    <CgSearchFound />{supplyData.found}
+                </span>
+            )}
+        </div>
+    ) : null;
   }
 
   const renderRarity = (tags) => {
@@ -105,10 +126,18 @@ const ShowcaseBook = ({ satCollection }) => {
       return supply ? <div className='small text-center mt-3'>1 / {supply.total}</div> : null;
   }
 
+  if (matchingSats.length === 0) {
+    return (
+      <div className="container mt-4">
+        {displayHeader(bookData)}
+        <div className="text-center mt-5">No matching items found in this collection</div>
+      </div>
+    );
+  }
+
   return (
     <div className="container mt-4">
-      <h3 className="mb-4">{bookData.name}</h3>
-      <p className="mb-4">{bookData.description}</p>
+      {displayHeader(bookData)}
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 g-4">
         {matchingSats.map(([sat, details], index) => (
           <div key={sat} className="col">
