@@ -757,3 +757,16 @@ ul.levels {
   color: white; /* White text on hover */
   box-shadow: 0 0 4px #E89A02; /* Slightly stronger glow on hover */
 }
+
+.nav-button.demo-mode {
+  border-color: #FFD166; /* Goldenrod Yellow */
+  color: #FFD166;
+  box-shadow: 0 0 5px #FFD166;
+  padding: 6px 12px; /* Smaller padding */
+}
+
+.nav-button.demo-mode:hover {
+  background-color: #FFD166;
+  color: black;
+  box-shadow: 0 0 10px #FFD166;
+}

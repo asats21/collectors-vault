@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
 import { loadSilkroadRanges } from './Silkroad';
 
+import DemoModeModal from './DemoModeModal';
 import ChallengeBook from './ChallengeBook';  // Import your ChallengeBook component
 import ChallengeBooksList from './ChallengeBooksList';  // Import the Challenge Books page
 import ShowcaseBook from './ShowcaseBook';  // Import your ChallengeBook component
@@ -102,27 +103,53 @@ function App() {
     );
   }
 
-  function SettingsCog() {
+  function SettingsAndDemo() {
+    const [showDemoModal, setShowDemoModal] = useState(false);
+  
     return (
-      <Link to="/settings" className="settings-link">
-        <div
-          className="settings-icon"
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-          }}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        {/* Demo Mode Button */}
+        <button
+          className="nav-button demo-mode"
+          onClick={() => setShowDemoModal(true)}
         >
-          <FaCog
-            size={24}
+          Demo Mode
+        </button>
+  
+        {/* Settings Cog */}
+        <Link to="/settings" className="settings-link">
+          <div
+            className="settings-icon"
             style={{
-              cursor: "pointer",
-              color: "#ffffff",
-              marginLeft: "10px",
+              display: "flex",
+              alignItems: "center",
             }}
-          />
-        </div>
-      </Link>
+          >
+            <FaCog
+              size={24}
+              style={{
+                cursor: "pointer",
+                color: "#ffffff",
+                marginLeft: "10px",
+              }}
+            />
+          </div>
+        </Link>
+  
+        {/* Demo Mode Modal */}
+        <DemoModeModal
+          showModal={showDemoModal}
+          setShowModal={setShowDemoModal}
+          satCollection={satCollection} 
+          setSatCollection={setSatCollection}
+        />
+      </div>
     );
   }
 
@@ -132,7 +159,7 @@ function App() {
         <div className="container">
 
           <div className='mt-3'>
-            <SettingsCog/>
+            <SettingsAndDemo />
           </div>
 
           <h1 className="text-center mb-4">Sat Collector's Vault</h1>
