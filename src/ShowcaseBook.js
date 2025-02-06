@@ -2,8 +2,8 @@ import React, { useEffect, useState, useContext, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { isPalindrome } from "./TagDetection";
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
-import { FaCube } from "react-icons/fa";
-import { FaBluesky } from "react-icons/fa6";
+import { FaCube } from 'react-icons/fa';
+import { FaBluesky } from 'react-icons/fa6';
 import { RenderTags } from "./RenderTags";
 import ShowcaseBooksContext from './ShowcaseBooksContext';
 
@@ -12,6 +12,7 @@ const ShowcaseBook = ({ satCollection }) => {
   const [bookData, setBookData] = useState(null);
   const { showcaseBooks } = useContext(ShowcaseBooksContext);
   const cardRefs = useRef([]);
+  const [expandedIndex, setExpandedIndex] = useState(null);
 
   useEffect(() => {
     if (showcaseBooks && bookKey) {
@@ -20,34 +21,60 @@ const ShowcaseBook = ({ satCollection }) => {
     }
   }, [bookKey, showcaseBooks]);
 
+  /**
+   * updateTransform combines the tilt (rotate) and scale (expansion) effects.
+   * The `expIndex` parameter defaults to the current expandedIndex,
+   * but toggleExpand will pass in the new value so that the update is immediate.
+   */
+  const updateTransform = (index, tiltX = 0, tiltY = 0, expIndex = expandedIndex) => {
+    const card = cardRefs.current[index];
+    if (card) {
+      const scale = expIndex === index ? 1.5 : 1;
+      // The transform combines perspective, tilt, a slight translateZ (for depth) and scale.
+      card.style.transform = `
+        perspective(1000px)
+        rotateX(${tiltY}deg)
+        rotateY(${tiltX}deg)
+        translateZ(10px)
+        scale(${scale})
+      `;
+      // Ensure the expanded card appears on top.
+      card.style.zIndex = expIndex === index ? 10 : 1;
+    }
+  };
+
   const handleMouseMove = (index, e) => {
     const card = cardRefs.current[index];
     if (!card) return;
-  
+
     const rect = card.getBoundingClientRect();
+    // Get the relative mouse position (0 to 1)
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
-  
+
+    // Calculate tilt: adjust these multipliers to change the effect's strength.
     const tiltX = (0.5 - x) * 30;
     const tiltY = (y - 0.5) * 20;
-  
-    // Apply tilt, a bit of Z-translation, and an enlarged scale
-    card.style.transform = `
-      perspective(1000px)
-      rotateX(${tiltY}deg)
-      rotateY(${tiltX}deg)
-      translateZ(10px)
-      scale(1.05)
-    `;
     
+    updateTransform(index, tiltX, tiltY);
   };
-  
+
   const handleMouseLeave = (index) => {
-    const card = cardRefs.current[index];
-    if (card) {
-      // Reset transformations and shadow
-      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0px) scale(1)';
-    }
+    // Reset the tilt to 0 while keeping the current scale (expanded or not)
+    updateTransform(index, 0, 0);
+  };
+
+  const toggleExpand = (index) => {
+    // Determine the new expanded index (toggle behavior)
+    const newExpandedIndex = expandedIndex === index ? null : index;
+    setExpandedIndex(newExpandedIndex);
+
+    // Update all cards with the new expansion state and reset tilt to 0
+    cardRefs.current.forEach((card, i) => {
+      if (card) {
+        updateTransform(i, 0, 0, newExpandedIndex);
+      }
+    });
   };
 
   if (!bookData) {
@@ -82,26 +109,28 @@ const ShowcaseBook = ({ satCollection }) => {
             <div 
               className="sat-card px-1 py-4"
               ref={el => cardRefs.current[index] = el}
+              onClick={() => toggleExpand(index)}
               onMouseMove={(e) => handleMouseMove(index, e)}
               onMouseLeave={() => handleMouseLeave(index)}
               style={{
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                position: 'relative' // Ensures z-index works as expected
               }}
             >
               <div className="sat-year text-center fw-bold small">{details.year}</div>
               <div className="sat-number text-center">
                 {isRodarmorName(sat) ? getRodarmorName(sat) : sat}
               </div>
-              <div className={`sat-block text-center fw-bold small ${isPalindrome(details.block_number) ? '' : ''}`}> 
+              <div className={`sat-block text-center fw-bold small`}>
                 <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
                   {isPalindrome(details.block_number) ? 
-                    <FaBluesky className="icon" style={{color: '#118AB2', padding: '1px', border: '1px solid #118AB2'}}/> 
+                    <FaBluesky className="icon" style={{ color: '#118AB2', padding: '1px', border: '1px solid #118AB2' }}/>
                     : <FaCube />
                   } {details.block_number}
                 </span>
               </div>
-              <div className="sat-tags mt-3 d-flex justify-content-center" style={{"rowGap": "0.5rem"}}>
+              <div className="sat-tags mt-3 d-flex justify-content-center" style={{ rowGap: "0.5rem" }}>
                 <RenderTags tags={details.tags || []} />
               </div>
             </div>
