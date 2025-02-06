@@ -47,8 +47,7 @@ import {
       const year = getSatYear(blockNumber);
       const epoch = getEpoch(blockNumber);
   
-      if (updatedCollection[sat]) return; // Skip if sat already exists
-  
+      // Always reset or create a new entry
       updatedCollection[sat] = {
         tags: [],
         block_number: blockNumber,
