@@ -19,6 +19,7 @@ export const tagWeights = {
     paliblock: 30,
     vintage: 20,
     rodarmor_name: 100,
+    prime: 50,
 
     uncommon: 20,
     black_uncommon: 20,

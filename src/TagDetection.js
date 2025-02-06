@@ -295,3 +295,60 @@ export const isNakamoto = (block) => {
     // Check if the block is in the set of Nakamoto blocks
     return nakamotoBlocks.has(block);
 }
+
+export function isPrime(n) {
+    if (n < 2) return false;
+    if (n === 2 || n === 3) return true;
+    if (n % 2 === 0) return false;
+  
+    // Quick elimination using small primes
+    const smallPrimes = [3, 5, 7, 11, 13, 17, 19, 23, 29];
+    for (let p of smallPrimes) {
+      if (n === p) return true;
+      if (n % p === 0) return false;
+    }
+  
+    // Factor n-1 as d * 2^s
+    let s = 0, d = n - 1;
+    while (d % 2 === 0) {
+      d /= 2;
+      s++;
+    }
+  
+    // Bases for deterministic Miller-Rabin for numbers < 2^64
+    const bases = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37];
+  
+    // Fast modular exponentiation
+    function modPow(base, exp, mod) {
+      let result = 1;
+      base = base % mod;
+      while (exp > 0) {
+        if (exp % 2 === 1) {
+          result = (result * base) % mod;
+        }
+        exp = Math.floor(exp / 2);
+        base = (base * base) % mod;
+      }
+      return result;
+    }
+  
+    // Miller-Rabin test
+    for (let a of bases) {
+      if (a >= n) continue;
+  
+      let x = modPow(a, d, n);
+      if (x === 1 || x === n - 1) continue;
+  
+      let composite = true;
+      for (let i = 0; i < s - 1; i++) {
+        x = modPow(x, 2, n);
+        if (x === n - 1) {
+          composite = false;
+          break;
+        }
+      }
+      if (composite) return false;
+    }
+  
+    return true;
+}

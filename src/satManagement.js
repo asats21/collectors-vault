@@ -17,7 +17,8 @@ import {
     getEpoch,
     getUniformPalinceptionStructure,
     is450x,
-    isNakamoto
+    isNakamoto,
+    isPrime
   } from './TagDetection';
   import { isPizza } from './Pizza';
   import { isJpeg } from './Jpeg';
@@ -140,6 +141,10 @@ import {
 
       if (isNakamoto(blockNumber)) {
         updatedCollection[sat].tags.push('nakamoto');
+      }
+
+      if (isPrime(satNumber)) {
+        updatedCollection[sat].tags.push('prime');
       }
 
     });
