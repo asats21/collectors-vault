@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { RenderTags } from "./RenderTags";
+import { getSupply } from "./Rarities";
 import { RiNumbersFill } from "react-icons/ri";
 import { CgSearchFound } from "react-icons/cg";
 import ShowcaseBooksContext from './ShowcaseBooksContext';
@@ -38,6 +39,23 @@ const ShowcaseBooksList = ({ satCollection }) => {
     return <div className="text-center mt-5"><div className="spinner-border text-primary" role="status"></div></div>;
   }
 
+  const displaySupplyFigures = (book) => {
+    const supplyData = book.total ? { total: book.total, found: book.found } : getSupply(book.traits);
+    
+    return supplyData ? (
+        <div className="fw-bold">
+            <span data-bs-toggle="tooltip" data-bs-placement="top" title="Total Supply">
+                <RiNumbersFill />{supplyData.total}
+            </span>
+            {supplyData.found && (
+                <span className='ms-1' data-bs-toggle="tooltip" data-bs-placement="top" title="Found">
+                    <CgSearchFound />{supplyData.found}
+                </span>
+            )}
+        </div>
+    ) : null;
+  }
+
   return (
     <div className="">
 
@@ -66,18 +84,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
                       <div className="sat-tags d-flex justify-content-start">
                         <RenderTags tags={book.traits} />
                       </div>
-                      {book.supply &&
-                        <div className="fw-bold">
-                          <span data-bs-toggle="tooltip" data-bs-placement="top" title="Total Supply">
-                            <RiNumbersFill />{book.supply}
-                          </span>
-                          {book.found &&
-                            <span className='ms-1' data-bs-toggle="tooltip" data-bs-placement="top" title="Found">
-                              <CgSearchFound />{book.found}
-                            </span>
-                          }
-                        </div>
-                      }
+                        { displaySupplyFigures(book) }
                     </div>
 
                     <p className='mt-2'>{book.description}</p>

@@ -11,7 +11,6 @@
     "name": "Pizza Palindromes",
     "description": "Palindromic sats from the 2010 'Bitcoin Pizza Day' transaction, where 2 pizzas were bought for 10,000 BTC, marking Bitcoin's first real-world purchase",
     "traits": ["pizza", "palindrome"],
-    "supply": "100K",
     "difficulty": "Novice"
   },
   {
@@ -19,8 +18,6 @@
     "name": "Vintage Palindromes",
     "description": "Palindromes from the first 1,000 Bitcoin blocks",
     "traits": ["vintage", "palindrome"],
-    "supply": "6M",
-    "found": "21K",
     "difficulty": "Novice"
   },
   {
@@ -28,7 +25,7 @@
     "name": "2009 Alphas",
     "description": "Alphas from 2009, the year Bitcoin began to shape its early legacy",
     "traits": ["2009", "alpha"],
-    "supply": "1,6M",
+    "total": "1,6M",
     "found": "8K",
     "difficulty": "Novice"
   },
@@ -37,7 +34,7 @@
     "name": "3D Palindromes",
     "description": "Palindromes consisting of just 3 repeated digits",
     "traits": ["3_digits", "palindrome"],
-    "supply": "1,2M",
+    "total": "1,2M",
     "found": "24K",
     "difficulty": "Novice"
   },
@@ -46,7 +43,7 @@
     "name": "Pre-First Halving Black Uncommons",
     "description": "Black Uncommons mined before the first halving event",
     "traits": ["black_uncommon", "epoch0"],
-    "supply": "210K",
+    "total": "210K",
     "found": "13K",
     "difficulty": "Novice"
   },
@@ -55,7 +52,7 @@
     "name": "Nova 3D Palindrome",
     "description": "3D Palindromes mined after the first Bitcoin halving, shortly following the 'palindrome extinction event'",
     "traits": ["palindrome", "nova", "3_digits"],
-    "supply": "70,766",
+    "total": "70,766",
     "difficulty": "Collector"
   },
   {
@@ -63,7 +60,7 @@
     "name": "3D Paliblock Palindromes",
     "description": "3D palindromes featuring a block number that is itself a palindrome",
     "traits": ["3_digits", "paliblock"],
-    "supply": "126,465",
+    "total": "126,465",
     "difficulty": "Collector"
   },
   {
@@ -71,7 +68,7 @@
     "name": "3D Uniform Palinception",
     "description": "3D uniform palinceptions, where the palindrome structure is made up of smaller palindromes of equal length",
     "traits": ["3_digits", "uniform_palinception"],
-    "supply": "139,616",
+    "total": "139,616",
     "difficulty": "Collector"
   },
   {
@@ -79,7 +76,7 @@
     "name": "Pre-First Halving Uncommons",
     "description": "Uncommons mined before the first halving event",
     "traits": ["uncommon", "epoch0"],
-    "supply": "210K",
+    "total": "210K",
     "found": "16K",
     "difficulty": "Collector"
   },
@@ -88,7 +85,7 @@
     "name": "Vintage Paliblock Palindromes",
     "description": "Vintage palindromes featuring a block number that is itself a palindrome",
     "traits": ["vintage", "palindrome", "paliblock"],
-    "supply": "1,1M",
+    "total": "1,1M",
     "found": "2K",
     "difficulty": "Collector"
   },
@@ -97,7 +94,7 @@
     "name": "2009 Black Uncommons",
     "description": "Black Uncommons from the year Bitcoin was created",
     "traits": ["black_uncommon", "2009"],
-    "supply": "32,474",
+    "total": "32,474",
     "difficulty": "Collector"
   },
   {
@@ -105,7 +102,7 @@
     "name": "Rodarmor Names",
     "description": "Sat names featured in the Ordinal Bounty 3, a challenge rewarding hunters for discovering names based on the Google Books dataset",
     "traits": ["rodarmor_name"],
-    "supply": "12,450",
+    "total": "12,450",
     "found": "1K",
     "difficulty": "Collector"
   },
@@ -114,7 +111,7 @@
     "name": "Nakamoto Palindromes",
     "description": "Palindromic sats mined by the man himself",
     "traits": ["nakamoto", "palindrome"],
-    "supply": "77,000",
+    "total": "77,000",
     "found": "1K",
     "difficulty": "Collector"
   },
@@ -137,7 +134,21 @@
     "name": "Vintage 3D Palindromes",
     "description": "3D palindrome originating from the first 1,000 Bitcoin blocks",
     "traits": ["vintage", "palindrome", "3_digits"],
-    "supply": "244,800",
+    "total": "244,800",
+    "difficulty": "Collector"
+  },
+  {
+    "key": "hitman_palindrome",
+    "name": "Hitman Palindrome",
+    "description": "Palindromic sats from the hitman transaction",
+    "traits": ["hitman", "palindrome"],
+    "difficulty": "Collector"
+  },
+  {
+    "key": "uniform_3_5",
+    "name": "3/5 Uniform Palinception",
+    "description": "A rare palinception featuring sub-palindrome lengths of both 3 & 5, e.g. 17171-70107-17171 / 171-717-010-717-171",
+    "traits": ["uniform_palinception", "uniform_3/5"],
     "difficulty": "Collector"
   },
   {
@@ -145,7 +156,7 @@
     "name": "Perfect Palinceptions",
     "description": "Perfect palinceptions, made up of identical smaller palindromes of equal length, creating a flawlessly symmetrical and balanced sequence",
     "traits": ["perfect_palinception"],
-    "supply": "13,305",
+    "total": "13,305",
     "difficulty": "Expert"
   },
   {
@@ -153,7 +164,7 @@
     "name": "2009 Uncommons",
     "description": "Uncommons from the year Bitcoin was created",
     "traits": ["uncommon", "2009"],
-    "supply": "32,474",
+    "total": "32,474",
     "difficulty": "Expert"
   },
   {
@@ -161,7 +172,7 @@
     "name": "Jpeg Palindromes",
     "description": "Palindromes from what is believed to be the first Bitcoin trade for an image",
     "traits": ["jpeg", "palindrome"],
-    "supply": "5,000",
+    "total": "5,000",
     "difficulty": "Expert"
   },
   {
@@ -169,7 +180,7 @@
     "name": "Pizza Alphas",
     "description": "First sats of each Bitcoin from the legendary pizza transaction",
     "traits": ["alpha", "pizza"],
-    "supply": "10,002",
+    "total": "10,002",
     "difficulty": "Expert"
   },
   {
@@ -177,7 +188,7 @@
     "name": "Paliblock 3D Uniform Palinceptions",
     "description": "3D uniform palinceptions, where the palindrome structure consists of smaller palindromes of equal length, and the block number itself is also a palindrome",
     "traits": ["3_digits", "uniform_palinception", "paliblock"],
-    "supply": "25,173",
+    "total": "25,173",
     "difficulty": "Expert"
   },
   {
@@ -185,7 +196,7 @@
     "name": "Nova Perfect Palinceptions",
     "description": "Perfect Palinceptions mined shortly after the 'palindrome extinction event'",
     "traits": ["perfect_palinception", "nova"],
-    "supply": "1,050",
+    "total": "1,050",
     "difficulty": "Elite"
   },
   {
@@ -193,7 +204,7 @@
     "name": "420 Pizza Palindromes",
     "description": "Pizza Palindromes mined on April 20, 2010",
     "traits": ["palindrome", "pizza", "pizza_4/20"],
-    "supply": "1,600",
+    "total": "1,600",
     "difficulty": "Elite"
   },
   {
@@ -201,7 +212,7 @@
     "name": "Paliblock Uncommon",
     "description": "Uncommon sat from a  palindromic block",
     "traits": ["palindrome", "uncommon"],
-    "supply": "7,925",
+    "total": "7,925",
     "difficulty": "Elite"
   },
   {
@@ -209,7 +220,7 @@
     "name": "2009 Pizza Palindromes",
     "description": "Pizza Palindromes mined in late 2009",
     "traits": ["alpha", "palindrome", "2009"],
-    "supply": "3,000",
+    "total": "3,000",
     "difficulty": "Elite"
   },
   {
@@ -217,7 +228,7 @@
     "name": "2010 Jpeg Palindromes",
     "description": "Jpeg Palindromes mined in early 2010",
     "traits": ["jpeg", "palindrome", "jpeg_2010"],
-    "supply": "5,000",
+    "total": "5,000",
     "difficulty": "Elite"
   },
   {
@@ -225,7 +236,7 @@
     "name": "Nova Uniform Palinceptions",
     "description": "Uniform Palinceptions mined shortly after the 'palindrome extinction event'",
     "traits": ["uniform_palinception", "nova"],
-    "supply": "2,040",
+    "total": "2,040",
     "found": "135",
     "difficulty": "Elite"
   },
@@ -234,7 +245,7 @@
     "name": "Jpeg Alphas",
     "description": "First sats of each Bitcoin from the jpeg transaction",
     "traits": ["alpha", "jpeg"],
-    "supply": "500",
+    "total": "500",
     "difficulty": "Zenite"
   },
   {
@@ -242,7 +253,7 @@
     "name": "2009 Pizza Alphas",
     "description": "First sats of each Bitcoin from the famous pizza transaction, mined in late 2009",
     "traits": ["alpha", "pizza", "2009"],
-    "supply": "300",
+    "total": "300",
     "difficulty": "Zenite"
   },
   {
@@ -250,7 +261,7 @@
     "name": "2D Perfect Palinceptions",
     "description": "Perfect Palinceptions containing only 2 unique digits",
     "traits": ["perfect_palinception", "2_digits"],
-    "supply": "1,768",
+    "total": "1,768",
     "difficulty": "Zenite"
   },
   {
@@ -258,7 +269,7 @@
     "name": "Paliblock Alpha Uncommon",
     "description": "Alpha Uncommons from a palindromic block",
     "traits": ["paliblock", "uncommon", "alpha"],
-    "supply": "1,602",
+    "total": "1,602",
     "difficulty": "Zenite"
   },
   {
@@ -266,7 +277,7 @@
     "name": "Paliblock Omega Black Uncommon",
     "description": "Omega Black Uncommons from a palindromic block",
     "traits": ["paliblock", "black_uncommon", "omega"],
-    "supply": "1,602",
+    "total": "1,602",
     "difficulty": "Zenite"
   },
   {

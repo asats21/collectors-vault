@@ -5,6 +5,15 @@ export const rarities = [
     //     "found": 0,
     // }
     {
+        "tags": ["pizza", "palindrome"],
+        "total": "100K",
+    },
+    {
+        "tags": ["vintage", "palindrome"],
+        "total": "6M",
+        "found": "21K",
+    },
+    {
         "tags": ["uncommon"],
         "total": "6,9M",
         "found": "170K",
