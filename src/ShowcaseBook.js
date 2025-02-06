@@ -5,6 +5,7 @@ import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 import { FaCube } from 'react-icons/fa';
 import { FaBluesky } from 'react-icons/fa6';
 import { RenderTags } from "./RenderTags";
+import { getSupply } from "./Rarities";
 import ShowcaseBooksContext from './ShowcaseBooksContext';
 
 const ShowcaseBook = ({ satCollection }) => {
@@ -99,6 +100,11 @@ const ShowcaseBook = ({ satCollection }) => {
     );
   }
 
+  const renderRarity = (tags) => {
+      const supply = getSupply(tags);
+      return supply ? <div className='small text-center mt-3'>1 / {supply.total}</div> : null;
+  }
+
   return (
     <div className="container mt-4">
       <h3 className="mb-4">{bookData.name}</h3>
@@ -133,6 +139,7 @@ const ShowcaseBook = ({ satCollection }) => {
               <div className="sat-tags mt-3 d-flex justify-content-center" style={{ rowGap: "0.5rem" }}>
                 <RenderTags tags={details.tags || []} />
               </div>
+              { renderRarity(details.tags || []) }
             </div>
           </div>
         ))}
