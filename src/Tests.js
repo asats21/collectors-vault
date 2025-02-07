@@ -310,7 +310,14 @@ const Tests = () => {
 
   const testIsPrime = () => {
     const testData = [
+      // nothingness
       { sat: 37974357555131, expected: true },
+      // naturalists
+      { sat: 113880367537921, expected: true },
+      // motoneurons
+      { sat: 179083786416181, expected: true },
+      // midsentence
+      { sat: 214972588278589, expected: true },
 
       { sat: 777123321777, expected: false },
     ];

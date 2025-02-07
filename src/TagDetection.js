@@ -322,52 +322,56 @@ export const isNakamoto = (block) => {
 }
 
 export function isPrime(n) {
-    if (n < 2) return false;
-    if (n === 2 || n === 3) return true;
-    if (n % 2 === 0) return false;
+    // Convert input to BigInt.
+    // eslint-disable-next-line no-undef
+    n = BigInt(n);
   
-    // Quick elimination using small primes
-    const smallPrimes = [3, 5, 7, 11, 13, 17, 19, 23, 29];
-    for (let p of smallPrimes) {
+    if (n < 2n) return false;
+    if (n === 2n || n === 3n) return true;
+    if (n % 2n === 0n) return false;
+  
+    // Quick elimination using small primes.
+    const smallPrimes = [3n, 5n, 7n, 11n, 13n, 17n, 19n, 23n, 29n];
+    for (const p of smallPrimes) {
       if (n === p) return true;
-      if (n % p === 0) return false;
+      if (n % p === 0n) return false;
     }
   
-    // Factor n-1 as d * 2^s
-    let s = 0, d = n - 1;
-    while (d % 2 === 0) {
-      d /= 2;
+    // Write n - 1 as d * 2^s.
+    let s = 0;
+    let d = n - 1n;
+    while (d % 2n === 0n) {
+      d /= 2n;
       s++;
     }
   
-    // Bases for deterministic Miller-Rabin for numbers < 2^64
-    const bases = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37];
+    // Bases for deterministic Miller-Rabin for numbers < 2^64.
+    const bases = [2n, 3n, 5n, 7n, 11n, 13n, 17n, 19n, 23n, 29n, 31n, 37n];
   
-    // Fast modular exponentiation
+    // Fast modular exponentiation using BigInt.
     function modPow(base, exp, mod) {
-      let result = 1;
+      let result = 1n;
       base = base % mod;
-      while (exp > 0) {
-        if (exp % 2 === 1) {
+      while (exp > 0n) {
+        if (exp % 2n === 1n) {
           result = (result * base) % mod;
         }
-        exp = Math.floor(exp / 2);
+        exp /= 2n;
         base = (base * base) % mod;
       }
       return result;
     }
   
-    // Miller-Rabin test
-    for (let a of bases) {
+    // Miller-Rabin test.
+    for (const a of bases) {
       if (a >= n) continue;
-  
       let x = modPow(a, d, n);
-      if (x === 1 || x === n - 1) continue;
+      if (x === 1n || x === n - 1n) continue;
   
       let composite = true;
       for (let i = 0; i < s - 1; i++) {
-        x = modPow(x, 2, n);
-        if (x === n - 1) {
+        x = modPow(x, 2n, n);
+        if (x === n - 1n) {
           composite = false;
           break;
         }
