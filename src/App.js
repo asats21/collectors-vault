@@ -103,7 +103,7 @@ function App() {
     );
   }
 
-  function SettingsAndDemo() {
+  function SettingsAndDemo({ satCollection }) {
     const [showDemoModal, setShowDemoModal] = useState(false);
   
     return (
@@ -115,15 +115,17 @@ function App() {
         }}
       >
         {/* Demo Mode Button */}
-        <button
-          className="nav-button demo-mode"
-          onClick={() => setShowDemoModal(true)}
-        >
-          Demo Mode
-        </button>
+        {satCollection && Object.keys(satCollection).length === 0 && (
+          <button
+            className="nav-button demo-mode"
+            onClick={() => setShowDemoModal(true)}
+          >
+            Demo Mode
+          </button>
+        )}
   
         {/* Settings Cog */}
-        <Link to="/settings" className="settings-link">
+        <Link to="/settings" className="settings-link" style={{ marginLeft: "auto" }}>
           <div
             className="settings-icon"
             style={{
@@ -146,20 +148,20 @@ function App() {
         <DemoModeModal
           showModal={showDemoModal}
           setShowModal={setShowDemoModal}
-          satCollection={satCollection} 
+          satCollection={satCollection}
           setSatCollection={setSatCollection}
         />
       </div>
     );
   }
-
+  
   return (
     <Router>
       <div className="app-container">
         <div className="container">
 
           <div className='mt-3'>
-            <SettingsAndDemo />
+            <SettingsAndDemo satCollection={satCollection} />
           </div>
 
           <h1 className="text-center mb-4">Sat Collector's Vault</h1>
