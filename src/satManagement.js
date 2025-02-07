@@ -136,6 +136,10 @@ import {
         updatedCollection[sat].tags.push('block_78');
       }
 
+      if (blockNumber === 286) {
+        updatedCollection[sat].tags.push('block_286');
+      }
+
       if (year === 2009) {
         updatedCollection[sat].tags.push('2009');
       }

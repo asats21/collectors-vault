@@ -139,6 +139,8 @@ export const demoSats = [
     // * B9
     // Palindrome
     45510601554,
+    // 450x Palindrome
+    45080708054,
 
     // * B78
     // Palindrome

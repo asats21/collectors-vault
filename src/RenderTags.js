@@ -6,11 +6,13 @@ import { PiNumberNineFill } from "react-icons/pi";
 import { GiCamel } from "react-icons/gi";
 import { MdRepeatOn } from "react-icons/md";
 import { BsIncognito } from "react-icons/bs";
+import { FaParking } from "react-icons/fa";
 
 export const tagIcons = {
     block_9: { icon: <PiNumberNineFill  className="icon" style={{ color: "#fff" }} />, number: 2, tooltip: "First transaction block" },
+    block_78: { icon: <div className="fw-bold" style={{ color: "#EF506A" }}>B78</div>, number: 2, tooltip: "Block mined by Hal Finney" },
+    block_286: { icon: <div className="fw-bold" style={{ color: "#0174F8" }}>B286</div>, number: 2, tooltip: "The second Bitcoin block, thought to be mined by Satoshi Nakamoto" },
     "450x": { icon: <div className="fw-bold">450x</div>, number: 1, tooltip: "The first Bitcoin in the very first transaction" },
-
     alpha: { icon: <TbAlpha className="icon" style={{ color: "#FF6F00" }} />, number: 2, tooltip: "Alpha" },
     omega: { icon: <TbOmega className="icon" style={{ color: "#118AB2" }} />, number: 2, tooltip: "Omega" },
     uncommon: { icon: <FaGem className="icon" style={{ color: "#ED2B9C" }} />, number: 1, tooltip: "Uncommon" },
@@ -24,7 +26,7 @@ export const tagIcons = {
     uniform_palinception: { icon: <><FaBluesky className="icon" style={{ color: "#118AB2" }} /><FaBluesky className="icon" style={{ color: "#118AB2" }} /></>, number: 2, tooltip: "Uniform Palinception" },
     perfect_palinception: { icon: <><FaBluesky className="icon" style={{ color: "#E89A02" }} /><FaBluesky className="icon" style={{ color: "#E89A02" }} /></>, number: 3, tooltip: "Perfect Palinception" },
     paliblock: { icon: <FaBluesky className="icon" style={{ color: "#118AB2", padding: "1px", border: "1px solid #118AB2" }} />, number: 10, tooltip: "PaliBlock" },
-    vintage: { icon: <FaHourglass className="icon" style={{ color: "#F6BB41" }} />, number: 2, tooltip: "Vintage" },
+    vintage: { icon: <FaHourglass className="icon" style={{ color: "#F6BB41" }} />, number: 3, tooltip: "Vintage" },
     "2_digits": { icon: <div className="fw-bold" style={{ color: "#E89A02" }}>2D</div>, number: 5, tooltip: "2 Digits" },
     "3_digits": { icon: <div className="fw-bold" style={{ color: "#118AB2" }}>3D</div>, number: 5, tooltip: "3 Digits" },
     epoch0: { icon: <div className="fw-bold">E0</div>, number: 10, tooltip: "Epoch 0" },
@@ -36,8 +38,9 @@ export const tagIcons = {
     "pizza_4/20": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#F2A900" }}><FaPizzaSlice className="icon"/>&nbsp;4/20</div>, number: 3, tooltip: "Pizza sats mined on 4/20/2010" },
     "pizza_2009": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#F2A900" }}><FaPizzaSlice className="icon"/>&nbsp;2009</div>, number: 2, tooltip: "Jpeg sats mined in 2009" },
     "jpeg_2010": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#037F5E" }}><FaImage className="icon" />&nbsp;2010</div>, number: 5, tooltip: "Jpeg sats mined in 2010" },
-    nakamoto: { icon: <BsIncognito className="icon" style={{ color: "#ccc" }} />, number: 5, tooltip: "Sats mined by Satoshi Nakamoto himself" },
+    nakamoto: { icon: <BsIncognito className="icon" style={{ color: "#ccc" }} />, number: 1, tooltip: "Sats mined by Satoshi Nakamoto himself" },
     "uniform_3/5": { icon: <div className="fw-bold">3/5</div>, number: 20, tooltip: "Uniform palinception with sub-palindrome lengths of both 3 and 5 simultaneously" },
+    "prime": { icon: <FaParking className="icon" style={{ color: "#FF6F00" }} />, number: 20, tooltip: "Prime Number" },
 };
 
 export function RenderTags({ tags }) {

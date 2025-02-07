@@ -12,10 +12,12 @@ export const tagWeights = {
     silkroad: 40,
     nakamoto: 100,
 
-    '3_digits': 20,
+    '3_digits': 30,
     '2_digits': 120,
-    'block 9': 50,
-    'block 78': 20,
+    'block_9': 50,
+    'block_78': 40,
+    'block_286': 30,
+    '450x': 400,
 
     paliblock: 30,
     vintage: 20,
