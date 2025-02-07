@@ -1,8 +1,8 @@
 export const tagWeights = {
     palindrome: 5,
     sequence: 5,
-    uniform_palinception: 30,
-    perfect_palinception: 200,
+    uniform_palinception: 40,
+    perfect_palinception: 80,
     'uniform_3/5': 20,
     nova: 40,
 
@@ -26,7 +26,7 @@ export const tagWeights = {
     black_uncommon: 20,
     epoch0: 40,
 
-    pali_uncommon: 50,
+    pali_uncommon: 80,
     pali_black_uncommon: 50,
 
     alpha: 10,
@@ -37,6 +37,6 @@ export const tagWeights = {
     'pizza_4/20': 30,
     'jpeg_2010': 50,
     
-    b78: 20,
-    b9: 20,
+    b78: 80,
+    b9: 100,
 };
