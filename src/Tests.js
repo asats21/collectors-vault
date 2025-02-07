@@ -1,5 +1,5 @@
 import { getBlock, isUniformPalinception, isPerfectPalinception, isAlpha, isOmega, isUncommon, isBlackUncommon, 
-getSubPaliLength, displayUniformPalinception, getUniformPalinceptionStructure, is450x, isSequence } from './TagDetection.js';
+getSubPaliLength, displayUniformPalinception, getUniformPalinceptionStructure, is450x, isSequence, isPrime } from './TagDetection.js';
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 
 const Tests = () => {
@@ -308,6 +308,26 @@ const Tests = () => {
     });
   };
 
+  const testIsPrime = () => {
+    const testData = [
+      { sat: 37974357555131, expected: true },
+
+      { sat: 777123321777, expected: false },
+    ];
+
+    return testData.map(({ sat, expected }, index) => {
+      const result = isPrime(sat);
+      const passed = result === expected;
+
+      return (
+        <div key={index} style={{ color: passed ? 'green' : 'red' }}>
+          <h4 style={{marginBottom: '0px'}}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
+          {`Sat: ${sat} → Expected: ${expected}, Got: ${result}`}
+        </div>
+      );
+    });
+  };
+
   return (
     <>
       <h3>IsAlpha Test</h3>
@@ -335,6 +355,8 @@ const Tests = () => {
       <div>{testIs450x()}</div>
       <h3>IsSequence Test</h3>
       <div>{testIsSequence()}</div>
+      <h3>IsPrime Test</h3>
+      <div>{testIsPrime()}</div>
     </>
   );
 };
