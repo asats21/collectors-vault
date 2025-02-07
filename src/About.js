@@ -31,7 +31,7 @@ const About = () => {
         Due to my low technical skills, this project only covers items 1, 2, and maybe 3 to some extent. To implement item 4, the site would need wallet connections to prove ownership and a permanent database.
       </p>
 
-      <p>
+      <p style={{ textDecoration: "underline" }}>
         There’s no usage tracking, no API calls to third parties, and the data you enter stays on your device. 
         All the calculations and sat trait detection happen inside your browser.
       </p>
@@ -41,12 +41,12 @@ const About = () => {
       </p>
 
       <p>
-        The code and ideas behind this project are free to use and reproduce, as it’s licensed under the Unlicense, 
+        The code and ideas behind this project are free to use and reproduce, as it’s licensed under the <a href="https://unlicense.org/" target="_blank" rel="noopener noreferrer" style={{ color: "#C38BFA", textDecoration: "none" }}>Unlicense</a>,
         which means it drops all IP rights and allows you to do pretty much anything with it.
       </p>
 
       <p>
-        The code is open-source and available on GitHub <a href="https://github.com/asats21/collectors-vault" target="_blank" rel="noopener noreferrer">here</a>. 
+        The code is open-source and available on GitHub <a href="https://github.com/asats21/collectors-vault" target="_blank" rel="noopener noreferrer" style={{ color: "#C38BFA", textDecoration: "none" }}>here</a>. 
       </p>
 
     </div>
