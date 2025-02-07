@@ -192,14 +192,14 @@
     "key": "paliblock_uncommon",
     "name": "Paliblock Uncommon",
     "description": "Uncommon sat from a  palindromic block",
-    "traits": ["palindrome", "uncommon"],
+    "traits": ["paliblock", "uncommon"],
     "difficulty": "Elite"
   },
   {
     "key": "pizza_palindrome_2009",
     "name": "2009 Pizza Palindromes",
     "description": "Pizza Palindromes mined in late 2009",
-    "traits": ["alpha", "palindrome", "2009"],
+    "traits": ["pizza", "palindrome", "2009"],
     "difficulty": "Elite"
   },
   {

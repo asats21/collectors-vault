@@ -119,8 +119,9 @@ export const demoSats = [
     152060000000000,
 
     // * Hitman
-    // Vintage Palindrome
-    2035929295302,
+    // Palindrome
+    937954131459739,
+    495712191217594,
     // Alpha
     675358000000000,
     664453700000000,
