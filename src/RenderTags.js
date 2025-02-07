@@ -2,7 +2,7 @@ import React from "react";
 import { FaGem, FaRegGem, FaPizzaSlice, FaHourglass, FaCrosshairs, FaImage, FaBook } from "react-icons/fa";
 import { FaBluesky } from "react-icons/fa6";
 import { TbAlpha, TbOmega } from "react-icons/tb";
-import { PiNumberNineFill } from "react-icons/pi";
+import { PiNumberNineFill, PiEmpty } from "react-icons/pi";
 import { GiCamel } from "react-icons/gi";
 import { MdRepeatOn } from "react-icons/md";
 import { BsIncognito } from "react-icons/bs";
@@ -41,6 +41,12 @@ export const tagIcons = {
     nakamoto: { icon: <BsIncognito className="icon" style={{ color: "#ccc" }} />, number: 1, tooltip: "Sats mined by Satoshi Nakamoto himself" },
     "uniform_3/5": { icon: <div className="fw-bold">3/5</div>, number: 20, tooltip: "Uniform palinception with sub-palindrome lengths of both 3 and 5 simultaneously" },
     "prime": { icon: <FaParking className="icon" style={{ color: "#FF6F00" }} />, number: 20, tooltip: "Prime Number" },
+    tz_10: { icon: <div className="fw-bold d-inline-flex align-items-center" style={{ color: "#ED2B9C" }}><PiEmpty /> 10</div>, number: 10, tooltip: "Uncommon sat with 10 trailing zeroes" },
+    tz_11: { icon: <div className="fw-bold d-inline-flex align-items-center" style={{ color: "#ED2B9C" }}><PiEmpty /> 11</div>, number: 10, tooltip: "Uncommon sat with 11 trailing zeroes" },
+    tz_12: { icon: <div className="fw-bold d-inline-flex align-items-center" style={{ color: "#ED2B9C" }}><PiEmpty /> 12</div>, number: 10, tooltip: "Uncommon sat with 12 trailing zeroes" },
+    tz_13: { icon: <div className="fw-bold d-inline-flex align-items-center" style={{ color: "#ED2B9C" }}><PiEmpty /> 13</div>, number: 10, tooltip: "Uncommon sat with 13 trailing zeroes" },
+    tz_14: { icon: <div className="fw-bold d-inline-flex align-items-center" style={{ color: "#ED2B9C" }}><PiEmpty /> 14</div>, number: 10, tooltip: "Uncommon sat with 14 trailing zeroes" },
+    tz_15: { icon: <div className="fw-bold d-inline-flex align-items-center" style={{ color: "#ED2B9C" }}><PiEmpty /> 15</div>, number: 10, tooltip: "Uncommon sat with 15 trailing zeroes" },
 };
 
 export function RenderTags({ tags }) {

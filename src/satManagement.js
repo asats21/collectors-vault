@@ -19,7 +19,8 @@ import {
     is450x,
     isNakamoto,
     isPrime,
-    isThreeFivePalinception
+    isThreeFivePalinception,
+    getTrailingZeroes
   } from './TagDetection';
   import { isPizza } from './Pizza';
   import { isJpeg } from './Jpeg';
@@ -111,6 +112,9 @@ import {
         updatedCollection[sat].tags.push('uncommon');
         if (epoch === 0) updatedCollection[sat].tags.push('epoch0');
         if (isPalindromicUncommon(satNumber)) updatedCollection[sat].tags.push('pali_uncommon');
+
+        const trailingZeroes = getTrailingZeroes(satNumber);
+        if(trailingZeroes >= 10) updatedCollection[sat].tags.push(`tz_${trailingZeroes}`);
       }
 
       if (isBlackUncommon(satNumber)) {

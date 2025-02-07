@@ -381,3 +381,12 @@ export function isPrime(n) {
   
     return true;
 }
+
+export function getTrailingZeroes(sat_num) {
+    let count = 0;
+    while (sat_num % 10 === 0 && sat_num !== 0) {
+        count++;
+        sat_num /= 10;
+    }
+    return count;
+}
