@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { RenderTags } from "./RenderTags";
+import { RenderTags, tagIcons } from "./RenderTags"; // Import tagIcons along with RenderTags
 import { getSupply } from "./Rarities";
 import { RiNumbersFill } from "react-icons/ri";
 import { CgSearchFound } from "react-icons/cg";
@@ -9,13 +9,14 @@ import ShowcaseBooksContext from './ShowcaseBooksContext';
 const ShowcaseBooksList = ({ satCollection }) => {
   const [loading, setLoading] = useState(true);
   const [matchedSats, setMatchedSats] = useState({});
+  const [activeFilter, setActiveFilter] = useState(null);
   
   const { showcaseBooks } = useContext(ShowcaseBooksContext);
 
   useEffect(() => {
     if (!showcaseBooks) return;
 
-    // Process sat matches
+    // Process sat matches for each book
     const processMatches = () => {
       const satMatches = {};
       showcaseBooks.forEach((book) => {
@@ -28,40 +29,78 @@ const ShowcaseBooksList = ({ satCollection }) => {
     };
 
     processMatches();
-
   }, [satCollection, showcaseBooks]);
 
   const difficultyOrder = ['Novice', 'Collector', 'Expert', 'Elite', 'Zenite'];
 
   const getColor = (matchingSats) => (matchingSats?.length > 0 ? "purple" : "gray");
 
-  if (loading || !showcaseBooks) {
-    return <div className="text-center mt-5"><div className="spinner-border text-primary" role="status"></div></div>;
-  }
-
   const displaySupplyFigures = (book) => {
     const supplyData = book.total ? { total: book.total, found: book.found } : getSupply(book.traits);
-    
     return supplyData ? (
-        <div className="fw-bold">
-            <span data-bs-toggle="tooltip" data-bs-placement="top" title="Total Supply">
-                <RiNumbersFill />{supplyData.total}
-            </span>
-            {supplyData.found && (
-                <span className='ms-1' data-bs-toggle="tooltip" data-bs-placement="top" title="Found">
-                    <CgSearchFound />{supplyData.found}
-                </span>
-            )}
-        </div>
+      <div className="fw-bold">
+        <span data-bs-toggle="tooltip" data-bs-placement="top" title="Total Supply">
+          <RiNumbersFill />{supplyData.total}
+        </span>
+        {supplyData.found && (
+          <span className='ms-1' data-bs-toggle="tooltip" data-bs-placement="top" title="Found">
+            <CgSearchFound />{supplyData.found}
+          </span>
+        )}
+      </div>
     ) : null;
+  };
+
+  // Define filter options for the five tags
+  const filterOptions = [
+    { key: 'palindrome', label: 'Palindrome', icon: tagIcons['palindrome']?.icon },
+    { key: 'uniform_palinception', label: 'Uniform Palinception', icon: tagIcons['uniform_palinception']?.icon },
+    { key: 'perfect_palinception', label: 'Perfect Palinception', icon: tagIcons['perfect_palinception']?.icon },
+    { key: 'jpeg', label: 'JPEG', icon: tagIcons['jpeg']?.icon },
+    { key: 'pizza', label: 'Pizza', icon: tagIcons['pizza']?.icon },
+  ];
+
+  const toggleFilter = (tag) => {
+    setActiveFilter((prevTag) => (prevTag === tag ? null : tag));
+  };
+
+  if (loading || !showcaseBooks) {
+    return (
+      <div className="text-center mt-5">
+        <div className="spinner-border text-primary" role="status"></div>
+      </div>
+    );
   }
 
   return (
     <div className="">
-
       {/* Header */}
       <div className="sats-header mt-4 mt-md-2">
         <h1>Showcase Books</h1>
+      </div>
+
+      {/* Filter Bar */}
+      <div className="filter-bar mb-3 d-flex align-items-center gap-3">
+        {filterOptions.map(option => (
+          <span
+            key={option.key}
+            onClick={() => toggleFilter(option.key)}
+            style={{
+              cursor: 'pointer',
+              border: activeFilter === option.key ? '2px solid #000' : 'none',
+              borderRadius: '4px',
+              padding: '2px 4px'
+            }}
+            title={option.label}
+          >
+            {option.icon}
+          </span>
+        ))}
+        {activeFilter && (
+          <button className="btn btn-sm btn-secondary ms-3" onClick={() => setActiveFilter(null)}>
+            Clear Filter
+          </button>
+        )}
       </div>
 
       {difficultyOrder.map((difficulty) => (
@@ -69,7 +108,10 @@ const ShowcaseBooksList = ({ satCollection }) => {
           <h2>{difficulty}</h2>
           <ul className="books-list">
             {showcaseBooks
-              .filter((book) => book.difficulty === difficulty)
+              .filter((book) =>
+                book.difficulty === difficulty &&
+                (!activeFilter || book.traits.includes(activeFilter))
+              )
               .map((book) => (
                 <li key={book.key} className={`showcase-book-item ${getColor(matchedSats[book.key])}`}>
                   <Link to={`/showcase-books/${book.key}`} className="book-link">
@@ -84,7 +126,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
                       <div className="sat-tags d-flex justify-content-start">
                         <RenderTags tags={book.traits} />
                       </div>
-                        { displaySupplyFigures(book) }
+                      {displaySupplyFigures(book)}
                     </div>
 
                     <p className='mt-2'>{book.description}</p>
