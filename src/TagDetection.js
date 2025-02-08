@@ -390,3 +390,10 @@ export function getTrailingZeroes(sat_num) {
     }
     return count;
 }
+
+export function isPaliblock(block_num) {
+    if(block_num < 10)
+        return false;
+
+    return isPalindrome(block_num);
+}

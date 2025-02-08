@@ -4,6 +4,7 @@ import {
     isSequence,
     isPerfectPalinception,
     isUniformPalinception,
+    isPaliblock,
     isAlpha,
     isOmega,
     getBlock,
@@ -100,7 +101,7 @@ import {
         updatedCollection[sat].tags.push('perfect_palinception');
       }
   
-      if (isPalindrome(blockNumber)) {
+      if (isPaliblock(blockNumber)) {
         updatedCollection[sat].tags.push('paliblock');
       }
   

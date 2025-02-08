@@ -147,6 +147,16 @@ export const rarities = [
     },
 
     // * B9
+    {
+        "tags": ["block_9", "palindrome"],
+        "total": 50000,
+        "found": 28,
+    },
+    {
+        "tags": ["450x", "palindrome"],
+        "total": 1000,
+        "found": 23,
+    },
 
     // * Alpha / Omega
     {
@@ -170,8 +180,8 @@ const mandatory_subtags = {
     'perfect_palinception': ['palindrome', 'uniform_palinception'],
     'uniform_palinception': ['palindrome'],
     'vintage': ['2009'],
-    'block_9': ['vintage', '2009'],
-    '450x': ['block_9', 'vintage', '2009'],
+    'block_9': ['vintage', '2009', 'nakamoto'],
+    '450x': ['block_9', 'vintage', '2009', 'nakamoto'],
 };
 
 export function getSupply(tags) {
