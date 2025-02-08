@@ -219,3 +219,70 @@ export function getSupply(tags) {
 
   return null;
 }
+
+export function getFormattedSupply(tags) {
+    // Retrieve the supply object (assuming getSupply is defined elsewhere)
+    const supplyObject = getSupply(tags);
+    if(supplyObject === null)
+        return null;
+  
+    // Format the total and found values
+    const formattedSupply = {
+        ...supplyObject,
+        total: renderTotalSupplyNumber(supplyObject.total),
+      };
+    if (supplyObject.found !== undefined) {
+        formattedSupply.found = renderFoundSupplyNumber(supplyObject.found);
+    }
+    return formattedSupply;
+  }
+
+function renderTotalSupplyNumber(number) {
+
+    // If the input is already a string, return it as is
+    if (typeof number === 'string') {
+        return number;
+    }
+  
+    if (number < 60000) {
+      return number.toLocaleString('en-US'); // Return the number as is if it's less than 60,000
+    }
+  
+    if (number < 1000000) {
+      // Format for thousands (K)
+      const rounded = Math.round(number / 1000); // Round to the nearest thousand
+      return `${rounded}K`;
+    }
+  
+    // Format for millions (M)
+    const rounded = Math.round(number / 100000) / 10; // Round to one decimal place
+    return `${rounded}M`;
+}
+
+function renderFoundSupplyNumber(number) {
+
+    // If the input is already a string, return it as is
+    if (typeof number === 'string') {
+        return number;
+    }
+  
+    if (number <= 300) {
+      return number.toString(); // Return the number as is if it's 300 or less
+    }
+  
+    if (number < 1000) {
+      // Round up to the nearest hundred for numbers between 300 and 999
+      const rounded = Math.ceil(number / 100) * 100;
+      return rounded.toString();
+    }
+  
+    if (number < 1000000) {
+      // Format for thousands (K)
+      const rounded = Math.round(number / 1000); // Round to the nearest thousand
+      return `${rounded}K`;
+    }
+  
+    // Format for millions (M)
+    const rounded = Math.round(number / 100000) / 10; // Round to one decimal place
+    return `${rounded}M`;
+}

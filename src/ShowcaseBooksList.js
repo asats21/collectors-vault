@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { RenderTags, tagIcons } from "./RenderTags"; // Import tagIcons along with RenderTags
-import { getSupply } from "./Rarities";
+import { getFormattedSupply } from "./Rarities";
 import { RiNumbersFill } from "react-icons/ri";
 import { CgSearchFound } from "react-icons/cg";
 import ShowcaseBooksContext from './ShowcaseBooksContext';
@@ -36,7 +36,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
   const getColor = (matchingSats) => (matchingSats?.length > 0 ? "purple" : "gray");
 
   const displaySupplyFigures = (book) => {
-    const supplyData = book.total ? { total: book.total, found: book.found } : getSupply(book.traits);
+    const supplyData = book.total ? { total: book.total, found: book.found } : getFormattedSupply(book.traits);
     return supplyData ? (
       <div className="fw-bold">
         <span data-bs-toggle="tooltip" data-bs-placement="top" title="Total Supply">

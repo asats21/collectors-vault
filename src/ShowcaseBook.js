@@ -5,7 +5,7 @@ import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 import { FaCube } from 'react-icons/fa';
 import { FaBluesky } from 'react-icons/fa6';
 import { RenderTags } from "./RenderTags";
-import { getSupply } from "./Rarities";
+import { getFormattedSupply } from "./Rarities";
 import { tagWeights, sortSatsByWeight } from './tagWeights';
 import ShowcaseBooksContext from './ShowcaseBooksContext';
 
@@ -106,7 +106,7 @@ const ShowcaseBook = ({ satCollection }) => {
   );
 
   const displaySupplyFigures = (book) => {
-    const supplyData = book.total ? { total: book.total, found: book.found } : getSupply(book.traits);
+    const supplyData = book.total ? { total: book.total, found: book.found } : getFormattedSupply(book.traits);
     
     return supplyData ? (
         <div className="fw-bold d-flex">
@@ -123,7 +123,7 @@ const ShowcaseBook = ({ satCollection }) => {
   }
 
   const renderRarity = (tags) => {
-      const supply = getSupply(tags);
+      const supply = getFormattedSupply(tags);
       return supply ? <div className='small text-center mt-3'>1 / {supply.total}</div> : null;
   }
 

@@ -3,7 +3,7 @@ import ReactPaginate from 'react-paginate';
 import { FaTrash } from 'react-icons/fa';
 import { isPalindrome, getSubPaliLength, displayUniformPalinception } from "./TagDetection";
 import { RenderTags } from "./RenderTags";
-import { getSupply } from "./Rarities";
+import { getFormattedSupply } from "./Rarities";
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 import { FiCalendar } from "react-icons/fi";
 import { FaCube } from "react-icons/fa";
@@ -23,7 +23,10 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
   }
 
   const renderRarity = (tags) => {
-    const supply = getSupply(tags);
+    const supply = getFormattedSupply(tags);
+    if(!supply)
+      return ``;
+
     return supply ? `1/${supply.total}` : ``;
   }
 
