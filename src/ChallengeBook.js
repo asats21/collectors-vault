@@ -18,8 +18,6 @@ const Book = ({ satCollection }) => {
   // Use the custom hook to get completed levels
   const bookLevels = useBookCompletion(bookData, satCollection);
 
-  console.log(bookLevels);
-
   if (!bookData) {
     return <div>Not found</div>;
   }
