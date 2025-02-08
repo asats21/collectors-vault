@@ -44,11 +44,23 @@ export const tagWeights = {
 };
 
 export const sortSatsByWeight = (satCollection, tagWeights) => {
-return Object.entries(satCollection)
-    .map(([sat, details]) => ({
-    sat,
-    details,
-    weightSum: details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0),
-    }))
-    .sort((a, b) => b.weightSum - a.weightSum);
+    return Object.entries(satCollection)
+      .map(([sat, details]) => ({
+        sat,
+        details,
+        weightSum: details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0),
+      }))
+      .sort((a, b) => {
+        const weightDiff = b.weightSum - a.weightSum;
+        if (weightDiff !== 0) return weightDiff;
+        
+        // If the weights are equal and both sats have the 'nova' tag, sort by year (descending)
+        const aHasNova = a.details.tags.includes('nova');
+        const bHasNova = b.details.tags.includes('nova');
+        if (aHasNova && bHasNova) {
+          return b.details.year - a.details.year;
+        }
+        
+        return 0;
+      });
 };
