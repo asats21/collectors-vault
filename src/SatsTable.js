@@ -3,6 +3,7 @@ import ReactPaginate from 'react-paginate';
 import { FaTrash } from 'react-icons/fa';
 import { isPalindrome, getSubPaliLength, displayUniformPalinception } from "./TagDetection";
 import { RenderTags } from "./RenderTags";
+import { getSupply } from "./Rarities";
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 import { FiCalendar } from "react-icons/fi";
 import { FaCube } from "react-icons/fa";
@@ -21,6 +22,11 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
     return '#' + sat;
   }
 
+  const renderRarity = (tags) => {
+    const supply = getSupply(tags);
+    return supply ? `1/${supply.total}` : ``;
+  }
+
   return (
     <>
       {/* Desktop Table View */}
@@ -32,9 +38,10 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                 <th>#</th>
                 <th>Sat Number</th>
                 <th></th>
+                <th>Rarity</th>
                 <th>Block</th>
                 <th>Year</th>
-                <th>Epoch</th>
+                <th>E</th>
                 <th></th>
               </tr>
             </thead>
@@ -50,6 +57,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                       <RenderTags tags={details.tags} />
                     </div>
                   </td>
+                  <td>{renderRarity(details.tags)}</td>
                   <td><span className={isPalindrome(details.block_number) ? 'table-palindromic-block' : ''}>{details.block_number}</span></td>
                   <td>{details.year}</td>
                   <td>{details.epoch}</td>
