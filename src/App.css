@@ -353,6 +353,12 @@ ul.levels {
   margin-bottom: 2rem;
 }
 
+.showcase-books-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 /* Table Styling */
 .table-responsive {
   overflow-x: auto;
@@ -767,4 +773,25 @@ ul.levels {
   background-color: #FFD166;
   color: black;
   box-shadow: 0 0 10px #FFD166;
+}
+
+/* Clear Showcase Books Filter Button Style */
+.clear-showcase-books-filter-button {
+  background-color: transparent;
+  border: 2px solid #6AA8C3; /* Default border color */
+  color: #6AA8C3;
+  padding: 2px 4px; /* Smaller padding */
+  font-size: 0.875rem; /* Smaller font size */
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px #6AA8C3; /* Subtle glow effect */
+}
+
+.clear-showcase-books-filter-button:hover {
+  background-color: #6AA8C3;
+  color: white; /* White text on hover */
+  box-shadow: 0 0 10px #6AA8C3; /* Slightly stronger glow on hover */
 }

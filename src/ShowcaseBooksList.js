@@ -53,11 +53,11 @@ const ShowcaseBooksList = ({ satCollection }) => {
 
   // Define filter options for the five tags
   const filterOptions = [
-    { key: 'palindrome', label: 'Palindrome', icon: tagIcons['palindrome']?.icon },
-    { key: 'uniform_palinception', label: 'Uniform Palinception', icon: tagIcons['uniform_palinception']?.icon },
-    { key: 'perfect_palinception', label: 'Perfect Palinception', icon: tagIcons['perfect_palinception']?.icon },
-    { key: 'jpeg', label: 'JPEG', icon: tagIcons['jpeg']?.icon },
-    { key: 'pizza', label: 'Pizza', icon: tagIcons['pizza']?.icon },
+    { key: 'palindrome', label: 'Palindrome', icon: tagIcons['palindrome']?.icon, tooltip: tagIcons['palindrome']?.tooltip },
+    { key: 'uniform_palinception', label: 'Uniform Palinception', icon: tagIcons['uniform_palinception']?.icon, tooltip: tagIcons['uniform_palinception']?.tooltip },
+    { key: 'perfect_palinception', label: 'Perfect Palinception', icon: tagIcons['perfect_palinception']?.icon, tooltip: tagIcons['perfect_palinception']?.tooltip },
+    { key: 'jpeg', label: 'JPEG', icon: tagIcons['jpeg']?.icon, tooltip: tagIcons['jpeg']?.tooltip },
+    { key: 'pizza', label: 'Pizza', icon: tagIcons['pizza']?.icon, tooltip: tagIcons['pizza']?.tooltip },
   ];
 
   const toggleFilter = (tag) => {
@@ -75,29 +75,30 @@ const ShowcaseBooksList = ({ satCollection }) => {
   return (
     <div className="">
       {/* Header */}
-      <div className="sats-header mt-4 mt-md-2">
+      <div className="showcase-books-header mt-4 mt-md-2">
         <h1>Showcase Books</h1>
       </div>
 
       {/* Filter Bar */}
-      <div className="filter-bar mb-3 d-flex align-items-center gap-3">
+      <div className="sat-tags d-flex justify-content-start align-items-center gap-3 mt-2 mb-4">
         {filterOptions.map(option => (
           <span
             key={option.key}
             onClick={() => toggleFilter(option.key)}
             style={{
               cursor: 'pointer',
-              border: activeFilter === option.key ? '2px solid #000' : 'none',
-              borderRadius: '4px',
-              padding: '2px 4px'
+              border: activeFilter === option.key ? "2px solid #6AA8C3" : "",
+              "box-shadow": activeFilter === option.key ? "0 0 10px #6AA8C3" : "",
             }}
-            title={option.label}
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title={option.tooltip}
           >
             {option.icon}
           </span>
         ))}
         {activeFilter && (
-          <button className="btn btn-sm btn-secondary ms-3" onClick={() => setActiveFilter(null)}>
+          <button className="clear-showcase-books-filter-button ms-3" onClick={() => setActiveFilter(null)}>
             Clear Filter
           </button>
         )}
