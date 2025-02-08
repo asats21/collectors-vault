@@ -178,6 +178,27 @@ ul.levels {
     box-shadow: 0 0 10px 2px #444;
 }
 
+/* Add Sats Button */
+.add-sats-button {
+  background-color: transparent;
+  border: 2px solid #6AA8C3; /* Default border color */
+  color: #6AA8C3;
+  padding: 6px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px #6AA8C3; /* Subtle glow effect */
+}
+
+.add-sats-button:hover {
+  background-color: #6AA8C3;
+  color: white; /* White text on hover */
+  box-shadow: 0 0 10px #6AA8C3; /* Slightly stronger glow on hover */
+}
+
 /* Navigation Buttons */
 .nav-button {
     background-color: transparent;

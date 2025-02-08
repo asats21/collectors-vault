@@ -66,7 +66,7 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
       <div className="my-sats-header mt-4 mt-md-2">
         <h1>My Sats</h1>
         <button
-          className="nav-button add-sats"
+          className="add-sats-button"
           onClick={() => setShowModal(true)}
         >
           <FaPlusSquare/> Add Sats
