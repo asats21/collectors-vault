@@ -104,16 +104,17 @@ const ShowcaseBooksList = ({ satCollection }) => {
         )}
       </div>
 
-      {difficultyOrder.map((difficulty) => (
-        <div key={difficulty} className="difficulty-tier">
-          <h2>{difficulty}</h2>
-          <ul className="books-list">
-            {showcaseBooks
-              .filter((book) =>
-                book.difficulty === difficulty &&
-                (!activeFilter || book.traits.includes(activeFilter))
-              )
-              .map((book) => (
+      {difficultyOrder.map((difficulty) => {
+        const filteredBooks = showcaseBooks.filter((book) =>
+          book.difficulty === difficulty &&
+          (!activeFilter || book.traits.includes(activeFilter))
+        );
+        if (filteredBooks.length === 0) return null;
+        return (
+          <div key={difficulty} className="difficulty-tier">
+            <h2>{difficulty}</h2>
+            <ul className="books-list">
+              {filteredBooks.map((book) => (
                 <li key={book.key} className={`showcase-book-item ${getColor(matchedSats[book.key])}`}>
                   <Link to={`/showcase-books/${book.key}`} className="book-link">
                     <div className='showcase-book-header d-flex justify-content-between'>
@@ -122,21 +123,23 @@ const ShowcaseBooksList = ({ satCollection }) => {
                         {matchedSats[book.key]?.length || 0}
                       </div>
                     </div>
-
+          
                     <div className='d-flex justify-content-between'>
                       <div className="sat-tags d-flex justify-content-start">
                         <RenderTags tags={book.traits} />
                       </div>
                       {displaySupplyFigures(book)}
                     </div>
-
+          
                     <p className='mt-2'>{book.description}</p>
                   </Link>
                 </li>
               ))}
-          </ul>
-        </div>
-      ))}
+            </ul>
+          </div>
+        );
+      })}
+
     </div>
   );
 };
