@@ -92,7 +92,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
             style={{
               cursor: 'pointer',
               border: activeFilter === option.key ? "1px solid #C38BFA" : "",
-              "box-shadow": activeFilter === option.key ? "0 0 10px #C38BFA" : "",
+              boxShadow: activeFilter === option.key ? "0 0 10px #C38BFA" : "",
             }}
             data-bs-toggle="tooltip"
             data-bs-placement="top"
