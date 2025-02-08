@@ -113,7 +113,7 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
     <div className="">
 
       {/* Header */}
-      <div className="sats-header mt-4 mt-md-2">
+      <div className="page-header mt-4 mt-md-2">
         <h1>Settings</h1>
       </div>
 

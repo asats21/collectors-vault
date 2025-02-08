@@ -346,11 +346,17 @@ ul.levels {
   margin: 0 auto;
 }
 
-.sats-header {
+.page-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+}
+
+.my-sats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .showcase-books-header {

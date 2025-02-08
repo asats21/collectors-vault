@@ -51,6 +51,7 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
     { key: 'jpeg', label: 'JPEG', icon: tagIcons['jpeg']?.icon, tooltip: tagIcons['jpeg']?.tooltip },
     { key: 'pizza', label: 'Pizza', icon: tagIcons['pizza']?.icon, tooltip: tagIcons['pizza']?.tooltip },
     { key: 'hitman', label: 'Hitman', icon: tagIcons['hitman']?.icon, tooltip: tagIcons['hitman']?.tooltip },
+    { key: 'paliblock', label: 'Paliblock', icon: tagIcons['paliblock']?.icon, tooltip: tagIcons['paliblock']?.tooltip },
     { key: 'nova', label: 'Nova', icon: tagIcons['nova']?.icon, tooltip: tagIcons['nova']?.tooltip },
   ];
 

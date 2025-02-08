@@ -4,7 +4,7 @@ const About = () => {
     <div className="">
 
       {/* Header */}
-      <div className="sats-header mt-4 mt-md-2">
+      <div className="page-header mt-4 mt-md-2">
         <h1>About this project</h1>
       </div>
 
