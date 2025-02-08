@@ -21,14 +21,18 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
     }
   };
 
-  // Calculate weight sum for each sat
-  const satsWithWeights = Object.entries(satCollection).map(([sat, details]) => {
-    const weightSum = details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0);
-    return { sat, details, weightSum };
-  });
-
   // Sort sats by weight sum (descending)
-  const sortedSats = satsWithWeights.sort((a, b) => b.weightSum - a.weightSum);
+  const sortSatsByWeight = (satCollection, tagWeights) => {
+    return Object.entries(satCollection)
+      .map(([sat, details]) => ({
+        sat,
+        details,
+        weightSum: details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0),
+      }))
+      .sort((a, b) => b.weightSum - a.weightSum);
+  };
+
+  const sortedSats = sortSatsByWeight(satCollection, tagWeights);
 
   // Pagination logic
   const pageCount = Math.ceil(sortedSats.length / satsPerPage);
