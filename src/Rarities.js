@@ -6,7 +6,7 @@ export const rarities = [
     // }
     {
         "tags": ["pizza", "palindrome"],
-        "total": "100K",
+        "total": "100,016",
     },
     {
         "tags": ["vintage", "palindrome"],
@@ -138,32 +138,51 @@ export const rarities = [
         "total": "1,050",
     },
     {
-        "tags": ["palindrome", "uniform_palinception", "perfect_palinception"],
-        "total": 13305,
-        "found": 335,
-    },
-    {
-        "tags": ["palindrome", "uncommon"],
+        "tags": ["paliblock", "uncommon"],
         "total": "7,925",
     },
-    {
-        "tags": ["palindrome", "uniform_palinception", "perfect_palinception", "nova"],
-        "total": "1,050",
-    }
 ];
 
 const exception_tags = ['3-3-3-3-3', '4-4-4-4', '5-5-5', '7-7', '8-8'];
 
+const mandatory_subtags = {
+    'perfect_palinception': ['palindrome', 'uniform_palinception'],
+    'uniform_palinception': ['palindrome'], 
+    // Add more mandatory relationships if needed
+};
+
 export function getSupply(tags) {
-    // Filter out exception tags
-    const filteredTags = tags.filter(tag => !exception_tags.includes(tag)).sort();
-    
-    for (const rarity of rarities) {
-        const sortedRarityTags = [...rarity.tags].sort();
-        
-        if (JSON.stringify(sortedRarityTags) === JSON.stringify(filteredTags)) {
-            return rarity;
-        }
+  // Create a Set to avoid duplicates
+  let expandedTags = new Set(tags);
+
+  // --- Expansion Step ---
+  // For each tag that has mandatory subtags, add those subtags.
+  tags.forEach(tag => {
+    if (mandatory_subtags[tag]) {
+      mandatory_subtags[tag].forEach(subtag => expandedTags.add(subtag));
     }
-    return null;
+  });
+
+  // --- Collapse Step ---
+  // If a parent tag is present, remove its mandatory subtags so that the canonical form is used.
+  Object.keys(mandatory_subtags).forEach(parent => {
+    if (expandedTags.has(parent)) {
+      mandatory_subtags[parent].forEach(subtag => expandedTags.delete(subtag));
+    }
+  });
+
+  // Convert the Set back to an array, filter out any exception tags, and sort the result.
+  const filteredTags = [...expandedTags]
+    .filter(tag => !exception_tags.includes(tag))
+    .sort();
+
+  // Compare the resulting sorted tags with each rarity’s tags (which should also be in canonical form)
+  for (const rarity of rarities) {
+    const sortedRarityTags = [...rarity.tags].sort();
+    if (JSON.stringify(sortedRarityTags) === JSON.stringify(filteredTags)) {
+      return rarity;
+    }
+  }
+
+  return null;
 }

@@ -2,6 +2,7 @@ import { getBlock, isUniformPalinception, isPerfectPalinception, isAlpha, isOmeg
 getSubPaliLength, displayUniformPalinception, getUniformPalinceptionStructure, is450x, isSequence, isPrime, 
 getTrailingZeroes} from './TagDetection.js';
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
+import { getSupply } from "./Rarities";
 
 const Tests = () => {
 
@@ -336,7 +337,7 @@ const Tests = () => {
     });
   };
 
-  const testgetTrailingZeroes = () => {
+  const testGetTrailingZeroes = () => {
     const testData = [
       { sat: 660660000000000, expected: 10 },
       { sat: 660600000000000, expected: 11 },
@@ -351,6 +352,48 @@ const Tests = () => {
         <div key={index} style={{ color: passed ? 'green' : 'red' }}>
           <h4 style={{marginBottom: '0px'}}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
           {`Sat: ${sat} → Expected: ${expected}, Got: ${result}`}
+        </div>
+      );
+    });
+  };
+
+  const testGetSupply = () => {
+    const testData = [
+      {
+        tags: ['uncommon'],
+        expected: {
+          tags: ["uncommon"],
+          total: "6,9M",
+          found: "170K",
+        }
+      },
+      {
+        tags: ["palindrome", "uniform_palinception", "3_digits", "5-5-5"],
+        expected: {
+          tags: ["3_digits", "uniform_palinception"],
+          total: "139,616",
+        }
+      },
+      {
+        tags: ['palindrome', 'uniform_palinception', 'perfect_palinception'],
+        expected: {
+          tags: ["perfect_palinception"],
+          total: "13,305",
+          found: 335,
+        },
+      },
+    ];
+  
+    return testData.map(({ tags, expected }, index) => {
+      const result = getSupply(tags);
+      const passed = JSON.stringify(result) === JSON.stringify(expected);
+  
+      return (
+        <div key={index} style={{ color: passed ? 'green' : 'red' }}>
+          <h4 style={{ marginBottom: '0px' }}>{`Test ${index + 1}: ${passed ? 'Passed ✅' : 'Failed ❌'}`}</h4>
+          <p><strong>Tags:</strong> {JSON.stringify(tags)}</p>
+          <p><strong>Expected:</strong> {JSON.stringify(expected)}</p>
+          <p><strong>Got:</strong> {JSON.stringify(result)}</p>
         </div>
       );
     });
@@ -386,7 +429,9 @@ const Tests = () => {
       <h3>IsPrime Test</h3>
       <div>{testIsPrime()}</div>
       <h3>GetTrailingZeroes Test</h3>
-      <div>{testgetTrailingZeroes()}</div>
+      <div>{testGetTrailingZeroes()}</div>
+      <h3>GetSupply Test</h3>
+      <div>{testGetSupply()}</div>
     </>
   );
 };
