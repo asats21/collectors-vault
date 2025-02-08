@@ -87,8 +87,8 @@ const ShowcaseBooksList = ({ satCollection }) => {
             onClick={() => toggleFilter(option.key)}
             style={{
               cursor: 'pointer',
-              border: activeFilter === option.key ? "2px solid #6AA8C3" : "",
-              "box-shadow": activeFilter === option.key ? "0 0 10px #6AA8C3" : "",
+              border: activeFilter === option.key ? "1px solid #C38BFA" : "",
+              "box-shadow": activeFilter === option.key ? "0 0 10px #C38BFA" : "",
             }}
             data-bs-toggle="tooltip"
             data-bs-placement="top"
@@ -97,11 +97,6 @@ const ShowcaseBooksList = ({ satCollection }) => {
             {option.icon}
           </span>
         ))}
-        {activeFilter && (
-          <button className="clear-showcase-books-filter-button ms-3" onClick={() => setActiveFilter(null)}>
-            Clear Filter
-          </button>
-        )}
       </div>
 
       {difficultyOrder.map((difficulty) => {
