@@ -38,6 +38,15 @@ const DemoModeModal = ({ showModal, setShowModal, setSatCollection, satCollectio
         </p>
 
         <p>
+          Discover unexpected satribute combinations like 'Pizza Rodarmor Name,' 'Palindromic & Paliblock Uncommons' and even blazing '4/20 Pizza Palindromes' (light up your collection with one!). 
+        </p>
+
+        <p>
+          Our detection system makes it easy to spot prime number sats, track down elusive '3/5 Uniform Palinceptions' and uncover 'Nova Palindromes.' 
+          Plus, don’t forget to explore our subpali detection — it reveals hidden patterns within your palinception!
+        </p>
+
+        <p>
           When you're done, you can easily <strong>delete all demo sats</strong> in the <strong>Settings</strong> section.
         </p>
         <div className="text-center mt-4">
