@@ -42,3 +42,13 @@ export const tagWeights = {
     b78: 80,
     b9: 100,
 };
+
+export const sortSatsByWeight = (satCollection, tagWeights) => {
+return Object.entries(satCollection)
+    .map(([sat, details]) => ({
+    sat,
+    details,
+    weightSum: details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0),
+    }))
+    .sort((a, b) => b.weightSum - a.weightSum);
+};

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { tagWeights } from './tagWeights';
+import { tagWeights, sortSatsByWeight } from './tagWeights';
 import { addSatsToCollection, deleteSatFromCollection } from './satManagement';
 import AddSatsModal from './AddSatsModal';
 import SatsTable from './SatsTable';
@@ -19,17 +19,6 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
       setInput('');
       setShowModal(false);
     }
-  };
-
-  // Sort sats by weight sum (descending)
-  const sortSatsByWeight = (satCollection, tagWeights) => {
-    return Object.entries(satCollection)
-      .map(([sat, details]) => ({
-        sat,
-        details,
-        weightSum: details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0),
-      }))
-      .sort((a, b) => b.weightSum - a.weightSum);
   };
 
   const sortedSats = sortSatsByWeight(satCollection, tagWeights);

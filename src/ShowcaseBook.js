@@ -6,6 +6,7 @@ import { FaCube } from 'react-icons/fa';
 import { FaBluesky } from 'react-icons/fa6';
 import { RenderTags } from "./RenderTags";
 import { getSupply } from "./Rarities";
+import { tagWeights, sortSatsByWeight } from './tagWeights';
 import ShowcaseBooksContext from './ShowcaseBooksContext';
 
 import { RiNumbersFill } from "react-icons/ri";
@@ -135,11 +136,13 @@ const ShowcaseBook = ({ satCollection }) => {
     );
   }
 
+  const sortedSats = sortSatsByWeight(Object.fromEntries(matchingSats), tagWeights);
+
   return (
     <div className="container mt-4">
       {displayHeader(bookData)}
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-5 g-4">
-        {matchingSats.map(([sat, details], index) => (
+        {sortedSats.map(({ sat, details }, index) => (
           <div key={sat} className="col">
             <div 
               className="sat-card px-1 py-4"
