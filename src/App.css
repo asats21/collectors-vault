@@ -602,8 +602,27 @@ ul.levels {
 
 .backup-all:hover {
   background: #037F5E;
-  color: #000; /* Black text */
-  box-shadow: 0 0 15px rgba(3,127,94 0.6);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(3,127,94, 0.6);
+}
+
+/* Export All Button */
+.export-all {
+  background: transparent;
+  border: 2px solid #C38BFA;
+  color: #C38BFA;
+  padding: 0.6rem 1.0rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(195,139,250, 0.3);
+}
+
+.export-all:hover {
+  background: #C38BFA;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(195,139,250, 0.6);
 }
 
 .showcase-book-item {

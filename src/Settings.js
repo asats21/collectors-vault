@@ -86,12 +86,34 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
     }));
   };
 
-  const convertToCSV = (data) => {
+  const convertToBackupCSV = (data) => {
     return Object.keys(data).join('\n');
   };
 
-  const downloadCSV = () => {
-    const csvData = convertToCSV(satCollection);
+  const convertToCollectionExportCSV = (data) => {
+    // Define the headers for the CSV
+    const headers = ['sat_number', 'tags', 'block_number', 'year', 'epoch'].join(';');
+  
+    // Map through the data to create the CSV rows
+    const rows = Object.entries(data).map(([satNumber, details]) => {
+      // Extract and format the values
+      const row = [
+        satNumber, // SAT number (key in the object)
+        details.tags.join(','), // Join tags with a comma
+        details.block_number,
+        details.year,
+        details.epoch
+      ].join(';'); // Join values with a semicolon
+  
+      return row;
+    }).join('\n'); // Join all rows with a newline
+  
+    // Combine headers and rows into a single CSV string
+    return `${headers}\n${rows}`;
+  };
+
+  const downloadBackupCSV = () => {
+    const csvData = convertToBackupCSV(satCollection);
     
     // Create a Blob from the CSV string
     const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
@@ -100,7 +122,7 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
     const link = document.createElement('a');
     const url = URL.createObjectURL(blob);
     link.setAttribute('href', url);
-    link.setAttribute('download', 'data.txt');  // Set the default filename
+    link.setAttribute('download', 'backup.txt');  // Set the default filename
     link.style.visibility = 'hidden';
     
     // Append the link to the body, click it, and remove it
@@ -108,6 +130,26 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
     link.click();
     document.body.removeChild(link);
   };
+
+  const downloadCollectionExportCSV = () => {
+    const csvData = convertToCollectionExportCSV(satCollection);
+    
+    // Create a Blob from the CSV string
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    
+    // Create an invisible link to trigger the download
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', 'collection.csv');  // Set the default filename
+    link.style.visibility = 'hidden';
+    
+    // Append the link to the body, click it, and remove it
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
 
   return (
     <div className="">
@@ -218,18 +260,21 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
       {satCollection && Object.keys(satCollection).length > 0 && (
         <div className="mt-5">
           <h3>Backup & Share</h3>
-        
-          <div className="mt-4">
-            <button className="nav-button backup-all" onClick={downloadCSV}>
-              Backup Sats
-            </button>
+          <div className="d-flex mt-4">
+              <button className="nav-button backup-all me-3" onClick={downloadBackupCSV}>
+                Backup Sats*
+              </button>
+              <button className="nav-button export-all" onClick={downloadCollectionExportCSV}>
+                Export Collection
+              </button>
           </div>
+          <div className="mt-2 small text-secondary">* backup can also be used to transfer your sats between devices</div>
         </div>
       )}
   
       {/* Collection Delete Button */}
       {satCollection && Object.keys(satCollection).length > 0 && (
-        <div className="mt-5">
+        <div className="mt-4">
           <h3>Danger Zone</h3>
         
           <div className="mt-4">
