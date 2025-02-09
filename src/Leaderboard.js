@@ -10,10 +10,10 @@ import { MdOutlineNumbers } from "react-icons/md";
 import { BiSolidPurchaseTag } from "react-icons/bi";
 
 const Leaderboard = ({ satCollection }) => {
-  // Add the user's collection to the leaderboard data
+  // Add the user's collection to the leaderboard data only if it's not empty
   const leaderboardData = {
     ...LeaderboardWallets,
-    myCollection: satCollection, // Use "myCollection" as the key for the user's collection
+    ...(Object.keys(satCollection).length > 0 && { myCollection: satCollection })
   };
 
   // Calculate stats for each wallet
