@@ -27,24 +27,30 @@ const Book = ({ satCollection }) => {
   return (
     <div>
       <h1 className='mt-3'>{bookData.name}</h1>
+      {bookData.description &&
+        <div className=''>{bookData.description}</div>
+      }
       <ul className="levels mt-4">
       {bookLevels.map((level, index) => (
         <li
           key={index}
           className={`level level-${allComplete ? 'complete' : (level.status === 'complete' ? 'next' : 'incomplete')}`} // Convert spaces to dashes
         >
-          <div className="level-content pb-5 pb-md-0">
+          <div className="level-content d-flex justify-content-between pb-5 pb-md-0">
             <div className="py-3 py-md-5">
-            <h3 className='ms-2'>
-              {level.level}
-            </h3>
-            {level.requirements.map(({ count, tags, years }, i) => (
-              <li key={i} className='ms-2'>
-                <div>At least {count} sats with:</div>
-                <div>Tags: {tags.join(', ')}</div>
-                {years?.length > 0 && <div>Years: {years.join(', ')}</div>}
-              </li>
-            ))}
+              <h3 className='ms-2'>
+                {level.level}
+              </h3>
+              {level.description &&
+                <div className='ms-2'>{level.description}</div>
+              }
+              {level.requirements.map(({ count, tags, years }, i) => (
+                <li key={i} className='ms-2 mt-2'>
+                  <div>At least {count} sats with:</div>
+                  <div>Tags: {tags.join(', ')}</div>
+                  {years?.length > 0 && <div>Years: {years.join(', ')}</div>}
+                </li>
+              ))}
             </div>
             {level.status === 'complete' && (
               <div className={`diamond ${allComplete ? 'diamond-full-complete' : 'diamond-partialy-complete'} mx-auto mx-md-5`}>

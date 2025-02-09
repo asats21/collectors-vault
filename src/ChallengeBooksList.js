@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import challengeBooksData from './challengeBooksData.json';
 import useBookCompletion from './useBookCompletion';
+import { RenderTags } from "./RenderTags";
 
-// Component for individual book progress
-const BookProgressItem = ({ book, satCollection }) => {
+// Component for individual books
+const BookCard = ({ book, satCollection }) => {
   const completedLevels = useBookCompletion(book, satCollection);
   const totalLevels = book.levels.length;
   const completedCount = completedLevels.filter(
@@ -22,7 +23,15 @@ const BookProgressItem = ({ book, satCollection }) => {
     <li className={`book-item ${cardColor}`}>
       <Link to={`/challenge-books/${book.key}`} className="book-link challenge-book-header">
         <h2>{book.name}</h2>
-        <p>
+        {book.display_tags &&
+          <div className="sat-tags mb-2">
+            <RenderTags tags={book.display_tags} />
+          </div>
+        }
+        {book.short_description &&
+          <div>{book.short_description}</div>
+        }
+        <p className='small mt-2'>
           Completed {completedCount} out of {totalLevels} levels
         </p>
         <div className="progress-bar">
@@ -65,7 +74,7 @@ const ChallengeBooksList = ({ satCollection }) => {
           <h2>{difficulty}</h2>
           <ul className="books-list mt-4">
             {groupedBooks[difficulty]?.map((book) => (
-              <BookProgressItem
+              <BookCard
                 key={book.key}
                 book={book}
                 satCollection={satCollection}

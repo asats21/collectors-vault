@@ -27,6 +27,7 @@ const useBookCompletion = (bookData, satCollection) => {
 
         return {
           level: level.name,
+          description: level.description,
           status: isComplete ? 'complete' : 'incomplete',
           sat: selectedSat,
           block: getBlock(selectedSat),

@@ -2,28 +2,35 @@
   {
     "key": "palindrome",
     "name": "Palindromes",
+    "display_tags": ["palindrome"],
     "difficulty": "Novice",
+    "short_description": "Explore and learn about one of the most essential types of rare sats",
+    "description": "Explore and learn about one of the most essential types of rare sats. By the way, you don’t need to acquire a common palindrome—any of these (3D, palindromic block, or palinception) will count.",
     "levels": [
       {
-        "name": "Level 1",
+        "name": "Common Palindrome",
+        "description": "A satoshi whose number reads the same forward and backward, exhibiting symmetry and adding a level of rarity. One of the most basic exotic sats.",
         "requirements": [
           { "count": 1, "tags": ["palindrome"] }
         ]
       },
       {
-        "name": "Level 2",
+        "name": "3D Palindrome",
+        "description": "A palindrome made only from three different digits, which makes it look more visually appealing and tremendously boosts its rarity.",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"] }
         ]
       },
       {
-        "name": "Level 3",
+        "name": "Palindrome made of palindromes - Palinception",
+        "description": "We need to go deeper! Palindromes made of palindromes are a thing. Uniform just means all sub-palindromes have the same length.",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "uniform_palinception"] }
         ]
       },
       {
-        "name": "Level 4",
+        "name": "Palindromic block",
+        "description": "Not only the sat number itself can make a sat valuable for a collector. One of the fundamental sat traits is the block number, and it can be palindromic too!",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "paliblock"] }
         ]
