@@ -122,9 +122,16 @@ const ShowcaseBook = ({ satCollection }) => {
     ) : null;
   }
 
+  const renderYear = (details) => {
+    if (details.tags.includes("nova")) {
+      return `${details.year} | Epoch ${details.epoch}`;
+    }
+    return details.year;
+  };
+
   const renderRarity = (tags) => {
       const supply = getFormattedSupply(tags);
-      return supply ? <div className='small text-center mt-3'>1 / {supply.total}</div> : null;
+      return supply ? <div className='small text-center mt-3 fw-bold'>1 / {supply.total}</div> : null;
   }
 
   if (matchingSats.length === 0) {
@@ -156,7 +163,7 @@ const ShowcaseBook = ({ satCollection }) => {
                 position: 'relative' // Ensures z-index works as expected
               }}
             >
-              <div className="sat-year text-center fw-bold small">{details.year}</div>
+              <div className="sat-year text-center fw-bold small">{ renderYear(details) }</div>
               <div className="sat-number text-center">
                 {isRodarmorName(sat) ? getRodarmorName(sat) : sat}
               </div>
