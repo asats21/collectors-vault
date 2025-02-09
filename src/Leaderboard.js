@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { tagWeights, getWeightStats } from './tagWeights';
 import { LeaderboardWallets } from './LeaderboardWallets';
 import { RenderTags } from "./RenderTags";
@@ -70,7 +71,9 @@ const Leaderboard = ({ satCollection }) => {
                   {wallet === "myCollection" ? (
                     <strong>My Collection</strong> // Display "My Collection" for the user
                   ) : (
-                    wallet // Display the wallet address for others
+                    <Link to={`/leaderboard/` + wallet} style={{ textDecoration: 'none' }}>
+                      {wallet}
+                    </Link>
                   )}
                 </td>
                 <td>{totalWeight}</td>
