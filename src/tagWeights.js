@@ -39,12 +39,12 @@ export const tagWeights = {
     'pizza_4/20': 30,
     'jpeg_2010': 50,
     
-    tz_10: 60,
-    tz_11: 80,
-    tz_12: 100,
-    tz_13: 120,
-    tz_14: 140,
-    tz_15: 200,
+    tz_10: 10,
+    tz_11: 40,
+    tz_12: 80,
+    tz_13: 140,
+    tz_14: 200,
+    tz_15: 300,
 };
 
 export const sortSatsByWeight = (satCollection, tagWeights) => {
