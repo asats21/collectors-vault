@@ -41,7 +41,7 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
     setSatCollection((prev) => deleteSatFromCollection(sat, prev));
   };
 
-  // Define filter options for the five tags
+  // Define filter options
   const filterOptions = [
     { key: 'uncommon', icon: tagIcons['uncommon']?.icon, tooltip: tagIcons['uncommon']?.tooltip },
     { key: 'black_uncommon', icon: tagIcons['black_uncommon']?.icon, tooltip: tagIcons['black_uncommon']?.tooltip },
