@@ -773,12 +773,24 @@ ul.levels {
 
 /* Specific button styles */
 .nav-button-footer.about {
+  border-color: #037F5E;
+  color: #037F5E;
+  box-shadow: 0 0 5px #037F5E;
+}
+
+.nav-button-footer.about:hover {
+  background-color: #037F5E;
+  color: white;
+  box-shadow: 0 0 10px #037F5E;
+}
+
+.nav-button-footer.leaderboard {
   border-color: #118AB2;
   color: #118AB2;
   box-shadow: 0 0 5px #118AB2;
 }
 
-.nav-button-footer.about:hover {
+.nav-button-footer.leaderboard:hover {
   background-color: #118AB2;
   color: white;
   box-shadow: 0 0 10px #118AB2;

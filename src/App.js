@@ -94,6 +94,11 @@ function App() {
               About
             </button>
           </Link>
+          <Link to="/leaderboard" style={{ textDecoration: 'none' }}>
+            <button className="nav-button-footer leaderboard">
+              Leaderboard
+            </button>
+          </Link>
           <a href="https://asats21.github.io/rare-stats/" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
             <button className="nav-button-footer rarity">
               Rare Stats
