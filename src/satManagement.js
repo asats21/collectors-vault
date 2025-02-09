@@ -47,6 +47,9 @@ import {
         return;
 
       const satNumber = Number(sat); // Convert to number
+      
+      if(satNumber < 45000000000) return; 
+
       const blockNumber = getBlock(satNumber);
       const year = getSatYear(blockNumber);
       const epoch = getEpoch(blockNumber);
