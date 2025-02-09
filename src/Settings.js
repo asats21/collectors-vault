@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { json } from "@codemirror/lang-json";
 import { EditorView } from "@codemirror/view";
-import { tagWeights } from "./tagWeights";
+import { tagWeights, sortSatsByWeight } from './tagWeights';
 import ShowcaseBooksContext from './ShowcaseBooksContext';
 
 const Settings = ({ satCollection, setSatCollection, settings, setSettings }) => {
@@ -90,19 +90,23 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
     return Object.keys(data).join('\n');
   };
 
-  const convertToCollectionExportCSV = (data) => {
-    // Define the headers for the CSV
-    const headers = ['sat_number', 'tags', 'block_number', 'year', 'epoch'].join(';');
+  const convertToCollectionExportCSV = (satCollection, tagWeights) => {
+    // Sort the sats by weight using the sortSatsByWeight function
+    const sortedSats = sortSatsByWeight(satCollection, tagWeights);
   
-    // Map through the data to create the CSV rows
-    const rows = Object.entries(data).map(([satNumber, details]) => {
+    // Define the headers for the CSV
+    const headers = ['sat_number', 'tags', 'block_number', 'year', 'epoch', 'weight_sum'].join(';');
+  
+    // Map through the sorted data to create the CSV rows
+    const rows = sortedSats.map(({ sat, details, weightSum }) => {
       // Extract and format the values
       const row = [
-        satNumber, // SAT number (key in the object)
+        sat, // SAT number (key in the object)
         details.tags.join(','), // Join tags with a comma
         details.block_number,
         details.year,
-        details.epoch
+        details.epoch,
+        weightSum.toFixed(1) // Include the weight sum in the CSV
       ].join(';'); // Join values with a semicolon
   
       return row;
@@ -132,7 +136,7 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
   };
 
   const downloadCollectionExportCSV = () => {
-    const csvData = convertToCollectionExportCSV(satCollection);
+    const csvData = convertToCollectionExportCSV(satCollection, tagWeights);
     
     // Create a Blob from the CSV string
     const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
@@ -149,7 +153,6 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
     link.click();
     document.body.removeChild(link);
   };
-
 
   return (
     <div className="">
