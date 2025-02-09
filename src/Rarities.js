@@ -13,25 +13,25 @@ export const rarities = [
     },
     {
         "tags": ["uncommon", "alpha"],
-        "total": "628,419",
+        "total": 628419,
         "found": "73K",
     },
     {
         "tags": ["uncommon", "alpha", "epoch0"],
-        "total": "210,000",
+        "total": 210000,
         "found": "16K",
     },
     {
         "tags": ["uncommon", "2009"],
-        "total": "32,474",
+        "total": 32474,
     },
     {
         "tags": ["paliblock", "uncommon"],
-        "total": "7,925",
+        "total": 7925,
     },
     {
         "tags": ["paliblock", "uncommon", "alpha"],
-        "total": "1,602",
+        "total": 1602,
     },
 
     // * Black Uncommon
@@ -42,7 +42,7 @@ export const rarities = [
     },
     {
         "tags": ["black_uncommon", "omega"],
-        "total": "628,419",
+        "total": 628419,
         "found": "46K",
     },
     {
@@ -52,7 +52,7 @@ export const rarities = [
     },
     {
         "tags": ["paliblock", "black_uncommon", "omega"],
-        "total": "1,602",
+        "total": 1602,
     },
 
     // * Palindrome
@@ -63,69 +63,69 @@ export const rarities = [
     },
     {
         "tags": ["palindrome", "paliblock", "3_digits"],
-        "total": "126,465",
+        "total": 126465,
     },
 
     // * Uniform Palinception
     {
         "tags": [ "uniform_palinception", "3_digits"],
-        "total": "139,616",
+        "total": 139616,
     },
     {
         "tags": [ "uniform_palinception", "3_digits", "paliblock"],
-        "total": "25,173",
+        "total": 25173,
     },
     {
         "tags": ["uniform_palinception", "nova"],
-        "total": "2,040",
-        "found": "135",
+        "total": 2040,
+        "found": 135,
     },
 
     // * Perfect Palinception
     {
         "tags": ["perfect_palinception"],
-        "total": "13,305",
+        "total": 13305,
         "found": 335,
     },
     {
         "tags": ["perfect_palinception", "nova"],
-        "total": "1,050",
+        "total": 1050,
     },
     {
         "tags": ["perfect_palinception", "2_digits"],
-        "total": "1,768",
+        "total": 1768,
     },
 
     // * Pizza
     {
         "tags": ["pizza", "palindrome"],
-        "total": "100,016",
+        "total": 100016,
     },
     {
         "tags": ["palindrome", "pizza", "pizza_4/20"],
-        "total": "1,600",
+        "total": 1600,
     },
     {
         "tags": ["alpha", "pizza"],
-        "total": "10,002",
+        "total": 10002,
     },
     {
         "tags": ["alpha", "pizza", "2009"],
-        "total": "300",
+        "total": 300,
     },
 
     // * Jpeg
     {
         "tags": ["jpeg", "palindrome"],
-        "total": "5,000",
+        "total": 5000,
     },
     {
         "tags": ["jpeg", "palindrome", "jpeg_2010"],
-        "total": "500",
+        "total": 500,
     },
     {
         "tags": ["alpha", "jpeg"],
-        "total": "500",
+        "total": 500,
     },
 
     // * Hitman
@@ -143,7 +143,7 @@ export const rarities = [
     },
     {
         "tags": ["vintage", "palindrome", "3_digits"],
-        "total": "244,800",
+        "total": 244800,
     },
 
     // * B9
