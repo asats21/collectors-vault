@@ -24,23 +24,27 @@ export const tagWeights = {
     rodarmor_name: 100,
     prime: 50,
 
-    uncommon: 20,
+    uncommon: 40,
     black_uncommon: 20,
-    epoch0: 40,
+    epoch0: 20,
 
     pali_uncommon: 80,
     pali_black_uncommon: 50,
 
-    alpha: 10,
-    omega: 10,
+    alpha: 40,
+    omega: 30,
 
     '2009': 10,
     'pizza_2009': 50,
     'pizza_4/20': 30,
     'jpeg_2010': 50,
     
-    b78: 80,
-    b9: 100,
+    tz_10: 60,
+    tz_11: 80,
+    tz_12: 100,
+    tz_13: 120,
+    tz_14: 140,
+    tz_15: 200,
 };
 
 export const sortSatsByWeight = (satCollection, tagWeights) => {
