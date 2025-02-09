@@ -15,6 +15,7 @@ import MySats from './MySats';  // Import the Index page
 import Tests from './Tests';  // Import the Tests page
 import About from './About';  // Import the About page
 import Settings from './Settings';  // Import the Settings page
+import Leaderboard from './Leaderboard';  // Import the Leaderboard page
 
 import { FaCog } from "react-icons/fa";
 
@@ -175,6 +176,7 @@ function App() {
             <Route path="/settings" element={<Settings satCollection={satCollection} setSatCollection={setSatCollection} settings={settings} setSettings={setSettings} />} />
             <Route path="/about" element={<About />} />
             <Route path="/tests" element={<Tests />} />
+            <Route path="/leaderboard" element={<Leaderboard />} />
           </Routes>
         </div>
         <Footer />

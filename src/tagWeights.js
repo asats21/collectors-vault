@@ -68,3 +68,12 @@ export const sortSatsByWeight = (satCollection, tagWeights) => {
         return 0;
       });
 };
+
+export const getTotalWeight = (satCollection, tagWeights) => {
+  return Object.entries(satCollection).reduce((totalWeight, [sat, details]) => {
+    // Calculate the weight for the current SAT
+    const satWeight = details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0);
+    // Add the SAT's weight to the total weight
+    return totalWeight + satWeight;
+  }, 0); // Start with an initial value of 0
+};
