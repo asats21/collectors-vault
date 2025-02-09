@@ -59,7 +59,7 @@ const LeaderboardEntry = () => {
   return (
     <div className="container">
       {/* Header */}
-      <div className="page-header mt-4 mt-md-2">
+      <div className="leaderboard-item-page-header mt-4 mt-md-2">
         <h1>{address}'s Collection</h1>
         <div className='fw-bold'>
           {Object.keys(satCollection).length > 0 
