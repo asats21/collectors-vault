@@ -8,10 +8,16 @@ import { FaCrown } from "react-icons/fa6";
 import { MdOutlineNumbers } from "react-icons/md";
 import { BiSolidPurchaseTag } from "react-icons/bi";
 
-const Leaderboard = () => {
+const Leaderboard = ({ satCollection }) => {
+  // Add the user's collection to the leaderboard data
+  const leaderboardData = {
+    ...LeaderboardWallets,
+    myCollection: satCollection, // Use "myCollection" as the key for the user's collection
+  };
+
   // Calculate stats for each wallet
-  const walletData = Object.entries(LeaderboardWallets).map(([wallet, satCollection]) => {
-    const stats = getWeightStats(satCollection, tagWeights);
+  const walletData = Object.entries(leaderboardData).map(([wallet, collection]) => {
+    const stats = getWeightStats(collection, tagWeights);
     return {
       wallet,
       ...stats, // Spread the stats (totalWeight, numberOfItems, heaviestSat)
@@ -26,17 +32,16 @@ const Leaderboard = () => {
     if (subPaliLength) {
       return '#' + displayUniformPalinception(sat, subPaliLength);
     }
-    if(isRodarmorName(sat)) {
+    if (isRodarmorName(sat)) {
       return getRodarmorName(sat);
     }
-
     return '#' + sat;
-  }
+  };
 
   return (
     <div className="container">
       {/* Header */}
-      <div className="page-header mt-4 mt-md-2" style={{"margin-bottom": "0px"}}>
+      <div className="page-header mt-4 mt-md-2" style={{ marginBottom: "0px" }}>
         <h1>Demo Leaderboard</h1>
       </div>
       <p>Discover how your collection ranks among our demo wallets</p>
@@ -50,18 +55,31 @@ const Leaderboard = () => {
               <th scope="col">Wallet</th>
               <th scope="col">Score</th>
               <th scope="col"><FaCrown className="icon" style={{ color: "#F2A900" }} /> <MdOutlineNumbers className="icon" style={{ color: "#F2A900" }} /></th>
-              <th scope="col"><FaCrown className="icon" style={{ color: "#F2A900" }} /> <BiSolidPurchaseTag  className="icon" style={{ color: "#F2A900" }} /></th>
+              <th scope="col"><FaCrown className="icon" style={{ color: "#F2A900" }} /> <BiSolidPurchaseTag className="icon" style={{ color: "#F2A900" }} /></th>
               <th scope="col">Items</th>
             </tr>
           </thead>
           <tbody>
             {sortedWalletData.map(({ wallet, totalWeight, numberOfItems, heaviestSat }, index) => (
-              <tr key={wallet}>
+              <tr
+                key={wallet}
+                className={wallet === "myCollection" ? "user-collection-row" : ""} // Add a class for the user's collection
+              >
                 <th scope="row">{index + 1}</th>
-                <td>{wallet}</td>
+                <td>
+                  {wallet === "myCollection" ? (
+                    <strong>My Collection</strong> // Display "My Collection" for the user
+                  ) : (
+                    wallet // Display the wallet address for others
+                  )}
+                </td>
                 <td>{totalWeight}</td>
                 <td>{displaySatNumber(heaviestSat.sat)}</td>
-                <td><div className="sat-tags"><RenderTags tags={heaviestSat.details.tags} /></div></td>
+                <td>
+                  <div className="sat-tags">
+                    <RenderTags tags={heaviestSat.details.tags} />
+                  </div>
+                </td>
                 <td>{numberOfItems}</td>
               </tr>
             ))}

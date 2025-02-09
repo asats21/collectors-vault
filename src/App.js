@@ -181,7 +181,7 @@ function App() {
             <Route path="/settings" element={<Settings satCollection={satCollection} setSatCollection={setSatCollection} settings={settings} setSettings={setSettings} />} />
             <Route path="/about" element={<About />} />
             <Route path="/tests" element={<Tests />} />
-            <Route path="/leaderboard" element={<Leaderboard />} />
+            <Route path="/leaderboard" element={<Leaderboard satCollection={satCollection} />} />
           </Routes>
         </div>
         <Footer />
