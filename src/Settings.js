@@ -279,9 +279,18 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
       {satCollection && Object.keys(satCollection).length > 0 && (
         <div className="mt-4">
           <h3>Danger Zone</h3>
-        
           <div className="mt-4">
-            <button className="nav-button delete-all" onClick={() => setSatCollection({})}>
+            <button
+              className="nav-button delete-all"
+              onClick={() => {
+                // Show confirmation dialog
+                const isConfirmed = window.confirm("Are you sure you want to delete all sats? This action cannot be undone.");
+                // If confirmed, delete all SATs
+                if (isConfirmed) {
+                  setSatCollection({});
+                }
+              }}
+            >
               Delete All Sats
             </button>
           </div>
