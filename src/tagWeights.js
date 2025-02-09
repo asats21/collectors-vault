@@ -77,3 +77,34 @@ export const getTotalWeight = (satCollection, tagWeights) => {
     return totalWeight + satWeight;
   }, 0); // Start with an initial value of 0
 };
+
+export const getWeightStats = (satCollection, tagWeights) => {
+  let totalWeight = 0;
+  let numberOfItems = 0;
+  let heaviestSat = null;
+  let maxWeight = -Infinity;
+
+  // Iterate over the satCollection
+  Object.entries(satCollection).forEach(([sat, details]) => {
+    // Calculate the weight for the current SAT
+    const satWeight = details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0);
+
+    // Update total weight
+    totalWeight += satWeight;
+
+    // Update number of items
+    numberOfItems += 1;
+
+    // Track the heaviest SAT
+    if (satWeight > maxWeight) {
+      maxWeight = satWeight;
+      heaviestSat = { sat, details, weight: satWeight };
+    }
+  });
+
+  return {
+    totalWeight, // Total weight of all SATs
+    numberOfItems, // Number of SATs in the collection
+    heaviestSat, // The heaviest SAT (object with sat, details, and weight)
+  };
+};
