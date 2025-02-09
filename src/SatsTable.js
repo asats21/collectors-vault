@@ -8,7 +8,7 @@ import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 import { FiCalendar } from "react-icons/fi";
 import { FaCube } from "react-icons/fa";
 
-const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageClick }) => {
+const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageClick, isReadOnly }) => {
 
   const displaySatNumber = (sat) => {
     const subPaliLength = getSubPaliLength(sat);
@@ -45,7 +45,9 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                 <th>Block</th>
                 <th>Year</th>
                 <th>E</th>
-                <th></th>
+                { !isReadOnly && 
+                  <th></th>
+                }
               </tr>
             </thead>
             <tbody>
@@ -64,14 +66,16 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                   <td><span className={isPalindrome(details.block_number) ? 'table-palindromic-block' : ''}>{details.block_number}</span></td>
                   <td>{details.year}</td>
                   <td>{details.epoch}</td>
-                  <td>
-                  <button
-                    className="delete-button fw-bold"
-                    onClick={() => handleDelete(sat)}
-                  >
-                    <FaTrash />
-                  </button>
-                  </td>
+                  { !isReadOnly && 
+                    <td>
+                      <button
+                        className="delete-button fw-bold"
+                        onClick={() => handleDelete(sat)}
+                      >
+                        <FaTrash />
+                      </button>
+                    </td>
+                  }
                 </tr>
               ))}
             </tbody>
