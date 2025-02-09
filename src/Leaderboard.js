@@ -40,7 +40,7 @@ const Leaderboard = ({ satCollection }) => {
   };
 
   return (
-    <div className="container">
+    <div className="">
       {/* Header */}
       <div className="page-header mt-4 mt-md-2" style={{ marginBottom: "0px" }}>
         <h1>Demo Leaderboard</h1>

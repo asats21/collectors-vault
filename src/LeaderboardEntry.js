@@ -57,7 +57,7 @@ const LeaderboardEntry = () => {
   };
 
   return (
-    <div className="container">
+    <div className="">
       {/* Header */}
       <div className="leaderboard-item-page-header mt-4 mt-md-2">
         <h1>{address}'s Collection</h1>
