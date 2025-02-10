@@ -28,7 +28,7 @@ export const tagIcons = {
     paliblock: { icon: <FaBluesky className="icon" style={{ color: "#118AB2", padding: "1px", border: "1px solid #118AB2" }} />, number: 10, tooltip: "PaliBlock" },
     vintage: { icon: <FaHourglass className="icon" style={{ color: "#F6BB41" }} />, number: 3, tooltip: "Vintage" },
     "2_digits": { icon: <div className="fw-bold" style={{ color: "#E89A02" }}>2D</div>, number: 5, tooltip: "2 Digits" },
-    "3_digits": { icon: <div className="fw-bold" style={{ color: "#118AB2" }}>3D</div>, number: 5, tooltip: "3 Digits" },
+    "3_digits": { icon: <div className="fw-bold" style={{ color: "#DDD" }}>3D</div>, number: 5, tooltip: "3 Digits" },
     epoch0: { icon: <div className="fw-bold">E0</div>, number: 10, tooltip: "Epoch 0" },
     "nova": { icon: <div className="fw-bold">Nova</div>, number: 20, tooltip: "Palindromes created after the first halving" },
     "2009": { icon: <div className="fw-bold">2009</div>, number: 8, tooltip: "Mined in 2009" },
