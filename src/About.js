@@ -49,6 +49,10 @@ const About = () => {
         The code is open-source and available on GitHub <a href="https://github.com/asats21/collectors-vault" target="_blank" rel="noopener noreferrer" style={{ color: "#C38BFA", textDecoration: "none" }}>here</a>. 
       </p>
 
+      <p> 
+        Special thanks to SatStats and Zed Zeroth, as well as the entire rare sat community and everyone who reached out to me after I launched the "Rare Stats" app. our knowledge, ideas, and encouragement have been instrumental in my journey to building this app. 
+      </p>
+
     </div>
   );
 };
