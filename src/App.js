@@ -75,10 +75,10 @@ function App() {
           <Link to="/" style={{ textDecoration: 'none' }}>
             <button className={`nav-button my-sats ${location.pathname === "/" ? "active" : ""}`}>My Sats</button>
           </Link>
-          <Link to="/showcase-books" style={{ textDecoration: 'none' }}>
+          <Link to="showcase-books" style={{ textDecoration: 'none' }}>
             <button className={`nav-button showcase-books ${location.pathname === "/showcase-books" ? "active" : ""}`}>Showcase Books</button>
           </Link>
-          <Link to="/challenge-books" style={{ textDecoration: 'none' }}>
+          <Link to="challenge-books" style={{ textDecoration: 'none' }}>
             <button className={`nav-button challenge-books ${location.pathname === "/challenge-books" ? "active" : ""}`}>Challenge Books</button>
           </Link>
         </div>
@@ -90,12 +90,12 @@ function App() {
     return (
       <footer className="footer-nav text-center pt-4">
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }} className='mb-5'>
-          <Link to="/about" style={{ textDecoration: 'none' }}>
+          <Link to="about" style={{ textDecoration: 'none' }}>
             <button className="nav-button-footer about">
               About
             </button>
           </Link>
-          <Link to="/leaderboard" style={{ textDecoration: 'none' }}>
+          <Link to="leaderboard" style={{ textDecoration: 'none' }}>
             <button className="nav-button-footer leaderboard">
               Leaderboard
             </button>
@@ -132,7 +132,7 @@ function App() {
         )}
   
         {/* Settings Cog */}
-        <Link to="/settings" className="settings-link" style={{ marginLeft: "auto" }}>
+        <Link to="settings" className="settings-link" style={{ marginLeft: "auto" }}>
           <div
             className="settings-icon"
             style={{

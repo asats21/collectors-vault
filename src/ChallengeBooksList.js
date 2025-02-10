@@ -21,7 +21,7 @@ const BookCard = ({ book, satCollection }) => {
 
   return (
     <li className={`book-item ${cardColor}`}>
-      <Link to={`/challenge-books/${book.key}`} className="book-link challenge-book-header">
+      <Link to={`challenge-books/${book.key}`} className="book-link challenge-book-header">
         <h2>{book.name}</h2>
         {book.display_tags &&
           <div className="sat-tags mb-2">
