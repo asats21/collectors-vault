@@ -116,7 +116,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
             <ul className="books-list">
               {filteredBooks.map((book) => (
                 <li key={book.key} className={`showcase-book-item ${getColor(matchedSats[book.key])}`}>
-                  <Link to={`showcase-books/${book.key}`} className="book-link">
+                  <Link to={`/showcase-books/${book.key}`} className="book-link">
                     <div className='showcase-book-header d-flex justify-content-between'>
                       <h2 className={`${getColor(matchedSats[book.key])} me-2`}>{book.name}</h2>
                       <div className={`fw-bold h3 ${getColor(matchedSats[book.key])}`}>

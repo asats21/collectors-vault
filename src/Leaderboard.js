@@ -71,7 +71,7 @@ const Leaderboard = ({ satCollection }) => {
                   {wallet === "myCollection" ? (
                     <strong>My Collection</strong> // Display "My Collection" for the user
                   ) : (
-                    <Link to={`leaderboard` + wallet} style={{ color: "#fff" }}>
+                    <Link to={`/leaderboard` + wallet} style={{ color: "#fff" }}>
                       {wallet}
                     </Link>
                   )}
