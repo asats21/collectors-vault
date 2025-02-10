@@ -161,16 +161,18 @@ function App() {
       </div>
     );
   }
+
+  const basename = process.env.NODE_ENV === "production" ? "/collectors-vault" : "/";
   
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="app-container">
         <div className="container">
-
+  
           <div className='mt-3'>
             <SettingsAndDemo satCollection={satCollection} />
           </div>
-
+  
           <h1 className="text-center mb-4">Sat Collector's Vault</h1>
           <Navigation />
           <Routes>
