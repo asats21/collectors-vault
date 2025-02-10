@@ -4,8 +4,8 @@
     "name": "Palindromes",
     "display_tags": ["palindrome"],
     "difficulty": "Novice",
-    "short_description": "Explore and learn about one of the most essential types of rare sats",
-    "description": "Explore and learn about one of the most essential types of rare sats. By the way, you don’t need to acquire a common palindrome—any of these (3D, palindromic block, or palinception) will count.",
+    "short_description": "Explore and discover one of the most essential types of rare sats—palindromes.",
+    "description": "Explore and learn about one of the most essential types of rare sats. These sats read the same forward and backward, making them a unique and visually striking category. Their symmetry add to their appeal, attracting collectors who appreciate numerical patterns within Bitcoin’s supply. By the way, you don’t need to acquire a common palindrome—any of these (3D, palindromic block, or palinception) will count.",
     "levels": [
       {
         "name": "Common Palindrome",
@@ -40,26 +40,28 @@
   {
     "key": "uncommons",
     "name": "Uncommons",
+    "short_description": "A fundamental tier in the Rodarmor Rarity system, as proposed by Ordinals creator Casey Rodarmor.",
+    "description": "These sats represent the first sat of a Bitcoin block, making them an appealing entry point for collectors seeking more traditional collecting options. As a fundamental tier in the Rodarmor Rarity system, they offer a solid starting point for both newcomers and seasoned collectors alike.",
     "display_tags": ["uncommon", "black_uncommon"],
     "difficulty": "Novice",
     "levels": [
       {
-        "name": "Uncommon sat",
+        "name": "Uncommon",
         "requirements": [
           { "count": 1, "tags": ["uncommon"] }
         ]
       }, {
-        "name": "Alpha Uncommon sat",
+        "name": "Alpha Uncommon",
         "requirements": [
           { "count": 1, "tags": ["uncommon",  "alpha"] }
         ]
       }, {
-        "name": "Black uncommon sat",
+        "name": "Black Uncommon",
         "requirements": [
           { "count": 1, "tags": ["black_uncommon"] }
         ]
       }, {
-        "name": "Black omega sat",
+        "name": "Omega Black Uncommon",
         "requirements": [
           { "count": 1, "tags": ["black_uncommon", "omega"] }
         ]
@@ -73,6 +75,8 @@
     "key": "event_pali",
     "name": "Event Palindromes",
     "display_tags": ["palindrome", "pizza", "silkroad", "hitman", "jpeg"],
+    "short_description": "Bitcoin’s history is filled with significant events, and Ordinal Theory makes it possible to track sats involved in these moments.",
+    "description": "Bitcoin’s history is filled with significant events, and Ordinal Theory makes it possible to track sats involved in these moments. While their overall supply may give them a more fungible nature, searching for palindromes within key event ranges uncovers truly unique, non-fungible collectibles tied to historic Bitcoin milestones. These sats combine the rarity of palindromic symmetry with the significance of past events, making them a prized find for collectors.",
     "difficulty": "Collector",
     "levels": [
       {
@@ -102,6 +106,8 @@
     "key": "uniform_palinceptions",
     "name": "Uniform Palinceptions",
     "display_tags": ["uniform_palinception"],
+    "short_description": "Palindromes within palindromes! These extraordinary sats are composed of smaller palindromes of equal length, sometimes forming truly mesmerizing patterns.", 
+    "description": "Palindromes within palindromes! These extraordinary sats are composed of smaller palindromes of equal length, creating a rare and mesmerizing pattern. Their layered symmetry sets them apart, making them a unique and highly sought-after category for collectors who appreciate deep numerical elegance.",
     "difficulty": "Collector",
     "levels": [
       {
@@ -139,6 +145,8 @@
     "key": "historical_uncommon",
     "name": "Historical Uncommon",
     "display_tags": ["uncommon", "epoch0", "2009"],
+    "short_description": "Uncommon sats mined in Bitcoin’s earliest years, before the first halving event, making them a piece of the network’s foundational era.",
+    "description": "Uncommon sats mined in Bitcoin’s earliest years, before the first halving, making them a piece of the network’s foundational era. These sats not only hold rarity within the Rodarmor Rarity system but also carry historical significance, originating from a time when Bitcoin was still an experimental technology known to only a few. Their connection to Bitcoin’s early days makes them highly desirable among collectors.",
     "difficulty": "Expert",
     "levels": [
       {
@@ -174,6 +182,8 @@
     "key": "event_pali_expert",
     "name": "Event Uniform Palinceptions",
     "display_tags": ["uniform_palinception", "pizza", "silkroad", "hitman", "jpeg"],
+    "short_description": "Taking rarity to the next level, these numerically beautiful sats are tied to historic Bitcoin events, dramatically enhancing their significance and collectability.",
+    "description": "Taking rarity to the next level, these numerically beautiful sats are tied to historic Bitcoin events, dramatically enhancing their significance and collectability. They combine structured symmetry with a direct connection to key moments in Bitcoin’s history, making them some of the most exceptional finds for collectors.",
     "difficulty": "Expert",
     "levels": [
       {
@@ -201,8 +211,10 @@
   },
   {
     "key": "exotic_pizza",
-    "name": "Exotic Pizza",
-    "display_tags": ["pizza", "uniform_palinception", "paliblock", "2009"],
+    "name": "Exotic Pizza Sats",
+    "short_description": "Pizza sats with a twist! Featuring unorthodox combinations of rarity, including palindromic block numbers and even sats mined on a 'blaze it' date!",
+    "description": "Pizza sats with a twist! Featuring unorthodox combinations of rarity, including palindromic block numbers and even sats mined on a 'blaze it' date!",
+    "display_tags": ["pizza", "pizza_4/20", "uniform_palinception", "paliblock", "2009"],
     "difficulty": "Expert",
     "levels": [
       {
@@ -241,6 +253,8 @@
     "key": "event_alphas",
     "name": "Event Alphas",
     "display_tags": ["alpha", "pizza", "silkroad", "hitman", "jpeg"],
+    "short_description": "The very first sats of Bitcoins that became part of historic events. These sats carry both numerical prestige and a direct link to key moments in Bitcoin’s timeline.",
+    "description": "The very first sats of Bitcoins that became part of historic events. These sats carry both numerical prestige and a direct link to key moments in Bitcoin’s timeline.",
     "difficulty": "Elite",
     "levels": [
       {
@@ -270,6 +284,8 @@
     "key": "perfect_palinceptions",
     "name": "Perfect Palinceptions",
     "display_tags": ["perfect_palinception"],
+    "short_description": "The pinnacle of palindromic elegance, these sats form eye-catching numerical patterns by repeating the same palindrome multiple times.",
+    "description": "The pinnacle of palindromic elegance, these sats form eye-catching numerical patterns by repeating the same palindrome multiple times. Their flawless symmetry and structured repetition make them one of the most visually striking and mathematically intriguing categories, appealing to collectors who seek perfection in numerical design.",
     "difficulty": "Elite",
     "levels": [
       {
@@ -302,6 +318,8 @@
     "key": "perfect_palinceptions_plus",
     "name": "Perfect Palinceptions +",
     "display_tags": ["perfect_palinception"],
+    "short_description": "The pinnacle of palindromic elegance—but with unexpected and even rarer traits. A true prize for seasoned collectors only!",
+    "description": "The pinnacle of palindromic elegance—but with unexpected and even rarer traits. A true prize for seasoned collectors only!",
     "difficulty": "Zenite",
     "levels": [
       {
@@ -326,6 +344,8 @@
     "key": "palindromic_uncommon",
     "name": "Palindromic Uncommon",
     "display_tags": ["uncommon", "paliblock", "pali_uncommon"],
+    "short_description": "Uncommons can’t be full palindromes—but their leading part can! These uncommons are not only tremendously rare but also visually appealing. Symmetry & the prestige of being the first sat of a block.",
+    "description": "Uncommons can’t be full palindromes—but their leading part can! These special uncommons are not only tremendously rare but also visually appealing, combining structured symmetry with the prestige of being the first sat of a block. Just look at this example—660660000000000—pretty, isn’t it?",
     "difficulty": "Zenite",
     "levels": [
       {
