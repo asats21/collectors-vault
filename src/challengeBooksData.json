@@ -38,36 +38,107 @@
     ]
   },
   {
+    "key": "uncommons",
+    "name": "Uncommons",
+    "display_tags": ["uncommon", "black_uncommon"],
+    "difficulty": "Novice",
+    "levels": [
+      {
+        "name": "Uncommon sat",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"] }
+        ]
+      }, {
+        "name": "Alpha Uncommon sat",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon",  "alpha"] }
+        ]
+      }, {
+        "name": "Black uncommon sat",
+        "requirements": [
+          { "count": 1, "tags": ["black_uncommon"] }
+        ]
+      }, {
+        "name": "Black omega sat",
+        "requirements": [
+          { "count": 1, "tags": ["black_uncommon", "omega"] }
+        ]
+      }
+    ]
+  },
+
+
+
+  {
     "key": "event_pali",
     "name": "Event Palindromes",
+    "display_tags": ["palindrome", "pizza", "silkroad", "hitman", "jpeg"],
     "difficulty": "Collector",
     "levels": [
       {
-        "name": "Level 1",
+        "name": "Pizza Palindrome",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "pizza"] }
         ]
       }, {
-        "name": "Level 2",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome", "jpeg"] }
-        ]
-      }, {
-        "name": "Level 2",
+        "name": "Silkroad Palindrome",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "silkroad"] }
         ]
       }, {
-        "name": "Level 2",
+        "name": "Hitman Palindrome",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "hitman"] }
+        ]
+      }, {
+        "name": "Jpeg Palindrome",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "jpeg"] }
         ]
       }
     ]
   },
   {
+    "key": "uniform_palinceptions",
+    "name": "Uniform Palinceptions",
+    "display_tags": ["uniform_palinception"],
+    "difficulty": "Collector",
+    "levels": [
+      {
+        "name": "Level 1",
+        "requirements": [
+          { "count": 1, "tags": ["uniform_palinception"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["uniform_palinception", "3_digits"] }
+        ]
+      }, {
+        "name": "Level 3",
+        "requirements": [
+          { "count": 1, "tags": ["uniform_palinception", "paliblock"] }
+        ]
+      }, {
+        "name": "Level 4",
+        "requirements": [
+          { "count": 1, "tags": ["uniform_palinception", "3_digits", "paliblock"] }
+        ]
+      }, {
+        "name": "Level 5",
+        "requirements": [
+          { "count": 1, "tags": ["uniform_palinception", "3_digits", "paliblock", "sequence"] }
+        ]
+      }
+    ]
+  },
+
+
+
+  {
     "key": "historical_uncommon",
     "name": "Historical Uncommon",
+    "display_tags": ["uncommon", "epoch0", "2009"],
     "difficulty": "Expert",
     "levels": [
       {
@@ -100,42 +171,10 @@
     ]
   },
   {
-    "key": "uniform_palinceptions",
-    "name": "Uniform Palinceptions",
-    "difficulty": "Collector",
-    "levels": [
-      {
-        "name": "Level 1",
-        "requirements": [
-          { "count": 1, "tags": ["uniform_palinception"] }
-        ]
-      }, {
-        "name": "Level 2",
-        "requirements": [
-          { "count": 1, "tags": ["uniform_palinception", "3_digits"] }
-        ]
-      }, {
-        "name": "Level 3",
-        "requirements": [
-          { "count": 1, "tags": ["uniform_palinception", "paliblock"] }
-        ]
-      }, {
-        "name": "Level 4",
-        "requirements": [
-          { "count": 1, "tags": ["uniform_palinception", "3_digits", "paliblock"] }
-        ]
-      }, {
-        "name": "Level 5",
-        "requirements": [
-          { "count": 1, "tags": ["uniform_palinception", "3_digits", "paliblock", "sequence"] }
-        ]
-      }
-    ]
-  },
-  {
     "key": "event_pali_expert",
     "name": "Event Uniform Palinceptions",
-    "difficulty": "Elite",
+    "display_tags": ["uniform_palinception", "pizza", "silkroad", "hitman", "jpeg"],
+    "difficulty": "Expert",
     "levels": [
       {
         "name": "Level 1",
@@ -161,115 +200,9 @@
     ]
   },
   {
-    "key": "perfect_palinceptions",
-    "name": "Perfect Palinceptions",
-    "difficulty": "Elite",
-    "levels": [
-      {
-        "name": "Level 1",
-        "requirements": [
-          { "count": 1, "tags": ["perfect_palinception"] }
-        ]
-      }, {
-        "name": "Level 2",
-        "requirements": [
-          { "count": 1, "tags": ["perfect_palinception"], "years": [2009] }
-        ]
-      }, {
-        "name": "Level 3",
-        "requirements": [
-          { "count": 1, "tags": ["perfect_palinception", "nova"] }
-        ]
-      }, {
-        "name": "Level 4",
-        "requirements": [
-          { "count": 1, "tags": ["perfect_palinception", "3_digits"] }
-        ]
-      }
-    ]
-  },
-  {
-    "key": "perfect_palinceptions_plus",
-    "name": "Perfect Palinceptions +",
-    "difficulty": "Zenite",
-    "levels": [
-      {
-        "name": "Level 1",
-        "requirements": [
-          { "count": 1, "tags": ["perfect_palinception", "nova"] }
-        ]
-      }, {
-        "name": "Level 2",
-        "requirements": [
-          { "count": 1, "tags": ["perfect_palinception",  "2_digits"] }
-        ]
-      }, {
-        "name": "Level 3",
-        "requirements": [
-          { "count": 1, "tags": ["perfect_palinception", "paliblock"] }
-        ]
-      }
-    ]
-  },
-  {
-    "key": "event_alphas",
-    "name": "Event Alphas",
-    "difficulty": "Expert",
-    "levels": [
-      {
-        "name": "Level 1",
-        "requirements": [
-          { "count": 1, "tags": ["pizza", "alpha"] }
-        ]
-      }, {
-        "name": "Level 2",
-        "requirements": [
-          { "count": 1, "tags": ["silkroad",  "alpha"] }
-        ]
-      }, {
-        "name": "Level 3",
-        "requirements": [
-          { "count": 1, "tags": ["hitman", "alpha"] }
-        ]
-      }, {
-        "name": "Level 4",
-        "requirements": [
-          { "count": 1, "tags": ["jpeg", "alpha"] }
-        ]
-      }
-    ]
-  },
-  {
-    "key": "uncommons",
-    "name": "Uncommons",
-    "difficulty": "Novice",
-    "levels": [
-      {
-        "name": "Uncommon sat",
-        "requirements": [
-          { "count": 1, "tags": ["uncommon"] }
-        ]
-      }, {
-        "name": "Alpha Uncommon sat",
-        "requirements": [
-          { "count": 1, "tags": ["uncommon",  "alpha"] }
-        ]
-      }, {
-        "name": "Black uncommon sat",
-        "requirements": [
-          { "count": 1, "tags": ["black_uncommon"] }
-        ]
-      }, {
-        "name": "Black omega sat",
-        "requirements": [
-          { "count": 1, "tags": ["black_uncommon", "omega"] }
-        ]
-      }
-    ]
-  },
-  {
     "key": "exotic_pizza",
     "name": "Exotic Pizza",
+    "display_tags": ["pizza", "uniform_palinception", "paliblock", "2009"],
     "difficulty": "Expert",
     "levels": [
       {
@@ -301,9 +234,98 @@
       }
     ]
   },
+
+
+
+  {
+    "key": "event_alphas",
+    "name": "Event Alphas",
+    "display_tags": ["alpha", "pizza", "silkroad", "hitman", "jpeg"],
+    "difficulty": "Elite",
+    "levels": [
+      {
+        "name": "Level 1",
+        "requirements": [
+          { "count": 1, "tags": ["pizza", "alpha"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["silkroad",  "alpha"] }
+        ]
+      }, {
+        "name": "Level 3",
+        "requirements": [
+          { "count": 1, "tags": ["hitman", "alpha"] }
+        ]
+      }, {
+        "name": "Level 4",
+        "requirements": [
+          { "count": 1, "tags": ["jpeg", "alpha"] }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "perfect_palinceptions",
+    "name": "Perfect Palinceptions",
+    "display_tags": ["perfect_palinception"],
+    "difficulty": "Elite",
+    "levels": [
+      {
+        "name": "Level 1",
+        "requirements": [
+          { "count": 1, "tags": ["perfect_palinception"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["perfect_palinception"], "years": [2009] }
+        ]
+      }, {
+        "name": "Level 3",
+        "requirements": [
+          { "count": 1, "tags": ["perfect_palinception", "nova"] }
+        ]
+      }, {
+        "name": "Level 4",
+        "requirements": [
+          { "count": 1, "tags": ["perfect_palinception", "3_digits"] }
+        ]
+      }
+    ]
+  },
+
+
+
+  {
+    "key": "perfect_palinceptions_plus",
+    "name": "Perfect Palinceptions +",
+    "display_tags": ["perfect_palinception"],
+    "difficulty": "Zenite",
+    "levels": [
+      {
+        "name": "Level 1",
+        "requirements": [
+          { "count": 1, "tags": ["perfect_palinception", "nova"] }
+        ]
+      }, {
+        "name": "Level 2",
+        "requirements": [
+          { "count": 1, "tags": ["perfect_palinception",  "2_digits"] }
+        ]
+      }, {
+        "name": "Level 3",
+        "requirements": [
+          { "count": 1, "tags": ["perfect_palinception", "paliblock"] }
+        ]
+      }
+    ]
+  },
   {
     "key": "palindromic_uncommon",
     "name": "Palindromic Uncommon",
+    "display_tags": ["uncommon", "paliblock", "pali_uncommon"],
     "difficulty": "Zenite",
     "levels": [
       {
