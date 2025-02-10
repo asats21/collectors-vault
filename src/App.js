@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Tooltip } from "bootstrap";
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { loadSilkroadRanges } from './Silkroad';
 
@@ -161,18 +161,16 @@ function App() {
       </div>
     );
   }
-
-  const basename = process.env.NODE_ENV === "production" ? "/collectors-vault" : "/";
   
   return (
-    <Router basename={basename}>
+    <Router>
       <div className="app-container">
         <div className="container">
-  
+
           <div className='mt-3'>
             <SettingsAndDemo satCollection={satCollection} />
           </div>
-  
+
           <h1 className="text-center mb-4">Sat Collector's Vault</h1>
           <Navigation />
           <Routes>
