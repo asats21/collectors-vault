@@ -216,11 +216,48 @@ export const rarities = [
     {
         "tags": ["pizza", "palindrome"],
         "total": 100016,
+        "found": 4139
+    },
+    {
+        "tags": ["pizza", "palindrome", "sequence"],
+        "total": 12521,
+        "found": 483,
+    },
+    {
+        "tags": ["pizza", "palindrome", "3_digits"],
+        "total": 391,
+        "found": 13
+    },
+    {
+        "tags": ["pizza", "palindrome", "3_digits", "sequence"],
+        "total": 217,
+        "found": 8
+    },
+    {
+        "tags": ["pizza", "palindrome", "paliblock"],
+        "total": 1530,
+        "found": 45
+    },
+    {
+        "tags": ["pizza", "uniform_palinception"],
+        "total": 4130,
+        "found": 147
+    },
+    {
+        "tags": ["pizza", "uniform_palinception", "paliblock"],
+        "total": 530,
+        "found": 26
+    },
+    {
+        "tags": ["palindrome", "pizza", "pizza_2009"],
+        "total": 3000,
+        "found": 381
     },
     {
         "tags": ["palindrome", "pizza", "pizza_4/20"],
         "total": 1600,
     },
+    // Pizza Alpha
     {
         "tags": ["alpha", "pizza"],
         "total": 10002,
@@ -229,11 +266,32 @@ export const rarities = [
         "tags": ["alpha", "pizza", "2009"],
         "total": 300,
     },
+    {
+        "tags": ["alpha", "pizza", "pizza_4/20"],
+        "total": 160,
+    },
+    // Pizza Omega
+    {
+        "tags": ["omega", "pizza"],
+        "total": 10000,
+    },
+    {
+        "tags": ["omega", "pizza", "2009"],
+        "total": 300,
+    },
+    {
+        "tags": ["omega", "pizza", "pizza_4/20"],
+        "total": 160,
+    },
 
     // * Jpeg
     {
         "tags": ["jpeg", "palindrome"],
         "total": 5000,
+    },
+    {
+        "tags": ["jpeg", "palindrome", "2009"],
+        "total": 4500,
     },
     {
         "tags": ["jpeg", "palindrome", "jpeg_2010"],
@@ -243,8 +301,79 @@ export const rarities = [
         "tags": ["alpha", "jpeg"],
         "total": 500,
     },
+    {
+        "tags": ["alpha", "jpeg", "2009"],
+        "total": 450,
+    },
+    {
+        "tags": ["alpha", "jpeg", "jpeg_2010"],
+        "total": 50,
+    },
+    {
+        "tags": ["omega", "jpeg"],
+        "total": 500,
+    },
+    {
+        "tags": ["omega", "jpeg", "2009"],
+        "total": 450,
+    },
+    {
+        "tags": ["omega", "jpeg", "jpeg_2010"],
+        "total": 50,
+    },
+    {
+        "tags": ["jpeg", "uncommon", "alpha", "2009", "epoch0", "tz_10"],
+        "total": 2,
+    },
 
     // * Hitman
+    {
+        "tags": ["hitman", "palindrome"],
+        "total": 16521,
+        "found": 1079,
+    },
+    {
+        "tags": ["hitman", "palindrome", "sequence"],
+        "total": 2033,
+        "found": 136,
+    },
+    {
+        "tags": ["hitman", "alpha"],
+        "total": 1662,
+        "found": 103,
+    },
+    {
+        "tags": ["hitman", "alpha", "vintage"],
+        "total": 2,
+        "found": 1,
+    },
+    {
+        "tags": ["hitman", "omega"],
+        "total": 1669,
+        "found": 102,
+    },
+
+    // * Silkroad
+    {
+        "tags": ["silkroad", "palindrome"],
+        "total": 198593,
+        "found": 3138,
+    },
+    {
+        "tags": ["silkroad", "palindrome", "sequence"],
+        "total": 28083,
+        "found": 446,
+    },
+    {
+        "tags": ["silkroad", "alpha"],
+        "total": 29542,
+        "found": 586,
+    },
+    {
+        "tags": ["silkroad", "omega"],
+        "total": 29560,
+        "found": 561,
+    },
 
     // * Vintage
     {
@@ -272,6 +401,38 @@ export const rarities = [
         "tags": ["450x", "palindrome"],
         "total": 1000,
         "found": 23,
+    },
+
+    // * B78
+    {
+        "tags": ["block_78", "palindrome"],
+        "total": 5000,
+        "found": 1462,
+    },
+    {
+        "tags": ["block_78", "palindrome", "sequence"],
+        "total": 545,
+        "found": 165,
+    },
+    {
+        "tags": ["block_78", "palindrome", "3_digits"],
+        "total": 260,
+        "found": 118,
+    },
+    {
+        "tags": ["block_78", "palindrome", "2_digits"],
+        "total": 8,
+        "found": 5,
+    },
+    {
+        "tags": ["block_78", "uniform_palinception"],
+        "total": 104,
+        "found": 45,
+    },
+    {
+        "tags": ["block_78", "perfect_palinception"],
+        "total": 5,
+        "found": 1,
     },
 
     // * Alpha
@@ -322,6 +483,7 @@ const mandatory_subtags = {
     'vintage': ['2009'],
     'block_9': ['vintage', '2009', 'nakamoto'],
     '450x': ['block_9', 'vintage', '2009', 'nakamoto'],
+    'pizza_2009': ['2009'],
 };
 
 export function getSupply(tags) {
