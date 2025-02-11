@@ -500,6 +500,16 @@ export const rarities = [
 
     // * Vintage
     {
+        "tags": ["vintage", "alpha"],
+        "total": 50000,
+        "found": 286,
+    },
+    {
+        "tags": ["vintage", "omega"],
+        "total": 50000,
+        "found": 285,
+    },
+    {
         "tags": ["vintage", "palindrome"],
         "total": "6M",
         "found": "21K",
@@ -512,6 +522,7 @@ export const rarities = [
     {
         "tags": ["vintage", "palindrome", "3_digits"],
         "total": 244800,
+        "found": 457,
     },
     {
         "tags": ["vintage", "palindrome", "3_digits", "paliblock"],

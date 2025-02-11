@@ -1,9 +1,23 @@
 [
   {
-    "key": "nova_palindrome",
-    "name": "Nova Palindrome",
-    "description": "Palindromes mined after the first Bitcoin halving, shortly following the 'palindrome extinction event'",
-    "traits": ["palindrome", "nova"],
+    "key": "pali_3d",
+    "name": "3D Palindromes",
+    "description": "Palindromes consisting of just 3 repeated digits",
+    "traits": ["3_digits", "palindrome"],
+    "difficulty": "Novice"
+  },
+  {
+    "key": "2009_alpha",
+    "name": "2009 Alphas",
+    "description": "Alphas from 2009, the year Bitcoin began to shape its early legacy",
+    "traits": ["2009", "alpha"],
+    "difficulty": "Novice"
+  },
+  {
+    "key": "black_uncommon_epoch0",
+    "name": "Pre-First Halving Black Uncommons",
+    "description": "Black Uncommons mined before the first halving event",
+    "traits": ["black_uncommon", "omega", "epoch0"],
     "difficulty": "Novice"
   },
   {
@@ -21,39 +35,41 @@
     "difficulty": "Novice"
   },
   {
-    "key": "2009_alpha",
-    "name": "2009 Alphas",
-    "description": "Alphas from 2009, the year Bitcoin began to shape its early legacy",
-    "traits": ["2009", "alpha"],
+    "key": "nova_palindrome",
+    "name": "Nova Palindrome",
+    "description": "Palindromes mined after the first Bitcoin halving, shortly following the 'palindrome extinction event'",
+    "traits": ["palindrome", "nova"],
     "difficulty": "Novice"
   },
+
+
+
   {
-    "key": "pali_3d",
-    "name": "3D Palindromes",
-    "description": "Palindromes consisting of just 3 repeated digits",
-    "traits": ["3_digits", "palindrome"],
-    "difficulty": "Novice"
+    "key": "uncommon_epoch0",
+    "name": "Pre-First Halving Uncommons",
+    "description": "Uncommons mined before the first halving event",
+    "traits": ["uncommon", "alpha", "epoch0"],
+    "difficulty": "Collector"
   },
   {
-    "key": "black_uncommon_epoch0",
-    "name": "Pre-First Halving Black Uncommons",
-    "description": "Black Uncommons mined before the first halving event",
-    "traits": ["black_uncommon", "epoch0"],
-    "difficulty": "Novice"
+    "key": "rodarmor_name",
+    "name": "Rodarmor Names",
+    "description": "Sat names featured in the Ordinal Bounty 3, a challenge rewarding hunters for discovering names based on the Google Books dataset",
+    "traits": ["rodarmor_name"],
+    "difficulty": "Collector"
   },
   {
     "key": "nova_palindrome_3d",
     "name": "Nova 3D Palindrome",
     "description": "3D Palindromes mined after the first Bitcoin halving, shortly following the 'palindrome extinction event'",
     "traits": ["palindrome", "nova", "3_digits"],
-    "total": "70,766",
     "difficulty": "Collector"
   },
   {
     "key": "paliblock_3d",
     "name": "3D Paliblock Palindromes",
     "description": "3D palindromes featuring a block number that is itself a palindrome",
-    "traits": ["3_digits", "paliblock"],
+    "traits": ["palindrome", "3_digits", "paliblock"],
     "difficulty": "Collector"
   },
   {
@@ -61,15 +77,6 @@
     "name": "3D Uniform Palinception",
     "description": "3D uniform palinceptions, where the palindrome structure is made up of smaller palindromes of equal length",
     "traits": ["3_digits", "uniform_palinception"],
-    "difficulty": "Collector"
-  },
-  {
-    "key": "uncommon_epoch0",
-    "name": "Pre-First Halving Uncommons",
-    "description": "Uncommons mined before the first halving event",
-    "traits": ["uncommon", "epoch0"],
-    "total": "210K",
-    "found": "16K",
     "difficulty": "Collector"
   },
   {
@@ -83,24 +90,14 @@
     "key": "black_uncommon_2009",
     "name": "2009 Black Uncommons",
     "description": "Black Uncommons from the year Bitcoin was created",
-    "traits": ["black_uncommon", "2009"],
-    "total": "32,474",
+    "traits": ["black_uncommon", "omega", "2009"],
     "difficulty": "Collector"
   },
   {
-    "key": "rodarmor_name",
-    "name": "Rodarmor Names",
-    "description": "Sat names featured in the Ordinal Bounty 3, a challenge rewarding hunters for discovering names based on the Google Books dataset",
-    "traits": ["rodarmor_name"],
-    "difficulty": "Collector"
-  },
-  {
-    "key": "nakamoto_palindrome",
-    "name": "Nakamoto Palindromes",
-    "description": "Palindromic sats mined by the man himself",
-    "traits": ["nakamoto", "palindrome"],
-    "total": "77,000",
-    "found": "1K",
+    "key": "block_78",
+    "name": "Block 78",
+    "description": "The first sats mined by someone other than Satoshi Nakamoto. Hal Finney, a renowned cryptographer and early Bitcoin pioneer, mined this block.",
+    "traits": ["block_78"],
     "difficulty": "Collector"
   },
   {
@@ -118,14 +115,6 @@
     "difficulty": "Collector"
   },
   {
-    "key": "vintage_palindrome_3d",
-    "name": "Vintage 3D Palindromes",
-    "description": "3D palindrome originating from the first 1,000 Bitcoin blocks",
-    "traits": ["vintage", "palindrome", "3_digits"],
-    "total": "244,800",
-    "difficulty": "Collector"
-  },
-  {
     "key": "hitman_palindrome",
     "name": "Hitman Palindrome",
     "description": "Palindromic sats from the hitman transaction",
@@ -139,6 +128,9 @@
     "traits": ["uniform_palinception", "uniform_3/5"],
     "difficulty": "Collector"
   },
+
+
+
   {
     "key": "perfect_palinceptions",
     "name": "Perfect Palinceptions",
@@ -175,11 +167,41 @@
     "difficulty": "Expert"
   },
   {
-    "key": "block_78",
-    "name": "Block 78",
-    "description": "The first sats mined by someone other than Satoshi Nakamoto. Hal Finney, a renowned cryptographer and early Bitcoin pioneer, mined this block.",
-    "traits": ["block_78"],
+    "key": "nakamoto_palindrome",
+    "name": "Nakamoto Palindromes",
+    "description": "Palindromic sats mined by the man himself",
+    "traits": ["nakamoto", "palindrome"],
     "difficulty": "Expert"
+  },
+  {
+    "key": "paliblock_uncommon",
+    "name": "Paliblock Uncommon",
+    "description": "Uncommon sat from a  palindromic block",
+    "traits": ["paliblock", "uncommon"],
+    "difficulty": "Expert"
+  },
+  {
+    "key": "paliblock_black_uncommon",
+    "name": "Paliblock Black Uncommon",
+    "description": "Black uncommon sat from a  palindromic block",
+    "traits": ["paliblock", "black_uncommon"],
+    "difficulty": "Expert"
+  },
+  {
+    "key": "vintage_palindrome_3d",
+    "name": "Vintage 3D Palindromes",
+    "description": "3D palindrome originating from the first 1,000 Bitcoin blocks",
+    "traits": ["vintage", "palindrome", "3_digits"],
+    "difficulty": "Expert"
+  },
+
+
+  {
+    "key": "vintage_alpha",
+    "name": "Vintage Alpha",
+    "description": "Alpha sats mined in the first 1000 bitcoin blocks",
+    "traits": ["alpha", "vintage"],
+    "difficulty": "Elite"
   },
   {
     "key": "nova_perfect_palinceptions",
@@ -189,17 +211,17 @@
     "difficulty": "Elite"
   },
   {
+    "key": "nova_unifrom_palinceptions",
+    "name": "Nova Uniform Palinceptions",
+    "description": "Uniform Palinceptions mined shortly after the 'palindrome extinction event'",
+    "traits": ["uniform_palinception", "nova"],
+    "difficulty": "Elite"
+  },
+  {
     "key": "pizza_palindrome_420",
     "name": "420 Pizza Palindromes",
     "description": "Pizza Palindromes mined on April 20, 2010",
     "traits": ["palindrome", "pizza", "pizza_4/20"],
-    "difficulty": "Elite"
-  },
-  {
-    "key": "paliblock_uncommon",
-    "name": "Paliblock Uncommon",
-    "description": "Uncommon sat from a  palindromic block",
-    "traits": ["paliblock", "uncommon"],
     "difficulty": "Elite"
   },
   {
@@ -216,13 +238,9 @@
     "traits": ["jpeg", "palindrome", "jpeg_2010"],
     "difficulty": "Elite"
   },
-  {
-    "key": "nova_unifrom_palinceptions",
-    "name": "Nova Uniform Palinceptions",
-    "description": "Uniform Palinceptions mined shortly after the 'palindrome extinction event'",
-    "traits": ["uniform_palinception", "nova"],
-    "difficulty": "Elite"
-  },
+
+
+
   {
     "key": "jpeg_alphas",
     "name": "Jpeg Alphas",

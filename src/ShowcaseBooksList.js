@@ -55,6 +55,8 @@ const ShowcaseBooksList = ({ satCollection }) => {
   const filterOptions = [
     { key: 'uncommon', icon: tagIcons['uncommon']?.icon, tooltip: tagIcons['uncommon']?.tooltip },
     { key: 'black_uncommon', icon: tagIcons['black_uncommon']?.icon, tooltip: tagIcons['black_uncommon']?.tooltip },
+    { key: 'alpha', icon: tagIcons['alpha']?.icon, tooltip: tagIcons['alpha']?.tooltip },
+    { key: 'omega', icon: tagIcons['omega']?.icon, tooltip: tagIcons['omega']?.tooltip },
     { key: 'palindrome', icon: tagIcons['palindrome']?.icon, tooltip: tagIcons['palindrome']?.tooltip },
     { key: 'uniform_palinception', icon: tagIcons['uniform_palinception']?.icon, tooltip: tagIcons['uniform_palinception']?.tooltip },
     { key: 'perfect_palinception', icon: tagIcons['perfect_palinception']?.icon, tooltip: tagIcons['perfect_palinception']?.tooltip },
@@ -62,6 +64,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
     { key: 'pizza', icon: tagIcons['pizza']?.icon, tooltip: tagIcons['pizza']?.tooltip },
     { key: 'hitman', icon: tagIcons['hitman']?.icon, tooltip: tagIcons['hitman']?.tooltip },
     { key: 'vintage', icon: tagIcons['vintage']?.icon, tooltip: tagIcons['vintage']?.tooltip },
+    { key: 'paliblock', icon: tagIcons['paliblock']?.icon, tooltip: tagIcons['paliblock']?.tooltip },
     { key: 'nova', icon: tagIcons['nova']?.icon, tooltip: tagIcons['nova']?.tooltip },
   ];
 
