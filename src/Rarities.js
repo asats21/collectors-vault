@@ -533,6 +533,11 @@ export const rarities = [
 
     // * B78
     {
+        "tags": ["block_78", "alpha"],
+        "total": 50,
+        "found": 15,
+    },
+    {
         "tags": ["block_78", "palindrome"],
         "total": 5000,
         "found": 1462,
@@ -556,6 +561,16 @@ export const rarities = [
         "tags": ["block_78", "uniform_palinception"],
         "total": 104,
         "found": 45,
+    },
+    {
+        "tags": ["block_78", "uniform_palinception", "sequence"],
+        "total": 10,
+        "found": 5,
+    },
+    {
+        "tags": ["block_78", "uniform_palinception", "2_digits", "sequence"],
+        "total": 2,
+        "found": 1,
     },
     {
         "tags": ["block_78", "perfect_palinception"],
@@ -603,7 +618,7 @@ export const rarities = [
 
 ];
 
-const exception_tags = ['3-3-3-3-3', '4-4-4-4', '5-5-5', '7-7', '8-8'];
+const exception_tags = ['3-3-3-3', '3-3-3-3-3', '4-4-4-4', '5-5-5', '7-7', '8-8'];
 
 const mandatory_subtags = {
     'perfect_palinception': ['palindrome', 'uniform_palinception'],
