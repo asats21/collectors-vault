@@ -4,6 +4,7 @@ import { json } from "@codemirror/lang-json";
 import { EditorView } from "@codemirror/view";
 import { getAvailableTags, sortSatsByWeight } from './tagWeights';
 import ShowcaseBooksContext from './ShowcaseBooksContext';
+import { Link } from "react-router-dom";
 
 const Settings = ({ satCollection, setSatCollection, settings, setSettings }) => {
   const [userBooksJson, setUserBooksJson] = useState("[]");
@@ -296,6 +297,16 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
           </div>
         </div>
       )}
+
+      <div className="mt-4">
+          <h3>Info</h3>
+          <div className="mt-4">
+            <Link to="/tag-weights" style={{ textDecoration: 'none' }}>
+              <button className={`nav-button`}>View Tag Weights</button>
+            </Link>
+          </div>
+      </div>
+
     </div>
   );
   

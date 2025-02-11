@@ -1,4 +1,4 @@
-const tagWeights = {
+export const tagWeights = {
 
     alpha: 5,
     omega: 5,
@@ -50,7 +50,7 @@ const tagWeights = {
     tz_15: 300,
 };
 
-const bonusTagWeights = {
+export const bonusTagWeights = {
   // * Paliblock
   'paliblock,pizza': 100,
   'uncommon,paliblock': 100,

@@ -17,6 +17,7 @@ import About from './About';  // Import the About page
 import Settings from './Settings';  // Import the Settings page
 import Leaderboard from './Leaderboard';  // Import the Leaderboard page
 import LeaderboardEntry from './LeaderboardEntry';  // Import the Leaderboard Entry page
+import TagWeightsPage from './TagWeightsPage';
 
 import { FaCog } from "react-icons/fa";
 
@@ -181,6 +182,7 @@ function App() {
             <Route path="/showcase-books/:bookKey" element={<ShowcaseBook satCollection={satCollection} />} />
             <Route path="/settings" element={<Settings satCollection={satCollection} setSatCollection={setSatCollection} settings={settings} setSettings={setSettings} />} />
             <Route path="/about" element={<About />} />
+            <Route path="/tag-weights" element={<TagWeightsPage />} />
             <Route path="/tests" element={<Tests />} />
             <Route path="/leaderboard" element={<Leaderboard satCollection={satCollection} />} />
             <Route path="/leaderboard/:address" element={<LeaderboardEntry />} />
