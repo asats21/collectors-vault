@@ -175,6 +175,13 @@
     "difficulty": "Expert"
   },
   {
+    "key": "block_78",
+    "name": "Block 78",
+    "description": "The first sats mined by someone other than Satoshi Nakamoto. Hal Finney, a renowned cryptographer and early Bitcoin pioneer, mined this block.",
+    "traits": ["block_78"],
+    "difficulty": "Expert"
+  },
+  {
     "key": "nova_perfect_palinceptions",
     "name": "Nova Perfect Palinceptions",
     "description": "Perfect Palinceptions mined shortly after the 'palindrome extinction event'",
@@ -256,6 +263,13 @@
     "name": "Palindromic Uncommon",
     "description": "Uncommons which resemble a palindrome, e.g. 123210000000000",
     "traits": ["pali_uncommon"],
+    "difficulty": "Zenite"
+  },
+  {
+    "key": "block_9",
+    "name": "Block 9",
+    "description": "The first satoshis in circulation, used in the first-ever Bitcoin transaction.",
+    "traits": ["block_9"],
     "difficulty": "Zenite"
   }
 ]
