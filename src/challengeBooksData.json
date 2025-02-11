@@ -80,22 +80,22 @@
     "difficulty": "Collector",
     "levels": [
       {
-        "name": "Pizza Palindrome",
+        "name": "Pizza",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "pizza"] }
         ]
       }, {
-        "name": "Silkroad Palindrome",
+        "name": "Silkroad",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "silkroad"] }
         ]
       }, {
-        "name": "Hitman Palindrome",
+        "name": "Hitman",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "hitman"] }
         ]
       }, {
-        "name": "Jpeg Palindrome",
+        "name": "Jpeg",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "jpeg"] }
         ]
@@ -111,27 +111,27 @@
     "difficulty": "Collector",
     "levels": [
       {
-        "name": "Level 1",
+        "name": "Uniform Palinception",
         "requirements": [
           { "count": 1, "tags": ["uniform_palinception"] }
         ]
       }, {
-        "name": "Level 2",
+        "name": "Uniform Palinception 3D",
         "requirements": [
           { "count": 1, "tags": ["uniform_palinception", "3_digits"] }
         ]
       }, {
-        "name": "Level 3",
+        "name": "Paliblock Uniform Palinception",
         "requirements": [
           { "count": 1, "tags": ["uniform_palinception", "paliblock"] }
         ]
       }, {
-        "name": "Level 4",
+        "name": "Paliblock Uniform Palinception 3D",
         "requirements": [
           { "count": 1, "tags": ["uniform_palinception", "3_digits", "paliblock"] }
         ]
       }, {
-        "name": "Level 5",
+        "name": "Paliblock Sequence Uniform Palinception 3D",
         "requirements": [
           { "count": 1, "tags": ["uniform_palinception", "3_digits", "paliblock", "sequence"] }
         ]
@@ -187,24 +187,24 @@
     "difficulty": "Expert",
     "levels": [
       {
-        "name": "Level 1",
+        "name": "Pizza",
         "requirements": [
           { "count": 1, "tags": ["uniform_palinception", "pizza"] }
         ]
       }, {
-        "name": "Level 2",
-        "requirements": [
-          { "count": 1, "tags": ["uniform_palinception", "jpeg"] }
-        ]
-      }, {
-        "name": "Level 2",
+        "name": "Silkroad",
         "requirements": [
           { "count": 1, "tags": ["uniform_palinception", "silkroad"] }
         ]
       }, {
-        "name": "Level 2",
+        "name": "Hitman",
         "requirements": [
           { "count": 1, "tags": ["uniform_palinception", "hitman"] }
+        ]
+      }, {
+        "name": "Jpeg",
+        "requirements": [
+          { "count": 1, "tags": ["uniform_palinception", "jpeg"] }
         ]
       }
     ]
@@ -258,22 +258,22 @@
     "difficulty": "Elite",
     "levels": [
       {
-        "name": "Level 1",
+        "name": "Pizza Alpha",
         "requirements": [
           { "count": 1, "tags": ["pizza", "alpha"] }
         ]
       }, {
-        "name": "Level 2",
+        "name": "Silkroad Alpha",
         "requirements": [
           { "count": 1, "tags": ["silkroad",  "alpha"] }
         ]
       }, {
-        "name": "Level 3",
+        "name": "Hitman Alpha",
         "requirements": [
           { "count": 1, "tags": ["hitman", "alpha"] }
         ]
       }, {
-        "name": "Level 4",
+        "name": "Jpeg Alpha",
         "requirements": [
           { "count": 1, "tags": ["jpeg", "alpha"] }
         ]
@@ -289,24 +289,24 @@
     "difficulty": "Elite",
     "levels": [
       {
-        "name": "Level 1",
+        "name": "Perfect Palinception",
         "requirements": [
           { "count": 1, "tags": ["perfect_palinception"] }
         ]
       }, {
-        "name": "Level 2",
+        "name": "Perfect Palinception 2009",
         "requirements": [
           { "count": 1, "tags": ["perfect_palinception"], "years": [2009] }
         ]
       }, {
-        "name": "Level 3",
-        "requirements": [
-          { "count": 1, "tags": ["perfect_palinception", "nova"] }
-        ]
-      }, {
-        "name": "Level 4",
+        "name": "Perfect Palinception 3D",
         "requirements": [
           { "count": 1, "tags": ["perfect_palinception", "3_digits"] }
+        ]
+      }, {
+        "name": "Nova Perfect Palinception",
+        "requirements": [
+          { "count": 1, "tags": ["perfect_palinception", "nova"] }
         ]
       }
     ]
@@ -323,17 +323,17 @@
     "difficulty": "Zenite",
     "levels": [
       {
-        "name": "Level 1",
+        "name": "Nova Perfect Palinception",
         "requirements": [
           { "count": 1, "tags": ["perfect_palinception", "nova"] }
         ]
       }, {
-        "name": "Level 2",
+        "name": "Perfect Palinception 2D",
         "requirements": [
           { "count": 1, "tags": ["perfect_palinception",  "2_digits"] }
         ]
       }, {
-        "name": "Level 3",
+        "name": "Paliblock Perfect Palinception",
         "requirements": [
           { "count": 1, "tags": ["perfect_palinception", "paliblock"] }
         ]
@@ -361,7 +361,7 @@
       }, {
         "name": "Palindromic uncommon",
         "requirements": [
-          { "count": 1, "tags": ["pali_uncommon", "uncommon", "alpha"] }
+          { "count": 1, "tags": ["pali_uncommon", "uncommon"] }
         ]
       }, {
         "name": "Palindromic alpha uncommon",
