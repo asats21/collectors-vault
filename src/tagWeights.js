@@ -1,4 +1,4 @@
-export const tagWeights = {
+const tagWeights = {
     palindrome: 5,
     sequence: 5,
     uniform_palinception: 40,
@@ -47,12 +47,12 @@ export const tagWeights = {
     tz_15: 300,
 };
 
-export const bonusTagWeights = {
+const bonusTagWeights = {
   // 'paliblock,pizza': 50,
   // 'uniform_palinception,jpeg': 50,
 };
 
-const calculateSatWeight = (tags, tagWeights, bonusTagWeights = {}) => {
+export const calculateSatWeight = (tags) => {
   // Calculate base weight from individual tags
   let weight = tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0);
   
@@ -67,7 +67,7 @@ const calculateSatWeight = (tags, tagWeights, bonusTagWeights = {}) => {
   return weight;
 };
 
-export const sortSatsByWeight = (satCollection, tagWeights, bonusTagWeights = {}) => {
+export const sortSatsByWeight = (satCollection) => {
   return Object.entries(satCollection)
     .map(([sat, details]) => ({
       sat,
@@ -86,13 +86,13 @@ export const sortSatsByWeight = (satCollection, tagWeights, bonusTagWeights = {}
     });
 };
 
-export const getTotalWeight = (satCollection, tagWeights, bonusTagWeights = {}) => {
+export const getTotalWeight = (satCollection) => {
   return Object.entries(satCollection).reduce((total, [sat, details]) => {
     return total + calculateSatWeight(details.tags, tagWeights, bonusTagWeights);
   }, 0);
 };
 
-export const getWeightStats = (satCollection, tagWeights, bonusTagWeights = {}) => {
+export const getWeightStats = (satCollection) => {
   let totalWeight = 0;
   let numberOfItems = 0;
   let heaviestSat = null;
@@ -111,3 +111,7 @@ export const getWeightStats = (satCollection, tagWeights, bonusTagWeights = {}) 
 
   return { totalWeight, numberOfItems, heaviestSat };
 };
+
+export const getAvailableTags = () => {
+  return Object.keys(tagWeights);
+}

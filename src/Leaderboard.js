@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { tagWeights, getWeightStats } from './tagWeights';
+import { getWeightStats } from './tagWeights';
 import { LeaderboardWallets } from './LeaderboardWallets';
 import { RenderTags } from "./RenderTags";
 import { getSubPaliLength, displayUniformPalinception } from "./TagDetection";
@@ -18,7 +18,7 @@ const Leaderboard = ({ satCollection }) => {
 
   // Calculate stats for each wallet
   const walletData = Object.entries(leaderboardData).map(([wallet, collection]) => {
-    const stats = getWeightStats(collection, tagWeights);
+    const stats = getWeightStats(collection);
     return {
       wallet,
       ...stats, // Spread the stats (totalWeight, numberOfItems, heaviestSat)

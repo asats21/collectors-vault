@@ -6,7 +6,7 @@ import { FaCube } from 'react-icons/fa';
 import { FaBluesky } from 'react-icons/fa6';
 import { RenderTags } from "./RenderTags";
 import { getFormattedSupply } from "./Rarities";
-import { tagWeights, sortSatsByWeight } from './tagWeights';
+import { sortSatsByWeight } from './tagWeights';
 import ShowcaseBooksContext from './ShowcaseBooksContext';
 
 import { RiNumbersFill } from "react-icons/ri";
@@ -143,7 +143,7 @@ const ShowcaseBook = ({ satCollection }) => {
     );
   }
 
-  const sortedSats = sortSatsByWeight(Object.fromEntries(matchingSats), tagWeights);
+  const sortedSats = sortSatsByWeight(Object.fromEntries(matchingSats));
 
   return (
     <div className="container mt-4">

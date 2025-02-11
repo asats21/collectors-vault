@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { json } from "@codemirror/lang-json";
 import { EditorView } from "@codemirror/view";
-import { tagWeights, sortSatsByWeight } from './tagWeights';
+import { getAvailableTags, sortSatsByWeight } from './tagWeights';
 import ShowcaseBooksContext from './ShowcaseBooksContext';
 
 const Settings = ({ satCollection, setSatCollection, settings, setSettings }) => {
@@ -11,7 +11,7 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
 
   const { addUserBook } = useContext(ShowcaseBooksContext);
 
-  const availableTraits = Object.keys(tagWeights);
+  const availableTraits = getAvailableTags();
 
   useEffect(() => {
     const savedUserBooks = localStorage.getItem("userShowcaseBooks");
@@ -90,9 +90,9 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
     return Object.keys(data).join('\n');
   };
 
-  const convertToCollectionExportCSV = (satCollection, tagWeights) => {
+  const convertToCollectionExportCSV = (satCollection) => {
     // Sort the sats by weight using the sortSatsByWeight function
-    const sortedSats = sortSatsByWeight(satCollection, tagWeights);
+    const sortedSats = sortSatsByWeight(satCollection);
   
     // Define the headers for the CSV
     const headers = ['sat_number', 'tags', 'block_number', 'year', 'epoch', 'weight_sum'].join(';');
@@ -136,7 +136,7 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
   };
 
   const downloadCollectionExportCSV = () => {
-    const csvData = convertToCollectionExportCSV(satCollection, tagWeights);
+    const csvData = convertToCollectionExportCSV(satCollection);
     
     // Create a Blob from the CSV string
     const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });

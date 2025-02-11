@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { tagWeights, sortSatsByWeight } from './tagWeights';
+import { sortSatsByWeight } from './tagWeights';
 import { tagIcons } from "./RenderTags";
 import SatsTable from './SatsTable';
 import { LeaderboardWallets } from './LeaderboardWallets';
@@ -20,7 +20,7 @@ const LeaderboardEntry = () => {
 
   // Get sorted SATs or empty array if no collection
   const sortedSats = Object.keys(satCollection).length > 0 
-    ? sortSatsByWeight(satCollection, tagWeights)
+    ? sortSatsByWeight(satCollection)
     : [];
 
   const filteredSats = activeFilter

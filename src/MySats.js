@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { tagWeights, sortSatsByWeight } from './tagWeights';
+import { sortSatsByWeight } from './tagWeights';
 import { addSatsToCollection, deleteSatFromCollection } from './satManagement';
 import AddSatsModal from './AddSatsModal';
 import SatsTable from './SatsTable';
@@ -23,7 +23,7 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
     }
   };
 
-  const sortedSats = sortSatsByWeight(satCollection, tagWeights);
+  const sortedSats = sortSatsByWeight(satCollection);
   const filteredSats = activeFilter
     ? sortedSats.filter(satObj => satObj.details.tags.includes(activeFilter))
     : sortedSats;
