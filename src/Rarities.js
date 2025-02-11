@@ -482,6 +482,8 @@ const mandatory_subtags = {
     'uniform_palinception': ['palindrome'],
     'vintage': ['2009'],
     'block_9': ['vintage', '2009', 'nakamoto'],
+    'block_78': ['vintage', '2009'],
+    'block_286': ['vintage', '2009'],
     '450x': ['block_9', 'vintage', '2009', 'nakamoto'],
     'pizza_2009': ['2009'],
 };

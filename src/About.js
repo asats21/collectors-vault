@@ -50,7 +50,7 @@ const About = () => {
       </p>
 
       <p> 
-        Special thanks to SatStats and Zed Zeroth, as well as the entire rare sat community and everyone who reached out to me after I launched the "Rare Stats" app. our knowledge, ideas, and encouragement have been instrumental in my journey to building this app. 
+        Special thanks to SatStats and Zed Zeroth, as well as the entire rare sat community and everyone who reached out to me after I launched the "Rare Stats" app. Your knowledge, ideas, and encouragement have been instrumental in my journey to building this app. 
       </p>
 
     </div>
