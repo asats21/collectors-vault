@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { isPalindrome } from "./TagDetection";
+import { isPaliblock } from "./TagDetection";
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 import { FaCube } from 'react-icons/fa';
 import { FaBluesky } from 'react-icons/fa6';
@@ -169,7 +169,7 @@ const ShowcaseBook = ({ satCollection }) => {
               </div>
               <div className={`sat-block text-center fw-bold small`}>
                 <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                  {isPalindrome(details.block_number) ? 
+                  {isPaliblock(details.block_number) ? 
                     <FaBluesky className="icon" style={{ color: '#118AB2', padding: '1px', border: '1px solid #118AB2' }}/>
                     : <FaCube />
                   } {details.block_number}
