@@ -370,15 +370,16 @@ const Tests = () => {
       {
         tags: ["palindrome", "uniform_palinception", "3_digits", "5-5-5"],
         expected: {
-          tags: ["3_digits", "uniform_palinception"],
-          total: "139,616",
+          tags: ["uniform_palinception", "3_digits"],
+          total: 139616,
+          found: 4700,
         }
       },
       {
         tags: ['palindrome', 'uniform_palinception', 'perfect_palinception'],
         expected: {
           tags: ["perfect_palinception"],
-          total: "13,305",
+          total: 13305,
           found: 335,
         },
       },
