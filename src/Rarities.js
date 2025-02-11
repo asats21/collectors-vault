@@ -481,6 +481,23 @@ export const rarities = [
         "found": 561,
     },
 
+    // * Nakamoto
+    {
+        "tags": ["nakamoto", "palindrome"],
+        "total": 77000,
+        "found": 1037,
+    },
+    {
+        "tags": ["nakamoto", "alpha"],
+        "total": 950,
+        "found": 67,
+    },
+    {
+        "tags": ["nakamoto", "omega"],
+        "total": 950,
+        "found": 66,
+    },
+
     // * Vintage
     {
         "tags": ["vintage", "palindrome"],
@@ -597,6 +614,7 @@ const mandatory_subtags = {
     'block_286': ['vintage', '2009'],
     '450x': ['block_9', 'vintage', '2009', 'nakamoto'],
     'pizza_2009': ['2009'],
+    'nakamoto': ['2009'],
 };
 
 export function getSupply(tags) {
