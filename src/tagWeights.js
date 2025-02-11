@@ -47,64 +47,67 @@ export const tagWeights = {
     tz_15: 300,
 };
 
-export const sortSatsByWeight = (satCollection, tagWeights) => {
-    return Object.entries(satCollection)
-      .map(([sat, details]) => ({
-        sat,
-        details,
-        weightSum: details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0),
-      }))
-      .sort((a, b) => {
-        const weightDiff = b.weightSum - a.weightSum;
-        if (weightDiff !== 0) return weightDiff;
-        
-        // If the weights are equal and both sats have the 'nova' tag, sort by year (descending)
-        const aHasNova = a.details.tags.includes('nova');
-        const bHasNova = b.details.tags.includes('nova');
-        if (aHasNova && bHasNova) {
-          return b.details.year - a.details.year;
-        }
-        
-        return 0;
-      });
+export const bonusTagWeights = {
+  // 'paliblock,pizza': 50,
+  // 'uniform_palinception,jpeg': 50,
 };
 
-export const getTotalWeight = (satCollection, tagWeights) => {
-  return Object.entries(satCollection).reduce((totalWeight, [sat, details]) => {
-    // Calculate the weight for the current SAT
-    const satWeight = details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0);
-    // Add the SAT's weight to the total weight
-    return totalWeight + satWeight;
-  }, 0); // Start with an initial value of 0
+const calculateSatWeight = (tags, tagWeights, bonusTagWeights = {}) => {
+  // Calculate base weight from individual tags
+  let weight = tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0);
+  
+  // Add bonuses for tag combinations
+  Object.entries(bonusTagWeights).forEach(([tagPair, bonus]) => {
+      const requiredTags = tagPair.split(',');
+      if (requiredTags.every(tag => tags.includes(tag))) {
+          weight += bonus;
+      }
+  });
+  
+  return weight;
 };
 
-export const getWeightStats = (satCollection, tagWeights) => {
+export const sortSatsByWeight = (satCollection, tagWeights, bonusTagWeights = {}) => {
+  return Object.entries(satCollection)
+    .map(([sat, details]) => ({
+      sat,
+      details,
+      weightSum: calculateSatWeight(details.tags, tagWeights, bonusTagWeights),
+    }))
+    .sort((a, b) => {
+      const weightDiff = b.weightSum - a.weightSum;
+      if (weightDiff !== 0) return weightDiff;
+      
+      // Existing sorting logic for 'nova' tags
+      const aHasNova = a.details.tags.includes('nova');
+      const bHasNova = b.details.tags.includes('nova');
+      if (aHasNova && bHasNova) return b.details.year - a.details.year;
+      return 0;
+    });
+};
+
+export const getTotalWeight = (satCollection, tagWeights, bonusTagWeights = {}) => {
+  return Object.entries(satCollection).reduce((total, [sat, details]) => {
+    return total + calculateSatWeight(details.tags, tagWeights, bonusTagWeights);
+  }, 0);
+};
+
+export const getWeightStats = (satCollection, tagWeights, bonusTagWeights = {}) => {
   let totalWeight = 0;
   let numberOfItems = 0;
   let heaviestSat = null;
   let maxWeight = -Infinity;
 
-  // Iterate over the satCollection
   Object.entries(satCollection).forEach(([sat, details]) => {
-    // Calculate the weight for the current SAT
-    const satWeight = details.tags.reduce((sum, tag) => sum + (tagWeights[tag] || 0), 0);
-
-    // Update total weight
+    const satWeight = calculateSatWeight(details.tags, tagWeights, bonusTagWeights);
     totalWeight += satWeight;
-
-    // Update number of items
     numberOfItems += 1;
 
-    // Track the heaviest SAT
     if (satWeight > maxWeight) {
       maxWeight = satWeight;
       heaviestSat = { sat, details, weight: satWeight };
     }
   });
 
-  return {
-    totalWeight, // Total weight of all SATs
-    numberOfItems, // Number of SATs in the collection
-    heaviestSat, // The heaviest SAT (object with sat, details, and weight)
-  };
+  return { totalWeight, numberOfItems, heaviestSat };
 };
