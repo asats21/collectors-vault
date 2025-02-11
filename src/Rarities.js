@@ -26,12 +26,48 @@ export const rarities = [
         "total": 32474,
     },
     {
+        "tags": ["uncommon", "alpha", "2009", "epoch0"],
+        "total": 32474,
+    },
+    {
         "tags": ["paliblock", "uncommon"],
         "total": 7925,
     },
     {
         "tags": ["paliblock", "uncommon", "alpha"],
         "total": 1602,
+    },
+    {
+        "tags": ["paliblock", "uncommon", "alpha", "2009", "epoch0"],
+        "total": 423,
+        "found": 9,
+    },
+
+    // * Uncommon, TZ
+    {
+        "tags": ["uncommon", "alpha", "epoch0", 'tz_10'],
+        "total": 94416,
+        "found": 7134,
+    },
+    {
+        "tags": ["uncommon", "alpha", "epoch0", 'tz_11'],
+        "total": 9434,
+        "found": 729,
+    },
+    {
+        "tags": ["uncommon", "alpha", "epoch0", 'tz_12'],
+        "total": 941,
+        "found": 68,
+    },
+    {
+        "tags": ["uncommon", "alpha", "epoch0", 'tz_13'],
+        "total": 94,
+        "found": 5,
+    },
+    {
+        "tags": ["uncommon", "alpha", "epoch0", 'tz_14'],
+        "total": 9,
+        "found": 2,
     },
 
     // * Black Uncommon
@@ -93,6 +129,16 @@ export const rarities = [
         "total": 54383,
         "found": 566,
     },
+    {
+        "tags": ["palindrome", "3_digits", "nova"],
+        "total": 70766,
+        "found": 2871,
+    },
+    {
+        "tags": ["palindrome", "3_digits", "nova", "sequence"],
+        "total": 39422,
+        "found": 1612,
+    },
     // Palindrome 2D
     {
         "tags": ["palindrome", "2_digits"],
@@ -114,6 +160,16 @@ export const rarities = [
         "total": 5924,
         "found": 65,
     },
+    {
+        "tags": ["palindrome", "2_digits", "nova"],
+        "total": 1143,
+        "found": 90,
+    },
+    {
+        "tags": ["palindrome", "2_digits", "nova", "sequence"],
+        "total": 954,
+        "found": 75,
+    },
 
     // * Uniform Palinception
     {
@@ -122,9 +178,29 @@ export const rarities = [
         "found": 17635,
     },
     {
+        "tags": ["uniform_palinception", "paliblock"],
+        "total": 134098,
+        "found": 2143,
+    },
+    {
+        "tags": ["uniform_palinception", "paliblock", "sequence"],
+        "total": 27173,
+        "found": 710,
+    },
+    {
         "tags": ["uniform_palinception", "nova"],
         "total": 2040,
         "found": 135,
+    },
+    {
+        "tags": ["uniform_palinception", "2009"],
+        "total": 188900,
+        "found": 1104,
+    },
+    {
+        "tags": ["uniform_palinception", "2009", "paliblock"],
+        "total": 48696,
+        "found": 216,
     },
     // 3D
     {
@@ -196,9 +272,24 @@ export const rarities = [
         "found": 148,
     },
     {
+        "tags": ["perfect_palinception", "3_digits", "sequence"],
+        "total": 1448,
+        "found": 33,
+    },
+    {
         "tags": ["perfect_palinception", "3_digits", "2009"],
         "total": 5225,
         "found": 70,
+    },
+    {
+        "tags": ["perfect_palinception", "3_digits", "nova"],
+        "total": 447,
+        "found": 41,
+    },
+    {
+        "tags": ["perfect_palinception", "3_digits", "nova", "sequence"],
+        "total": 149,
+        "found": 14,
     },
     // 2D
     {
@@ -207,9 +298,24 @@ export const rarities = [
         "found": 44,
     },
     {
+        "tags": ["perfect_palinception", "2_digits", "sequence"],
+        "total": 938,
+        "found": 24,
+    },
+    {
         "tags": ["perfect_palinception", "2_digits", "2009"],
         "total": 1403,
         "found": 13,
+    },
+    {
+        "tags": ["perfect_palinception", "2_digits", "nova"],
+        "total": 63,
+        "found": 8,
+    },
+    {
+        "tags": ["perfect_palinception", "2_digits", "nova", "sequence"],
+        "total": 45,
+        "found": 4,
     },
 
     // * Pizza
@@ -390,6 +496,11 @@ export const rarities = [
         "tags": ["vintage", "palindrome", "3_digits"],
         "total": 244800,
     },
+    {
+        "tags": ["vintage", "palindrome", "3_digits", "paliblock"],
+        "total": 99680,
+        "found": 115,
+    },
 
     // * B9
     {
@@ -475,7 +586,7 @@ export const rarities = [
 
 ];
 
-const exception_tags = ['3-3-3-3-3', '4-4-4-4', '5-5-5', '7-7', '8-8', 'prime'];
+const exception_tags = ['3-3-3-3-3', '4-4-4-4', '5-5-5', '7-7', '8-8'];
 
 const mandatory_subtags = {
     'perfect_palinception': ['palindrome', 'uniform_palinception'],
