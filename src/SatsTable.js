@@ -45,6 +45,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                 <th>Block</th>
                 <th>Year</th>
                 <th>E</th>
+                {/* <th>W</th> */}
                 { !isReadOnly && 
                   <th></th>
                 }
@@ -66,6 +67,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                   <td><span className={isPalindrome(details.block_number) ? 'table-palindromic-block' : ''}>{details.block_number}</span></td>
                   <td>{details.year}</td>
                   <td>{details.epoch}</td>
+                  {/* <td>{weightSum}</td> */}
                   { !isReadOnly && 
                     <td>
                       <button
