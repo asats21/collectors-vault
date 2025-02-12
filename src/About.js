@@ -9,7 +9,7 @@ const About = () => {
       </div>
 
       <p>
-        This site was created as a proof of concept, based on my experience in the space and my thoughts on what rare sat collectors might need.
+        This app was created as a proof of concept, inspired by my experience in the space and what I believe rare sat collectors need.
       </p>
 
       <p>
@@ -24,11 +24,11 @@ const About = () => {
       </ul>
 
       <p>
-        Unfortunately, we don’t have these tools yet.
+        These tools don’t exist yet, but this project is a step toward that vision.
       </p>
 
       <p>
-        Due to my low technical skills, this project only covers items 1, 2, and maybe 3 to some extent. To implement item 4, the site would need wallet connections to prove ownership and a permanent database.
+        Given my technical limitations, this project currently covers items 1, 2, and partially 3. To implement item 4, the site would need wallet connections to prove ownership and a permanent database.
       </p>
 
       <p style={{ textDecoration: "underline" }}>
@@ -41,17 +41,39 @@ const About = () => {
       </p>
 
       <p>
-        The code and ideas behind this project are free to use and reproduce, as it’s licensed under the <a href="https://unlicense.org/" target="_blank" rel="noopener noreferrer" style={{ color: "#C38BFA", textDecoration: "none" }}>Unlicense</a>,
+        The code and ideas behind this project are free to use and reproduce, as it’s licensed under the <a href="https://unlicense.org/" target="_blank" rel="noopener noreferrer" style={{ color: "#C38BFA", textDecoration: "none", fontWeight: "bold" }}>Unlicense</a>,
         which means it drops all IP rights and allows you to do pretty much anything with it.
       </p>
 
       <p>
-        The code is open-source and available on GitHub <a href="https://github.com/asats21/collectors-vault" target="_blank" rel="noopener noreferrer" style={{ color: "#C38BFA", textDecoration: "none" }}>here</a>. 
+        The code is open-source and available on GitHub <a href="https://github.com/asats21/collectors-vault" target="_blank" rel="noopener noreferrer" style={{ color: "#C38BFA", textDecoration: "none", fontWeight: "bold" }}>here</a>. 
       </p>
 
       <p> 
         Special thanks to SatStats and Zed Zeroth, as well as the entire rare sat community and everyone who reached out to me after I launched the "Rare Stats" app. Your knowledge, ideas, and encouragement have been instrumental in my journey to building this app. 
       </p>
+
+      <hr />
+
+      <h3>Some ideas to take this further:</h3>
+      <ul>
+        <li><strong>Wallet connection</strong> – Enable users to connect their wallets for seamless collection management.</li>
+        <li><strong>User database</strong> – Store collections so they persist across devices.</li>
+        <li><strong>Collection scoring & appraisal</strong> – Implement a system to rank collections. Estimate the total value.</li>
+        <li><strong>Leaderboards</strong> – Showcase top collectors.</li>
+        <li><strong>Public collections</strong> – Let users showcase their collections and highlight notable sats.</li>
+        <li><strong>Achievements</strong> – Add gamification elements with badges and milestones.</li>
+        <li><strong>Marketplace integrations</strong> – Allow users to buy specific sats for their collections instantly within the app.</li>
+        <li><strong>Supply & circulation API integration</strong> – Fetch real-time info about any given sat on the fly.</li>
+        <li><strong>More visually appealing sat cards</strong> – Enhance UI to make collections even more engaging.</li>
+        <li><strong>Pricing info & market caps</strong> – Provide valuation insights for different sats.</li>
+      </ul>
+
+      <p>
+        If you share my vision and like these ideas, you are free to act. You don’t need any permissions or need to give me credit. Use this code in your apps. Monetize it if you want—it's open for anyone to build upon.</p>
+      <p/>
+        
+      <p><strong>It’s up to us, the rare sats pioneers, to lay the foundation.</strong><br/> No one else will build it for us.</p>
 
     </div>
   );
