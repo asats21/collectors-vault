@@ -843,3 +843,17 @@ ul.levels {
     color: #fff;
   }
 }
+
+.close-add-sats-modal-button {
+  background: transparent;
+  border: none;
+  color: #E05C5C; /* Red color */
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-left: auto; /* Push to the right */
+}
+
+.close-add-sats-modal-button {
+  color: #ff6b6b; /* Brighter red on hover */
+}
