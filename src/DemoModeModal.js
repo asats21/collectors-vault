@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal } from 'react-bootstrap';
 import { demoSats } from './DemoMode'; // Import demoSats
 import { addSatsToCollection } from './satManagement'; // Import function
+import { FaTimes } from "react-icons/fa";
 
 const DemoModeModal = ({ showModal, setShowModal, setSatCollection, satCollection }) => {
   // Function to activate demo mode
@@ -15,12 +16,18 @@ const DemoModeModal = ({ showModal, setShowModal, setSatCollection, satCollectio
     <Modal
       show={showModal}
       onHide={() => setShowModal(false)}
-      className="cyber-modal"
+      className="demo-modal"
       centered
       size="lg"
     >
-      <Modal.Header className="modal-header-glow">
+      <Modal.Header className="demo-modal-header-glow">
         <Modal.Title>Try Demo Mode</Modal.Title>
+        <button 
+          onClick={() => setShowModal(false)} 
+          className="close-add-sats-modal-button"
+        >
+          <FaTimes size={24} />
+        </button>
       </Modal.Header>
       <Modal.Body className="modal-body-glow">
         <p>
@@ -50,7 +57,7 @@ const DemoModeModal = ({ showModal, setShowModal, setSatCollection, satCollectio
           When you're done, you can easily <strong>delete all demo sats</strong> in the <strong>Settings</strong> section.
         </p>
         <div className="text-center mt-4">
-          <button onClick={handleActivateDemo} className="nav-button add-sats">
+          <button onClick={handleActivateDemo} className="nav-button try-demo-mode">
             Activate Demo Mode
           </button>
         </div>

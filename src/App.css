@@ -463,6 +463,19 @@ ul.levels {
   box-shadow: 0 0 10px rgba(224, 92, 92, 0.6); /* Stronger glow on hover */
 }
 
+/* Demo Modal Styling */
+.demo-modal .modal-content {
+  background: #1e1e1e;
+  border: 2px solid #E89A02;
+  border-radius: 12px;
+}
+
+.demo-modal-header-glow {
+  border-bottom: 2px solid #E89A02;
+  color: #E89A02;
+  padding: 1rem;
+}
+
 /* Modal Styling */
 .cyber-modal .modal-content {
   background: #1e1e1e;
@@ -523,6 +536,19 @@ ul.levels {
 .nav-button.add-sats:hover {
   background: #6AA8C3;
   color: #fff;
+}
+
+/* Try Demo Mode Button */
+.nav-button.try-demo-mode {
+  border-color: #E89A02;
+  color: #E89A02;
+  box-shadow: 0 0 4px #E89A02;
+}
+
+.nav-button.try-demo-mode:hover {
+  background: #E89A02;
+  color: #fff;
+  box-shadow: 0 0 10px #E89A02;
 }
 
 /* Pagination Styling */
