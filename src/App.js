@@ -125,7 +125,7 @@ function App() {
         {/* Demo Mode Button */}
         {satCollection && Object.keys(satCollection).length === 0 && (
           <button
-            className="nav-button demo-mode"
+            className="nav-button demo-mode mb-2 mb-md-0"
             onClick={() => setShowDemoModal(true)}
           >
             Demo Mode
