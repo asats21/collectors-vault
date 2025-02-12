@@ -68,7 +68,118 @@
       }
     ]
   },
-
+  {
+    "key": "alpha_year_book",
+    "name": "Alpha Year Book",
+    "display_tags": ["alpha"],
+    "short_description": "A collector’s journey through Bitcoin’s history, one Alpha Sat at a time.", 
+    "description": "This book is dedicated to Alpha Sats—the first sat of each Bitcoin—collected from every year, starting from 2009 to 2025. Each Alpha Sat represents a unique piece of Bitcoin’s timeline, marking the evolution of the network from its earliest days to the present.",
+    "difficulty": "Novice",
+    "levels": [
+      {
+        "name": "Alpha 2009",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2009] }
+        ]
+      },
+      {
+        "name": "Alpha 2010",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2010] }
+        ]
+      },
+      {
+        "name": "Alpha 2011",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2011] }
+        ]
+      },
+      {
+        "name": "Alpha 2012",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2012] }
+        ]
+      },
+      {
+        "name": "Alpha 2013",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2013] }
+        ]
+      },
+      {
+        "name": "Alpha 2014",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2014] }
+        ]
+      },
+      {
+        "name": "Alpha 2015",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2015] }
+        ]
+      },
+      {
+        "name": "Alpha 2016",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2016] }
+        ]
+      },
+      {
+        "name": "Alpha 2017",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2017] }
+        ]
+      },
+      {
+        "name": "Alpha 2018",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2018] }
+        ]
+      },
+      {
+        "name": "Alpha 2019",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2019] }
+        ]
+      },
+      {
+        "name": "Alpha 2020",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2020] }
+        ]
+      },
+      {
+        "name": "Alpha 2021",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2021] }
+        ]
+      },
+      {
+        "name": "Alpha 2022",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2022] }
+        ]
+      },
+      {
+        "name": "Alpha 2023",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2023] }
+        ]
+      },
+      {
+        "name": "Alpha 2024",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2024] }
+        ]
+      },
+      {
+        "name": "Alpha 2025",
+        "requirements": [
+          { "count": 1, "tags": ["alpha"], "years": [2025] }
+        ]
+      }
+    ]
+  },
 
 
   {
@@ -138,8 +249,94 @@
       }
     ]
   },
-
-
+  {
+    "key": "uncommon_year_book",
+    "name": "Uncommon Year Book",
+    "display_tags": ["uncommon"],
+    "short_description": "Embark on a collector's path through Bitcoin's rich history, with each Uncommon Sat marking a milestone along the way.", 
+    "description": "This book is dedicated to Uncommon Sats—the first sat of each Bitcoin block—collected from every year, starting from 2013 to 2025. We began with 2013 to maintain a manageable difficulty level, while our companion volume, Historical Uncommons, dives into the pioneering years of 2009-2012. As a fundamental part of the Rodarmor Rarity system, these sats offer a structured way to collect a piece of Bitcoin’s history.",
+    "difficulty": "Collector",
+    "levels": [
+      {
+        "name": "Uncommon 2013",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2013] }
+        ]
+      },
+      {
+        "name": "Uncommon 2014",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2014] }
+        ]
+      },
+      {
+        "name": "Uncommon 2015",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2015] }
+        ]
+      },
+      {
+        "name": "Uncommon 2016",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2016] }
+        ]
+      },
+      {
+        "name": "Uncommon 2017",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2017] }
+        ]
+      },
+      {
+        "name": "Uncommon 2018",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2018] }
+        ]
+      },
+      {
+        "name": "Uncommon 2019",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2019] }
+        ]
+      },
+      {
+        "name": "Uncommon 2020",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2020] }
+        ]
+      },
+      {
+        "name": "Uncommon 2021",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2021] }
+        ]
+      },
+      {
+        "name": "Uncommon 2022",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2022] }
+        ]
+      },
+      {
+        "name": "Uncommon 2023",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2023] }
+        ]
+      },
+      {
+        "name": "Uncommon 2024",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2024] }
+        ]
+      },
+      {
+        "name": "Uncommon 2025",
+        "requirements": [
+          { "count": 1, "tags": ["uncommon"], "years": [2025] }
+        ]
+      }
+    ]
+  },
 
   {
     "key": "historical_uncommon",
