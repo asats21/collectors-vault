@@ -1,6 +1,6 @@
 ## About this project
 
-This site was created as a proof of concept, based on my experience in the space and my thoughts on what rare sat collectors might need.
+This app was created as a proof of concept, inspired by my experience in the space and what I believe rare sat collectors need.
 
 Rare sat collectors need tools and services to:
 
@@ -9,7 +9,7 @@ Rare sat collectors need tools and services to:
 - **Gamify** – evaluate collections and score them  
 - **Add a social aspect** – enable public collections and leaderboards  
 
-Unfortunately, we don’t have these tools yet.
+These tools don’t exist yet, but this project is a step toward that vision.
 
 This project only covers items 1, 2, and maybe 3 to some extent. To implement item 4, the site would need wallet connections to prove ownership and a permanent database.
 
