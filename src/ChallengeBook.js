@@ -5,6 +5,8 @@ import useBookCompletion from './useBookCompletion';
 import { FaCube } from "react-icons/fa";
 import { RenderTags } from "./RenderTags";
 import { getFormattedSupply } from "./Rarities";
+import { getSubPaliLength, displayUniformPalinception } from "./TagDetection";
+import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 
 const Book = ({ satCollection }) => {
   const { bookKey } = useParams();
@@ -58,6 +60,22 @@ const Book = ({ satCollection }) => {
     setBookData(book);
   }, [bookKey]);
 
+  const handleDiamondClick = (level) => {
+    setSelectedSat(level === selectedSat ? null : level);
+  };
+
+  const displaySatNumber = (sat) => {
+    const subPaliLength = getSubPaliLength(sat);
+    if (subPaliLength) {
+      return (<span className='small'>{displayUniformPalinception(sat, subPaliLength)}</span>);
+    }
+    if(isRodarmorName(sat)) {
+      return getRodarmorName(sat);
+    }
+
+    return sat;
+  }
+
   const bookLevels = useBookCompletion(bookData, satCollection);
 
   if (!bookData) {
@@ -65,10 +83,6 @@ const Book = ({ satCollection }) => {
   }
 
   const allComplete = bookLevels.length > 0 && bookLevels.every(level => level.status === 'complete');
-
-  const handleDiamondClick = (level) => {
-    setSelectedSat(level === selectedSat ? null : level);
-  };
 
   return (
     <div>
@@ -142,7 +156,7 @@ const Book = ({ satCollection }) => {
                   {selectedSat.tags?.length > 0 ? <RenderTags tags={selectedSat.tags} /> : ``}
                 </div>
               </div>
-              <span>{selectedSat.sat}</span>
+              <span>{ displaySatNumber(selectedSat.sat) } </span>
               <div className="sat-details text-center">
                 <div className='small'><FaCube /> {selectedSat.block}</div>
                 { renderRarity(selectedSat.tags) }
