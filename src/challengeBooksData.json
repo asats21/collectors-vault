@@ -180,6 +180,119 @@
       }
     ]
   },
+  {
+    "key": "palindrome_year_book",
+    "name": "Palindrome Year Book",
+    "display_tags": ["palindrome"],
+    "short_description": "As the years progress, fewer and fewer palindromes are created, making these sats more valuable with each passing year.", 
+    "description": "This book is dedicated to palindromes collected from every year, starting from 2009 to 2025. As the years progress, fewer and fewer palindromes are created, making these unique sat numbers even rarer and more valuable with each passing year.",
+    "difficulty": "Novice",
+    "levels": [
+      {
+        "name": "Palindrome 2009",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2009] }
+        ]
+      },
+      {
+        "name": "Palindrome 2010",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2010] }
+        ]
+      },
+      {
+        "name": "Palindrome 2011",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2011] }
+        ]
+      },
+      {
+        "name": "Palindrome 2012",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2012] }
+        ]
+      },
+      {
+        "name": "Palindrome 2013",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2013] }
+        ]
+      },
+      {
+        "name": "Palindrome 2014",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2014] }
+        ]
+      },
+      {
+        "name": "Palindrome 2015",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2015] }
+        ]
+      },
+      {
+        "name": "Palindrome 2016",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2016] }
+        ]
+      },
+      {
+        "name": "Palindrome 2017",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2017] }
+        ]
+      },
+      {
+        "name": "Palindrome 2018",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2018] }
+        ]
+      },
+      {
+        "name": "Palindrome 2019",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2019] }
+        ]
+      },
+      {
+        "name": "Palindrome 2020",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2020] }
+        ]
+      },
+      {
+        "name": "Palindrome 2021",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2021] }
+        ]
+      },
+      {
+        "name": "Palindrome 2022",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2022] }
+        ]
+      },
+      {
+        "name": "Palindrome 2023",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2023] }
+        ]
+      },
+      {
+        "name": "Palindrome 2024",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2024] }
+        ]
+      },
+      {
+        "name": "Palindrome 2025",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2025] }
+        ]
+      }
+    ]
+  },
+
 
 
   {
@@ -338,6 +451,9 @@
     ]
   },
 
+
+
+
   {
     "key": "historical_uncommon",
     "name": "Historical Uncommon",
@@ -443,7 +559,118 @@
       }
     ]
   },
-
+  {
+    "key": "3d_palindrome_year_book",
+    "name": "3D Palindrome Year Book",
+    "display_tags": ["palindrome", "3_digits"],
+    "short_description": "As the years progress, fewer and fewer palindromes are created, making these sats more valuable with each passing year.", 
+    "description": "This book is dedicated to 3D palindromes collected from every year, starting from 2009 to 2025. As the years progress, fewer and fewer palindromes are created, making these unique sat numbers even rarer and more valuable with each passing year.",
+    "difficulty": "Expert",
+    "levels": [
+      {
+        "name": "3D Palindrome 2009",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2009] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2010",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2010] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2011",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2011] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2012",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2012] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2013",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2013] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2014",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2014] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2015",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2015] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2016",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2016] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2017",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2017] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2018",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2018] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2019",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2019] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2020",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2020] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2021",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2021] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2022",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2022] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2023",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2023] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2024",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2024] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2025",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2025] }
+        ]
+      }
+    ]
+  },
 
 
   {
