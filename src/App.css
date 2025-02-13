@@ -958,7 +958,6 @@ ul.levels {
 
 /* Hover effect for normal-sized diamonds */
 .diamond:not(.enlarged):hover {
-  animation: none; /* Stop pulsing when hovered */
 }
 
 .diamond-enlarged-complete {

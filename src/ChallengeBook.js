@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import challengeBooksData from './challengeBooksData.json';
 import useBookCompletion from './useBookCompletion';
@@ -9,6 +9,40 @@ const Book = ({ satCollection }) => {
   const { bookKey } = useParams();
   const [bookData, setBookData] = useState(null);
   const [selectedSat, setSelectedSat] = useState(null); // Track enlarged diamond
+  const enlargedCardRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    const card = enlargedCardRef.current;
+    if (!card) return;
+
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+
+    // Tilt calculations
+    const tiltX = (0.5 - x) * 30;
+    const tiltY = (y - 0.5) * 20;
+    
+    updateTransform(tiltX, tiltY);
+  };
+
+  const handleMouseLeave = () => {
+    updateTransform(0, 0);
+  };
+
+  const updateTransform = (tiltX = 0, tiltY = 0) => {
+    const card = enlargedCardRef.current;
+    if (card) {
+      card.style.transform = `
+        perspective(1000px)
+        rotateX(${tiltY}deg)
+        rotateY(${tiltX}deg)
+        rotate(45deg) /* Keep the original rotation */
+        translateZ(10px)
+      `;
+      card.style.zIndex = 10;
+    }
+  };
 
   useEffect(() => {
     const book = challengeBooksData.find((b) => b.key === bookKey);
@@ -86,7 +120,12 @@ const Book = ({ satCollection }) => {
 
       {selectedSat && (
         <div className="overlay" onClick={() => setSelectedSat(null)}>
-          <div className={`diamond enlarged ${allComplete ? 'diamond-enlarged-complete' : 'diamond-enlarged-partialy-complete'}`}>
+          <div 
+            className={`diamond enlarged ${allComplete ? 'diamond-enlarged-complete' : 'diamond-enlarged-partialy-complete'}`} 
+            ref={enlargedCardRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="diamond-content">
               <div className='small'>{selectedSat.year}</div>
               <span>{selectedSat.sat}</span>
