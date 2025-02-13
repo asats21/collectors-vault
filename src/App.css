@@ -933,6 +933,7 @@ ul.levels {
   width: 300px;
   height: 300px;
   transform: rotate(45deg);
+  transition: transform 0.3s ease-out; /* Smooth stop */
 }
 
 /* Enlarged Content */
