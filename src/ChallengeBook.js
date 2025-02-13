@@ -27,6 +27,7 @@ const Book = ({ satCollection }) => {
   return (
     <div>
       <h1 className='mt-3'>{bookData.name}</h1>
+      <p className="mb-3 small text-decoration-underline">{bookData.difficulty}</p>
       {bookData.description &&
         <div className=''>{bookData.description}</div>
       }
