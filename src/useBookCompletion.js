@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { getBlock } from './TagDetection';
-
 const useBookCompletion = (bookData, satCollection) => {
   const [completedLevels, setCompletedLevels] = useState([]);
 
@@ -21,7 +19,7 @@ const useBookCompletion = (bookData, satCollection) => {
           })
           .sort((a, b) => a[1].tags.length - b[1].tags.length);
 
-        const selectedSat = satsForLevel.length > 0 ? satsForLevel[0][0] : null; // Pick the sat with the least tags
+        const selectedSatEntry = satsForLevel.length > 0 ? satsForLevel[0] : null;// Pick the sat with the least tags
 
         const isComplete = satsForLevel.length >= level.requirements[0].count;
 
@@ -29,8 +27,11 @@ const useBookCompletion = (bookData, satCollection) => {
           level: level.name,
           description: level.description,
           status: isComplete ? 'complete' : 'incomplete',
-          sat: selectedSat,
-          block: getBlock(selectedSat),
+          sat: selectedSatEntry ? selectedSatEntry[0] : null, // The sat number
+          block: selectedSatEntry ? selectedSatEntry[1].block_number : null,
+          year: selectedSatEntry ? selectedSatEntry[1].year : null,
+          epoch: selectedSatEntry ? selectedSatEntry[1].epoch : null, // Ensure epoch is included
+          tags: selectedSatEntry ? selectedSatEntry[1].tags : [],
           requirements: level.requirements,
         };
       });

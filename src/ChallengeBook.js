@@ -88,15 +88,16 @@ const Book = ({ satCollection }) => {
         <div className="overlay" onClick={() => setSelectedSat(null)}>
           <div className="diamond enlarged">
             <div className="diamond-content">
-              <span className="small">{selectedSat.sat}</span>
-              <div className="sat-details">
+              <div className='small'>{selectedSat.year}</div>
+              <span>{selectedSat.sat}</span>
+              <div className="sat-details text-center">
                 <div><FaCube /> {selectedSat.block}</div>
-                <div>Year: {selectedSat.year}</div>
-                <div>Epoch: {selectedSat.epoch}</div>
-                <div className="sat-tags">
-                  {selectedSat.tags?.length > 0 ? <RenderTags tags={selectedSat.tags} /> : <span>No tags</span>}
+                <div className="sat-tags mt-3">
+                  {selectedSat.tags?.length > 0 ? <RenderTags tags={selectedSat.tags} /> : ``}
                 </div>
+                { selectedSat.supply &&
                 <div className='small text-center mt-3 fw-bold'>1 / {selectedSat.supply}</div>
+                }
               </div>
             </div>
           </div>
