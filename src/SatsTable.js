@@ -140,8 +140,8 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
       {/* Pagination */}
       {pageCount > 1 &&
         <ReactPaginate
-          previousLabel={'← Previous'}
-          nextLabel={'Next →'}
+          previousLabel={'←'}
+          nextLabel={'→'}
           pageCount={pageCount}
           onPageChange={handlePageClick}
           containerClassName={'pagination'}
