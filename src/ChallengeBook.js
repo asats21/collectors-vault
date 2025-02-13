@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import challengeBooksData from './challengeBooksData.json'; // JSON file with book data
 import useBookCompletion from './useBookCompletion'; // Import the custom hook
 import { FaCube } from "react-icons/fa";
+import { RenderTags } from "./RenderTags";
 
 const Book = ({ satCollection }) => {
   const { bookKey } = useParams(); // Get the book key from the URL
@@ -48,7 +49,9 @@ const Book = ({ satCollection }) => {
               {level.requirements.map(({ count, tags, years }, i) => (
                 <li key={i} className='ms-2 mt-2'>
                   <div>At least {count} sats with:</div>
-                  <div>Tags: {tags.join(', ')}</div>
+                  <div className="sat-tags mt-1">
+                    <div className='me-2'>Tags:</div><RenderTags tags={tags} />
+                  </div>
                   {years?.length > 0 && <div>Years: {years.join(', ')}</div>}
                 </li>
               ))}
