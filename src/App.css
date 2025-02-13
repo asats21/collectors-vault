@@ -167,6 +167,7 @@ ul.levels {
     color: white;
     border: 2px solid #C38BFA;
     box-shadow: 0 0 10px 2px #C38BFA;
+    animation: pulse 4s infinite; /* Sparkle animation */
 }
 
 .diamond-empty {
