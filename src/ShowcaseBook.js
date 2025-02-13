@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { isPaliblock } from "./TagDetection";
+import { isPaliblock, getSubPaliLength, displayUniformPalinception } from "./TagDetection";
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
 import { FaCube } from 'react-icons/fa';
 import { FaBluesky } from 'react-icons/fa6';
@@ -134,6 +134,18 @@ const ShowcaseBook = ({ satCollection }) => {
       return supply ? <div className='small text-center mt-3 fw-bold'>1 / {supply.total}</div> : null;
   }
 
+  const displaySatNumber = (sat) => {
+    const subPaliLength = getSubPaliLength(sat);
+    if (subPaliLength) {
+      return (<span className='small'>{displayUniformPalinception(sat, subPaliLength)}</span>);
+    }
+    if(isRodarmorName(sat)) {
+      return getRodarmorName(sat);
+    }
+
+    return sat;
+  }
+
   if (matchingSats.length === 0) {
     return (
       <div className="container mt-4">
@@ -165,7 +177,7 @@ const ShowcaseBook = ({ satCollection }) => {
             >
               <div className="sat-year text-center fw-bold small">{ renderYear(details) }</div>
               <div className="sat-number text-center">
-                {isRodarmorName(sat) ? getRodarmorName(sat) : sat}
+                { displaySatNumber(sat)}
               </div>
               <div className={`sat-block text-center fw-bold small`}>
                 <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
