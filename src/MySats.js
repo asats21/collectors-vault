@@ -53,6 +53,7 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
     { key: 'jpeg', icon: tagIcons['jpeg']?.icon, tooltip: tagIcons['jpeg']?.tooltip },
     { key: 'pizza', icon: tagIcons['pizza']?.icon, tooltip: tagIcons['pizza']?.tooltip },
     { key: 'hitman', icon: tagIcons['hitman']?.icon, tooltip: tagIcons['hitman']?.tooltip },
+    { key: 'silkroad', icon: tagIcons['silkroad']?.icon, tooltip: tagIcons['silkroad']?.tooltip },
     { key: 'vintage', icon: tagIcons['vintage']?.icon, tooltip: tagIcons['vintage']?.tooltip },
     { key: 'paliblock', icon: tagIcons['paliblock']?.icon, tooltip: tagIcons['paliblock']?.tooltip },
     { key: 'rodarmor_name', icon: tagIcons['rodarmor_name']?.icon, tooltip: tagIcons['rodarmor_name']?.tooltip },
