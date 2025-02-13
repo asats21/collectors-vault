@@ -86,7 +86,7 @@ const Book = ({ satCollection }) => {
 
       {selectedSat && (
         <div className="overlay" onClick={() => setSelectedSat(null)}>
-          <div className="diamond enlarged">
+          <div className={`diamond enlarged ${allComplete ? 'diamond-enlarged-complete' : 'diamond-enlarged-partialy-complete'}`}>
             <div className="diamond-content">
               <div className='small'>{selectedSat.year}</div>
               <span>{selectedSat.sat}</span>

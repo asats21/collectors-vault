@@ -933,8 +933,6 @@ ul.levels {
   width: 300px;
   height: 300px;
   transform: rotate(45deg);
-  border: 3px solid #037F5E;
-  box-shadow: 0 0 20px 5px #037F5E;
 }
 
 /* Enlarged Content */
@@ -960,5 +958,15 @@ ul.levels {
 
 /* Hover effect for normal-sized diamonds */
 .diamond:not(.enlarged):hover {
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Add glow */
+  animation: none; /* Stop pulsing when hovered */
+}
+
+.diamond-enlarged-complete {
+  border: 3px solid #037F5E;
+  box-shadow: 0 0 15px 5px #037F5E;
+}
+
+.diamond-enlarged-partialy-complete {
+  border: 3px solid #C38BFA;
+  box-shadow: 0 0 15px 5px #C38BFA;
 }
