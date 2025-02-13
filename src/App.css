@@ -913,3 +913,53 @@ ul.levels {
   color: #fff;
   box-shadow: 0 0 10px #E89A02;
 }
+
+/* Challenge book big diamond */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Enlarged Diamond */
+.diamond.enlarged {
+  width: 300px;
+  height: 300px;
+  transform: rotate(45deg);
+  border: 3px solid #037F5E;
+  box-shadow: 0 0 20px 5px #037F5E;
+}
+
+/* Enlarged Content */
+.diamond.enlarged .diamond-content {
+  transform: rotate(-45deg);
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Details inside enlarged diamond */
+.sat-details {
+  font-size: 1rem;
+  margin-top: 15px;
+  color: white;
+}
+
+/* Make diamonds look clickable */
+.diamond {
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+/* Hover effect for normal-sized diamonds */
+.diamond:not(.enlarged):hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Add glow */
+}
