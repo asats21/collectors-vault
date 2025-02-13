@@ -538,19 +538,6 @@ ul.levels {
   color: #fff;
 }
 
-/* Try Demo Mode Button */
-.nav-button.try-demo-mode {
-  border-color: #E89A02;
-  color: #E89A02;
-  box-shadow: 0 0 4px #E89A02;
-}
-
-.nav-button.try-demo-mode:hover {
-  background: #E89A02;
-  color: #fff;
-  box-shadow: 0 0 10px #E89A02;
-}
-
 /* Pagination Styling */
 .pagination {
   display: flex;
@@ -882,4 +869,34 @@ ul.levels {
 
 .close-add-sats-modal-button {
   color: #ff6b6b; /* Brighter red on hover */
+}
+
+/* Try Demo Mode Button */
+@keyframes pulseSlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 4px #E89A02;
+  }
+  50% {
+    transform: scale(1.02); /* Slightly enlarge */
+    box-shadow: 0 0 10px #E89A02;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 4px #E89A02;
+  }
+}
+
+.nav-button.demo-mode {
+  border-color: #E89A02;
+  color: #E89A02;
+  box-shadow: 0 0 4px #E89A02;
+  animation: pulseSlow 3s infinite ease-in-out; /* Slow pulsing effect */
+}
+
+.nav-button.demo-mode:hover {
+  background: #E89A02;
+  color: #fff;
+  box-shadow: 0 0 10px #E89A02;
+  animation: none; /* Stop pulsing when hovered */
 }
