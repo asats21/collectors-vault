@@ -900,3 +900,15 @@ ul.levels {
   box-shadow: 0 0 10px #E89A02;
   animation: none; /* Stop pulsing when hovered */
 }
+
+.nav-button.try-demo-mode {
+  border-color: #E89A02;
+  color: #E89A02;
+  box-shadow: 0 0 4px #E89A02;
+}
+
+.nav-button.try-demo-mode:hover {
+  background: #E89A02;
+  color: #fff;
+  box-shadow: 0 0 10px #E89A02;
+}
