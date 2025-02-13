@@ -4,12 +4,21 @@ import challengeBooksData from './challengeBooksData.json';
 import useBookCompletion from './useBookCompletion';
 import { FaCube } from "react-icons/fa";
 import { RenderTags } from "./RenderTags";
+import { getFormattedSupply } from "./Rarities";
 
 const Book = ({ satCollection }) => {
   const { bookKey } = useParams();
   const [bookData, setBookData] = useState(null);
   const [selectedSat, setSelectedSat] = useState(null); // Track enlarged diamond
   const enlargedCardRef = useRef(null);
+
+  const renderRarity = (tags) => {
+    const supply = getFormattedSupply(tags);
+    if(!supply)
+      return ``;
+
+    return supply ? (<div className='mt-2'>1/{supply.total}</div>) : "";
+  }
 
   const handleMouseMove = (e) => {
     const card = enlargedCardRef.current;
@@ -127,16 +136,16 @@ const Book = ({ satCollection }) => {
             onMouseLeave={handleMouseLeave}
           >
             <div className="diamond-content">
-              <div className='small'>{selectedSat.year}</div>
-              <span>{selectedSat.sat}</span>
               <div className="sat-details text-center">
-                <div><FaCube /> {selectedSat.block}</div>
-                <div className="sat-tags mt-3">
+                <div className='small'>{selectedSat.year}</div>
+                <div className="sat-tags mt-2">
                   {selectedSat.tags?.length > 0 ? <RenderTags tags={selectedSat.tags} /> : ``}
                 </div>
-                { selectedSat.supply &&
-                <div className='small text-center mt-3 fw-bold'>1 / {selectedSat.supply}</div>
-                }
+              </div>
+              <span>{selectedSat.sat}</span>
+              <div className="sat-details text-center">
+                <div className='small'><FaCube /> {selectedSat.block}</div>
+                { renderRarity(selectedSat.tags) }
               </div>
             </div>
           </div>
