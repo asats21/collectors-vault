@@ -30,6 +30,18 @@ function App() {
     return savedCollection ? JSON.parse(savedCollection) : {};
   });
 
+  // Global state for achieved achievement keys
+  const [achievements, setAchievements] = useState(() => {
+    const stored = localStorage.getItem('completedAchievements');
+    return stored ? JSON.parse(stored) : [];
+  });
+  
+  // Global state for notification queue (achievement keys not yet shown)
+  const [notifications, setNotifications] = useState(() => {
+    const stored = localStorage.getItem('achievementNotifications');
+    return stored ? JSON.parse(stored) : [];
+  });
+
   const [settings, setSettings] = useState(() => {
     // Get settings from localStorage if they exist, otherwise use default values
     const savedSettings = localStorage.getItem("scv_settings");
@@ -40,6 +52,16 @@ function App() {
   useEffect(() => {
     localStorage.setItem('satCollection', JSON.stringify(satCollection));
   }, [satCollection]);
+
+  // Persist achievements to local storage whenever they change.
+  useEffect(() => {
+    localStorage.setItem('completedAchievements', JSON.stringify(achievements));
+  }, [achievements]);
+  
+  // Persist notifications to local storage whenever they change.
+  useEffect(() => {
+    localStorage.setItem('achievementNotifications', JSON.stringify(notifications));
+  }, [notifications]);
 
   // Save settings to localStorage whenever they change
   useEffect(() => {
@@ -187,7 +209,7 @@ function App() {
             <Route path="/tests" element={<Tests />} />
             <Route path="/leaderboard" element={<Leaderboard satCollection={satCollection} />} />
             <Route path="/leaderboard/:address" element={<LeaderboardEntry />} />
-            <Route path="/achievements" element={<Achievements satCollection={satCollection} />} />
+            <Route path="/achievements" element={<Achievements satCollection={satCollection} achievements={achievements} setAchievements={setAchievements} notifications={notifications} setNotifications={setNotifications} />} />
           </Routes>
         </div>
         <Footer />

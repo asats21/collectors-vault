@@ -1,30 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import achievementData from './achievements.json';
 import { checkAchievements } from './AchievementsCheck';
 import AchievementNotification from './AchievementNotification';
 
-const Achievements = ({ satCollection }) => {
-  // Global state for achieved achievement keys
-  const [achievements, setAchievements] = useState(() => {
-    const stored = localStorage.getItem('completedAchievements');
-    return stored ? JSON.parse(stored) : [];
-  });
-  
-  // Global state for notification queue (achievement keys not yet shown)
-  const [notifications, setNotifications] = useState(() => {
-    const stored = localStorage.getItem('achievementNotifications');
-    return stored ? JSON.parse(stored) : [];
-  });
-  
-  // Persist achievements to local storage whenever they change.
-  useEffect(() => {
-    localStorage.setItem('completedAchievements', JSON.stringify(achievements));
-  }, [achievements]);
-  
-  // Persist notifications to local storage whenever they change.
-  useEffect(() => {
-    localStorage.setItem('achievementNotifications', JSON.stringify(notifications));
-  }, [notifications]);
+const Achievements = ({ satCollection, achievements, setAchievements, notifications, setNotifications }) => {
   
   const handleRefresh = () => {
     // Run detection logic: returns an array of achievement keys that are achieved.
