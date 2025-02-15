@@ -970,3 +970,52 @@ ul.levels {
   border: 3px solid #C38BFA;
   box-shadow: 0 0 15px 5px #C38BFA;
 }
+
+/* AchievementNotification */
+
+.achievement-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1050;
+}
+
+.achievement-card {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e; /* dark background to match your theme */
+  border: 2px solid #6AA8C3; /* using your blue/green tones */
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 0 15px rgba(106, 168, 195, 0.5);
+  animation: slideIn 0.5s ease-out;
+}
+
+.achievement-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.achievement-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #6AA8C3;
+}
+
+.achievement-description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
