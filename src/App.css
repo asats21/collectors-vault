@@ -1023,3 +1023,8 @@ ul.levels {
   right: 20px;
   z-index: 1050;
 }
+
+.achievement-card-completed {
+  border: 2px solid #037F5E; /* Green border */
+  box-shadow: 0 0 10px #037F5E;
+}

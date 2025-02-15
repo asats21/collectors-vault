@@ -1,30 +1,47 @@
 import React from 'react';
 import achievementData from './achievements.json';
+import * as FaIcons from 'react-icons/fa'; // import all FontAwesome icons
+import * as Fa6Icons from "react-icons/fa6";
 
-const Achievements = ({ achievements }) => {
+// Assuming you have `achievements` (array of completed achievement keys) passed in as props or from state
+const Achievements = ({ achievements: completedKeys }) => {
+
+  function getIconComponent(iconName) {
+    let Icon = FaIcons[iconName];
+    if (!Icon) {
+      Icon = Fa6Icons[iconName];
+    }
+    // Fallback if icon is not found in either set
+    if (!Icon) {
+      Icon = FaIcons.FaQuestion; // or any default icon of your choice
+    }
+    return Icon;
+  }
 
   return (
     <div className="container">
       <div className="page-header mt-4 mt-md-2 d-flex justify-content-between align-items-center">
         <h1>Achievements</h1>
       </div>
-      
+
       <div className="row">
-        {achievementData.map((ach) => (
-          <div key={ach.key} className="col-md-4 mb-4">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">{ach.name}</h5>
-                <p className="card-text">{ach.description}</p>
-                {achievements.includes(ach.key) ? (
-                  <p className="card-text text-success">Completed</p>
-                ) : (
-                  <p className="card-text text-warning">Incomplete</p>
-                )}
+        {achievementData.map((ach) => {
+          // Get the icon component from react-icons using the icon name stored in the JSON.
+          const IconComponent = getIconComponent(ach.icon);
+          return (
+            <div key={ach.key} className="col-md-4 mb-4">
+              <div className={`card ${completedKeys.includes(ach.key) ? "achievement-card-completed" : ""}`}>
+                <div className="card-body">
+                  <div className="d-flex align-items-center mb-3">
+                    {IconComponent && <IconComponent size={30} />}
+                    <h5 className="card-title ms-2">{ach.name}</h5>
+                  </div>
+                  <p className="card-text">{ach.description}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

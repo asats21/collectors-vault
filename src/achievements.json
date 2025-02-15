@@ -1,65 +1,71 @@
 [
     {
-        "key": "getting_started",
-        "name": "Getting Started",
-        "description": "Add your first sats to your collection.",
-        "requirements": [
-            {
-                "total_sats": 1
-            }
-        ]
+      "key": "getting_started",
+      "name": "Getting Started",
+      "description": "Add your first sats to your collection.",
+      "icon": "FaRocket",
+      "requirements": [
+        {
+          "total_sats": 1
+        }
+      ]
     },
     {
-        "key": "rookie_hunter",
-        "name": "Rookie Hunter",
-        "description": "Show your skills by collecting at least 20 rare sats.",
-        "requirements": [ 
-            {
-                "total_sats": 20
-            }
-        ]
+      "key": "rookie_hunter",
+      "name": "Rookie Hunter",
+      "description": "Show your skills by collecting at least 20 rare sats.",
+      "icon": "FaMedal",
+      "requirements": [
+        {
+          "total_sats": 20
+        }
+      ]
     },
     {
-        "key": "lucky_777",
-        "name": "Lucky 777",
-        "description": "Feel the luck of the draw by collecting a sat with a 777 sequence in its ordinal number.",
-        "requirements": [
-            {
-                "sat_number_includes": "777"
-            }
-        ]
+      "key": "lucky_777",
+      "name": "Lucky 777",
+      "description": "Feel the luck of the draw by collecting a sat with a 777 sequence in its ordinal number.",
+      "icon": "FaDice",
+      "requirements": [
+        {
+          "sat_number_includes": "777"
+        }
+      ]
     },
     {
-        "key": "primed",
-        "name": "Primed",
-        "description": "Show off your numerical flair by owning a prime number sat.",
-        "requirements": [
-            {
-                "tags": ["prime"],
-                "count": 1
-            }
-        ]
+      "key": "primed",
+      "name": "Primed",
+      "description": "Show off your numerical flair by owning a prime number sat.",
+      "icon": "FaHashtag",
+      "requirements": [
+        {
+          "tags": ["prime"],
+          "count": 1
+        }
+      ]
     },
     {
-        "key": "symmetric_stacker",
-        "name": "Symmetric Stacker",
-        "description": "Stack your collection with at least 20 palindrome sats.",
-        "requirements": [
-            {
-                "tags": ["palindrome"],
-                "count": 20
-            }
-        ]
+      "key": "symmetric_stacker",
+      "name": "Symmetric Stacker",
+      "description": "Stack your collection with at least 20 palindrome sats.",
+      "icon": "FaBluesky",
+      "requirements": [
+        {
+          "tags": ["palindrome"],
+          "count": 20
+        }
+      ]
     },
     {
-        "key": "epoch_explorer",
-        "name": "Epoch Explorer",
-        "description": "Collect at least one sat from every halving epoch.",
-        "requirements": [
-            { "epoch": 0, "count": 1 },
-            { "epoch": 1, "count": 1 },
-            { "epoch": 2, "count": 1 },
-            { "epoch": 3, "count": 1 }
-        ]
+      "key": "epoch_explorer",
+      "name": "Epoch Explorer",
+      "description": "Collect at least one sat from every halving epoch.",
+      "icon": "FaHourglassHalf",
+      "requirements": [
+        { "epoch": 0, "count": 1 },
+        { "epoch": 1, "count": 1 },
+        { "epoch": 2, "count": 1 },
+        { "epoch": 3, "count": 1 }
+      ]
     }
-]
+  ]
