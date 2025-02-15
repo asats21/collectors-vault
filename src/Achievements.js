@@ -3,13 +3,10 @@ import { checkAchievements } from './AchievementsCheck';
 
 const Achievements = ({ satCollection }) => {
     const [achievements, setAchievements] = useState([]);
-    const [lastScan, setLastScan] = useState(null);
   
-    // Refresh button handler: uses the passed-in satCollection
     const handleRefresh = () => {
       const updatedAchievements = checkAchievements(satCollection);
       setAchievements(updatedAchievements);
-      setLastScan(new Date().toLocaleString());
     };
   
     return (
@@ -20,12 +17,6 @@ const Achievements = ({ satCollection }) => {
             Refresh Achievements
           </button>
         </div>
-  
-        {lastScan && (
-          <div className="mb-3">
-            <small>Last scan: {lastScan}</small>
-          </div>
-        )}
   
         <div className="row">
           {achievements.map((ach) => (

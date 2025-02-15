@@ -3,43 +3,53 @@
         "key": "getting_started",
         "name": "Getting Started",
         "description": "Add your first sats to your collection.",
-        "requirements": {
-            "total_sats": 1
-        }
+        "requirements": [
+            {
+                "total_sats": 1
+            }
+        ]
     },
     {
         "key": "rookie_hunter",
         "name": "Rookie Hunter",
         "description": "Show your skills by collecting at least 20 rare sats.",
-        "requirements": {
-            "total_sats": 20
-        }
+        "requirements": [ 
+            {
+                "total_sats": 20
+            }
+        ]
     },
     {
         "key": "lucky_777",
         "name": "Lucky 777",
         "description": "Feel the luck of the draw by collecting a sat with a 777 sequence in its ordinal number.",
-        "requirements": {
-            "sat_number_includes": "777"
-        }
+        "requirements": [
+            {
+                "sat_number_includes": "777"
+            }
+        ]
     },
     {
         "key": "primed",
         "name": "Primed",
         "description": "Show off your numerical flair by owning a prime number sat.",
-        "requirements": {
-        "tags": ["prime"],
-            "count": 1
-        }
+        "requirements": [
+            {
+                "tags": ["prime"],
+                "count": 1
+            }
+        ]
     },
     {
         "key": "symmetric_stacker",
         "name": "Symmetric Stacker",
         "description": "Stack your collection with at least 20 palindrome sats.",
-        "requirements": {
-            "tags": ["palindrome"],
-            "count": 20
-        }
+        "requirements": [
+            {
+                "tags": ["palindrome"],
+                "count": 20
+            }
+        ]
     },
     {
         "key": "epoch_explorer",
