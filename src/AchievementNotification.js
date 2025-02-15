@@ -3,11 +3,19 @@ import { useNavigate } from 'react-router-dom';
 import achievementData from './achievements.json';
 import * as FaIcons from 'react-icons/fa';
 import * as Fa6Icons from 'react-icons/fa6';
+import * as TbIcons from "react-icons/tb";
+import * as GiIcons from 'react-icons/gi';
 
 function getIconComponent(iconName) {
   let Icon = FaIcons[iconName];
   if (!Icon) {
     Icon = Fa6Icons[iconName];
+  }
+  if (!Icon) {
+    Icon = TbIcons[iconName];
+  }
+  if (!Icon) {
+    Icon = GiIcons[iconName];
   }
   if (!Icon) {
     Icon = FaIcons.FaQuestion; // fallback icon

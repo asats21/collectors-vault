@@ -1,71 +1,308 @@
 [
-    {
-      "key": "getting_started",
-      "name": "Getting Started",
-      "description": "Add your first sats to your collection.",
-      "icon": "FaRocket",
-      "requirements": [
-        {
-          "total_sats": 1
-        }
-      ]
-    },
-    {
-      "key": "rookie_hunter",
-      "name": "Rookie Hunter",
-      "description": "Show your skills by collecting at least 20 rare sats.",
-      "icon": "FaMedal",
-      "requirements": [
-        {
-          "total_sats": 20
-        }
-      ]
-    },
-    {
-      "key": "lucky_777",
-      "name": "Lucky 777",
-      "description": "Feel the luck of the draw by collecting a sat with a 777 sequence in its ordinal number.",
-      "icon": "FaDice",
-      "requirements": [
-        {
-          "sat_number_includes": "777"
-        }
-      ]
-    },
-    {
-      "key": "primed",
-      "name": "Primed",
-      "description": "Show off your numerical flair by owning a prime number sat.",
-      "icon": "FaHashtag",
-      "requirements": [
-        {
-          "tags": ["prime"],
-          "count": 1
-        }
-      ]
-    },
-    {
-      "key": "symmetric_stacker",
-      "name": "Symmetric Stacker",
-      "description": "Stack your collection with at least 20 palindrome sats.",
-      "icon": "FaBluesky",
-      "requirements": [
-        {
-          "tags": ["palindrome"],
-          "count": 20
-        }
-      ]
-    },
-    {
-      "key": "epoch_explorer",
-      "name": "Epoch Explorer",
-      "description": "Collect at least one sat from every halving epoch.",
-      "icon": "FaHourglassHalf",
-      "requirements": [
-        { "epoch": 0, "count": 1 },
-        { "epoch": 1, "count": 1 },
-        { "epoch": 2, "count": 1 },
-        { "epoch": 3, "count": 1 }
-      ]
-    }
-  ]
+  {
+    "key": "getting_started",
+    "name": "Getting Started",
+    "description": "Add your first sats to your collection",
+    "icon": "FaRocket",
+    "requirements": [
+      {
+        "total_sats": 1
+      }
+    ]
+  },
+  {
+    "key": "rookie_hunter",
+    "name": "Rookie Hunter",
+    "description": "Collect 20 rare sats",
+    "icon": "FaMedal",
+    "requirements": [
+      {
+        "total_sats": 20
+      }
+    ]
+  },
+  {
+    "key": "seasoned_seeker",
+    "name": "Seasoned Seeker",
+    "description": "Gather 100 rare sats",
+    "icon": "FaBinoculars",
+    "requirements": [
+      {
+        "total_sats": 100
+      }
+    ]
+  },
+  {
+    "key": "master_collector",
+    "name": "Master Collector",
+    "description": "Accumulate 200 rare sats",
+    "icon": "FaAward",
+    "requirements": [
+      {
+        "total_sats": 200
+      }
+    ]
+  },
+  {
+    "key": "grand_collection",
+    "name": "Grand Collection",
+    "description": "Reach 500 rare sats. A well-curated collection",
+    "icon": "FaCrown",
+    "requirements": [
+      {
+        "total_sats": 500
+      }
+    ]
+  },
+  {
+    "key": "vintage_visionary",
+    "name": "Vintage Visionary",
+    "description": "Own a vintage sat",
+    "icon": "FaHourglassHalf",
+    "requirements": [
+      {
+        "tags": ["vintage"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "genesis_proximity",
+    "name": "Genesis Proximity",
+    "description": "Own a block 9 sat",
+    "icon": "FaFlag",
+    "requirements": [
+      {
+        "tags": ["block_9"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "running_bitcoin",
+    "name": "Running Bitcoin",
+    "description": "Own a block 78 sat",
+    "icon": "FaRunning",
+    "requirements": [
+      {
+        "tags": ["block_78"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "lucky_777",
+    "name": "Lucky Sevens",
+    "description": "Feel the luck by collecting a sat with a 777 sequence",
+    "icon": "FaDice",
+    "requirements": [
+      {
+        "sat_number_includes": "777"
+      }
+    ]
+  },
+  {
+    "key": "primed",
+    "name": "Primed",
+    "description": "Show off your numerical flair by owning a prime number sat",
+    "icon": "FaParking",
+    "requirements": [
+      {
+        "tags": ["prime"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "palindrome_pioner",
+    "name": "Palindrome Pioneer",
+    "description": "Achieve symmetry by owning your very first palindrome sat",
+    "icon": "FaBluesky",
+    "requirements": [
+      {
+        "tags": ["palindrome"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "symmetric_stacker",
+    "name": "Symmetric Stacker",
+    "description": "Stack your collection with at least 50 palindrome sats",
+    "icon": "FaBluesky",
+    "requirements": [
+      {
+        "tags": ["palindrome"],
+        "count": 50
+      }
+    ]
+  },
+  {
+    "key": "palindrome_pro",
+    "name": "Palindrome Pro",
+    "description": "Master the mirror—collect 50 palindrome sats",
+    "icon": "FaBluesky",
+    "requirements": [
+      {
+        "tags": ["palindrome"],
+        "count": 50
+      }
+    ]
+  },
+  {
+    "key": "uncommon_collector",
+    "name": "Uncommon Collector",
+    "description": "Collect an uncommon sat",
+    "icon": "FaGem",
+    "requirements": [
+      {
+        "tags": ["uncommon"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "black_diamond",
+    "name": "Black Diamond",
+    "description": "Collect a black uncommon sat",
+    "icon": "FaGem",
+    "requirements": [
+      {
+        "tags": ["black_uncommon"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "alpha_acquisition",
+    "name": "Alpha Acquisition",
+    "description": "Own an alpha sat",
+    "icon": "TbAlpha",
+    "requirements": [
+      {
+        "tags": ["alpha"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "rri_enthusiast",
+    "name": "RRI Enthusiast",
+    "description": "Own 10 uncommon sats",
+    "icon": "FaGem",
+    "requirements": [
+      {
+        "tags": ["uncommon"],
+        "count": 10
+      }
+    ]
+  },
+  {
+    "key": "rri_maxi",
+    "name": "RRI Maxi",
+    "description": "Own 100 uncommon sats",
+    "icon": "FaGem",
+    "requirements": [
+      {
+        "tags": ["uncommon"],
+        "count": 100
+      }
+    ]
+  },
+  {
+    "key": "halving_historian",
+    "name": "Halving Historian",
+    "description": "Collect a sat from each halving epoch",
+    "icon": "FaHourglassHalf",
+    "requirements": [
+      { "epoch": 0, "count": 1 },
+      { "epoch": 1, "count": 1 },
+      { "epoch": 2, "count": 1 },
+      { "epoch": 3, "count": 1 }
+    ]
+  },
+  {
+    "key": "maxi_2009",
+    "name": "2009 Maxi",
+    "description": "Own at least 20 sats from 2009.",
+    "icon": "FaRegCalendarAlt",
+    "requirements": [
+      {
+        "tags": ["2009"],
+        "count": 20
+      }
+    ]
+  },
+  {
+    "key": "yearly_collector",
+    "name": "Yearly Collector",
+    "description": "Own a sat from each year.",
+    "icon": "FaCalendarCheck",
+    "requirements": [
+      { "year": 2009, "count": 1 },
+      { "year": 2010, "count": 1 },
+      { "year": 2011, "count": 1 },
+      { "year": 2012, "count": 1 },
+      { "year": 2013, "count": 1 },
+      { "year": 2014, "count": 1 },
+      { "year": 2015, "count": 1 },
+      { "year": 2016, "count": 1 },
+      { "year": 2017, "count": 1 },
+      { "year": 2018, "count": 1 },
+      { "year": 2019, "count": 1 },
+      { "year": 2020, "count": 1 },
+      { "year": 2021, "count": 1 },
+      { "year": 2022, "count": 1 },
+      { "year": 2023, "count": 1 },
+      { "year": 2024, "count": 1 }
+    ]
+  },
+  {
+    "key": "birthday_special",
+    "name": "Birthday Special",
+    "description": "Own a sat mined on your birthday.",
+    "icon": "FaBirthdayCake",
+    "requirements": [
+      {
+        "tags": ["birthday"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "relic_finder",
+    "name": "Relic Finder",
+    "description": "Own a sat mined on Bitcoin’s 10th anniversary.",
+    "icon": "FaLandmark",
+    "requirements": [
+      {
+        "tags": ["anniversary"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "whales_footprint",
+    "name": "Whale’s Footprint",
+    "description": "Own a sat from a block with more than 10 BTC in fees.",
+    "icon": "GiWhaleTail",
+    "requirements": [
+      {
+        "tags": ["whale"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "milestone_collector",
+    "name": "Landmark Collector",
+    "description": "Own a sat mined on the day of Taproot, SegWit, or Ordinals birthday.",
+    "icon": "GiCalendar",
+    "requirements": [
+      {
+        "tags": ["milestone"],
+        "count": 1
+      }
+    ]
+  }
+]

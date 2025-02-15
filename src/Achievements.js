@@ -2,6 +2,8 @@ import React from 'react';
 import achievementData from './achievements.json';
 import * as FaIcons from 'react-icons/fa'; // import all FontAwesome icons
 import * as Fa6Icons from "react-icons/fa6";
+import * as TbIcons from "react-icons/tb";
+import * as GiIcons from 'react-icons/gi';
 
 // Assuming you have `achievements` (array of completed achievement keys) passed in as props or from state
 const Achievements = ({ achievements: completedKeys }) => {
@@ -10,6 +12,12 @@ const Achievements = ({ achievements: completedKeys }) => {
     let Icon = FaIcons[iconName];
     if (!Icon) {
       Icon = Fa6Icons[iconName];
+    }
+    if (!Icon) {
+      Icon = TbIcons[iconName];
+    }
+    if (!Icon) {
+      Icon = GiIcons[iconName];
     }
     // Fallback if icon is not found in either set
     if (!Icon) {
