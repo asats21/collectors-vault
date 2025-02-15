@@ -19,6 +19,7 @@ import Leaderboard from './Leaderboard';  // Import the Leaderboard page
 import LeaderboardEntry from './LeaderboardEntry';  // Import the Leaderboard Entry page
 import TagWeightsPage from './TagWeightsPage';
 import Achievements from './Achievements';
+import AchievementNotification from './AchievementNotification';
 
 import { FaCog } from "react-icons/fa";
 
@@ -212,8 +213,19 @@ function App() {
             <Route path="/achievements" element={<Achievements satCollection={satCollection} achievements={achievements} setAchievements={setAchievements} notifications={notifications} setNotifications={setNotifications} />} />
           </Routes>
         </div>
+        {/* Notification container: shows the first notification in the queue, if any */}
+        <div className="notification-container">
+          {notifications.length > 0 && (
+            <AchievementNotification 
+              key={notifications[0]} // Force re-mount when achievementKey changes
+              achievementKey={notifications[0]} 
+              onNotificationComplete={() => {
+                setNotifications(prev => prev.slice(1));
+              }}
+            />
+          )}
+        </div>
         <Footer />
-
       </div>
     </Router>
   );

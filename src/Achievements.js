@@ -1,7 +1,6 @@
 import React from 'react';
 import achievementData from './achievements.json';
 import { checkAchievements } from './AchievementsCheck';
-import AchievementNotification from './AchievementNotification';
 
 const Achievements = ({ satCollection, achievements, setAchievements, notifications, setNotifications }) => {
   
@@ -44,19 +43,6 @@ const Achievements = ({ satCollection, achievements, setAchievements, notificati
             </div>
           </div>
         ))}
-      </div>
-      
-      {/* Notification container: shows the first notification in the queue, if any */}
-      <div className="notification-container">
-        {notifications.length > 0 && (
-          <AchievementNotification 
-            key={notifications[0]} // Force re-mount when achievementKey changes
-            achievementKey={notifications[0]} 
-            onNotificationComplete={() => {
-              setNotifications(prev => prev.slice(1));
-            }}
-          />
-        )}
       </div>
     </div>
   );
