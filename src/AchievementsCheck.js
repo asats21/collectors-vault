@@ -2,7 +2,7 @@ import achievementData from './achievements.json';
 
 /**
  * Checks the user's sat collection against each achievement's requirements.
- * Returns an array of keys for achievements that are completed.
+ * Returns an array of keys for achievements that are achieved.
  * @param {Object} userSatCollection - The user's sat collection.
  * @returns {Array} Array of achievement keys that are achieved.
  */
@@ -30,6 +30,17 @@ export function checkAchievements(userSatCollection) {
         for (const satId in userSatCollection) {
           const sat = userSatCollection[satId];
           if (sat.epoch === req.epoch) {
+            count++;
+          }
+        }
+        return count >= req.count;
+      }
+      // Check for a year requirement.
+      if (req.hasOwnProperty('year') && req.hasOwnProperty('count')) {
+        let count = 0;
+        for (const satId in userSatCollection) {
+          const sat = userSatCollection[satId];
+          if (sat.year === req.year) {
             count++;
           }
         }
