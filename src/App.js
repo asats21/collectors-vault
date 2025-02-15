@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Tooltip } from "bootstrap";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { loadSilkroadRanges } from './Silkroad';
+import { checkAchievements } from './AchievementsCheck';
 
 import DemoModeModal from './DemoModeModal';
 import ChallengeBook from './ChallengeBook';  // Import your ChallengeBook component
@@ -49,10 +50,29 @@ function App() {
     return savedSettings ? JSON.parse(savedSettings) : { ignoreSilkroadRanges: true };
   });
 
+  const refreshAchievements = useCallback((satCollection) => {
+    setAchievements(prevAchievements => {
+      const newAchieved = checkAchievements(satCollection);
+      // New achievements are those not already in the previous achievements.
+      const newNotifs = newAchieved.filter(key => !prevAchievements.includes(key));
+      
+      if (newNotifs.length > 0) {
+        setNotifications(prev => {
+          // Filter out keys already in notifications to prevent duplicates.
+          const uniqueNew = newNotifs.filter(key => !prev.includes(key));
+          return [...prev, ...uniqueNew];
+        });
+      }
+      
+      return newAchieved;
+    });
+  }, []);
+
   // Save satCollection to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('satCollection', JSON.stringify(satCollection));
-  }, [satCollection]);
+    refreshAchievements(satCollection);
+  }, [satCollection, refreshAchievements]);
 
   // Persist achievements to local storage whenever they change.
   useEffect(() => {
@@ -210,7 +230,7 @@ function App() {
             <Route path="/tests" element={<Tests />} />
             <Route path="/leaderboard" element={<Leaderboard satCollection={satCollection} />} />
             <Route path="/leaderboard/:address" element={<LeaderboardEntry />} />
-            <Route path="/achievements" element={<Achievements satCollection={satCollection} achievements={achievements} setAchievements={setAchievements} notifications={notifications} setNotifications={setNotifications} />} />
+            <Route path="/achievements" element={<Achievements achievements={achievements} />} />
           </Routes>
         </div>
         {/* Notification container: shows the first notification in the queue, if any */}
