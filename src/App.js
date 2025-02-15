@@ -134,10 +134,15 @@ function App() {
   function Footer() {
     return (
       <footer className="footer-nav text-center pt-4">
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px' }} className='mb-5'>
+        <div className="d-flex flex-wrap justify-content-center gap-3 mb-5">
           <Link to="about" style={{ textDecoration: 'none' }}>
             <button className="nav-button-footer about">
               About
+            </button>
+          </Link>
+          <Link to="achievements" style={{ textDecoration: 'none' }}>
+            <button className="nav-button-footer achievements">
+              Achievements
             </button>
           </Link>
           <Link to="leaderboard" style={{ textDecoration: 'none' }}>
