@@ -1,6 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import achievementData from './achievements.json';
+import * as FaIcons from 'react-icons/fa';
+import * as Fa6Icons from 'react-icons/fa6';
+
+function getIconComponent(iconName) {
+  let Icon = FaIcons[iconName];
+  if (!Icon) {
+    Icon = Fa6Icons[iconName];
+  }
+  if (!Icon) {
+    Icon = FaIcons.FaQuestion; // fallback icon
+  }
+  return Icon;
+}
 
 const AchievementNotification = ({ achievementKey, onNotificationComplete }) => {
   const [visible, setVisible] = useState(true);
@@ -25,9 +38,12 @@ const AchievementNotification = ({ achievementKey, onNotificationComplete }) => 
     navigate('/achievements');
   };
 
+  const IconComponent = getIconComponent(achievement.icon);
+  
   return (
     <div className="achievement-notification" onClick={handleClick} style={{ cursor: 'pointer' }}>
-      <div className="achievement-card">
+      <div className="achievement-card" style={{ display: 'flex', alignItems: 'center' }}>
+        {IconComponent && <IconComponent size={40} style={{ marginRight: '10px' }} />}
         <div className="achievement-info">
           <h5 className="achievement-title">Achievement Unlocked!</h5>
           <p className="achievement-description">{achievement.name}</p>
