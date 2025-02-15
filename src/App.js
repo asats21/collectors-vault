@@ -18,6 +18,7 @@ import Settings from './Settings';  // Import the Settings page
 import Leaderboard from './Leaderboard';  // Import the Leaderboard page
 import LeaderboardEntry from './LeaderboardEntry';  // Import the Leaderboard Entry page
 import TagWeightsPage from './TagWeightsPage';
+import Achievements from './Achievements';
 
 import { FaCog } from "react-icons/fa";
 
@@ -186,6 +187,7 @@ function App() {
             <Route path="/tests" element={<Tests />} />
             <Route path="/leaderboard" element={<Leaderboard satCollection={satCollection} />} />
             <Route path="/leaderboard/:address" element={<LeaderboardEntry />} />
+            <Route path="/achievements" element={<Achievements satCollection={satCollection} />} />
           </Routes>
         </div>
         <Footer />
