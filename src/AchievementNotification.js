@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import achievementData from './achievements.json';
 
-const AchievementNotification = () => {
-  const [show, setShow] = useState(true);
+const AchievementNotification = ({ achievementKey, onNotificationComplete }) => {
+  const [visible, setVisible] = useState(true);
+  
+  // Find achievement details based on achievementKey
+  const achievement = achievementData.find(ach => ach.key === achievementKey);
 
   useEffect(() => {
-    // Auto-hide the notification after 5 seconds
-    const timer = setTimeout(() => setShow(false), 5000);
+    const timer = setTimeout(() => {
+      setVisible(false);
+      onNotificationComplete();
+    }, 5000);
     return () => clearTimeout(timer);
-  }, []);
-
-  if (!show) return null;
-
+  }, [onNotificationComplete, achievementKey]);
+  
+  if (!visible || !achievement) return null;
+  
   return (
     <div className="achievement-notification">
       <div className="achievement-card">
@@ -21,7 +27,7 @@ const AchievementNotification = () => {
         />
         <div className="achievement-info">
           <h5 className="achievement-title">Achievement Unlocked!</h5>
-          <p className="achievement-description">Getting Started</p>
+          <p className="achievement-description">{achievement.name}</p>
         </div>
       </div>
     </div>

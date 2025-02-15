@@ -974,21 +974,18 @@ ul.levels {
 /* AchievementNotification */
 
 .achievement-notification {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1050;
+  animation: slideIn 0.5s ease-out;
+  margin-bottom: 10px;
 }
 
 .achievement-card {
   display: flex;
   align-items: center;
-  background-color: #1e1e1e; /* dark background to match your theme */
-  border: 2px solid #6AA8C3; /* using your blue/green tones */
+  background-color: #1e1e1e;
+  border: 2px solid #6AA8C3;
   border-radius: 8px;
   padding: 10px;
   box-shadow: 0 0 15px rgba(106, 168, 195, 0.5);
-  animation: slideIn 0.5s ease-out;
 }
 
 .achievement-icon {
@@ -1018,4 +1015,11 @@ ul.levels {
     transform: translateX(0);
     opacity: 1;
   }
+}
+
+.notification-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1050;
 }

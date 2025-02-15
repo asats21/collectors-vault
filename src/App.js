@@ -20,8 +20,6 @@ import LeaderboardEntry from './LeaderboardEntry';  // Import the Leaderboard En
 import TagWeightsPage from './TagWeightsPage';
 import Achievements from './Achievements';
 
-import AchievementNotification from './AchievementNotification';
-
 import { FaCog } from "react-icons/fa";
 
 function App() {
@@ -193,8 +191,6 @@ function App() {
           </Routes>
         </div>
         <Footer />
-
-        <AchievementNotification />
 
       </div>
     </Router>
