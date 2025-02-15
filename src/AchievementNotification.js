@@ -11,7 +11,7 @@ const AchievementNotification = ({ achievementKey, onNotificationComplete }) => 
     const timer = setTimeout(() => {
       setVisible(false);
       onNotificationComplete();
-    }, 5000);
+    }, 2500);
     return () => clearTimeout(timer);
   }, [onNotificationComplete, achievementKey]);
   
@@ -20,11 +20,6 @@ const AchievementNotification = ({ achievementKey, onNotificationComplete }) => 
   return (
     <div className="achievement-notification">
       <div className="achievement-card">
-        <img
-          src="path/to/achievement_icon.png"
-          alt="Achievement Icon"
-          className="achievement-icon"
-        />
         <div className="achievement-info">
           <h5 className="achievement-title">Achievement Unlocked!</h5>
           <p className="achievement-description">{achievement.name}</p>
