@@ -47,21 +47,25 @@
     "levels": [
       {
         "name": "Uncommon",
+        "description": "The first sat of each block. Part of the Rodarmor Rarity Index, as described in the Ordinals Whitepaper.",
         "requirements": [
           { "count": 1, "tags": ["uncommon"] }
         ]
       }, {
         "name": "Alpha Uncommon",
+        "description": "The first sat of each block, which also happens to be the first sat of a bitcoin.",
         "requirements": [
           { "count": 1, "tags": ["uncommon",  "alpha"] }
         ]
       }, {
         "name": "Black Uncommon",
+        "description": "The very last sat of the block. Not originally part of the RRI, but later embraced by the community",
         "requirements": [
           { "count": 1, "tags": ["black_uncommon"] }
         ]
       }, {
         "name": "Omega Black Uncommon",
+        "description": "The very last sat of the block, which also happens to be the last sat of a bitcoin.",
         "requirements": [
           { "count": 1, "tags": ["black_uncommon", "omega"] }
         ]
@@ -305,21 +309,25 @@
     "levels": [
       {
         "name": "Pizza",
+        "description": "A sat from the iconic pizza transaction that features a palindromic ordinal number",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "pizza"] }
         ]
       }, {
         "name": "Silkroad",
+        "description": "A sat from the infamous Silkroad—nod to bitcoin’s controversial early days",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "silkroad"] }
         ]
       }, {
         "name": "Hitman",
+        "description": "A sat from the alleged hitman transaction linked to Ross Ulbricht—an event shrouded in mystery",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "hitman"] }
         ]
       }, {
         "name": "Jpeg",
+        "description": "A palindromic sat from the historic JPEG trade—a landmark moment when bitcoin was exchanged for an image",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "jpeg"] }
         ]
@@ -569,104 +577,114 @@
     "levels": [
       {
         "name": "3D Palindrome 2009",
+        "description": "Fewer palindromes are mined each year—dive in to explore the numbers in our special collectors book. Supply: 598,573",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2009] }
         ]
       },
       {
         "name": "3D Palindrome 2010",
+        "description": "Supply: 229,828",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2010] }
         ]
       },
       {
         "name": "3D Palindrome 2011",
+        "description": "Supply: 207,263",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2011] }
         ]
       },
       {
         "name": "3D Palindrome 2012",
+        "description": "Supply: 142,995",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2012] }
         ]
       },
       {
         "name": "3D Palindrome 2013",
+        "description": "Supply: 24,431",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2013] }
         ]
       },
       {
         "name": "3D Palindrome 2014",
+        "description": "Supply: 7,989",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2014] }
         ]
       },
       {
         "name": "3D Palindrome 2015",
+        "description": "Supply: 6,211",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2015] }
         ]
       },
       {
         "name": "3D Palindrome 2016",
+        "description": "Supply: 5,401",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2016] }
         ]
       },
       {
         "name": "3D Palindrome 2017",
+        "description": "Supply: 4,537",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2017] }
         ]
       },
       {
         "name": "3D Palindrome 2018",
+        "description": "Supply: 3,119",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2018] }
         ]
       },
       {
         "name": "3D Palindrome 2019",
+        "description": "Supply: 3,711",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2019] }
         ]
       },
       {
         "name": "3D Palindrome 2020",
+        "description": "Supply: 1,906",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2020] }
         ]
       },
       {
         "name": "3D Palindrome 2021",
+        "description": "Supply: 2,228",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2021] }
         ]
       },
       {
         "name": "3D Palindrome 2022",
+        "description": "Supply: 2,309",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2022] }
         ]
       },
       {
         "name": "3D Palindrome 2023",
+        "description": "Supply: 729",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2023] }
         ]
       },
       {
         "name": "3D Palindrome 2024",
+        "description": "Supply: 567",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2024] }
-        ]
-      },
-      {
-        "name": "3D Palindrome 2025",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2025] }
         ]
       }
     ]
@@ -731,6 +749,128 @@
         "name": "Nova Perfect Palinception",
         "requirements": [
           { "count": 1, "tags": ["perfect_palinception", "nova"] }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "paliblock_year_book",
+    "name": "Paliblock Palindrome Year Book",
+    "display_tags": ["palindrome", "paliblock"],
+    "short_description": "As the years progress, fewer and fewer paliblock palindromes are created, making these sats more valuable with each passing year.", 
+    "description": "This book is dedicated to paliblock palindromes collected from every year, starting from 2009 to 2024. As the years progress, fewer and fewer palindromes are created, making these unique sat numbers even rarer and more valuable with each passing year.",
+    "difficulty": "Elite",
+    "levels": [
+      {
+        "name": "Paliblock Palindrome 2009",
+        "description": "Fewer palindromes are mined each year—dive in to explore the numbers in our special collectors book. Supply: 1,342,499",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2009] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2010",
+        "description": "Supply: 338,000",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2010] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2011",
+        "description": "Supply: 29,500",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2011] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2012",
+        "description": "Supply: 20,625",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2012] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2013",
+        "description": "Supply: 1,575",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2013] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2014",
+        "description": "Supply: 1,475",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2014] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2015",
+        "description": "Supply: 1,350",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2015] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2016",
+        "description": "Supply: 1,053",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2016] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2017",
+        "description": "Supply: 696",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2017] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2018",
+        "description": "Supply: 674",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2018] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2019",
+        "description": "Supply: 685",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2019] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2020",
+        "description": "Supply: 451",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2020] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2021",
+        "description": "Supply: 327",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2021] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2022",
+        "description": "Supply: 333",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2022] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2023",
+        "description": "Supply: 342",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2023] }
+        ]
+      },
+      {
+        "name": "Paliblock Palindrome 2024",
+        "description": "Supply: 215",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2024] }
         ]
       }
     ]

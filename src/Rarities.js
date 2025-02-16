@@ -112,6 +112,11 @@ export const rarities = [
         "total": 1740988,
         "found": 10056,
     },
+    {
+        "tags": ["palindrome", "paliblock", "nova"],
+        "total": 10489,
+        "found": 260,
+    },
     // Palindrome 3D
     {
         "tags": ["palindrome", "3_digits"],

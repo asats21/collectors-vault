@@ -194,6 +194,13 @@
     "traits": ["vintage", "palindrome", "3_digits"],
     "difficulty": "Expert"
   },
+  {
+    "key": "paliblock_nova",
+    "name": "Nova Paliblock Palindrome",
+    "description": "A paliblock palindrome mined after the palindrome extinction event",
+    "traits": ["palindrome", "paliblock", "nova"],
+    "difficulty": "Expert"
+  },
 
 
   {
