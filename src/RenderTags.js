@@ -36,7 +36,7 @@ export const tagIcons = {
     pali_black_uncommon: { icon: <><FaRegGem className="icon" style={{ color: "#999" }} />&nbsp;<FaBluesky className="icon" style={{ color: "#999" }} /></>, number: 2, tooltip: "Palindromic Black Uncommon" },
     rodarmor_name: { icon: <FaBook className="icon" style={{ color: "#ccc" }} />, number: 1, tooltip: "Rodarmor Name" },
     "pizza_4/20": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#F2A900" }}><FaPizzaSlice className="icon"/>&nbsp;4/20</div>, number: 3, tooltip: "Pizza sats mined on 4/20/2010" },
-    "pizza_2009": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#F2A900" }}><FaPizzaSlice className="icon"/>&nbsp;2009</div>, number: 2, tooltip: "Jpeg sats mined in 2009" },
+    "pizza_2009": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#F2A900" }}><FaPizzaSlice className="icon"/>&nbsp;2009</div>, number: 2, tooltip: "Pizza sats mined in 2009" },
     "jpeg_2010": { icon: <div className="fw-bold d-inline-flex align-items-center text-nowrap" style={{ color: "#037F5E" }}><FaImage className="icon" />&nbsp;2010</div>, number: 5, tooltip: "Jpeg sats mined in 2010" },
     nakamoto: { icon: <BsIncognito className="icon" style={{ color: "#ccc" }} />, number: 1, tooltip: "Sats mined by Satoshi Nakamoto himself" },
     "uniform_3/5": { icon: <div className="fw-bold">3/5</div>, number: 20, tooltip: "Uniform palinception with sub-palindrome lengths of both 3 and 5 simultaneously" },
