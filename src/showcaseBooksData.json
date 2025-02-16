@@ -142,7 +142,7 @@
     "key": "uncommon_2009",
     "name": "2009 Uncommons",
     "description": "Uncommons from the year Bitcoin was created",
-    "traits": ["uncommon", "2009"],
+    "traits": ["uncommon", "alpha", "2009"],
     "difficulty": "Expert"
   },
   {

@@ -24,18 +24,22 @@ export const rarities = [
     {
         "tags": ["uncommon", "alpha", "2009"],
         "total": 32474,
+        "found": 1232,
     },
     {
         "tags": ["uncommon", "alpha", "2009", "epoch0"],
         "total": 32474,
+        "found": 1232,
     },
     {
         "tags": ["paliblock", "uncommon"],
         "total": 7925,
+        "found": 216,
     },
     {
         "tags": ["paliblock", "uncommon", "alpha"],
         "total": 1602,
+        "found": 130,
     },
     {
         "tags": ["paliblock", "uncommon", "alpha", "2009", "epoch0"],
@@ -259,6 +263,7 @@ export const rarities = [
     {
         "tags": ["perfect_palinception", "nova"],
         "total": 1050,
+        "found": 106,
     },
     {
         "tags": ["perfect_palinception", "paliblock"],
@@ -355,6 +360,11 @@ export const rarities = [
         "found": 26
     },
     {
+        "tags": ["palindrome", "pizza", "2009"],
+        "total": 3000,
+        "found": 381
+    },
+    {
         "tags": ["palindrome", "pizza", "pizza_2009"],
         "total": 3000,
         "found": 381
@@ -367,10 +377,12 @@ export const rarities = [
     {
         "tags": ["alpha", "pizza"],
         "total": 10002,
+        "found": 391
     },
     {
         "tags": ["alpha", "pizza", "2009"],
         "total": 300,
+        "found": 22
     },
     {
         "tags": ["alpha", "pizza", "pizza_4/20"],
@@ -394,38 +406,47 @@ export const rarities = [
     {
         "tags": ["jpeg", "palindrome"],
         "total": 5000,
+        "found": 422,
     },
     {
         "tags": ["jpeg", "palindrome", "2009"],
         "total": 4500,
+        "found": 395,
     },
     {
         "tags": ["jpeg", "palindrome", "jpeg_2010"],
         "total": 500,
+        "found": 27,
     },
     {
         "tags": ["alpha", "jpeg"],
         "total": 500,
+        "found": 35,
     },
     {
         "tags": ["alpha", "jpeg", "2009"],
         "total": 450,
+        "found": 32,
     },
     {
         "tags": ["alpha", "jpeg", "jpeg_2010"],
         "total": 50,
+        "found": 3,
     },
     {
         "tags": ["omega", "jpeg"],
         "total": 500,
+        "found": 33,
     },
     {
         "tags": ["omega", "jpeg", "2009"],
         "total": 450,
+        "found": 31,
     },
     {
         "tags": ["omega", "jpeg", "jpeg_2010"],
         "total": 50,
+        "found": 2,
     },
     {
         "tags": ["jpeg", "uncommon", "alpha", "2009", "epoch0", "tz_10"],
