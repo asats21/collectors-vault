@@ -86,6 +86,9 @@ const ShowcaseBooksList = ({ satCollection }) => {
       <div className="showcase-books-header mt-4 mt-md-2">
         <h1>Showcase Books</h1>
       </div>
+      <p className="mb-3 small d-none d-md-block" style={{color: "#CCC"}}>
+        Discover ideas for expanding your collection, or simply enjoy the sats you’ve collected
+      </p>
 
       {/* Filter Bar */}
       <div className="sat-tags d-flex justify-content-start align-items-center gap-3 mt-2 mb-4">

@@ -65,9 +65,12 @@ const ChallengeBooksList = ({ satCollection }) => {
     <div className="">
 
       {/* Header */}
-      <div className="page-header mt-4 mt-md-2">
+      <div className="showcase-books-header mt-4 mt-md-2">
         <h1>Challenge Books</h1>
       </div>
+      <p className="mb-3 small d-none d-md-block" style={{color: "#CCC"}}>
+         Dive into these challenges and put your collection to the test—do you have what it takes to complete them?
+      </p>
 
       {difficultyOrder.map((difficulty) => (
         <div key={difficulty} className="difficulty-tier">
