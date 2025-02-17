@@ -1,0 +1,45 @@
+/* Modal Styling */
+.cyber-modal .modal-content {
+    background: #1e1e1e;
+    border: 2px solid #6AA8C3;
+    border-radius: 12px;
+}
+  
+.modal-header-glow {
+    border-bottom: 2px solid #6AA8C3;
+    color: #6AA8C3;
+    padding: 1rem;
+}
+  
+.modal-body-glow {
+    padding: 1.5rem;
+}
+  
+.add-sats-input {
+    background: #2a2d34;
+    border: 2px solid #444;
+    color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+  
+.add-sats-input:focus {
+    background: #2a2d34;
+    color: white;
+    border-color: #6AA8C3;
+    box-shadow: 0 0 10px #6AA8C3;
+}
+
+/* Demo Modal Styling */
+.demo-modal .modal-content {
+    background: #1e1e1e;
+    border: 2px solid #E89A02;
+    border-radius: 12px;
+}
+  
+.demo-modal-header-glow {
+    border-bottom: 2px solid #E89A02;
+    color: #E89A02;
+    padding: 1rem;
+}

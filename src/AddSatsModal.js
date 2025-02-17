@@ -37,7 +37,7 @@ const AddSatsModal = ({ showModal, setShowModal, input, setInput, handleSubmit }
               rows={20}
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="cyber-input"
+              className="add-sats-input"
             />
           </Form.Group>
           <div className="text-center mt-4">

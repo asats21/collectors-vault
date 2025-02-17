@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import './Settings.css';
-import './Achievements.css';
+import './css/Settings.css';
+import './css/Modal.css';
+import './css/Achievements.css';
 import { Tooltip } from "bootstrap";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";

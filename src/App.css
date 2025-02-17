@@ -63,19 +63,6 @@ h2 {
     font-weight: bold;
 }
 
-.list-group-item {
-    font-size: 1.2rem;
-    background-color: #2A2D34; /* Charcoal Gray (dark background) */
-    color: #FFFFFF;
-    border: 1px solid #444;
-    margin-bottom: 10px;
-}
-
-.list-group-item:hover {
-    background-color: #037F5E; /* Mint Green (hover effect) */
-    color: #FFFFFF;
-}
-
 ul.levels {
     padding-left: 0 !important; /* Optional: to remove any default padding as well */
 }
@@ -462,52 +449,6 @@ ul.levels {
   background: rgba(256, 256, 256, 0.01);
   border-color: #ff6b6b; /* Brighter red border on hover */
   box-shadow: 0 0 10px rgba(224, 92, 92, 0.6); /* Stronger glow on hover */
-}
-
-/* Demo Modal Styling */
-.demo-modal .modal-content {
-  background: #1e1e1e;
-  border: 2px solid #E89A02;
-  border-radius: 12px;
-}
-
-.demo-modal-header-glow {
-  border-bottom: 2px solid #E89A02;
-  color: #E89A02;
-  padding: 1rem;
-}
-
-/* Modal Styling */
-.cyber-modal .modal-content {
-  background: #1e1e1e;
-  border: 2px solid #6AA8C3;
-  border-radius: 12px;
-}
-
-.modal-header-glow {
-  border-bottom: 2px solid #6AA8C3;
-  color: #6AA8C3;
-  padding: 1rem;
-}
-
-.modal-body-glow {
-  padding: 1.5rem;
-}
-
-.cyber-input {
-  background: #2a2d34;
-  border: 2px solid #444;
-  color: white;
-  border-radius: 8px;
-  padding: 1rem;
-  transition: all 0.3s ease;
-}
-
-.cyber-input:focus {
-  background: #2a2d34;
-  color: white;
-  border-color: #6AA8C3;
-  box-shadow: 0 0 10px #6AA8C3;
 }
 
 /* Nav Button Styling */
