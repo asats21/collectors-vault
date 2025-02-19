@@ -210,6 +210,57 @@
     ]
   },
   {
+    "key": "1d_block",
+    "name": "Mono-Digit Block",
+    "description": "Own a sat with a block number made entirely of one repeating digit.",
+    "icon": "FaRepeat",
+    "requirements": [
+      {
+        "block_number_digits": 1
+      }
+    ]
+  },
+  {
+    "key": "rodarmor_name",
+    "name": "Name Game",
+    "description": "Own a Rodarmor Name sat from the original 'ordinal bounty 3'.",
+    "icon": "TbAlphabetLatin",
+    "requirements": [
+      {
+        "tags": ["rodarmor_name"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "vintage_alpha",
+    "name": "Vintage Alpha",
+    "description": "Own a Vintage Alpha sat",
+    "icon": "TbAlpha",
+    "requirements": [
+      {
+        "tags": ["vintage", "alpha"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "alpha_omega",
+    "name": "The Beginning and The End",
+    "description": "Own both an Alpha sat and an Omega sat",
+    "icon": "TbAlphabetGreek",
+    "requirements": [
+      {
+        "tags": ["alpha"],
+        "count": 1
+      },
+      {
+        "tags": ["omega"],
+        "count": 1
+      }
+    ]
+  },
+  {
     "key": "halving_historian",
     "name": "Halving Historian",
     "description": "Collect a sat from each halving epoch",
@@ -265,6 +316,18 @@
     "requirements": [
       {
         "tags": ["birthday"],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "key": "leap_day_treasure",
+    "name": "Leap Day Treasure",
+    "description": "Own a sat mined on February 29.",
+    "icon": "FaRegCalendar",
+    "requirements": [
+      {
+        "tags": ["leap_day"],
         "count": 1
       }
     ]

@@ -46,6 +46,19 @@ export function checkAchievements(userSatCollection) {
         }
         return count >= req.count;
       }
+      // Check for a block number with only one repeating digit.
+      if (req.hasOwnProperty('block_number_digits')) {
+        let count = 0;
+        for (const satId in userSatCollection) {
+          const sat = userSatCollection[satId];
+          const blockStr = sat.block_number.toString();
+          const uniqueDigits = new Set(blockStr.split(''));
+          if (uniqueDigits.size === req.block_number_digits) {
+            count++;
+          }
+        }
+        return count >= (req.count || 1);
+      }
       // Check for a tag-based requirement.
       if (req.hasOwnProperty('tags') && req.hasOwnProperty('count')) {
         const requiredTags = req.tags;
