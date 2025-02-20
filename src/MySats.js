@@ -12,7 +12,7 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
   const [input, setInput] = useState('');
   const [currentPage, setCurrentPage] = useState(0);
   const satsPerPage = 20;
-  const [activeFilter, setActiveFilter] = useState(null);
+  const [activeFilters, setActiveFilters] = useState([]); // Change from single state to an array
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,9 +24,11 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
   };
 
   const sortedSats = sortSatsByWeight(satCollection);
-  const filteredSats = activeFilter
-    ? sortedSats.filter(satObj => satObj.details.tags.includes(activeFilter))
-    : sortedSats;
+  const filteredSats = activeFilters.length > 0
+  ? sortedSats.filter((satObj) =>
+      activeFilters.every((filter) => satObj.details.tags.includes(filter))
+    )
+  : sortedSats;
 
   // Pagination logic
   const pageCount = Math.ceil(filteredSats.length / satsPerPage);
@@ -65,8 +67,12 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
   ];
 
   const toggleFilter = (tag) => {
-    setActiveFilter((prevTag) => (prevTag === tag ? null : tag));
-    setCurrentPage(0); // Reset to first page when applying a filter
+    setActiveFilters((prevFilters) => 
+      prevFilters.includes(tag) 
+        ? prevFilters.filter((f) => f !== tag) // Remove if already selected
+        : [...prevFilters, tag] // Add if not selected
+    );
+    setCurrentPage(0); // Reset to first page when changing filters
   };
 
   return (
@@ -90,8 +96,8 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
             onClick={() => toggleFilter(option.key)}
             style={{
               cursor: 'pointer',
-              border: activeFilter === option.key ? "1px solid #C38BFA" : "",
-              boxShadow: activeFilter === option.key ? "0 0 10px #C38BFA" : "",
+              border: activeFilters.includes(option.key) ? "1px solid #C38BFA" : "",
+              boxShadow: activeFilters.includes(option.key) ? "0 0 10px #C38BFA" : "",
             }}
             data-bs-toggle="tooltip"
             data-bs-placement="top"
