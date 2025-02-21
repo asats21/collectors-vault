@@ -9,6 +9,7 @@ import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { loadSilkroadRanges } from './Silkroad';
 import { checkAchievements } from './AchievementsCheck';
+import { FaCog, FaUser } from 'react-icons/fa';
 
 import DemoModeModal from './DemoModeModal';
 import ChallengeBook from './ChallengeBook';  // Import your ChallengeBook component
@@ -24,8 +25,7 @@ import LeaderboardEntry from './LeaderboardEntry';  // Import the Leaderboard En
 import TagWeightsPage from './TagWeightsPage';
 import Achievements from './Achievements';
 import AchievementNotification from './AchievementNotification';
-
-import { FaCog } from "react-icons/fa";
+import Profile from './Profile';
 
 function App() {
 
@@ -184,25 +184,18 @@ function App() {
           </button>
         )}
   
-        {/* Settings Cog */}
-        <Link to="settings" className="settings-link" style={{ marginLeft: "auto" }}>
-          <div
-            className="settings-icon"
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <FaCog
-              size={24}
-              style={{
-                cursor: "pointer",
-                color: "#ffffff",
-                marginLeft: "10px",
-              }}
-            />
-          </div>
-        </Link>
+        <div style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto', gap: '10px' }}>
+          <Link to="profile" className="profile-link">
+            <div className="profile-icon" style={{ display: 'flex', alignItems: 'center' }}>
+              <FaUser size={24} style={{ cursor: 'pointer', color: "#ffffff" }} />
+            </div>
+          </Link>
+          <Link to="settings" className="settings-link">
+            <div className="settings-icon" style={{ display: 'flex', alignItems: 'center' }}>
+              <FaCog size={24} style={{ cursor: 'pointer', color: "#ffffff" }} />
+            </div>
+          </Link>
+        </div>
   
         {/* Demo Mode Modal */}
         <DemoModeModal
@@ -239,6 +232,7 @@ function App() {
             <Route path="/leaderboard" element={<Leaderboard satCollection={satCollection} />} />
             <Route path="/leaderboard/:address" element={<LeaderboardEntry />} />
             <Route path="/achievements" element={<Achievements achievements={achievements} />} />
+            <Route path="/profile" element={<Profile satCollection={satCollection} />} />
           </Routes>
         </div>
         {/* Notification container: shows the first notification in the queue, if any */}
