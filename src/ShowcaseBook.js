@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { isPaliblock, getSubPaliLength, displayUniformPalinception } from "./TagDetection";
-import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
+import { isPaliblock } from "./TagDetection";
+import { renderRarity, displaySatNumber } from "./Helpers";
 import { FaCube } from 'react-icons/fa';
 import { FaBluesky } from 'react-icons/fa6';
 import { RenderTags } from "./RenderTags";
@@ -128,23 +128,6 @@ const ShowcaseBook = ({ satCollection }) => {
     }
     return details.year;
   };
-
-  const renderRarity = (tags) => {
-      const supply = getFormattedSupply(tags);
-      return supply ? <div className='small text-center mt-3 fw-bold'>1 / {supply.total}</div> : null;
-  }
-
-  const displaySatNumber = (sat) => {
-    const subPaliLength = getSubPaliLength(sat);
-    if (subPaliLength) {
-      return (<span className='small'>{displayUniformPalinception(sat, subPaliLength)}</span>);
-    }
-    if(isRodarmorName(sat)) {
-      return getRodarmorName(sat);
-    }
-
-    return sat;
-  }
 
   if (matchingSats.length === 0) {
     return (

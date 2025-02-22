@@ -6,6 +6,7 @@ import React, {
   useRef,
 } from "react";
 import { RenderTags } from "./RenderTags";
+import { renderRarity, displaySatNumber } from "./Helpers";
 import ProfileSelectSatModal from "./ProfileSelectSatModal";
 
 const Profile = ({ satCollection }) => {
@@ -173,12 +174,13 @@ const Profile = ({ satCollection }) => {
           return (
             <>
               <div className="text-center">
-                <div className="fw-bold">{satId}</div>
+                <div className="fw-bold">{displaySatNumber(satId)}</div>
                 {satDetails && (
                   <div className="sat-tags my-2">
                     <RenderTags tags={satDetails.tags || []} />
                   </div>
                 )}
+                { renderRarity(satDetails.tags || []) }
               </div>
               <div
                 onClick={(e) => {

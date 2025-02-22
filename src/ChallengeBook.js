@@ -4,23 +4,13 @@ import challengeBooksData from './challengeBooksData.json';
 import useBookCompletion from './useBookCompletion';
 import { FaCube } from "react-icons/fa";
 import { RenderTags } from "./RenderTags";
-import { getFormattedSupply } from "./Rarities";
-import { getSubPaliLength, displayUniformPalinception } from "./TagDetection";
-import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
+import { renderRarity, displaySatNumber } from "./Helpers";
 
 const Book = ({ satCollection }) => {
   const { bookKey } = useParams();
   const [bookData, setBookData] = useState(null);
   const [selectedSat, setSelectedSat] = useState(null); // Track enlarged diamond
   const enlargedCardRef = useRef(null);
-
-  const renderRarity = (tags) => {
-    const supply = getFormattedSupply(tags);
-    if(!supply)
-      return ``;
-
-    return supply ? (<div className='mt-2'>1/{supply.total}</div>) : "";
-  }
 
   const handleMouseMove = (e) => {
     const card = enlargedCardRef.current;
@@ -63,18 +53,6 @@ const Book = ({ satCollection }) => {
   const handleDiamondClick = (level) => {
     setSelectedSat(level === selectedSat ? null : level);
   };
-
-  const displaySatNumber = (sat) => {
-    const subPaliLength = getSubPaliLength(sat);
-    if (subPaliLength) {
-      return (<span className='small'>{displayUniformPalinception(sat, subPaliLength)}</span>);
-    }
-    if(isRodarmorName(sat)) {
-      return getRodarmorName(sat);
-    }
-
-    return sat;
-  }
 
   const bookLevels = useBookCompletion(bookData, satCollection);
 
