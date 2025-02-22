@@ -5,6 +5,7 @@ import React, {
   useEffect,
   useRef,
 } from "react";
+import { RenderTags } from "./RenderTags";
 import ProfileSelectSatModal from "./ProfileSelectSatModal";
 
 const Profile = ({ satCollection }) => {
@@ -159,30 +160,40 @@ const Profile = ({ satCollection }) => {
         onMouseMove={hasSat ? (e) => handleMouseMove(index, e) : undefined}
         onMouseLeave={hasSat ? () => handleMouseLeave(index) : undefined}
       >
-        {hasSat ? (
-          <>
-            <span style={{ color: "white", fontWeight: "bold" }}>{satId}</span>
-            <div
-              onClick={(e) => {
-                e.stopPropagation();
-                if (index === null) {
-                  setShowPiece(null);
-                  updateTransform(0, 0, 0, null); // Reset main card transform
-                } else {
-                  setSubPieces(prev => {
-                    const newArr = [...prev];
-                    newArr[index] = null;
-                    return newArr;
-                  });
-                  updateTransform(index, 0, 0, null); // Reset sub piece transform
-                }
-              }}
-              className="profile-delete-btn"
-            >
-              &#x2715;
-            </div>
-          </>
-        ) : (
+        {hasSat ? (() => {
+          // Retrieve sat details using the satId key
+          const satDetails = satCollection[satId];
+          return (
+            <>
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ color: "white", fontWeight: "bold" }}>{satId}</div>
+                {satDetails && (
+                  <div className="sat-tags mb-2">
+                    <RenderTags tags={satDetails.tags || []} />
+                  </div>
+                )}
+              </div>
+              <div
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (index === null) {
+                    setShowPiece(null);
+                  } else {
+                    setSubPieces((prev) => {
+                      const newArr = [...prev];
+                      newArr[index] = null;
+                      return newArr;
+                    });
+                  }
+                  updateTransform(index, 0, 0, null);
+                }}
+                className="profile-delete-btn"
+              >
+                &#x2715;
+              </div>
+            </>
+          );
+        })() : (
           <span style={{ color: "#777" }}>???</span>
         )}
       </div>
