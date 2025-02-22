@@ -18,3 +18,10 @@ export const renderRarity = (tags) => {
     const supply = getFormattedSupply(tags);
     return supply ? <div className='small text-center mt-3 fw-bold'>1 / {supply.total}</div> : null;
 }
+
+export const renderYear = (details) => {
+    if (details.tags.includes("nova")) {
+      return `${details.year} | Epoch ${details.epoch}`;
+    }
+    return details.year;
+};

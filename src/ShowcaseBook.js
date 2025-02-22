@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { isPaliblock } from "./TagDetection";
-import { renderRarity, displaySatNumber } from "./Helpers";
+import { renderRarity, displaySatNumber, renderYear } from "./Helpers";
 import { FaCube } from 'react-icons/fa';
 import { FaBluesky } from 'react-icons/fa6';
 import { RenderTags } from "./RenderTags";
@@ -121,13 +121,6 @@ const ShowcaseBook = ({ satCollection }) => {
         </div>
     ) : null;
   }
-
-  const renderYear = (details) => {
-    if (details.tags.includes("nova")) {
-      return `${details.year} | Epoch ${details.epoch}`;
-    }
-    return details.year;
-  };
 
   if (matchingSats.length === 0) {
     return (
