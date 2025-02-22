@@ -16,7 +16,7 @@ const Profile = ({ satCollection }) => {
   });
   const [subPieces, setSubPieces] = useState(() => {
     const saved = localStorage.getItem("profile_subPieces");
-    return saved ? JSON.parse(saved) : Array(10).fill(null);
+    return saved ? JSON.parse(saved) : Array(8).fill(null);
   });
 
   // Modal state for sat selection
@@ -58,7 +58,7 @@ const Profile = ({ satCollection }) => {
         translateZ(10px)
         scale(${scale})
       `;
-      card.style.zIndex = expIndex === index ? 10 : 1;
+      card.style.zIndex = expIndex === index ? 8 : 1;
     }
   };
 
@@ -127,7 +127,7 @@ const Profile = ({ satCollection }) => {
       const lowerText = searchText.toLowerCase();
       const filtered = satEntries
         .filter(([satId]) => satId.toLowerCase().includes(lowerText))
-        .slice(0, 10);
+        .slice(0, 8);
       setSearchResults(filtered);
     }, 300);
     return () => clearTimeout(timer);
@@ -213,12 +213,12 @@ const Profile = ({ satCollection }) => {
         <div className="col-md-4" style={{ height: "calc(150px * 2 + 1rem)" }}>
           {renderSatCard(showPiece, true, null)}
         </div>
-        {/* Right column for 10 sub pieces */}
+        {/* Right column for 8 sub pieces */}
         <div className="col-md-8">
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(5, 1fr)",
+              gridTemplateColumns: "repeat(4, 1fr)",
               gap: "1rem",
             }}
           >
