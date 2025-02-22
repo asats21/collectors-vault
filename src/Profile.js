@@ -1,27 +1,31 @@
-import React, { useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { Modal } from 'react-bootstrap';
 
 const Profile = ({ satCollection }) => {
-  // Main show piece
+  // Main show piece (sat id or null)
   const [showPiece, setShowPiece] = useState(null);
-
-  // 10 sub pieces
+  // Array of 10 sub piece sat ids (or null for placeholders)
   const [subPieces, setSubPieces] = useState(Array(10).fill(null));
 
-  // Modal state
+  // Modal state for selecting a sat
   const [showModal, setShowModal] = useState(false);
-
-  // Whether we are setting main piece (subIndex=null) or a sub piece (0..9)
+  // subIndex: null means selecting main show piece; 0-9 for sub pieces.
   const [subIndex, setSubIndex] = useState(null);
 
-  // Search state
+  // Search state for modal
   const [searchText, setSearchText] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  // Convert satCollection to array once, then memoize
-  const satEntries = useMemo(() => {
-    return Object.entries(satCollection);
-  }, [satCollection]);
+  // Convert satCollection to an array once
+  const satEntries = useMemo(() => Object.entries(satCollection), [satCollection]);
+
+  // Open the selection modal
+  const openModal = (index = null) => {
+    setSubIndex(index);
+    setSearchText('');
+    setSearchResults([]);
+    setShowModal(true);
+  };
 
   const closeModal = useCallback(() => {
     setShowModal(false);
@@ -30,19 +34,12 @@ const Profile = ({ satCollection }) => {
     setSearchResults([]);
   }, []);
 
-  const openModal = useCallback((index = null) => {
-    setSubIndex(index);
-    setSearchText('');
-    setSearchResults([]);
-    setShowModal(true);
-  }, []);
-
-  // Called when user clicks on a search result
+  // When user selects a sat from search results
   const selectSat = useCallback((satId) => {
     if (subIndex === null) {
       setShowPiece(satId);
     } else {
-      setSubPieces((prev) => {
+      setSubPieces(prev => {
         const newArr = [...prev];
         newArr[subIndex] = satId;
         return newArr;
@@ -51,13 +48,12 @@ const Profile = ({ satCollection }) => {
     closeModal();
   }, [closeModal, subIndex]);
 
+  // Debounced search effect
   useEffect(() => {
-    // If searchText is empty or less than 2 characters, clear results.
     if (!searchText || searchText.length < 2) {
       setSearchResults([]);
       return;
     }
-  
     const timer = setTimeout(() => {
       const lowerText = searchText.toLowerCase();
       const filtered = satEntries
@@ -65,27 +61,30 @@ const Profile = ({ satCollection }) => {
         .slice(0, 10);
       setSearchResults(filtered);
     }, 300);
-  
     return () => clearTimeout(timer);
   }, [searchText, satEntries]);
 
-  // Renders a sat card or placeholder
+  // Render a sat card that mimics the ShowcaseBook card style
   const renderSatCard = (satId, isMain, index = null) => {
-    const hasSat = !!satId;
+    const hasSat = Boolean(satId);
     return (
       <div
         key={index !== null ? index : 'main'}
-        className={`profile-sat ${hasSat ? "purple" : "gray"}`}
+        className="sat-card"
         style={{
-          width: '100%',
+          padding: '1rem',
+          cursor: 'pointer',
           height: isMain ? '300px' : '150px',
-          marginBottom: isMain ? '1rem' : '0',
-          cursor: 'pointer'
+          border: hasSat ? '2px solid #C38BFA' : '2px dashed #888',
+          boxShadow: hasSat ? '0 0 10px #C38BFA' : '0 0 10px #888',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
         }}
         onClick={() => openModal(index)}
       >
         {hasSat ? (
-          <span style={{ color: 'white' }}>{satId}</span>
+          <span style={{ color: 'white', fontWeight: 'bold' }}>{satId}</span>
         ) : (
           <span style={{ color: '#777' }}>???</span>
         )}
@@ -96,29 +95,28 @@ const Profile = ({ satCollection }) => {
   return (
     <div className="container mt-4">
       <div className="row">
-        {/* Left column for main piece */}
+        {/* Left column: Main show piece */}
         <div className="col-md-4">
           {renderSatCard(showPiece, true, null)}
         </div>
 
-        {/* Right column for sub pieces */}
+        {/* Right column: 10 sub pieces in 2 rows */}
         <div className="col-md-8">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(5, 1fr)',
-              gap: '1rem'
-            }}
-          >
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(5, 1fr)',
+            gap: '1rem'
+          }}>
             {subPieces.map((satId, i) => renderSatCard(satId, false, i))}
           </div>
         </div>
       </div>
 
-      {/* Stats section placeholder */}
+      {/* Statistics Section (placeholder) */}
       <div className="mt-4">
         <h2>Collection Stats</h2>
         <p>Total Sats: {Object.keys(satCollection).length}</p>
+        {/* Additional stats can be added here */}
       </div>
 
       {/* Modal for selecting a sat */}
