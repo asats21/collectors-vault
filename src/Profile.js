@@ -165,10 +165,10 @@ const Profile = ({ satCollection }) => {
           const satDetails = satCollection[satId];
           return (
             <>
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <div style={{ color: "white", fontWeight: "bold" }}>{satId}</div>
+              <div className="text-center">
+                <div className="fw-bold">{satId}</div>
                 {satDetails && (
-                  <div className="sat-tags mb-2">
+                  <div className="sat-tags my-2">
                     <RenderTags tags={satDetails.tags || []} />
                   </div>
                 )}
