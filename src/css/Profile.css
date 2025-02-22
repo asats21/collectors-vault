@@ -34,10 +34,12 @@
 /* Height variants */
 .profile-sat--main {
     height: 300px;
+    background: #1e1e1e;
 }
 
 .profile-sat--sub {
     height: 150px;
+    background: #1e1e1e;
 }
 
 /* If a sat is selected (user choice) */
