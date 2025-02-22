@@ -138,6 +138,7 @@ const Profile = ({ satCollection }) => {
     return (
       <div
         key={index !== null ? index : "main"}
+        style={{ height: isMain ? "calc(150px * 2 + 1rem)" : "150px" }}
         ref={el => {
           if (index === null) {
             cardRefs.current[0] = el;
@@ -192,7 +193,9 @@ const Profile = ({ satCollection }) => {
     <div className="container mt-4">
       <div className="row">
         {/* Left column for main show piece */}
-        <div className="col-md-4">{renderSatCard(showPiece, true, null)}</div>
+        <div className="col-md-4" style={{ height: "calc(150px * 2 + 1rem)" }}>
+          {renderSatCard(showPiece, true, null)}
+        </div>
         {/* Right column for 10 sub pieces */}
         <div className="col-md-8">
           <div
