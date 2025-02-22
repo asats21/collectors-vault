@@ -1,13 +1,92 @@
-/* Ensure profile cards use the same base styling as your other sat cards */
-.sat-card {
-    background-color: #1e1e1e;
-    color: white;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+/* Profile.css */
+
+/* Main container for the Profile page */
+.profile-container {
+    margin-top: 1rem;
 }
 
+/* Left column: Main show piece card */
+.profile-main-piece {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 1rem;
+}
+
+/* Right column: Grid container for sub pieces */
+.profile-sub-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+/* Base styling for all sat cards on the Profile page */
 .profile-sat {
-    background-color: #1e1e1e;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
     border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Height variants */
+.profile-sat--main {
+    height: 300px;
+}
+
+.profile-sat--sub {
+    height: 150px;
+}
+
+/* If a sat is selected (user choice) */
+.profile-sat--selected {
+    border: 2px solid #C38BFA;
+    box-shadow: 0 0 10px #C38BFA;
+}
+
+/* If no sat is selected (placeholder) */
+.profile-sat--empty {
+    border: 2px dashed #888;
+    box-shadow: 0 0 10px #888;
+}
+
+/* Enlarged state when toggled */
+.profile-sat--expanded {
+    transform: scale(1.5);
+    z-index: 10;
+}
+
+/* Delete button (small purple cross) on selected cards */
+.profile-delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    color: #C38BFA;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Statistics section styling */
+.profile-stats {
+    margin-top: 2rem;
+}
+
+.profile-stats h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.profile-stats p {
+    font-size: 1rem;
     color: white;
 }

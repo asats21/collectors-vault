@@ -138,33 +138,20 @@ const Profile = ({ satCollection }) => {
     return (
       <div
         key={index !== null ? index : "main"}
-        ref={(el) => {
+        ref={el => {
           if (index === null) {
             cardRefs.current[0] = el;
           } else {
             cardRefs.current[index] = el;
           }
         }}
-        className="profile-sat"
-        style={{
-          width: "100%",
-          height: isMain ? "300px" : "150px",
-          marginBottom: isMain ? "1rem" : "0",
-          cursor: "pointer",
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          border: hasSat ? "2px solid #C38BFA" : "2px dashed #888",
-          boxShadow: hasSat ? "0 0 10px #C38BFA" : "0 0 10px #888",
-          transition: "transform 0.3s ease, box-shadow 0.3s ease",
-        }}
+        className={`profile-sat ${isMain ? "profile-sat--main" : "profile-sat--sub"} ${
+          hasSat ? "profile-sat--selected" : "profile-sat--empty"
+        }`}
         onClick={() => {
           if (hasSat) {
-            // For selected sats, toggle enlargement.
             toggleExpand(index);
           } else {
-            // For empty slots, open modal.
             openModal(index);
           }
         }}
@@ -180,28 +167,14 @@ const Profile = ({ satCollection }) => {
                 if (index === null) {
                   setShowPiece(null);
                 } else {
-                  setSubPieces((prev) => {
+                  setSubPieces(prev => {
                     const newArr = [...prev];
                     newArr[index] = null;
                     return newArr;
                   });
                 }
               }}
-              style={{
-                position: "absolute",
-                top: "5px",
-                right: "5px",
-                cursor: "pointer",
-                color: "#C38BFA",
-                backgroundColor: "rgba(0, 0, 0, 0.5)",
-                borderRadius: "50%",
-                width: "20px",
-                height: "20px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "14px",
-              }}
+              className="profile-delete-btn"
             >
               &#x2715;
             </div>
