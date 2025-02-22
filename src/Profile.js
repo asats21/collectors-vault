@@ -166,12 +166,14 @@ const Profile = ({ satCollection }) => {
                 e.stopPropagation();
                 if (index === null) {
                   setShowPiece(null);
+                  updateTransform(0, 0, 0, null); // Reset main card transform
                 } else {
                   setSubPieces(prev => {
                     const newArr = [...prev];
                     newArr[index] = null;
                     return newArr;
                   });
+                  updateTransform(index, 0, 0, null); // Reset sub piece transform
                 }
               }}
               className="profile-delete-btn"
