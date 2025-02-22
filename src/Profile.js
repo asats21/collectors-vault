@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
-import { Modal } from 'react-bootstrap';
+import ProfileSelectSatModal from './ProfileSelectSatModal';
 
 const Profile = ({ satCollection }) => {
   // Main show piece (sat id or null)
@@ -120,33 +120,14 @@ const Profile = ({ satCollection }) => {
       </div>
 
       {/* Modal for selecting a sat */}
-      <Modal show={showModal} onHide={closeModal} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Select a Sat</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <input
-            type="text"
-            className="form-control mb-3"
-            placeholder="Type at least 2 characters..."
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-          />
-          {searchResults.length === 0 && searchText.length >= 2 && (
-            <p className="text-muted">No results found.</p>
-          )}
-          {searchResults.map(([satId]) => (
-            <div
-              key={satId}
-              className="p-2"
-              style={{ cursor: 'pointer', borderBottom: '1px solid #444' }}
-              onClick={() => selectSat(satId)}
-            >
-              {satId}
-            </div>
-          ))}
-        </Modal.Body>
-      </Modal>
+      <ProfileSelectSatModal
+        show={showModal}
+        onHide={closeModal}
+        searchText={searchText}
+        setSearchText={setSearchText}
+        searchResults={searchResults}
+        selectSat={selectSat}
+      />
     </div>
   );
 };
