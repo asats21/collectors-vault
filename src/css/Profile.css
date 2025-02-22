@@ -5,3 +5,9 @@
     border-radius: 8px;
     transition: all 0.3s ease;
 }
+
+.profile-sat {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    color: white;
+}
