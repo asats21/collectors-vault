@@ -190,7 +190,13 @@ const Profile = ({ satCollection }) => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="">
+
+      {/* Header */}
+      <div className="page-header mt-4 mt-md-2">
+        <h1>Profile</h1>
+      </div>
+
       <div className="row">
         {/* Left column for main show piece */}
         <div className="col-md-4" style={{ height: "calc(150px * 2 + 1rem)" }}>
@@ -211,7 +217,7 @@ const Profile = ({ satCollection }) => {
       </div>
       {/* Statistics Section */}
       <div className="mt-4">
-        <h2>Collection Stats</h2>
+        <h3>Collection Stats</h3>
         <p>Total Sats: {Object.keys(satCollection).length}</p>
         {/* Additional stats can be added here */}
       </div>
