@@ -1,6 +1,8 @@
 import { getRodarmorName, isRodarmorName } from './RodarmorNames.js';
-import { getSubPaliLength, displayUniformPalinception } from "./TagDetection";
+import { isPaliblock, getSubPaliLength, displayUniformPalinception } from "./TagDetection";
 import { getFormattedSupply } from "./Rarities";
+import { FaCube } from 'react-icons/fa';
+import { FaBluesky } from 'react-icons/fa6';
 
 export const displaySatNumber = (sat) => {
     const subPaliLength = getSubPaliLength(sat);
@@ -25,3 +27,14 @@ export const renderYear = (details) => {
     }
     return details.year;
 };
+
+export const renderBlockNumber = (details) => {
+  return (
+  <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+    {isPaliblock(details.block_number) ? 
+      <FaBluesky className="icon" style={{ color: '#118AB2', padding: '1px', border: '1px solid #118AB2' }}/>
+      : <FaCube />
+    } {details.block_number}
+  </span>
+  )
+}

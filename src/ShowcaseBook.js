@@ -1,9 +1,6 @@
 import React, { useEffect, useState, useContext, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import { isPaliblock } from "./TagDetection";
-import { renderRarity, displaySatNumber, renderYear } from "./Helpers";
-import { FaCube } from 'react-icons/fa';
-import { FaBluesky } from 'react-icons/fa6';
+import { renderRarity, displaySatNumber, renderYear, renderBlockNumber } from "./Helpers";
 import { RenderTags } from "./RenderTags";
 import { getFormattedSupply } from "./Rarities";
 import { sortSatsByWeight } from './tagWeights';
@@ -156,12 +153,7 @@ const ShowcaseBook = ({ satCollection }) => {
                 { displaySatNumber(sat)}
               </div>
               <div className={`sat-block text-center fw-bold small`}>
-                <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                  {isPaliblock(details.block_number) ? 
-                    <FaBluesky className="icon" style={{ color: '#118AB2', padding: '1px', border: '1px solid #118AB2' }}/>
-                    : <FaCube />
-                  } {details.block_number}
-                </span>
+                { renderBlockNumber(details) }
               </div>
               <div className="sat-tags mt-3 d-flex justify-content-center" style={{ rowGap: "0.5rem" }}>
                 <RenderTags tags={details.tags || []} />
