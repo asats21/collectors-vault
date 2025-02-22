@@ -82,3 +82,16 @@
     background-color: #373b44;
 }
 
+/* Shrink tags inside sub-cards */
+.profile-sat--sub .sat-tags {
+    font-size: 0.75rem; /* Smaller than default (e.g., 75% of normal size) */
+    transform: scale(0.8); /* Scales down the entire tag container */
+    transform-origin: center; /* Keeps scaling centered */
+}
+
+/* Optional: Ensure icons and text align properly within scaled tags */
+.profile-sat--sub .sat-tags span {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 0.25rem; /* Adjusted spacing for smaller size */
+}
