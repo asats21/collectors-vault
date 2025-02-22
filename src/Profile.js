@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import ProfileSelectSatModal from './ProfileSelectSatModal';
+import { FaTimes } from 'react-icons/fa';
 
 const Profile = ({ satCollection }) => {
   // Main show piece
@@ -82,14 +83,31 @@ const Profile = ({ satCollection }) => {
   // Render a sat card that mimics the ShowcaseBook card style
   const renderSatCard = (satId, isMain, index = null) => {
     const hasSat = Boolean(satId);
+  
+    // Delete handler: clear the selection for main (index === null) or a sub piece.
+    const handleDelete = (e) => {
+      e.stopPropagation(); // Prevent the modal from opening.
+      if (index === null) {
+        setShowPiece(null);
+      } else {
+        setSubPieces((prev) => {
+          const newArr = [...prev];
+          newArr[index] = null;
+          return newArr;
+        });
+      }
+    };
+  
     return (
       <div
         key={index !== null ? index : 'main'}
-        className="sat-card"
+        className="profile-sat"
         style={{
-          padding: '1rem',
-          cursor: 'pointer',
+          width: '100%',
           height: isMain ? '300px' : '150px',
+          marginBottom: isMain ? '1rem' : '0',
+          cursor: 'pointer',
+          position: 'relative',
           border: hasSat ? '2px solid #C38BFA' : '2px dashed #888',
           boxShadow: hasSat ? '0 0 10px #C38BFA' : '0 0 10px #888',
           display: 'flex',
@@ -99,7 +117,29 @@ const Profile = ({ satCollection }) => {
         onClick={() => openModal(index)}
       >
         {hasSat ? (
-          <span style={{ color: 'white', fontWeight: 'bold' }}>{satId}</span>
+          <>
+            <span style={{ color: 'white', fontWeight: 'bold' }}>{satId}</span>
+            <div
+              onClick={handleDelete}
+              style={{
+                position: 'absolute',
+                top: '5px',
+                right: '5px',
+                cursor: 'pointer',
+                color: '#C38BFA',
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                borderRadius: '50%',
+                width: '20px',
+                height: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '14px'
+              }}
+            >
+              <FaTimes />
+            </div>
+          </>
         ) : (
           <span style={{ color: '#777' }}>???</span>
         )}
