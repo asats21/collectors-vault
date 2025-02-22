@@ -223,21 +223,21 @@ const Profile = ({ satCollection }) => {
         <h1>Profile</h1>
       </div>
 
-      <div className="row">
-        {/* Left column for main show piece */}
-        <div className="col-md-4" style={{ height: "calc(150px * 2 + 1rem)" }}>
+      <div className="row g-3">
+        {/* Main show piece */}
+        <div className="col-md-4 col-12">
           {renderSatCard(showPiece, true, null)}
         </div>
-        {/* Right column for 8 sub pieces */}
-        <div className="col-md-8">
+        {/* Sub pieces - hidden on mobile, 4 columns on desktop */}
+        <div className="col-md-8 d-none d-md-block">
           <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: "1rem",
-            }}
+            className="row row-cols-1 row-cols-md-4 g-3" // Enforces 4 columns on md and up, 1 on mobile (hidden anyway)
           >
-            {subPieces.map((satId, i) => renderSatCard(satId, false, i))}
+            {subPieces.map((satId, i) => (
+              <div key={i} className="col">
+                {renderSatCard(satId, false, i)}
+              </div>
+            ))}
           </div>
         </div>
       </div>
