@@ -75,11 +75,10 @@ const Profile = ({ satCollection }) => {
     return (
       <div
         key={index !== null ? index : 'main'}
-        className="d-flex align-items-center justify-content-center"
+        className={`profile-sat ${hasSat ? "purple" : "gray"}`}
         style={{
           width: '100%',
           height: isMain ? '300px' : '150px',
-          border: `2px ${hasSat ? 'solid' : 'dashed'} gray`,
           marginBottom: isMain ? '1rem' : '0',
           cursor: 'pointer'
         }}
