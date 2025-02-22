@@ -13,15 +13,6 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Height variants */
-.profile-sat--main {
-    height: 300px; /* Matches inline calc(150px * 2 + 1rem) roughly */
-}
-
-.profile-sat--sub {
-    height: 150px;
-}
-
 /* State variants */
 .profile-sat--selected {
     border: 2px solid #C38BFA;
@@ -90,3 +81,4 @@
 .profile-modal-result:hover {
     background-color: #373b44;
 }
+

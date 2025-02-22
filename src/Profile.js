@@ -9,6 +9,8 @@ import { RenderTags } from "./RenderTags";
 import ProfileSelectSatModal from "./ProfileSelectSatModal";
 
 const Profile = ({ satCollection }) => {
+  const BASE_HEIGHT = 200; // Base height in pixels for sub-cards
+
   // Initialize showPiece and subPieces from localStorage
   const [showPiece, setShowPiece] = useState(() => {
     const saved = localStorage.getItem("profile_showPiece");
@@ -144,8 +146,8 @@ const Profile = ({ satCollection }) => {
     return (
       <div
         key={index !== null ? index : "main"}
-        style={{ height: isMain ? "calc(150px * 2 + 1rem)" : "150px" }}
-        ref={el => {
+        style={{ height: isMain ? `${BASE_HEIGHT * 2 + 10}px` : `${BASE_HEIGHT}px` }} // 10px approximates 1rem
+        ref={(el) => {
           if (index === null) {
             cardRefs.current[0] = el;
           } else {
@@ -232,7 +234,7 @@ const Profile = ({ satCollection }) => {
         </div>
       </div>
       {/* Statistics Section */}
-      <div className="mt-4">
+      <div className="mt-4 profile-stats">
         <h3>Collection Stats</h3>
         <p>Total Sats: {Object.keys(satCollection).length}</p>
         <p>Uncommons: {tagCounts.uncommon || 0}</p>
