@@ -87,6 +87,11 @@ const Profile = ({ satCollection }) => {
     });
   };
 
+  const tagCounts = Object.values(satCollection).reduce((acc, { tags }) => {
+    tags.forEach(tag => acc[tag] = (acc[tag] || 0) + 1);
+    return acc;
+  }, {});
+
   // --- Modal Search Logic ---
   const openModal = useCallback((index = null) => {
     setSubIndex(index);
@@ -230,7 +235,14 @@ const Profile = ({ satCollection }) => {
       <div className="mt-4">
         <h3>Collection Stats</h3>
         <p>Total Sats: {Object.keys(satCollection).length}</p>
-        {/* Additional stats can be added here */}
+        <p>Uncommons: {tagCounts.uncommon || 0}</p>
+        <p>Black uncommons: {tagCounts.black_uncommon || 0}</p>
+        <p>Palindromes: {tagCounts.palindrome || 0}</p>
+        <p>Uniform Palinceptions: {tagCounts.uniform_palinception || 0}</p>
+        <p>Perfect Palinceptions: {tagCounts.perfect_palinception || 0}</p>
+        <p>Nova Palindromes: {tagCounts.nova || 0}</p>
+        <p>Rodarmor Names: {tagCounts.rodarmor_name || 0}</p>
+        <p>Primes: {tagCounts.prime || 0}</p>
       </div>
       {/* Modal for selecting a sat */}
       <ProfileSelectSatModal
