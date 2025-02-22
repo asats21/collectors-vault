@@ -2,10 +2,25 @@ import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import ProfileSelectSatModal from './ProfileSelectSatModal';
 
 const Profile = ({ satCollection }) => {
-  // Main show piece (sat id or null)
-  const [showPiece, setShowPiece] = useState(null);
-  // Array of 10 sub piece sat ids (or null for placeholders)
-  const [subPieces, setSubPieces] = useState(Array(10).fill(null));
+  // Main show piece
+  const [showPiece, setShowPiece] = useState(() => {
+    const saved = localStorage.getItem('profile_showPiece');
+    return saved ? JSON.parse(saved) : null;
+  });
+
+  // 10 sub pieces
+  const [subPieces, setSubPieces] = useState(() => {
+    const saved = localStorage.getItem('profile_subPieces');
+    return saved ? JSON.parse(saved) : Array(10).fill(null);
+  });
+
+  useEffect(() => {
+    localStorage.setItem('profile_showPiece', JSON.stringify(showPiece));
+  }, [showPiece]);
+  
+  useEffect(() => {
+    localStorage.setItem('profile_subPieces', JSON.stringify(subPieces));
+  }, [subPieces]);
 
   // Modal state for selecting a sat
   const [showModal, setShowModal] = useState(false);
