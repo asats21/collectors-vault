@@ -100,3 +100,20 @@
 .profile-sat--main .profile-main-sat-number {
     font-size: 1.5rem; /* Slightly bigger than default (adjust as needed) */
 }
+
+.mobile-showcase-text {
+    font-size: 0.9rem;
+    color: #C38BFA; /* Purple accent to match your app */
+    background-color: rgba(30, 30, 30, 0.9); /* Slightly lighter dark background */
+    padding: 0.5rem 1rem; /* Better padding for readability */
+    border: 2px solid #C38BFA; /* Purple border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px #C38BFA; /* Subtle purple glow */
+    text-align: center; /* Centered for a cleaner look */
+    margin: 0 auto; /* Center horizontally */
+    transition: all 0.3s ease; /* Smooth transition for hover if needed */
+}
+
+.mobile-showcase-text:hover {
+    box-shadow: 0 0 15px #C38BFA; /* Stronger glow on hover (optional) */
+}

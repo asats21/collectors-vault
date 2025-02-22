@@ -241,6 +241,13 @@ const Profile = ({ satCollection }) => {
           </div>
         </div>
       </div>
+
+      <div className="d-block d-md-none my-3">
+        <p className="mobile-showcase-text">
+          More showcase sat slots available on desktop
+        </p>
+      </div>
+
       {/* Statistics Section */}
       <div className="mt-4 profile-stats">
         <h3>Collection Stats</h3>
