@@ -175,7 +175,7 @@ const Profile = ({ satCollection }) => {
             <>
               <div className="text-center">
                 <div className="sat-year text-center fw-bold small">{ renderYear(satDetails) }</div>
-                <div className="fw-bold" style={{color: "#C38BFA"}}>{displaySatNumber(satId)}</div>
+                <div className="fw-bold profile-main-sat-number" style={{color: "#C38BFA"}}>{displaySatNumber(satId)}</div>
                 {isMain &&
                   <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
                     { renderBlockNumber(satDetails) }

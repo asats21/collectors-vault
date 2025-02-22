@@ -95,3 +95,8 @@
     align-items: center;
     margin-right: 0.25rem; /* Adjusted spacing for smaller size */
 }
+
+/* Increase sat number size on main card */
+.profile-sat--main .profile-main-sat-number {
+    font-size: 1.5rem; /* Slightly bigger than default (adjust as needed) */
+}
