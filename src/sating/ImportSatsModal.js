@@ -1,5 +1,7 @@
 // ImportSatsModal.js
 import React, { useState } from 'react';
+import { Modal, Form } from 'react-bootstrap';
+import { FaTimes, FaExclamationTriangle } from "react-icons/fa";
 import { fetchSats } from './SatingApiCaller';
 import { addSatsToCollection } from '../satManagement';
 
@@ -23,34 +25,69 @@ const ImportSatsModal = ({ show, setShow, setSatCollection, settings }) => {
     setLoading(false);
   };
 
-  if (!show) return null;
-
   return (
-    <div className="modal show" style={{ display: 'block', backgroundColor: 'rgba(0,0,0,0.5)' }} onClick={() => setShow(false)}>
-      <div className="modal-dialog modal-sm" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-content p-3">
-          <div className="modal-header">
-            <h5 className="modal-title">Import Sats</h5>
-            <button type="button" className="btn-close" onClick={() => setShow(false)}></button>
-          </div>
-          <div className="modal-body">
-            <p>Import sats from sating.io - experimental. By clicking submit you are sending your wallet address to the sating.io API and getting your sats from there.</p>
-            <input
+    <Modal
+      show={show}
+      onHide={() => setShow(false)}
+      className="cyber-modal"
+      centered
+      size="md"
+    >
+      <Modal.Header className="modal-header-glow">
+        <Modal.Title>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <FaExclamationTriangle
+                  style={{
+                    color: "#FFB300",
+                    filter: "drop-shadow(0 0 10px #FF6F00)",
+                    fontSize: "2rem",
+                  }}
+                />
+                <span
+                  style={{
+                    color: "#FFB300",
+                    filter: "drop-shadow(0 0 10px #FF6F00)",
+                    fontSize: "1.5rem",
+                    fontWeight: "bold",
+                  }}
+                >
+                  Experimental
+                </span>
+              </div>
+
+        </Modal.Title>
+        <button 
+          onClick={() => setShow(false)} 
+          className="close-add-sats-modal-button"
+        >
+          <FaTimes size={24} />
+        </button>
+      </Modal.Header>
+      <Modal.Body className="modal-body-glow">
+        <Form onSubmit={handleSubmit}>
+          <Form.Group>
+            <Form.Label className='mb-2'>
+              <p>
+                Import sats from <a href="https://sating.io/" target="_blank" rel="noopener noreferrer" style={{ color: "#C38BFA", textDecoration: 'none', "fontWeight": "bold" }}>sating.io</a>
+              </p>
+              <p>Clicking 'Submit' will send your wallet address to the sating.io API to retrieve your sat data and add it to your collection.</p>
+            </Form.Label>
+            <Form.Label>Enter wallet address:</Form.Label>
+            <Form.Control
               type="text"
-              className="form-control"
-              placeholder="Enter wallet address"
+              placeholder="Wallet address"
               value={wallet}
               onChange={(e) => setWallet(e.target.value)}
             />
-          </div>
-          <div className="modal-footer">
-            <button className="nav-button" onClick={handleSubmit} disabled={loading}>
+          </Form.Group>
+          <div className="text-center mt-4">
+            <button type="submit" className="nav-button add-sats" disabled={loading}>
               {loading ? 'Importing...' : 'Submit'}
             </button>
           </div>
-        </div>
-      </div>
-    </div>
+        </Form>
+      </Modal.Body>
+    </Modal>
   );
 };
 
