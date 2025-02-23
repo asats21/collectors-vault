@@ -4,6 +4,7 @@ import { addSatsToCollection, deleteSatFromCollection } from './satManagement';
 import AddSatsModal from './AddSatsModal';
 import SatsTable from './SatsTable';
 import { tagIcons } from "./RenderTags";
+import ImportSatsModal from './sating/ImportSatsModal';
 
 import { FaPlusSquare } from "react-icons/fa";
 
@@ -11,8 +12,10 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
   const [showModal, setShowModal] = useState(false);
   const [input, setInput] = useState('');
   const [currentPage, setCurrentPage] = useState(0);
-  const satsPerPage = 20;
   const [activeFilters, setActiveFilters] = useState([]); // Change from single state to an array
+  const [showImportModal, setShowImportModal] = useState(false);
+
+  const satsPerPage = 20;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,12 +83,20 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
       {/* Header + Add Button */}
       <div className="my-sats-header mt-4 mt-md-2 mb-3 mb-md-0">
         <h1>My Sats</h1>
-        <button
-          className="add-sats-button"
-          onClick={() => setShowModal(true)}
-        >
-          <FaPlusSquare/> Add Sats
-        </button>
+        <div>
+          <button
+            className="add-sats-button"
+            onClick={() => setShowModal(true)}
+          >
+            <FaPlusSquare /> Add Sats
+          </button>
+          <button
+            className="add-sats-button ms-2"
+            onClick={() => setShowImportModal(true)}
+          >
+            Import
+          </button>
+        </div>
       </div>
 
       {/* Filter Bar */}
@@ -125,6 +136,14 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
         setInput={setInput}
         handleSubmit={handleSubmit}
       />
+
+      <ImportSatsModal
+        show={showImportModal}
+        setShow={setShowImportModal}
+        setSatCollection={setSatCollection}
+        settings={settings}
+      />
+
     </div>
 
     
