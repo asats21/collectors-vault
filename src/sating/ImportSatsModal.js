@@ -14,8 +14,18 @@ const ImportSatsModal = ({ show, setShow, setSatCollection, settings }) => {
     setLoading(true);
     try {
       const fetchedData = await fetchSats(wallet);
-      // Extract only the first number from each sat array
-      const satsArray = fetchedData.map(item => item.sat[0]);
+      // Only include sats that have at least one permitted tag
+      const permittedToImport = [
+        "palindromes_integer", 
+        "alpha", "omega", 
+        "uncommon", "black",
+        "bounty3_name"
+      ];
+      const filteredData = fetchedData.filter(item =>
+        item.types.some(type => permittedToImport.includes(type))
+      );
+      // Extract only the first number from each sat array of the filtered data
+      const satsArray = filteredData.map(item => item.sat[0]);
       const satsString = satsArray.join(',');
       setSatCollection(prev => addSatsToCollection(satsString, prev, settings));
       setShow(false);
