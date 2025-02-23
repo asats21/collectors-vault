@@ -57,6 +57,17 @@ function App() {
     return savedSettings ? JSON.parse(savedSettings) : { ignoreSilkroadRanges: true };
   });
 
+  // Initialize showPiece and subPieces for the Profile Page from localStorage
+  const [showPiece, setShowPiece] = useState(() => {
+    const saved = localStorage.getItem("profile_showPiece");
+    return saved ? JSON.parse(saved) : null;
+  });
+
+  const [subPieces, setSubPieces] = useState(() => {
+    const saved = localStorage.getItem("profile_subPieces");
+    return saved ? JSON.parse(saved) : Array(8).fill(null);
+  });
+
   const refreshAchievements = useCallback((satCollection) => {
     setAchievements(prevAchievements => {
       const newAchieved = checkAchievements(satCollection);
@@ -100,6 +111,16 @@ function App() {
   useEffect(() => {
     if(!settings.ignoreSilkroadRanges) loadSilkroadRanges();
   }, [settings]);
+
+  // Persist selections to local storage
+  useEffect(() => {
+    localStorage.setItem("profile_showPiece", JSON.stringify(showPiece));
+  }, [showPiece]);
+
+  // Persist selections to local storage
+  useEffect(() => {
+    localStorage.setItem("profile_subPieces", JSON.stringify(subPieces));
+  }, [subPieces]);
 
   useEffect(() => {
     const initializeTooltips = () => {
@@ -229,14 +250,14 @@ function App() {
             <Route path="/challenge-books/:bookKey" element={<ChallengeBook satCollection={satCollection} />} />
             <Route path="/showcase-books" element={<ShowcaseBooksList satCollection={satCollection} />} />
             <Route path="/showcase-books/:bookKey" element={<ShowcaseBook satCollection={satCollection} />} />
-            <Route path="/settings" element={<Settings satCollection={satCollection} setSatCollection={setSatCollection} settings={settings} setSettings={setSettings} />} />
+            <Route path="/settings" element={<Settings satCollection={satCollection} setSatCollection={setSatCollection} settings={settings} setSettings={setSettings} setShowPiece={setShowPiece} setSubPieces={setSubPieces} />} />
             <Route path="/about" element={<About />} />
             <Route path="/tag-weights" element={<TagWeightsPage />} />
             <Route path="/tests" element={<Tests />} />
             <Route path="/leaderboard" element={<Leaderboard satCollection={satCollection} />} />
             <Route path="/leaderboard/:address" element={<LeaderboardEntry />} />
             <Route path="/achievements" element={<Achievements achievements={achievements} />} />
-            <Route path="/profile" element={<Profile satCollection={satCollection} />} />
+            <Route path="/profile" element={<Profile satCollection={satCollection} showPiece={showPiece} setShowPiece={setShowPiece} subPieces={subPieces} setSubPieces={setSubPieces} />} />
             <Route path="/test-sating-api" element={<SatingTestApiPage />} />
           </Routes>
         </div>

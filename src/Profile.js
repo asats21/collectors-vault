@@ -9,18 +9,8 @@ import { RenderTags } from "./RenderTags";
 import { renderRarity, displaySatNumber, renderYear, renderBlockNumber } from "./Helpers";
 import ProfileSelectSatModal from "./ProfileSelectSatModal";
 
-const Profile = ({ satCollection }) => {
+const Profile = ({ satCollection, showPiece, setShowPiece, subPieces, setSubPieces }) => {
   const BASE_HEIGHT = 200; // Base height in pixels for sub-cards
-
-  // Initialize showPiece and subPieces from localStorage
-  const [showPiece, setShowPiece] = useState(() => {
-    const saved = localStorage.getItem("profile_showPiece");
-    return saved ? JSON.parse(saved) : null;
-  });
-  const [subPieces, setSubPieces] = useState(() => {
-    const saved = localStorage.getItem("profile_subPieces");
-    return saved ? JSON.parse(saved) : Array(8).fill(null);
-  });
 
   // Modal state for sat selection
   const [showModal, setShowModal] = useState(false);
@@ -39,15 +29,6 @@ const Profile = ({ satCollection }) => {
   // For card transformations (tilt/enlargement)
   const cardRefs = useRef([]);
   const [expandedIndex, setExpandedIndex] = useState(null);
-
-  // Persist selections to local storage
-  useEffect(() => {
-    localStorage.setItem("profile_showPiece", JSON.stringify(showPiece));
-  }, [showPiece]);
-
-  useEffect(() => {
-    localStorage.setItem("profile_subPieces", JSON.stringify(subPieces));
-  }, [subPieces]);
 
   // --- Transformation Functions (similar to ShowcaseBook) ---
   const updateTransform = (index, tiltX = 0, tiltY = 0, expIndex = expandedIndex) => {
@@ -123,7 +104,7 @@ const Profile = ({ satCollection }) => {
       }
       closeModal();
     },
-    [closeModal, subIndex]
+    [closeModal, subIndex, setShowPiece, setSubPieces]
   );
 
   useEffect(() => {
@@ -143,7 +124,7 @@ const Profile = ({ satCollection }) => {
 
   // --- Render a sat card ---
   const renderSatCard = (satId, isMain, index = null) => {
-    const hasSat = Boolean(satId);
+    const hasSat = satId && Object.keys(satId).length > 0;
     return (
       <div
         key={index !== null ? index : "main"}

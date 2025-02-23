@@ -6,7 +6,7 @@ import { getAvailableTags, sortSatsByWeight } from './tagWeights';
 import ShowcaseBooksContext from './ShowcaseBooksContext';
 import { Link } from "react-router-dom";
 
-const Settings = ({ satCollection, setSatCollection, settings, setSettings }) => {
+const Settings = ({ satCollection, setSatCollection, settings, setSettings, setShowPiece, setSubPieces }) => {
   const [userBooksJson, setUserBooksJson] = useState("[]");
   const [error, setError] = useState("");
 
@@ -260,7 +260,7 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
         </div>
       </div>
 
-      {/* Collection Delete Button */}
+      {/* Collection Backup Button */}
       {satCollection && Object.keys(satCollection).length > 0 && (
         <div className="mt-5">
           <h3>Backup & Share</h3>
@@ -289,6 +289,8 @@ const Settings = ({ satCollection, setSatCollection, settings, setSettings }) =>
                 // If confirmed, delete all SATs
                 if (isConfirmed) {
                   setSatCollection({});
+                  setShowPiece({});
+                  setSubPieces(Array(8).fill(null));
                 }
               }}
             >
