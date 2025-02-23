@@ -29,6 +29,7 @@ import TagWeightsPage from './TagWeightsPage';
 import Achievements from './Achievements';
 import AchievementNotification from './AchievementNotification';
 import Profile from './Profile';
+import SatingTestApiPage from './sating/SatingTestApiPage';
 
 function App() {
 
@@ -236,6 +237,7 @@ function App() {
             <Route path="/leaderboard/:address" element={<LeaderboardEntry />} />
             <Route path="/achievements" element={<Achievements achievements={achievements} />} />
             <Route path="/profile" element={<Profile satCollection={satCollection} />} />
+            <Route path="/test-sating-api" element={<SatingTestApiPage />} />
           </Routes>
         </div>
         {/* Notification container: shows the first notification in the queue, if any */}
