@@ -68,7 +68,7 @@ const ImportSatsModal = ({ show, setShow, setSatCollection, settings }) => {
           <Form.Group>
             <Form.Label className='mb-2'>
               <p>
-                Import sats from <a href="https://sating.io/" target="_blank" rel="noopener noreferrer" style={{ color: "#C38BFA", textDecoration: 'none', "fontWeight": "bold" }}>sating.io</a>
+                Import sats from <a href="https://sating.io/" target="_blank" rel="noopener noreferrer" style={{ color: "#FFFFFF", textDecoration: 'none', "fontWeight": "bold" }}>sating.io</a>
               </p>
               <p>Clicking 'Submit' will send your wallet address to the sating.io API to retrieve your sat data and add it to your collection.</p>
             </Form.Label>
