@@ -164,6 +164,11 @@ import {
         updatedCollection[sat].tags.push('prime');
       }
 
+      // This way, any sat that ends up with no tags won't be added to the collection. 
+      if (updatedCollection[sat].tags.length === 0) {
+        delete updatedCollection[sat];
+      }
+
     });
   
     return updatedCollection;
