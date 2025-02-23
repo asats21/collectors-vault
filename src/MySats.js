@@ -6,8 +6,6 @@ import SatsTable from './SatsTable';
 import { tagIcons } from "./RenderTags";
 import ImportSatsModal from './sating/ImportSatsModal';
 
-import { FaPlusSquare } from "react-icons/fa";
-
 const MySats = ({ satCollection, setSatCollection, settings }) => {
   const [showModal, setShowModal] = useState(false);
   const [input, setInput] = useState('');
@@ -88,7 +86,7 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
             className="add-sats-button"
             onClick={() => setShowModal(true)}
           >
-            <FaPlusSquare /> Add Sats
+            Add Sats
           </button>
           <button
             className="add-sats-button ms-2"
