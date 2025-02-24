@@ -128,7 +128,7 @@ const Profile = ({ satCollection, showPiece, setShowPiece, subPieces, setSubPiec
     return (
       <div
         key={index !== null ? index : "main"}
-        style={{ height: isMain ? `${BASE_HEIGHT * 2 + 10}px` : `${BASE_HEIGHT}px` }} // 10px approximates 1rem
+        style={{ height: isMain ? `${BASE_HEIGHT * 2 + 16}px` : `${BASE_HEIGHT}px` }} // 10px approximates 1rem
         ref={(el) => {
           if (index === null) {
             cardRefs.current[0] = el;
