@@ -108,7 +108,7 @@ const SatsTable = ({ currentSats, offset, handleDelete, pageCount, handlePageCli
                   {/* Bottom Line: SAT + Metadata */}
                   <div className="d-flex align-items-center justify-content-between gap-2 text-nowrap mt-2">
                     {/* Sat Number */}
-                    <div className="d-flex align-items-center text-truncate" style={{maxWidth: '40%'}}>
+                    <div className="d-flex align-items-center text-truncate" style={{maxWidth: '60%'}}>
                       <span className="fw-bold">
                         { displaySatNumber(sat) }
                       </span>
