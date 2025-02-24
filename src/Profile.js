@@ -30,6 +30,14 @@ const Profile = ({ satCollection, showPiece, setShowPiece, subPieces, setSubPiec
   const cardRefs = useRef([]);
   const [expandedIndex, setExpandedIndex] = useState(null);
 
+  // Add this helper component inside your Profile component
+  const StatItem = ({ label, value }) => (
+    <div className="d-flex justify-content-between align-items-center py-2 stat-item">
+      <span>{label}:</span>
+      <span className="fw-bold" style={{ color: "#C38BFA" }}>{value}</span>
+    </div>
+  );
+
   // --- Transformation Functions (similar to ShowcaseBook) ---
   const updateTransform = (index, tiltX = 0, tiltY = 0, expIndex = expandedIndex) => {
     const card = cardRefs.current[index];
@@ -230,18 +238,39 @@ const Profile = ({ satCollection, showPiece, setShowPiece, subPieces, setSubPiec
       </div>
 
       {/* Statistics Section */}
-      <div className="mt-4 profile-stats">
-        <h3>Collection Stats</h3>
-        <p>Total Sats: {Object.keys(satCollection).length}</p>
-        <p>Uncommons: {tagCounts.uncommon || 0}</p>
-        <p>Black uncommons: {tagCounts.black_uncommon || 0}</p>
-        <p>Palindromes: {tagCounts.palindrome || 0}</p>
-        <p>Uniform Palinceptions: {tagCounts.uniform_palinception || 0}</p>
-        <p>Perfect Palinceptions: {tagCounts.perfect_palinception || 0}</p>
-        <p>Nova Palindromes: {tagCounts.nova || 0}</p>
-        <p>Rodarmor Names: {tagCounts.rodarmor_name || 0}</p>
-        <p>Primes: {tagCounts.prime || 0}</p>
+      <div className="my-5 profile-stats">
+        <h3 className="mb-4" style={{ color: "#C38BFA", borderBottom: "2px solid #444", paddingBottom: "0.5rem" }}>
+          Collection Stats
+        </h3>
+        
+        <div className="row g-3">
+          {/* Column 1 */}
+          <div className="col-md-6">
+            <div className="card stats-card">
+              <div className="card-body">
+                <StatItem label="Total Sats" value={Object.keys(satCollection).length} />
+                <StatItem label="Uncommons" value={tagCounts.uncommon || 0} />
+                <StatItem label="Black Uncommons" value={tagCounts.black_uncommon || 0} />
+                <StatItem label="Rodarmor Names" value={tagCounts.rodarmor_name || 0} />
+                <StatItem label="Primes" value={tagCounts.prime || 0} />
+              </div>
+            </div>
+          </div>
+
+          {/* Column 2 */}
+          <div className="col-md-6">
+            <div className="card stats-card mt-3 mt-md-0">
+              <div className="card-body">
+                <StatItem label="Palindromes" value={tagCounts.palindrome || 0} />
+                <StatItem label="Uniform Palinceptions" value={tagCounts.uniform_palinception || 0} />
+                <StatItem label="Perfect Palinceptions" value={tagCounts.perfect_palinception || 0} />
+                <StatItem label="Nova Palindromes" value={tagCounts.nova || 0} />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
       {/* Modal for selecting a sat */}
       <ProfileSelectSatModal
         show={showModal}

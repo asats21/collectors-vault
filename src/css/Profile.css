@@ -128,3 +128,28 @@
     box-shadow: 0 0 4px #C38BFA !important; /* Subtle purple glow */
     border-color: #888 !important; /* Slightly lighter border on focus */
 }
+
+/* Statistics Section */
+.stats-card {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+  
+.stat-item {
+    border-bottom: 1px solid #333;
+    transition: background-color 0.2s ease;
+}
+  
+.stat-item:last-child {
+    border-bottom: none;
+}
+  
+.stat-item:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+  
+.stats-card .card-body {
+    padding: 1.25rem;
+}
