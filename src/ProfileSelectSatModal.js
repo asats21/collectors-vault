@@ -11,19 +11,25 @@ const ProfileSelectSatModal = ({
 }) => {
   return (
     <Modal show={show} onHide={onHide} centered>
-      <Modal.Header closeButton>
+      <Modal.Header>
         <Modal.Title>Select a Sat</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <input
           type="text"
-          className="form-control mb-3"
-          placeholder="Type at least 2 characters..."
+          className="form-control mb-3 profile-sat-input"
+          placeholder="Type at least 2 digits..."
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
+          style={{
+            backgroundColor: "black",
+            color: "white",
+            border: "1px solid #777",
+            outline: "none", // Removes the blue focus outline
+          }}
         />
         {searchResults.length === 0 && searchText.length >= 2 && (
-          <p className="text-muted">No results found.</p>
+          <p className="" style={{color: "#FFFFFF"}}>No results found.</p>
         )}
         {searchResults.map(([satId]) => (
           <div

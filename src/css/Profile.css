@@ -117,3 +117,14 @@
 .mobile-showcase-text:hover {
     box-shadow: 0 0 15px #C38BFA; /* Stronger glow on hover (optional) */
 }
+
+.profile-sat-input::placeholder {
+    color: #aaa !important; /* Light gray for visibility */
+    opacity: 1; /* Ensures full visibility */
+}
+
+.profile-sat-input:focus {
+    outline: none !important;
+    box-shadow: 0 0 4px #C38BFA !important; /* Subtle purple glow */
+    border-color: #888 !important; /* Slightly lighter border on focus */
+}
