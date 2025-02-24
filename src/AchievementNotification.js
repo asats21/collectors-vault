@@ -1,26 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import achievementData from './achievements.json';
-import * as FaIcons from 'react-icons/fa';
-import * as Fa6Icons from 'react-icons/fa6';
-import * as TbIcons from "react-icons/tb";
-import * as GiIcons from 'react-icons/gi';
+
+import {
+  FaRocket, FaMedal, FaBinoculars, FaAward, FaCrown, FaHourglassHalf,
+  FaFlag, FaRunning, FaDice, FaParking, FaGem,
+  FaRegCalendarAlt, FaCalendarCheck, FaBirthdayCake, FaRegCalendar, FaLandmark, FaQuestion
+} from "react-icons/fa";
+import { FaRepeat } from "react-icons/fa6";
+import { TbAlpha, TbAlphabetLatin, TbAlphabetGreek } from "react-icons/tb";
+import { GiWhaleTail, GiCalendar } from "react-icons/gi";
+
+const iconMap = {
+  FaRocket: FaRocket,
+  FaMedal: FaMedal,
+  FaBinoculars: FaBinoculars,
+  FaAward: FaAward,
+  FaCrown: FaCrown,
+  FaHourglassHalf: FaHourglassHalf,
+  FaFlag: FaFlag,
+  FaRunning: FaRunning,
+  FaDice: FaDice,
+  FaParking: FaParking,
+  FaGem: FaGem,
+  FaRepeat: FaRepeat,
+  FaRegCalendarAlt: FaRegCalendarAlt,
+  FaCalendarCheck: FaCalendarCheck,
+  FaBirthdayCake: FaBirthdayCake,
+  FaRegCalendar: FaRegCalendar,
+  FaLandmark: FaLandmark,
+  TbAlpha: TbAlpha,
+  TbAlphabetLatin: TbAlphabetLatin,
+  TbAlphabetGreek: TbAlphabetGreek,
+  GiWhaleTail: GiWhaleTail,
+  GiCalendar: GiCalendar,
+};
 
 function getIconComponent(iconName) {
-  let Icon = FaIcons[iconName];
-  if (!Icon) {
-    Icon = Fa6Icons[iconName];
-  }
-  if (!Icon) {
-    Icon = TbIcons[iconName];
-  }
-  if (!Icon) {
-    Icon = GiIcons[iconName];
-  }
-  if (!Icon) {
-    Icon = FaIcons.FaQuestion; // fallback icon
-  }
-  return Icon;
+  return iconMap[iconName] || FaQuestion; // No JSX here
 }
 
 const AchievementNotification = ({ achievementKey, onNotificationComplete }) => {
