@@ -138,6 +138,7 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
       <ImportSatsModal
         show={showImportModal}
         setShow={setShowImportModal}
+        satCollection={satCollection}
         setSatCollection={setSatCollection}
         settings={settings}
       />

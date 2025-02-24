@@ -5,14 +5,27 @@ import { FaTimes, FaExclamationTriangle } from "react-icons/fa";
 import { fetchSats } from './SatingApiCaller';
 import { addSatsToCollection } from '../satManagement';
 
-const ImportSatsModal = ({ show, setShow, setSatCollection, settings }) => {
+const ImportSatsModal = ({ show, setShow, satCollection, setSatCollection, settings }) => {
   const [wallet, setWallet] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const demoSats = new Set([
+    "152060000000000",
+    "45080708054",
+    "1444444114444441"
+  ]);
+  
+  // Check if the collection contains all three demo mode sats
+  const hasAllDemoSats = [...demoSats].every(sat => satCollection.hasOwnProperty(sat));
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
+
+      // Reset collection if demo mode sats are present
+      const updatedCollection = hasAllDemoSats ? {} : satCollection;
+
       const fetchedData = await fetchSats(wallet);
       // Only include sats that have at least one permitted tag
       const permittedToImport = [
@@ -27,7 +40,7 @@ const ImportSatsModal = ({ show, setShow, setSatCollection, settings }) => {
       // Extract only the first number from each sat array of the filtered data
       const satsArray = filteredData.map(item => item.sat[0]);
       const satsString = satsArray.join(',');
-      setSatCollection(prev => addSatsToCollection(satsString, prev, settings));
+      setSatCollection(prev => addSatsToCollection(satsString, updatedCollection, settings));
       setShow(false);
     } catch (error) {
       console.error('Error importing sats:', error);
