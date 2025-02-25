@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/collectors-vault/static/css/main.758ce637.css",
-    "main.js": "/collectors-vault/static/js/main.46f9728a.js",
+    "main.js": "/collectors-vault/static/js/main.dbb3dfb0.js",
     "index.html": "/collectors-vault/index.html",
     "main.758ce637.css.map": "/collectors-vault/static/css/main.758ce637.css.map",
-    "main.46f9728a.js.map": "/collectors-vault/static/js/main.46f9728a.js.map"
+    "main.dbb3dfb0.js.map": "/collectors-vault/static/js/main.dbb3dfb0.js.map"
   },
   "entrypoints": [
     "static/css/main.758ce637.css",
-    "static/js/main.46f9728a.js"
+    "static/js/main.dbb3dfb0.js"
   ]
 }
