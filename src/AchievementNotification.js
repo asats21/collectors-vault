@@ -7,7 +7,7 @@ import {
   FaFlag, FaRunning, FaDice, FaParking, FaGem,
   FaRegCalendarAlt, FaCalendarCheck, FaBirthdayCake, FaRegCalendar, FaLandmark, FaQuestion
 } from "react-icons/fa";
-import { FaRepeat } from "react-icons/fa6";
+import { FaRepeat, FaBluesky } from "react-icons/fa6";
 import { TbAlpha, TbAlphabetLatin, TbAlphabetGreek } from "react-icons/tb";
 import { GiWhaleTail, GiCalendar } from "react-icons/gi";
 
@@ -34,6 +34,7 @@ const iconMap = {
   TbAlphabetGreek: TbAlphabetGreek,
   GiWhaleTail: GiWhaleTail,
   GiCalendar: GiCalendar,
+  FaBluesky: FaBluesky,
 };
 
 function getIconComponent(iconName) {
