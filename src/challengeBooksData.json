@@ -552,7 +552,7 @@
       }, {
         "name": "Uniform Palinception",
         "requirements": [
-          { "count": 1, "tags": ["uniform_palinception", "pizza"] }
+          { "count": 1, "tags": ["pizza", "uniform_palinception"] }
         ]
       }, {
         "name": "Paliblock Uniform Palinception",
@@ -562,7 +562,7 @@
       }, {
         "name": "Alpha 420",
         "requirements": [
-          { "count": 1, "tags": ["alpha", "420"] }
+          { "count": 1, "tags": ["pizza", "alpha", "pizza_4/20"] }
         ]
       }
     ]
