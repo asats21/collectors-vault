@@ -689,6 +689,47 @@
       }
     ]
   },
+  {
+    "key": "prime_collector",
+    "name": "Prime Collector",
+    "display_tags": ["prime", "palindrome", "black_uncommon", "omega"],
+    "short_description": "Prime number is a natural number that has no divisors other than 1 and itself — celebrated by math lovers for their purity and elegance.",
+    "description": "Prime number is a natural number that has no divisors other than 1 and itself — celebrated by math lovers for their purity and elegance.",
+    "difficulty": "Expert",
+    "levels": [
+      {
+        "name": "Prime Palindrome",
+        "requirements": [
+          { "count": 1, "tags": ["prime", "palindrome"] }
+        ]
+      }, {
+        "name": "Prime Omega",
+        "requirements": [
+          { "count": 1, "tags": ["prime", "omega"]}
+        ]
+      }, {
+        "name": "Prime 3D Palindrome",
+        "requirements": [
+          { "count": 1, "tags": ["prime", "palindrome", "3_digits"] }
+        ]
+      }, {
+        "name": "Prime Paliblock Palindrome",
+        "requirements": [
+          { "count": 1, "tags": ["prime", "palindrome", "paliblock"] }
+        ]
+      }, {
+        "name": "Prime Uniform Palinception",
+        "requirements": [
+          { "count": 1, "tags": ["prime", "uniform_palinception"] }
+        ]
+      }, {
+        "name": "Prime Black Uncommon",
+        "requirements": [
+          { "count": 1, "tags": ["prime", "black_uncommon"] }
+        ]
+      }
+    ]
+  },
 
 
   {
