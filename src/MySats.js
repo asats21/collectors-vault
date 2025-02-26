@@ -60,6 +60,7 @@ const MySats = ({ satCollection, setSatCollection, settings }) => {
     { key: 'block_78', icon: tagIcons['block_78']?.icon, tooltip: tagIcons['block_78']?.tooltip },
     { key: 'vintage', icon: tagIcons['vintage']?.icon, tooltip: tagIcons['vintage']?.tooltip },
     { key: 'paliblock', icon: tagIcons['paliblock']?.icon, tooltip: tagIcons['paliblock']?.tooltip },
+    { key: '2_digits', icon: tagIcons['2_digits']?.icon, tooltip: tagIcons['2_digits']?.tooltip },
     { key: '3_digits', icon: tagIcons['3_digits']?.icon, tooltip: tagIcons['3_digits']?.tooltip },
     { key: 'rodarmor_name', icon: tagIcons['rodarmor_name']?.icon, tooltip: tagIcons['rodarmor_name']?.tooltip },
     { key: 'prime', icon: tagIcons['prime']?.icon, tooltip: tagIcons['prime']?.tooltip },

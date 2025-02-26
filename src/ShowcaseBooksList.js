@@ -60,6 +60,7 @@ const ShowcaseBooksList = ({ satCollection }) => {
     { key: 'palindrome', icon: tagIcons['palindrome']?.icon, tooltip: tagIcons['palindrome']?.tooltip },
     { key: 'uniform_palinception', icon: tagIcons['uniform_palinception']?.icon, tooltip: tagIcons['uniform_palinception']?.tooltip },
     { key: 'perfect_palinception', icon: tagIcons['perfect_palinception']?.icon, tooltip: tagIcons['perfect_palinception']?.tooltip },
+    { key: '3_digits', icon: tagIcons['3_digits']?.icon, tooltip: tagIcons['3_digits']?.tooltip },
     { key: 'jpeg', icon: tagIcons['jpeg']?.icon, tooltip: tagIcons['jpeg']?.tooltip },
     { key: 'pizza', icon: tagIcons['pizza']?.icon, tooltip: tagIcons['pizza']?.tooltip },
     { key: 'hitman', icon: tagIcons['hitman']?.icon, tooltip: tagIcons['hitman']?.tooltip },
