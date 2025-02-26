@@ -185,8 +185,8 @@
     ]
   },
   {
-    "key": "palindrome_year_book",
-    "name": "Palindrome Year Book",
+    "key": "palindrome_year_book_1",
+    "name": "Palindrome Year Book I",
     "display_tags": ["palindrome"],
     "short_description": "As the years progress, fewer and fewer palindromes are created, making these sats more valuable with each passing year.", 
     "description": "This book is dedicated to palindromes collected from every year, starting from 2009 to 2025. As the years progress, fewer and fewer palindromes are created, making these unique sat numbers even rarer and more valuable with each passing year.",
@@ -238,60 +238,6 @@
         "name": "Palindrome 2016",
         "requirements": [
           { "count": 1, "tags": ["palindrome"], "years": [2016] }
-        ]
-      },
-      {
-        "name": "Palindrome 2017",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome"], "years": [2017] }
-        ]
-      },
-      {
-        "name": "Palindrome 2018",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome"], "years": [2018] }
-        ]
-      },
-      {
-        "name": "Palindrome 2019",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome"], "years": [2019] }
-        ]
-      },
-      {
-        "name": "Palindrome 2020",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome"], "years": [2020] }
-        ]
-      },
-      {
-        "name": "Palindrome 2021",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome"], "years": [2021] }
-        ]
-      },
-      {
-        "name": "Palindrome 2022",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome"], "years": [2022] }
-        ]
-      },
-      {
-        "name": "Palindrome 2023",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome"], "years": [2023] }
-        ]
-      },
-      {
-        "name": "Palindrome 2024",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome"], "years": [2024] }
-        ]
-      },
-      {
-        "name": "Palindrome 2025",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome"], "years": [2025] }
         ]
       }
     ]
@@ -458,6 +404,70 @@
       }
     ]
   },
+  {
+    "key": "palindrome_year_book_2",
+    "name": "Palindrome Year Book II",
+    "display_tags": ["palindrome"],
+    "short_description": "As the years progress, fewer and fewer palindromes are created, making these sats more valuable with each passing year.", 
+    "description": "This book is dedicated to palindromes collected from every year, starting from 2009 to 2025. As the years progress, fewer and fewer palindromes are created, making these unique sat numbers even rarer and more valuable with each passing year.",
+    "difficulty": "Collector",
+    "levels": [
+      {
+        "name": "Palindrome 2017",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2017] }
+        ]
+      },
+      {
+        "name": "Palindrome 2018",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2018] }
+        ]
+      },
+      {
+        "name": "Palindrome 2019",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2019] }
+        ]
+      },
+      {
+        "name": "Palindrome 2020",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2020] }
+        ]
+      },
+      {
+        "name": "Palindrome 2021",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2021] }
+        ]
+      },
+      {
+        "name": "Palindrome 2022",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2022] }
+        ]
+      },
+      {
+        "name": "Palindrome 2023",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2023] }
+        ]
+      },
+      {
+        "name": "Palindrome 2024",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2024] }
+        ]
+      },
+      {
+        "name": "Palindrome 2025",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome"], "years": [2025] }
+        ]
+      }
+    ]
+  },
 
 
 
@@ -568,8 +578,8 @@
     ]
   },
   {
-    "key": "3d_palindrome_year_book",
-    "name": "3D Palindrome Year Book",
+    "key": "3d_palindrome_year_book_1",
+    "name": "3D Palindrome Year Book I",
     "display_tags": ["palindrome", "3_digits"],
     "short_description": "As the years progress, fewer and fewer palindromes are created, making these sats more valuable with each passing year.", 
     "description": "This book is dedicated to 3D palindromes collected from every year, starting from 2009 to 2025. As the years progress, fewer and fewer palindromes are created, making these unique sat numbers even rarer and more valuable with each passing year.",
@@ -629,62 +639,6 @@
         "description": "Supply: 5,401",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2016] }
-        ]
-      },
-      {
-        "name": "3D Palindrome 2017",
-        "description": "Supply: 4,537",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2017] }
-        ]
-      },
-      {
-        "name": "3D Palindrome 2018",
-        "description": "Supply: 3,119",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2018] }
-        ]
-      },
-      {
-        "name": "3D Palindrome 2019",
-        "description": "Supply: 3,711",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2019] }
-        ]
-      },
-      {
-        "name": "3D Palindrome 2020",
-        "description": "Supply: 1,906",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2020] }
-        ]
-      },
-      {
-        "name": "3D Palindrome 2021",
-        "description": "Supply: 2,228",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2021] }
-        ]
-      },
-      {
-        "name": "3D Palindrome 2022",
-        "description": "Supply: 2,309",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2022] }
-        ]
-      },
-      {
-        "name": "3D Palindrome 2023",
-        "description": "Supply: 729",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2023] }
-        ]
-      },
-      {
-        "name": "3D Palindrome 2024",
-        "description": "Supply: 567",
-        "requirements": [
-          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2024] }
         ]
       }
     ]
@@ -912,6 +866,72 @@
         "description": "Supply: 215",
         "requirements": [
           { "count": 1, "tags": ["palindrome", "paliblock"], "years": [2024] }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "3d_palindrome_year_book_2",
+    "name": "3D Palindrome Year Book II",
+    "display_tags": ["palindrome", "3_digits"],
+    "short_description": "As the years progress, fewer and fewer palindromes are created, making these sats more valuable with each passing year.", 
+    "description": "This book is dedicated to 3D palindromes collected from every year, starting from 2009 to 2025. As the years progress, fewer and fewer palindromes are created, making these unique sat numbers even rarer and more valuable with each passing year.",
+    "difficulty": "Elite",
+    "levels": [
+      {
+        "name": "3D Palindrome 2017",
+        "description": "Supply: 4,537",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2017] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2018",
+        "description": "Supply: 3,119",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2018] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2019",
+        "description": "Supply: 3,711",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2019] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2020",
+        "description": "Supply: 1,906",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2020] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2021",
+        "description": "Supply: 2,228",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2021] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2022",
+        "description": "Supply: 2,309",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2022] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2023",
+        "description": "Supply: 729",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2023] }
+        ]
+      },
+      {
+        "name": "3D Palindrome 2024",
+        "description": "Supply: 567",
+        "requirements": [
+          { "count": 1, "tags": ["palindrome", "3_digits"], "years": [2024] }
         ]
       }
     ]

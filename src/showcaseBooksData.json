@@ -253,6 +253,13 @@
     "traits": ["jpeg", "palindrome", "jpeg_2010"],
     "difficulty": "Elite"
   },
+  {
+    "key": "2d_uniform_palinception",
+    "name": "2D Uniform Palinception",
+    "description": "Uniform Palinceptions containing only 2 unique digits",
+    "traits": ["uniform_palinception", "2_digits"],
+    "difficulty": "Elite"
+  },
 
 
 
