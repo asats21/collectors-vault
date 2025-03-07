@@ -46,6 +46,14 @@ export const rarities = [
         "total": 423,
         "found": 9,
     },
+    {
+        "tags": ["uncommon", "pali_uncommon"],
+        "total": 1898,
+    },
+    {
+        "tags": ["uncommon", "pali_uncommon", "paliblock"],
+        "total": 169,
+    },
 
     // * Uncommon, TZ
     {
