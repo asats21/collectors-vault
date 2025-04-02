@@ -183,6 +183,11 @@ function App() {
               Rare Stats
             </button>
           </a>
+          <a href="https://magisat.io/categories?_ref=alpha-sats" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+            <button className="nav-button-footer about">
+              Shop
+            </button>
+          </a>
         </div>
       </footer>
     );
