@@ -159,7 +159,7 @@ const Profile = ({ satCollection, showPiece, setShowPiece, subPieces, setSubPiec
                   </span>
                 }
                 {satDetails && (
-                  <div className="sat-tags ms-1 my-2">
+                  <div className="sat-tags ms-1 my-2 justify-content-center">
                     <RenderTags tags={satDetails.tags || []} />
                   </div>
                 )}
